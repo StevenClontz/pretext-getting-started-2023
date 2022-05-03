@@ -6,7 +6,12 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta_frontmatter">
   <titlepage>
     <author>
-      <personname>Me</personname>
+      <personname>Steven Clontz</personname>
+      <department>Department of Mathematics and Statistics</department>
+      <institution>University of South Alabama</institution>
+    </author>
+    <author>
+      <personname>Oscar Levin</personname>
       <department>My department</department>
       <institution>My school</institution>
     </author>
