@@ -8,7 +8,7 @@
 <backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta_backmatter">
   <title>Backmatter</title>
   
-  <solutions divisional="hint">
+  <!-- <solutions divisional="hint">
     <title>Selected Hints</title>
   </solutions>
   
@@ -24,7 +24,7 @@
   <index>
     <title>Index</title>
     <index-list/>
-  </index>
+  </index> -->
 
   <colophon>
     <p>
