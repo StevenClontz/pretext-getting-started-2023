@@ -2,4 +2,6 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_intro">
 <title>Write Once, Read Anywhere</title>
 <p>words...</p>
+<p>This document is available in HTML format at <url href="https://stevenclontz.github.io/ptx-jmm-2023/"/>,
+and the same document is available in a PDF format at <url href="https://stevenclontz.github.io/ptx-jmm-2023/pdf/main.pdf"/>.</p>
 </section>
