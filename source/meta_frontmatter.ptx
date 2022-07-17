@@ -15,10 +15,14 @@
       <department>School of Mathematical Sciences</department>
       <institution>University of Northern Colorado</institution>
     </author>
-    <date><today/></date>
+    <date>2023 January 05 (9am-11am), 2023 January 07 (9am-11am)</date>
   </titlepage>
 
     <abstract>
+<p><em>
+This JMM Professional Enhancement Program will be held on Thursday, January 5 between 9 am - 11 am and 
+Saturday, January 7 between 9 am - 11 am in Salon CD on the fourth floor of the Boston Marriott Copley Place.
+</em></p>
 <p>
 <url href="https://pretextbook.org">PreTeXt</url> is a document authoring system that allows you to convert the source of your document into a variety of output formats, including fully accessible webpages, PDF, Epub, Jupyter Notebooks, and braille.  This “write once, read anywhere” approach has made it a popular choice for authors of Open Educational Resources, but PreTeXt can also be used to create other kinds of mathematical documents as well.  Recent updates make this process much easier; there has never been a better time to get started with PreTeXt.
 </p>
