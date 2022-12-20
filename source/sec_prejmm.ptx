@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_prejmm">
-<title>Before We Begin...</title>
-<p>words..</p>
+    <title>Before you arrive...</title>
+    <introduction>
+        <p>
+            Authoring in PreTeXt requires nothing more
+            than a wifi connection and GitHub account.
+            GitHub users also can share their
+            content for free on GitHub Pages!
+            <fn>
+                (The program description references CoCalc.com,
+                another service that can be used to author PreTeXt,
+                but workshop plans have been updated to focus primarily on
+                GitHub workflows.)
+            </fn>
+        </p>
+        <p>
+            Wifi will be available in our room at the JMM, so
+            each participant will only need to bring their laptop.
+            No installation of software is required 
+        </p>
+    </introduction>
+    <subsection>
+        <title>Setting up your GitHub account</title>
+        <p>
+            To create a GitHub account, 
+            <url href="https://github.com/signup">
+                follow the instructions on GitHub's
+                signup page.
+            </url>
+        </p>
+        <p>
+            Be sure to note your GitHub username and password in your password manager
+            (or however you usually keep track of login credentials) so you can log in
+            again at the Joint Mathematics Meetings.
+        </p>
+    </subsection>
+    <subsection>
+        <title>And that's it!</title>
+        <p>
+            Even just a couple months ago, the process to get started writing PreTeXt
+            involved several more steps. But the community is streamlining this experience 
+            daily, and we look forward to sharing how easy writing in PreTeXt is when we meet 
+            you at the JMM in January!
+        </p>
+    </subsection>
 </section>

@@ -18,39 +18,53 @@
     <date>2023 January</date>
   </titlepage>
 
-    <abstract>
-<p><em>
-This JMM Professional Enhancement Program will be held on Thursday, January 5 between 9 am - 11 am and 
-Saturday, January 7 between 9 am - 11 am in Salon CD on the fourth floor of the Boston Marriott Copley Place.
-</em></p>
-<p>
-<url href="https://pretextbook.org">PreTeXt</url> is a document authoring system that allows you to convert the source of your document into a variety of output formats, including fully accessible webpages, PDF, Epub, Jupyter Notebooks, and braille.  This “write once, read anywhere” approach has made it a popular choice for authors of Open Educational Resources, but PreTeXt can also be used to create other kinds of mathematical documents as well.  Recent updates make this process much easier; there has never been a better time to get started with PreTeXt.
-</p>
-<p>
-Participants of this PEP will be introduced to the fundamentals of authoring documents with PreTeXt and gain the technical skills required to work with it. Specifically, participants will learn how to:
-</p>
-<ul>
-<li>Install all required free and open-source software</li>
-<li>Create a new PreTeXt document</li>
-<li>Write and structure content using PreTeXt markup.</li>
-<li>Add content to the document, including mathematics, graphics, interactive exercises, and more.</li>
-<li>Build accessible and interactive webpages as well as a static PDF from the same PreTeXt source.</li>
-<li>Easily deploy the interactive webpages online (for free).</li>
-</ul>
-<p>
+  <abstract>
+    <p>
+      <em>
+This JMM Professional Enhancement Program will be held on Thursday, January 5 between
+9 am - 11 am and Saturday, January 7 between 9 am - 11 am in Salon CD on the fourth floor 
+of the Boston Marriott Copley Place.
+      </em>
+    </p>
+    <p>
+      <url href="https://pretextbook.org">PreTeXt</url>
+      is a document authoring system that allows you to convert the source of your document 
+      into a variety of output formats, including fully accessible webpages, PDF, Epub, 
+      Jupyter Notebooks, and braille.  This “write once, read anywhere” approach has made it 
+      a popular choice for authors of Open Educational Resources, but PreTeXt can also be used 
+      to create other kinds of mathematical documents as well.  Recent updates make this process 
+      much easier; there has never been a better time to get started with PreTeXt.
+    </p>
+    <p>
+Participants of this PEP will be introduced to the fundamentals of authoring documents 
+with PreTeXt and gain the technical skills required to work with it. Specifically, 
+participants will learn how to:
+    </p>
+    <ul>
+      <li>Install all required free and open-source software</li>
+      <li>Create a new PreTeXt document</li>
+      <li>Write and structure content using PreTeXt markup.</li>
+      <li>Add content to the document, including mathematics, graphics, interactive exercises, and more.</li>
+      <li>Build accessible and interactive webpages as well as a static PDF from the same PreTeXt source.</li>
+      <li>Easily deploy the interactive webpages online (for free).</li>
+    </ul>
+    <p>
 We will also share tips for converting existing documents into PreTeXt.
-</p>
-<p>
-Prior to the PEP, participants should have some familiarity with LaTeX or other markup languages.  No previous experience working with PreTeXt or HTML/XML is assumed.  
-Participants should bring a Windows, Mac, or Linux laptop on which they can install software, or alternatively any device that can use the CoCalc.com service.  
-Instructions for downloading and installing software will be provided prior to the PEP in this document. 
-</p>
-    </abstract>
+    </p>
+    <p>
+Prior to the PEP, participants should have some familiarity with LaTeX or other markup languages.
+No previous experience working with PreTeXt or HTML/XML is assumed.  
+Participants should bring a laptop that can connect to JMM's provided wifi: no prior installations will be required
+as we will use PreTeXt's new GitHub Codespace-powered online authoring service.
+    </p>
+  </abstract>
 
   <colophon>
 
     <website>
-      <name><c>PreTeXtBook.org</c></name>
+      <name>
+        <c>PreTeXtBook.org</c>
+      </name>
       <address>http://pretextbook.org</address>
     </website>
 
@@ -58,17 +72,21 @@ Instructions for downloading and installing software will be provided prior to t
       <!-- In addition to specifying the copyright holder, you should  -->
       <!-- include a license, such as the cc-by-sa license shown below -->
       <!-- so people reading your book know how they can use it.       -->
-      <year>2020<ndash/>2022</year>
+      <year>
+        2023
+      </year>
       <holder>Steven Clontz and Oscar Levin</holder>
       <!-- <minilicense><image source="../images/by-sa.png" /></minilicense> -->
       <shortlicense>
         <!-- <image source="../images/by-sa.png" width="15%"/>  -->
-        This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License.
+        This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 
+        International License.
         To view a copy of this license, visit
-        <url 
+        <url
           href="http://creativecommons.org/licenses/by-sa/4.0/"
           visual="creativecommons.org/licenses/by-sa/4.0">
-          CreativeCommons.org</url>
+          CreativeCommons.org
+        </url>
       </shortlicense>
     </copyright>
 
@@ -76,11 +94,11 @@ Instructions for downloading and installing software will be provided prior to t
 
   <acknowledgement>
     <p>
-      We would like to thank the American Institute of Mathematics for asking us
-      to present this Professional Enhancement Program at the 2023 Joint Mathematics
-      Meeting.
+      We would like to thank the
+      <url href="https://aimath.org">American Institute of Mathematics</url>
+      for sponsoring us to present this Professional Enhancement Program at the 
+      2023 Joint Mathematics Meeting.
     </p>
   </acknowledgement>
 
 </frontmatter>
-
