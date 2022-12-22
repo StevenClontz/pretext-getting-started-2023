@@ -1,7 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_intro">
-<title>Write Once, Read Anywhere</title>
-<p>words...</p>
-<p>This document is available in HTML format at <url href="https://stevenclontz.github.io/ptx-jmm-2023/"/>,
-and the same document is available in a PDF format at <url href="https://stevenclontz.github.io/ptx-jmm-2023/pdf/main.pdf"/>.</p>
+    <title>Write Once, Read Anywhere</title>
+    <introduction>
+        <p>
+            At the end of this section, you'll be able to identify several
+            features of PreTeXt, and have a working GitHub Codespaces environment
+            to start playing with.
+        </p>
+    </introduction>
+    <subsection xml:id="subsec-setting-up-codespaces">
+        <title>Setting up Codespaces</title>
+        <p> A <term>Codespace</term> is an authoring environment that lives in the <q>cloud</q>,
+            that is, a virtual machine hosted by GitHub that has all of the software needed to
+            create great accessible documents, accessible with just a web browser. </p>
+        <p>
+            This coding environment uses a web version of Virtual Studio
+            Code, an open-source editor, along with the PreTeXt community's
+            custom plugins and software to get started authoring quickly.
+        </p>
+        <p> Follow the instructions at <url href="https://github.com/PreTeXtBook/pretext-template" />
+            to get started. Let this run for a few minutes in the background while you review the
+            rest of this section. </p>
+    </subsection>
+    <subsection xml:id="subsec-paragraphs">
+        <title>Paragraphs, Lists, and Blocks</title>
+        <p>TODO</p>
+    </subsection>
+    <subsection xml:id="subsec-figures">
+        <title>Figures and Diagrams</title>
+        <p>TODO</p>
+        <figure xml:id="figure-braille">
+            <caption>Photograph taken from AIM Press Release on braille.</caption>
+            <image source="braille_bubble.jpg" width="50%">
+                <description>
+                    Photograph of a hand tracing over braille code. A cartoon thought bubble
+                    contains the quadratic formula in standard mathematical notation, matching the
+                    contents of the braille code in the photograph.
+                </description>
+            </image>
+        </figure>
+    </subsection>
+    <subsection xml:id="subsec-interactives">
+        <title>Interactives</title>
+        <p>TODO</p>
+    </subsection>
+    <subsection xml:id="subsec-exercises">
+        <title>Exercises</title>
+        <p>TODO</p>
+    </subsection>
+    <subsection xml:id="subsec-not-just-html-not-just-pdf">
+        <title>Not Just HTML, Not Just PDF</title>
+        <p> This document is available in HTML format at <url
+                href="https://stevenclontz.github.io/ptx-jmm-2023/" />, and the same document is
+            available in a PDF format at <url
+                href="https://stevenclontz.github.io/ptx-jmm-2023/pdf/main.pdf" />. </p>
+        <p> Obtaining these formats are as easy as running <c>pretext build web</c> and
+            <c>pretext build print</c> respectively. PreTeXt supports other types of output as well, including
+            Jupyter notebooks and tacticle braille code. You're encouraged to view authoring in
+            PreTeXt as an investment: you may not need the braille output today, but the little
+            extra thought and care required to author in PreTeXt will allow you to provide this
+            version of your document to a blind student tomorrow. </p>
+    </subsection>
+    <subsection xml:id="subsec-intro-conclusion">
+        <title>Conclusion</title>
+        <p>
+            Go check back on your Codespace. If it's up and running, you're ready to
+            move on to the next section!
+        </p>
+    </subsection>
 </section>
