@@ -6,30 +6,25 @@
 <!-- solutions in the next.  Then there is an appendix    -->
 <!-- with all notation generated, and finally the index.  -->
 <backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta_backmatter">
-  <title>Backmatter</title>
-  
-  <!-- <solutions divisional="hint">
-    <title>Selected Hints</title>
-  </solutions>
-  
-  <solutions divisional="solution">
-    <title>Selected Solutions</title>
-  </solutions>
-  
+
   <appendix>
-    <title>List of Symbols</title>
-    <notation-list/>
+    <title>Copyright and Licensing</title>
+    <p><copyright /> 2023 Steven Clontz and Oscar Levin.</p>
+    <p> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International
+      License. To view a copy of this license, visit <url
+        href="http://creativecommons.org/licenses/by-sa/4.0/"
+        visual="creativecommons.org/licenses/by-sa/4.0">
+        CreativeCommons.org
+      </url>
+    </p>
+
   </appendix>
 
-  <index>
-    <title>Index</title>
-    <index-list/>
-  </index> -->
-
-  <colophon>
-    <p>
-      This book was authored in <pretext/>.
-    </p>
-  </colophon>
+  <appendix>
+    <title>Acknowledgement</title>
+    <p> We would like to thank the <url href="https://aimath.org">American Institute of Mathematics</url>
+      for sponsoring us to present this Professional Enhancement Program at the 2023 Joint
+      Mathematics Meeting. </p>
+  </appendix>
 </backmatter>
 
