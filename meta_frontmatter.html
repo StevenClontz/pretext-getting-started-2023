@@ -191,11 +191,7 @@ window.MathJax = {
 <div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
 <li class="active">
 <div class="toc-item"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="meta_frontmatter.html#abstract-1" class="internal"><span class="title"></span></a></div></li>
-<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li><div class="toc-item"><a href="acknowledgement-1.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
-</ul>
+<ul class="structural"><li><div class="toc-item"><a href="meta_frontmatter.html#abstract-1" class="internal"><span class="title">Abstract</span></a></div></li></ul>
 </li>
 <li>
 <div class="toc-item"><a href="sec_prejmm.html" class="internal"><span class="codenumber">1</span> <span class="title">Before you arrive...</span></a></div>
@@ -204,8 +200,25 @@ window.MathJax = {
 <li><div class="toc-item"><a href="sec_prejmm.html#subsection-2" class="internal"><span class="codenumber">1.2</span> <span class="title">And that's it!</span></a></div></li>
 </ul>
 </li>
-<li><div class="toc-item"><a href="sec_intro.html" class="internal"><span class="codenumber">2</span> <span class="title">Write Once, Read Anywhere</span></a></div></li>
-<li><div class="toc-item"><a href="meta_backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+<li>
+<div class="toc-item"><a href="sec_intro.html" class="internal"><span class="codenumber">2</span> <span class="title">Write Once, Read Anywhere</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="sec_intro.html#subsec-setting-up-codespaces" class="internal"><span class="codenumber">2.1</span> <span class="title">Setting up Codespaces</span></a></div></li>
+<li><div class="toc-item"><a href="sec_intro.html#subsec-paragraphs" class="internal"><span class="codenumber">2.2</span> <span class="title">Paragraphs, Lists, and Blocks</span></a></div></li>
+<li><div class="toc-item"><a href="sec_intro.html#subsec-figures" class="internal"><span class="codenumber">2.3</span> <span class="title">Figures and Diagrams</span></a></div></li>
+<li><div class="toc-item"><a href="sec_intro.html#subsec-interactives" class="internal"><span class="codenumber">2.4</span> <span class="title">Interactives</span></a></div></li>
+<li><div class="toc-item"><a href="sec_intro.html#subsec-exercises" class="internal"><span class="codenumber">2.5</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec_intro.html#subsec-not-just-html-not-just-pdf" class="internal"><span class="codenumber">2.6</span> <span class="title">Not Just HTML, Not Just PDF</span></a></div></li>
+<li><div class="toc-item"><a href="sec_intro.html#subsec-intro-conclusion" class="internal"><span class="codenumber">2.7</span> <span class="title">Conclusion</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="meta_backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="appendix-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Copyright and Licensing</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Acknowledgement</span></a></div></li>
+</ul>
+</li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content">
 <section class="frontmatter" id="meta_frontmatter"><h2 class="heading">
@@ -220,7 +233,8 @@ window.MathJax = {
 <div class="author-info">School of Mathematical Sciences<br>University of Northern Colorado</div>
 </div>
 <div class="date">2023 January</div>
-<div class="para" id="p-1"><em class="emphasis">This JMM Professional Enhancement Program will be held on Thursday, January 5 between 9 am - 11 am and Saturday, January 7 between 9 am - 11 am in Salon CD on the fourth floor of the Boston Marriott Copley Place.</em></div> <div class="para" id="p-2">
+<div class="abstract" id="abstract-1">
+<span class="title">Abstract</span><div class="para" id="p-1"><em class="emphasis">This JMM Professional Enhancement Program will be held on Thursday, January 5 between 9 am - 11 am and Saturday, January 7 between 9 am - 11 am in Salon CD on the fourth floor of the Boston Marriott Copley Place.</em></div> <div class="para" id="p-2">
 <a class="external" href="https://pretextbook.org" target="_blank">PreTeXt</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a> is a document authoring system that allows you to convert the source of your document into a variety of output formats, including fully accessible webpages, PDF, Epub, Jupyter Notebooks, and braille.  This “write once, read anywhere” approach has made it a popular choice for authors of Open Educational Resources, but PreTeXt can also be used to create other kinds of mathematical documents as well.  Recent updates make this process much easier; there has never been a better time to get started with PreTeXt.</div> <div class="para" id="p-3">Participants of this PEP will be introduced to the fundamentals of authoring documents with PreTeXt and gain the technical skills required to work with it. Specifically, participants will learn how to:</div> <ul class="disc">
 <li id="li-1"><div class="para" id="p-derived-li-1">Install all required free and open-source software</div></li>
 <li id="li-2"><div class="para" id="p-derived-li-2">Create a new PreTeXt document</div></li>
@@ -229,17 +243,7 @@ window.MathJax = {
 <li id="li-5"><div class="para" id="p-derived-li-5">Build accessible and interactive webpages as well as a static PDF from the same PreTeXt source.</div></li>
 <li id="li-6"><div class="para" id="p-derived-li-6">Easily deploy the interactive webpages online (for free).</div></li>
 </ul> <div class="para" id="p-4">We will also share tips for converting existing documents into PreTeXt.</div> <div class="para" id="p-5">Prior to the PEP, participants should have some familiarity with LaTeX or other markup languages. No previous experience working with PreTeXt or HTML/XML is assumed. Participants should bring a laptop that can connect to JMM's provided wifi: no prior installations will be required as we will use PreTeXt's new GitHub Codespace-powered online authoring service.</div>
-<section class="colophon" id="colophon-1"><h3 class="heading hide-type">
-<span class="type">Colophon</span> <span class="codenumber"></span> <span class="title">Colophon</span>
-</h3>
-<p class="credit"><b class="title">Website</b> <a href="http://pretextbook.org"><code class="code-inline tex2jax_ignore">PreTeXtBook.org</code></a></p>
-<p class="copyright">©2023 Steven Clontz and Oscar Levin</p>
-<p class="license"> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <a class="external" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CreativeCommons.org</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-2" id="fn-2"><sup> 2 </sup></a></p></section><section class="acknowledgement" id="acknowledgement-1"><h3 class="heading hide-type">
-<span class="type">Acknowledgements</span> <span class="codenumber"></span> <span class="title">Acknowledgements</span>
-</h3>
-<div class="para" id="p-6">We would like to thank the <a class="external" href="https://aimath.org" target="_blank">American Institute of Mathematics</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-3" id="fn-3"><sup> 3 </sup></a> for sponsoring us to present this Professional Enhancement Program at the 2023 Joint Mathematics Meeting.</div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn"><code class="code-inline tex2jax_ignore">pretextbook.org</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-2"><div class="fn"><code class="code-inline tex2jax_ignore">creativecommons.org/licenses/by-sa/4.0</code></div></div>
-<div class="hidden-content tex2jax_ignore" id="hk-fn-3"><div class="fn"><code class="code-inline tex2jax_ignore">aimath.org</code></div></div>
+</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-1"><div class="fn"><code class="code-inline tex2jax_ignore">pretextbook.org</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ptx-jmm-2023.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec_prejmm.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

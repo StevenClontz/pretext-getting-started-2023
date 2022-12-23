@@ -7,7 +7,7 @@ var ptx_lunr_docs = [
   "type": "Front Matter",
   "number": "",
   "title": "Front Matter",
-  "body": "   Steven Clontz  Department of Mathematics and Statistics  University of South Alabama    Oscar Levin  School of Mathematical Sciences  University of Northern Colorado   2023 January     This JMM Professional Enhancement Program will be held on Thursday, January 5 between 9 am - 11 am and Saturday, January 7 between 9 am - 11 am in Salon CD on the fourth floor of the Boston Marriott Copley Place.    PreTeXt is a document authoring system that allows you to convert the source of your document into a variety of output formats, including fully accessible webpages, PDF, Epub, Jupyter Notebooks, and braille. This “write once, read anywhere” approach has made it a popular choice for authors of Open Educational Resources, but PreTeXt can also be used to create other kinds of mathematical documents as well. Recent updates make this process much easier; there has never been a better time to get started with PreTeXt.  Participants of this PEP will be introduced to the fundamentals of authoring documents with PreTeXt and gain the technical skills required to work with it. Specifically, participants will learn how to:   Install all required free and open-source software  Create a new PreTeXt document  Write and structure content using PreTeXt markup.  Add content to the document, including mathematics, graphics, interactive exercises, and more.  Build accessible and interactive webpages as well as a static PDF from the same PreTeXt source.  Easily deploy the interactive webpages online (for free).   We will also share tips for converting existing documents into PreTeXt.  Prior to the PEP, participants should have some familiarity with LaTeX or other markup languages. No previous experience working with PreTeXt or HTML\/XML is assumed. Participants should bring a laptop that can connect to JMM's provided wifi: no prior installations will be required as we will use PreTeXt's new GitHub Codespace-powered online authoring service.      PreTeXtBook.org   http:\/\/pretextbook.org   copyright    We would like to thank the American Institute of Mathematics for sponsoring us to present this Professional Enhancement Program at the 2023 Joint Mathematics Meeting.   "
+  "body": "   Steven Clontz  Department of Mathematics and Statistics  University of South Alabama    Oscar Levin  School of Mathematical Sciences  University of Northern Colorado   2023 January     This JMM Professional Enhancement Program will be held on Thursday, January 5 between 9 am - 11 am and Saturday, January 7 between 9 am - 11 am in Salon CD on the fourth floor of the Boston Marriott Copley Place.    PreTeXt is a document authoring system that allows you to convert the source of your document into a variety of output formats, including fully accessible webpages, PDF, Epub, Jupyter Notebooks, and braille. This “write once, read anywhere” approach has made it a popular choice for authors of Open Educational Resources, but PreTeXt can also be used to create other kinds of mathematical documents as well. Recent updates make this process much easier; there has never been a better time to get started with PreTeXt.  Participants of this PEP will be introduced to the fundamentals of authoring documents with PreTeXt and gain the technical skills required to work with it. Specifically, participants will learn how to:   Install all required free and open-source software  Create a new PreTeXt document  Write and structure content using PreTeXt markup.  Add content to the document, including mathematics, graphics, interactive exercises, and more.  Build accessible and interactive webpages as well as a static PDF from the same PreTeXt source.  Easily deploy the interactive webpages online (for free).   We will also share tips for converting existing documents into PreTeXt.  Prior to the PEP, participants should have some familiarity with LaTeX or other markup languages. No previous experience working with PreTeXt or HTML\/XML is assumed. Participants should bring a laptop that can connect to JMM's provided wifi: no prior installations will be required as we will use PreTeXt's new GitHub Codespace-powered online authoring service.   "
 },
 {
   "id": "sec_prejmm",
@@ -25,16 +25,43 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2",
   "title": "Write Once, Read Anywhere",
-  "body": " Write Once, Read Anywhere  words...  This document is available in HTML format at , and the same document is available in a PDF format at .  "
+  "body": " Write Once, Read Anywhere   At the end of this section, you'll be able to identify several features of PreTeXt, and have a working GitHub Codespaces environment to start playing with.    Setting up Codespaces  A Codespace is an authoring environment that lives in the cloud , that is, a virtual machine hosted by GitHub that has all of the software needed to create great accessible documents, accessible with just a web browser.  This coding environment uses a web version of Virtual Studio Code, an open-source editor, along with the PreTeXt community's custom plugins and software to get started authoring quickly.  Follow the instructions at to get started. Let this run for a few minutes in the background while you review the rest of this section.    Paragraphs, Lists, and Blocks  TODO    Figures and Diagrams  TODO    Photograph of a hand tracing over braille code. A cartoon thought bubble contains the quadratic formula in standard mathematical notation, matching the contents of the braille code in the photograph.   Photograph taken from AIM Press Release on braille.     Interactives  TODO    Exercises  TODO    Not Just HTML, Not Just PDF  This document is available in HTML format at , and the same document is available in a PDF format at .  Obtaining these formats are as easy as running pretext build web and pretext build print respectively. PreTeXt supports other types of output as well, including Jupyter notebooks and tacticle braille code. You're encouraged to view authoring in PreTeXt as an investment: you may not need the braille output today, but the little extra thought and care required to author in PreTeXt will allow you to provide this version of your document to a blind student tomorrow.    Conclusion  Go check back on your Codespace. If it's up and running, you're ready to move on to the next section!   "
 },
 {
-  "id": "colophon-2",
-  "level": "1",
-  "url": "colophon-2.html",
-  "type": "Colophon",
+  "id": "p-12",
+  "level": "2",
+  "url": "sec_intro.html#p-12",
+  "type": "Paragraph (with a defined term)",
   "number": "",
-  "title": "Colophon",
-  "body": " This book was authored in PreTeXt .  "
+  "title": "",
+  "body": "Codespace "
+},
+{
+  "id": "figure-braille",
+  "level": "2",
+  "url": "sec_intro.html#figure-braille",
+  "type": "Figure",
+  "number": "2.3.1",
+  "title": "",
+  "body": "  Photograph of a hand tracing over braille code. A cartoon thought bubble contains the quadratic formula in standard mathematical notation, matching the contents of the braille code in the photograph.   Photograph taken from AIM Press Release on braille.  "
+},
+{
+  "id": "appendix-1",
+  "level": "1",
+  "url": "appendix-1.html",
+  "type": "Appendix",
+  "number": "A",
+  "title": "Copyright and Licensing",
+  "body": " Copyright and Licensing  copyright 2023 Steven Clontz and Oscar Levin.  This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit CreativeCommons.org   "
+},
+{
+  "id": "appendix-2",
+  "level": "1",
+  "url": "appendix-2.html",
+  "type": "Appendix",
+  "number": "B",
+  "title": "Acknowledgement",
+  "body": " Acknowledgement  We would like to thank the American Institute of Mathematics for sponsoring us to present this Professional Enhancement Program at the 2023 Joint Mathematics Meeting.  "
 }
 ]
 
