@@ -41,8 +41,7 @@ with PreTeXt and gain the technical skills required to work with it. Specificall
 participants will learn how to:
     </p>
     <ul>
-      <li>Install all required free and open-source software</li>
-      <li>Create a new PreTeXt document</li>
+      <li>Use GitHub Codespaces to create an editable PreTeXt document in their web browser.</li>
       <li>Write and structure content using PreTeXt markup.</li>
       <li>Add content to the document, including mathematics, graphics, interactive exercises, and more.</li>
       <li>Build accessible and interactive webpages as well as a static PDF from the same PreTeXt source.</li>
