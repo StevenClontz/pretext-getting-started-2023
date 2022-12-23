@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
+  &lt;webwork&gt;
+    &lt;setup&gt;
+      &lt;pg-code&gt;
+        $a = random(0.1,0.5,0.01);
+        $b = random(0.5,3.5,0.25);
+        $c = random(1,9,0.2);
+        $disc = $b*$b-4*$a*$c;
+        $f = Compute("$a*x^2 + $b*x + $c");
+        if ($disc &amp;gt;= 0)
+        {
+          $root1 = Compute(" (-$b + sqrt($b^2 - 4*$a*$c))/(2*$a)");
+          $root2 = Compute(" (-$b - sqrt($b^2 - 4*$a*$c))/(2*$a)");
+          $roots = List("$root1,$root2");
+        } else{
+          $roots = Compute("DNE");
+        }
+      &lt;/pg-code&gt;
+    &lt;/setup&gt;
+    &lt;statement&gt;
+      &lt;p&gt;
+        Let &lt;m&gt;f(x) = &lt;var name="$a"/&gt;x^2 + &lt;var name="$b"/&gt;x + &lt;var name="$c"/&gt;&lt;/m&gt;.  Find all &lt;m&gt;x&lt;/m&gt; such that &lt;m&gt;f(x) = 0&lt;/m&gt;.
+      &lt;/p&gt;
+      &lt;instruction&gt;
+        If there is more than one answer, enter your answer as a comma separated list.  If there are no answers, enter &lt;m&gt;DNE&lt;/m&gt;
+      &lt;/instruction&gt;
+      &lt;p&gt;
+        Solutions = &lt;var name="$roots" width="20"/&gt;
+      &lt;/p&gt;
+    &lt;/statement&gt;
+  &lt;/webwork&gt;
+&lt;/exercise&gt;
+</pre></div></body>
+</html>
