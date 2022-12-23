@@ -1,9 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
-<!-- This is the main file of the pretext template book provided -->
-<!-- by the `pretext new book` command.  The main.ptx here always-->
-<!-- starts with <pretext> tags.  In this example, the main file -->
-<!-- just imports other .ptx files which contain content. Open   -->
-<!-- those files to see more pretext features                    -->
 
 <pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
 
