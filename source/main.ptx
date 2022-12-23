@@ -20,6 +20,7 @@
 
     <xi:include href="./sec_prejmm.ptx" />
     <xi:include href="./sec_intro.ptx" />
+    <xi:include href="./quick_pretext_walkthrough.ptx" />
 
 
     <!-- Finaly we place the backmatter in its own file and inlcude-->
