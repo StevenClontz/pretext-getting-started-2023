@@ -947,7 +947,7 @@
     </task>
   </exploration>
 
-  <exercise>
+  <exercise xml:id="tfq" label="true-false">
     <title>True/False Question</title>
     <statement correct='yes'>
       <p>
