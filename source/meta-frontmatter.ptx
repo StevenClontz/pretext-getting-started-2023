@@ -3,7 +3,7 @@
 <!-- first chapter.  Fill in and comment/uncomment to see how this -->
 <!-- works.                                                        -->
 
-<frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta_frontmatter">
+<frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta-frontmatter">
   <titlepage>
     <author>
       <personname>Steven Clontz</personname>

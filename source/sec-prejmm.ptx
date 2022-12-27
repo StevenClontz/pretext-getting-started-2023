@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec_prejmm">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-prejmm">
     <title>Before you arrive...</title>
     <introduction>
         <p>
@@ -7,13 +7,15 @@
             than a wifi connection and GitHub account.
             GitHub users also can share their
             content for free on GitHub Pages!
-            <fn>
+        </p>
+        <aside>
+            <p>
                 (The program description references CoCalc.com,
                 another service that can be used to author PreTeXt,
                 but workshop plans have been updated to focus primarily on
                 GitHub workflows.)
-            </fn>
-        </p>
+            </p>
+        </aside>
         <p>
             Wifi will be available in our room at the JMM, so
             each participant will only need to bring their laptop.
