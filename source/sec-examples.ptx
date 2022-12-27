@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<section xml:id="sec-workedexamples">
-  <title>foo</title>
+<section xml:id="sec-examples">
+  <title>Some Examples</title>
   <subsection>
-  <title>Some PreTeXt Examples</title>
+  <title>Basic PreTeXt</title>
 
   <exploration>
     <title>Static Exercises</title>
