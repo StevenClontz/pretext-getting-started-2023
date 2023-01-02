@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-intro">
     <title>Write Once, Read Anywhere</title>
-    <introduction>
+    <objectives>
+    <!-- <introduction>
         <p>
-            At the end of this section, you'll be able to identify several
-            features of PreTeXt, and have a working GitHub Codespaces environment
-            to start playing with.
+            At the end of this section, you'll be able to: 
         </p>
-    </introduction>
+    </introduction> -->
+    <ol>
+        <li>
+            <p>
+                Identify several features of PreTeXt.
+            </p>
+        </li>
+       <li>
+            <p>
+                Have a working GitHub Codespaces environment to start playing with.
+            </p>
+        </li>
+    </ol>
+    </objectives>
     <subsection xml:id="subsec-setting-up-codespaces">
         <title>Setting up Codespaces</title>
         <p> A <term>Codespace</term> is an authoring environment that lives in the <q>cloud</q>,
@@ -18,7 +30,7 @@
             Code, an open-source editor, along with the PreTeXt community's
             custom plugins and software to get started authoring quickly.
         </p>
-        <p> Follow the instructions at <url href="https://github.com/PreTeXtBook/pretext-template" />
+        <p> Follow the instructions at <url href="https://github.com/PreTeXtBook/pretext-codespace" />
             to get started. Let this run for a few minutes in the background while you review the
             rest of this section. </p>
     </subsection>
