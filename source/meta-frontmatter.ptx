@@ -21,43 +21,45 @@
   <abstract>
     <p>
       <em>
-This JMM Professional Enhancement Program will be held on Thursday, January 5 between
-9 am - 11 am and Saturday, January 7 between 9 am - 11 am in Salon CD on the fourth floor 
-of the Boston Marriott Copley Place.
+        This JMM Professional Enhancement Program will be held on Thursday, January 5 between
+        9 am - 11 am and Saturday, January 7 between 9 am - 11 am in Salon CD on the fourth floor
+        of the Boston Marriott Copley Place.
       </em>
     </p>
     <p>
-      <url href="https://pretextbook.org">PreTeXt</url>
-      is a document authoring system that allows you to convert the source of your document 
-      into a variety of output formats, including fully accessible webpages, PDF, Epub, 
-      Jupyter Notebooks, and braille.  This “write once, read anywhere” approach has made it 
-      a popular choice for authors of Open Educational Resources, but PreTeXt can also be used 
-      to create other kinds of mathematical documents as well.  Recent updates make this process 
-      much easier; there has never been a better time to get started with PreTeXt.
-    </p>
+      <url href="https://pretextbook.org">PreTeXt</url> is a document authoring system that allows
+      you to convert the source of your document into a variety of output formats, including fully
+      accessible webpages, PDF, Epub, Jupyter Notebooks, and braille. This “write once, read
+      anywhere” approach has made it a popular choice for authors of Open Educational Resources, but
+      PreTeXt can also be used to create other kinds of mathematical documents as well. Recent
+      updates make this process much easier; there has never been a better time to get started with
+      PreTeXt. </p>
     <p>
-Participants of this PEP will be introduced to the fundamentals of authoring documents 
-with PreTeXt and gain the technical skills required to work with it. Specifically, 
-participants will learn how to:
+      Participants of this PEP will be introduced to the fundamentals of authoring documents
+      with PreTeXt and gain the technical skills required to work with it. Specifically,
+      participants will learn how to:
     </p>
     <ul>
       <li>Use GitHub Codespaces to create an editable PreTeXt document in their web browser.</li>
       <li>Write and structure content using PreTeXt markup.</li>
-      <li>Add content to the document, including mathematics, graphics, interactive exercises, and more.</li>
-      <li>Build accessible and interactive webpages as well as a static PDF from the same PreTeXt source.</li>
+      <li>Add content to the document, including mathematics, graphics, interactive exercises, and
+        more.</li>
+      <li>Build accessible and interactive webpages as well as a static PDF from the same PreTeXt
+        source.</li>
       <li>Easily deploy the interactive webpages online (for free).</li>
     </ul>
     <p>
-We will also share tips for converting existing documents into PreTeXt.
+      We will also share tips for converting existing documents into PreTeXt.
     </p>
     <p>
-Prior to the PEP, participants should have some familiarity with LaTeX or other markup languages.
-No previous experience working with PreTeXt or HTML/XML is assumed.  
-Participants should bring a laptop that can connect to JMM's provided wifi: no prior installations will be required
-as we will use PreTeXt's new GitHub Codespace-powered online authoring service.
+      Prior to the PEP, participants should have some familiarity with LaTeX or other markup
+      languages.
+      No previous experience working with PreTeXt or HTML/XML is assumed.
+      Participants should bring a laptop that can connect to JMM's provided wifi: no prior
+      installations will be required
+      as we will use PreTeXt's new GitHub Codespace-powered online authoring service.
     </p>
   </abstract>
 
- 
 
 </frontmatter>
