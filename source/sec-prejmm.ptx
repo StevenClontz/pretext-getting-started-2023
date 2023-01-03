@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-prejmm">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-prejmm">
     <title>Before you arrive...</title>
     <introduction>
         <p>
@@ -22,7 +22,7 @@
             No installation of software is required 
         </p>
     </introduction>
-    <subsection>
+    <section>
         <title>Setting up your GitHub account</title>
         <p>
             To create a GitHub account, 
@@ -36,8 +36,8 @@
             (or however you usually keep track of login credentials) so you can log in
             again at the Joint Mathematics Meetings.
         </p>
-    </subsection>
-    <subsection>
+    </section>
+    <section>
         <title>And that's it!</title>
         <p>
             Even just a couple months ago, the process to get started writing PreTeXt
@@ -45,5 +45,5 @@
             daily, and we look forward to sharing how easy writing in PreTeXt is when we meet 
             you at the JMM in January!
         </p>
-    </subsection>
-</section>
+    </section>
+</chapter>

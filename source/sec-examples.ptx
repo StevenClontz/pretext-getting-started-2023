@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<section xml:id="sec-examples">
+<chapter xml:id="ch-examples">
   <title>Some Examples</title>
-  <subsection>
+  <section>
   <title>Basic PreTeXt</title>
 
   <exploration>
@@ -684,9 +684,9 @@
   
 
 
-</subsection>
+</section>
 
-<subsection>
+<section>
   <title>Basic Principles and Frequently Asked Questions</title>
   <p>
     <dl>
@@ -904,12 +904,12 @@
       </li>
     </dl>
   </p>
-</subsection>
+</section>
 
 
 
-<subsection>
-  <title>Interactive Activities that Don't Work?</title>
+<section>
+  <title>Interactive Activities</title>
 
   <exploration>
     <introduction>
@@ -961,7 +961,7 @@
     </feedback>
   </exercise>
 
-  <exercise>
+  <exercise label="some-matching">
     <title>Matching Problem</title>
     <statement>
       <p>
@@ -1020,7 +1020,7 @@
     </choices>
   </exercise>
 
-  <exercise>
+  <exercise label="parsons">
     <title>Parsons Problem</title>
     <statement>
       <p>
@@ -1059,7 +1059,7 @@
     </blocks>
   </exercise>
 
-  <exercise>
+  <exercise label="matching">
     <title>Matching Problem</title>
     <statement>
       <p>
@@ -1093,7 +1093,7 @@
       </match>
     </matches>
   </exercise>
-</subsection>
-
-
 </section>
+
+
+</chapter>

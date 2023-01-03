@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-intro">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-intro">
     <title>Write Once, Read Anywhere</title>
     <introduction>
         <p>
@@ -8,7 +8,7 @@
             to start playing with.
         </p>
     </introduction>
-    <subsection xml:id="subsec-setting-up-codespaces">
+    <section xml:id="sec-setting-up-codespaces">
         <title>Setting up Codespaces</title>
         <p> A <term>Codespace</term> is an authoring environment that lives in the <q>cloud</q>,
             that is, a virtual machine hosted by GitHub that has all of the software needed to
@@ -21,12 +21,12 @@
         <p> Follow the instructions at <url href="https://github.com/PreTeXtBook/pretext-template" />
             to get started. Let this run for a few minutes in the background while you review the
             rest of this section. </p>
-    </subsection>
-    <subsection xml:id="subsec-paragraphs">
+    </section>
+    <section xml:id="sec-paragraphs">
         <title>Paragraphs, Lists, and Blocks</title>
         <p>TODO</p>
-    </subsection>
-    <subsection xml:id="subsec-figures">
+    </section>
+    <section xml:id="sec-figures">
         <title>Figures and Diagrams</title>
         <p>TODO</p>
         <figure xml:id="figure-braille">
@@ -39,16 +39,16 @@
                 </description>
             </image>
         </figure>
-    </subsection>
-    <subsection xml:id="subsec-interactives">
+    </section>
+    <section xml:id="sec-interactives">
         <title>Interactives</title>
         <p>TODO</p>
-    </subsection>
-    <subsection xml:id="subsec-exercises">
+    </section>
+    <section xml:id="sec-exercises">
         <title>Exercises</title>
         <p>TODO</p>
-    </subsection>
-    <subsection xml:id="subsec-not-just-html-not-just-pdf">
+    </section>
+    <section xml:id="sec-not-just-html-not-just-pdf">
         <title>Not Just HTML, Not Just PDF</title>
         <p> This document is available in HTML format at <url
                 href="https://stevenclontz.github.io/ptx-jmm-2023/" />, and the same document is
@@ -60,12 +60,12 @@
             PreTeXt as an investment: you may not need the braille output today, but the little
             extra thought and care required to author in PreTeXt will allow you to provide this
             version of your document to a blind student tomorrow. </p>
-    </subsection>
-    <subsection xml:id="subsec-intro-conclusion">
+    </section>
+    <section xml:id="sec-intro-conclusion">
         <title>Conclusion</title>
         <p>
             Go check back on your Codespace. If it's up and running, you're ready to
             move on to the next section!
         </p>
-    </subsection>
-</section>
+    </section>
+</chapter>

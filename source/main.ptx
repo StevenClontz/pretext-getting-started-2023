@@ -7,7 +7,7 @@
 
   <!-- The <book> tags wrap all the content.  Change the @xml:id   -->
   <!-- to some short (non-spaced) description of your book         -->
-  <article xml:id="ptx-jmm-2023">
+  <book xml:id="ptx-jmm-2023">
     <!-- The book needs a title and can have a subtitle  -->
     <title>Creating accessible and interactive documents with PreTeXt</title>
     <subtitle>A JMM2023 Professional Enhancement Program</subtitle>
@@ -25,5 +25,5 @@
 
     <!-- Finaly we place the backmatter in its own file and inlcude-->
     <xi:include href="./meta-backmatter.ptx" />
-  </article>
+  </book>
 </pretext>
