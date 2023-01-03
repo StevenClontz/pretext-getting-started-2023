@@ -18,9 +18,9 @@
     <!-- out for now and write this when the book is more complete -->
     <xi:include href="./meta-frontmatter.ptx" />
 
-    <xi:include href="./sec-prejmm.ptx" />
-    <xi:include href="./sec-intro.ptx" />
-    <xi:include href="./sec-examples.ptx" />
+    <xi:include href="./ch-prejmm.ptx" />
+    <xi:include href="./ch-intro.ptx" />
+    <xi:include href="./ch-examples.ptx" />
 
 
     <!-- Finaly we place the backmatter in its own file and inlcude-->
