@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="li"><h3 class="heading"><span class="title">Mastering PreTeXt Syntax</span></h3>
+<div class="para">When you use a more complex environment for the first time or in a new way, double check the PreTeXt schema <a class="external" href="https://pretextbook.org/doc/schema/" target="_blank"><code class="code-inline tex2jax_ignore">https://pretextbook.org/doc/schema/</code></a>.</div>
+<div class="para">The <em class="emphasis">Content</em> of the <em class="alert">XML Representation Summary</em> tells you what type of content the environment is allowed to contain. Be careful when reading the Schema, and refer to the abbreviations in <a class="external" href="https://pretextbook.org/doc/guide/html/schema-reading-relaxng.html" target="_blank">the documentation</a><a href="" class="fn-knowl original" data-knowl="./knowl/fn-8-hidden.html" title="Footnote 3.2.1"><sup> 1 </sup></a>.</div>
+<div class="para">For example, consider the entry for the <a class="external" href="https://pretextbook.org/doc/schema/schemas/pretext_xsd/elements/exercise.html" target="_blank"><code class="code-inline tex2jax_ignore">exercise</code></a><a href="" class="fn-knowl original" data-knowl="./knowl/fn-9-hidden.html" title="Footnote 3.2.2"><sup> 2 </sup></a> environment. Even though the <code class="code-inline tex2jax_ignore">exercise</code> environment permits <code class="code-inline tex2jax_ignore">p</code> and <code class="code-inline tex2jax_ignore">solution</code> environments, they cannot be used at the same time, as they are in separate Groupings ( ) that are combined by a Choice |.  If you want to use a <code class="code-inline tex2jax_ignore">solution</code> in an <code class="code-inline tex2jax_ignore">exercise</code>, the exercise must consist of a <code class="code-inline tex2jax_ignore">statement</code> followed by zero or more <code class="code-inline tex2jax_ignore">hint</code>, <code class="code-inline tex2jax_ignore">answer</code>, or <code class="code-inline tex2jax_ignore">solution</code> environments.</div>
+<div class="para">You can also use the Schema to see where an environment can be used, by looking at the <em class="alert">Included in content model of elements</em> section of the page. This will help you make sure that you are placing your environment in a valid location. For example the <a class="external" href="https://pretextbook.org/doc/schema/schemas/pretext_xsd/elements/exercise.html" target="_blank"><code class="code-inline tex2jax_ignore">exercise</code></a><a href="" class="fn-knowl original" data-knowl="./knowl/fn-10-hidden.html" title="Footnote 3.2.3"><sup> 3 </sup></a> environment can be used in (among other places) sections and subsections, but not inside of another exercise.</div></article><span class="incontext"><a href="section-13.html#li-23" class="internal">in-context</a></span>
+</body>
+</html>

@@ -11,8 +11,53 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<article class="li"><h4 class="heading"><span class="title">Summarizing Concepts</span></h4>
-<div class="para">Use the <code class="code-inline tex2jax_ignore">assemblage</code> environment to summarize content, such as a list of formulas. Assemblages are not numbered, so when you reference them you need to add <code class="code-inline tex2jax_ignore">text='custom'</code> or <code class="code-inline tex2jax_ignore">text='title'</code>.  For example, you would need to type  to any <code class="code-inline tex2jax_ignore">&lt; xref text='title' ref="REFNAME" /&gt;</code>
-</div></article><span class="incontext"><a href="sec-examples.html#li-13" class="internal">in-context</a></span>
+<article class="li"><h3 class="heading"><span class="title">Nesting Environments</span></h3>
+<div class="para">All normal text should be contained inside <code class="code-inline tex2jax_ignore">p</code> environments. Moreover, a <code class="code-inline tex2jax_ignore">p</code> environment should <em class="emphasis">only</em> contain text, math, and lists.</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:45%;"><section class="paragraphs"><h4 class="heading"><span class="title">Never Write.</span></h4>
+<pre class="code-block tex2jax_ignore">&lt;p&gt;
+  The frog is a majestic creature:
+  &lt;image source="frog.gif" width="100%"&gt;
+  &lt;/image&gt;
+&lt;/p&gt;
+</pre></section></div>
+<div class="sbspanel top" style="width:45%;"><section class="paragraphs"><h4 class="heading"><span class="title">Always Write.</span></h4>
+<pre class="code-block tex2jax_ignore">&lt;p&gt;
+  The frog is a majestic creature:
+&lt;/p&gt;
+&lt;image source="frog.gif" width="100%"&gt;
+&lt;/image&gt;
+</pre></section></div>
+</div></div>
+<div class="para">Some environments have more complex rules about how they can be combined.</div>
+<div class="para">For example, the <code class="code-inline tex2jax_ignore">example</code>, <code class="code-inline tex2jax_ignore">exercise</code>, <code class="code-inline tex2jax_ignore">project</code>, and <code class="code-inline tex2jax_ignore">task</code> environments are essentially the only environments that can contain <code class="code-inline tex2jax_ignore">solution</code>, <code class="code-inline tex2jax_ignore">hint</code>, and <code class="code-inline tex2jax_ignore">answer</code> sub-environments. <em class="emphasis">However</em>, these sub-environments are only allowed in a very specific format.  If solutions are to be used, they <em class="emphasis">must</em> be paired with a <code class="code-inline tex2jax_ignore">statement</code> (and optionally hint, answer) and <em class="emphasis">no other divisions</em>, not even a paragraph.</div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:45%;"><section class="paragraphs"><h4 class="heading"><span class="title">Never Write.</span></h4>
+<pre class="code-block tex2jax_ignore">&lt;example&gt;
+  &lt;p&gt;
+    A paragraph, ending in a question.
+  &lt;/p&gt;
+  &lt;solution&gt;
+    &lt;p&gt;
+      A solution to the question in the paragraph.
+    &lt;/p&gt;
+  &lt;/solution&gt;
+&lt;/example&gt;
+</pre></section></div>
+<div class="sbspanel top" style="width:45%;"><section class="paragraphs"><h4 class="heading"><span class="title">Always Write.</span></h4>
+<pre class="code-block tex2jax_ignore">&lt;example&gt;
+  &lt;statement&gt;
+    &lt;p&gt;
+    A paragraph, ending in a question.
+    &lt;/p&gt;
+  &lt;/statement&gt;
+  &lt;solution&gt;
+    &lt;p&gt;
+      A solution to the question in the paragraph.
+    &lt;/p&gt;
+  &lt;/solution&gt;
+&lt;/example&gt;
+</pre></section></div>
+</div></div></article><span class="incontext"><a href="section-13.html#li-13" class="internal">in-context</a></span>
 </body>
 </html>
