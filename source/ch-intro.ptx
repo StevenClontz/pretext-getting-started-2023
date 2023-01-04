@@ -325,10 +325,9 @@ useful for leaving notes for yourself or future editors... -->
 
     <section xml:id="sec-figures">
         <title>Figures and Diagrams</title>
-        <p>TODO</p>
         <figure xml:id="figure-braille">
-            <caption>Photograph taken from AIM Press Release on braille.</caption>
-            <image source="braille_bubble.jpg" width="50%">
+            <caption>Photograph taken from AIM Press Release on braille, provided as a JPEG in the project <c>assets</c> directory.</caption>
+            <image source="braille_bubble.jpg" width="75%">
                 <description>
                     Photograph of a hand tracing over braille code. A cartoon thought bubble
                     contains the quadratic formula in standard mathematical notation, matching the
@@ -336,9 +335,34 @@ useful for leaving notes for yourself or future editors... -->
                 </description>
             </image>
         </figure>
+<figure xml:id="figure-asymptote-levers">
+  <caption>Asymptote Lever Demonstration</caption>
+  <image xml:id="asymptote-lever">
+    <description>Moments on a lever</description>
+      <asymptote>
+      size(200,0);
+      pair z0=(0,0);
+      pair z1=(2,0);
+      pair z2=(5,0);
+      pair zf=z1+0.75*(z2-z1);
+      draw(z1--z2);
+      dot(z1,red+0.15cm);
+      dot(z2,darkgreen+0.3cm);
+      label("$m$",z1,1.2N,red);
+      label("$M$",z2,1.5N,darkgreen);
+      label("$\hat{\ }$",zf,0.2*S,fontsize(24pt)+blue);
+      pair s=-0.2*I;
+      draw("$x$",z0+s--z1+s,N,red,Arrows,Bars,PenMargins);
+      s=-0.5*I;
+      draw("$\bar{x}$",z0+s--zf+s,blue,Arrows,Bars,PenMargins);
+      s=-0.95*I;
+      draw("$X$",z0+s--z2+s,darkgreen,Arrows,Bars,PenMargins);
+      </asymptote>
+  </image>
+</figure>
         <figure xml:id="figure-sage-polynomial-approximation">
-            <caption>Sage polynomial approximations of <m>f(x)=1/(1+25x^2)</m></caption>
-            <image xml:id="sageplot-polynomial-approximation">
+            <caption>Polynomial approximations of <m>f(x)=1/(1+25x^2)</m> generated from SageMath code</caption>
+            <image xml:id="sageplot-polynomial-approximation" width="75%">
                 <sageplot variant="2d">
 def f(x):
     return RDF(1 / (1 + 25 * x^2))
