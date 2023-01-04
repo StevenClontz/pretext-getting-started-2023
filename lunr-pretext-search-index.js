@@ -124,7 +124,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.5",
   "title": "Paragraphs, Lists, and Blocks",
-  "body": " Paragraphs, Lists, and Blocks  Within each division (chapter, section, etc., see ) of your book, you likely want some content (e.g. what you're reading right now!).  Written content is usually structured as paragraphs , <p> for short. If you've ever written HTML , this tag may be familiar to you, but be warned: while PreTeXt is XML ( ), PreTeXt is not HTML ! There is some overlap: you can emphasize words or phrases with <em> for instance. However, while HTML uses the full word code for its tag, PreTeXt uses the shortened <c> tag.  Note that these elements are all semantic : they express the meaning of content, not its presentation. For example, the word semantic was a <term> we just defined, while we merely emphasized meaning with <em> . The presentation of these concepts may vary by output format, likely using some combination of boldface, italics, or underlining.   Heads up!  We'll talk about customizing presentation later, but it's important to remember that the PreTeXt community separates such publication decisions away from the work of authoring content.   For users coming from LaTeX, rest assured your mathematical formulas work in PreTeXt . Inline mathmode is invoked with <m>ax^2+bx+c=0<\/m> , while display mathematics like is available via <me>x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}<\/me> . (Users from LaTeX will also appreciate that quotes are surrounded with <q> in PreTeXt to handle the different way quotation marks are handled in LaTeX vs most other markup languages.)  You may also have lists withinn paragraphs, ordered <ol> and unordered <ul> , nested as needed. Each list item is represented by <li> .   A single item.    An item with an ordered list.   First item.    Second item.        Of course, often you have important blocks of content to include, such as <definition> s or <claim> s.     PreTeXt is an uncomplicated XML language for describing scholarly documents.      PreTeXt is the language that will replace LaTeX.    Left to the reader.    Such content is automatically numbered appropriately. Each of the blocks above is structured with a <statement> , and additionally features a <proof> .  Content is often knowled . A knowl is a piece of context-independent information that is useful to transclude elsewhere in the HTML build of your document. For example, in the HTML build for this document, the above proof is knowled by default, and clicking the referenced Claim in the previous paragraph expands its knowl to reveal the claim for the reader.   Because this document was edited directly on GitHub using Codespaces, and served with GitHub pages, finding its source is simple: head to its repository and find the corresponding source file . Check the link out to see exactly how each claim, list, etc. in this chapter was marked up!    "
+  "body": " Paragraphs, Lists, and Blocks  Within each division (chapter, section, etc., see ) of your book, you likely want some content (e.g. what you're reading right now!).  Written content is usually structured as paragraphs , <p> for short. If you've ever written HTML , this tag may be familiar to you, but be warned: while PreTeXt is XML ( ), PreTeXt is not HTML ! There is some overlap: you can emphasize words or phrases with <em> for instance. However, while HTML uses the full word code for its tag, PreTeXt uses the shortened <c> tag.  Note that these elements are all semantic : they express the meaning of content, not its presentation. For example, the word semantic was a <term> we just defined, while we merely emphasized meaning with <em> . The presentation of these concepts may vary by output format, likely using some combination of boldface, italics, or underlining.   Heads up!  We'll talk about customizing presentation later, but it's important to remember that the PreTeXt community separates such publication decisions away from the work of authoring content.   For users coming from LaTeX, rest assured your mathematical formulas work in PreTeXt . Inline mathmode is invoked with <m>ax^2+bx+c=0<\/m> , while display mathematics like is available via <me>x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}<\/me> . (Users from LaTeX will also appreciate that quotes are surrounded with <q> in PreTeXt to handle the different way quotation marks are handled in LaTeX vs most other markup languages.)  You may also have lists withinn paragraphs, ordered <ol> and unordered <ul> , nested as needed. Each list item is represented by <li> .   A single item.    An item with an ordered list.   First item.    Second item.        Of course, often you have important blocks of content to include, such as <definition> s or <claim> s.     PreTeXt is an uncomplicated XML language for describing scholarly documents.      PreTeXt is the language that will replace LaTeX for authors.    Left to the reader.    Such content is automatically numbered appropriately. Each of the blocks above is structured with a <statement> , and additionally features a <proof> .  Content is often knowled . A knowl is a piece of context-independent information that is useful to transclude elsewhere in the HTML build of your document. For example, in the HTML build for this document, the above proof is knowled by default, and clicking the referenced Claim in the previous paragraph expands its knowl to reveal the claim for the reader.   Because this document was edited directly on GitHub using Codespaces, and served with GitHub pages, finding its source is simple: head to its repository and find the corresponding source file . Check the link out to see exactly how each claim, list, etc. in this chapter was marked up!    "
 },
 {
   "id": "p-32",
@@ -169,7 +169,7 @@ var ptx_lunr_docs = [
   "type": "Claim",
   "number": "2.5.2",
   "title": "",
-  "body": "  PreTeXt is the language that will replace LaTeX.    Left to the reader.   "
+  "body": "  PreTeXt is the language that will replace LaTeX for authors.    Left to the reader.   "
 },
 {
   "id": "p-46",
@@ -196,7 +196,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.6",
   "title": "Figures and Diagrams",
-  "body": " Figures and Diagrams  TODO   Photograph taken from AIM Press Release on braille.   Photograph of a hand tracing over braille code. A cartoon thought bubble contains the quadratic formula in standard mathematical notation, matching the contents of the braille code in the photograph.     Sage polynomial approximations of      "
+  "body": " Figures and Diagrams   Photograph taken from AIM Press Release on braille, provided as a JPEG in the project assets directory.   Photograph of a hand tracing over braille code. A cartoon thought bubble contains the quadratic formula in standard mathematical notation, matching the contents of the braille code in the photograph.     Electronics Diagram generated with Tikz code   A pile of electronic components wired together      Contour Plot generated from Asymptote code       Work Cone generated from Asymptote code       Polynomial approximations of generated from SageMath code       An implicitly defined 3D surface generated with SageMath code      "
 },
 {
   "id": "figure-braille",
@@ -205,16 +205,52 @@ var ptx_lunr_docs = [
   "type": "Figure",
   "number": "2.6.1",
   "title": "",
-  "body": " Photograph taken from AIM Press Release on braille.   Photograph of a hand tracing over braille code. A cartoon thought bubble contains the quadratic formula in standard mathematical notation, matching the contents of the braille code in the photograph.   "
+  "body": " Photograph taken from AIM Press Release on braille, provided as a JPEG in the project assets directory.   Photograph of a hand tracing over braille code. A cartoon thought bubble contains the quadratic formula in standard mathematical notation, matching the contents of the braille code in the photograph.   "
+},
+{
+  "id": "figure-tikz-electronics",
+  "level": "2",
+  "url": "sec-figures.html#figure-tikz-electronics",
+  "type": "Figure",
+  "number": "2.6.2",
+  "title": "",
+  "body": " Electronics Diagram generated with Tikz code   A pile of electronic components wired together    "
+},
+{
+  "id": "figure-asymptote-contour-plot",
+  "level": "2",
+  "url": "sec-figures.html#figure-asymptote-contour-plot",
+  "type": "Figure",
+  "number": "2.6.3",
+  "title": "",
+  "body": " Contour Plot generated from Asymptote code     "
+},
+{
+  "id": "figure-asymptote-workcone",
+  "level": "2",
+  "url": "sec-figures.html#figure-asymptote-workcone",
+  "type": "Figure",
+  "number": "2.6.4",
+  "title": "",
+  "body": " Work Cone generated from Asymptote code     "
 },
 {
   "id": "figure-sage-polynomial-approximation",
   "level": "2",
   "url": "sec-figures.html#figure-sage-polynomial-approximation",
   "type": "Figure",
-  "number": "2.6.2",
+  "number": "2.6.5",
   "title": "",
-  "body": " Sage polynomial approximations of     "
+  "body": " Polynomial approximations of generated from SageMath code     "
+},
+{
+  "id": "figure-sage-implicit-surface",
+  "level": "2",
+  "url": "sec-figures.html#figure-sage-implicit-surface",
+  "type": "Figure",
+  "number": "2.6.6",
+  "title": "",
+  "body": " An implicitly defined 3D surface generated with SageMath code     "
 },
 {
   "id": "sec-interactives",
@@ -223,7 +259,43 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.7",
   "title": "Interactives",
-  "body": " Interactives  TODO  "
+  "body": " Interactives   Right Triangle Paradox powered by Geogebra     Graph of powered by Desmos     Intersection of two planes powered by CalcPlot3D     Fourier: Making Waves powered by PhET Interactive Simulations    "
+},
+{
+  "id": "figure-geogebra",
+  "level": "2",
+  "url": "sec-interactives.html#figure-geogebra",
+  "type": "Figure",
+  "number": "2.7.1",
+  "title": "",
+  "body": " Right Triangle Paradox powered by Geogebra   "
+},
+{
+  "id": "figure-8",
+  "level": "2",
+  "url": "sec-interactives.html#figure-8",
+  "type": "Figure",
+  "number": "2.7.2",
+  "title": "",
+  "body": " Graph of powered by Desmos   "
+},
+{
+  "id": "figure-intersecting-planes",
+  "level": "2",
+  "url": "sec-interactives.html#figure-intersecting-planes",
+  "type": "Figure",
+  "number": "2.7.3",
+  "title": "",
+  "body": " Intersection of two planes powered by CalcPlot3D   "
+},
+{
+  "id": "figure-phet-fourier",
+  "level": "2",
+  "url": "sec-interactives.html#figure-phet-fourier",
+  "type": "Figure",
+  "number": "2.7.4",
+  "title": "",
+  "body": " Fourier: Making Waves powered by PhET Interactive Simulations   "
 },
 {
   "id": "sec-exercises",
@@ -232,7 +304,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.8",
   "title": "Authoring an Exercise",
-  "body": " Authoring an Exercise  Manually-authored exercise What is ? We're being a bit tricky here... , where is the concatenation operator.  Using WebWork   Compute  The sum is .              Generated by CheckIt  Consider the following system of linear equations.    Explain how to find a simpler system or vector equation that has the same solution set.       Explain how to describe this solution set using set notation.   The solution set is .   "
+  "body": " Authoring an Exercise  Manually-authored exercise What is ? We're being a bit tricky here... , where is the concatenation operator.  Using WebWork   Compute  The sum is .              was taken from Linear Algebra for Team-Based Inquiry Learning .  Generated by CheckIt  Consider the following system of linear equations.    Explain how to find a simpler system or vector equation that has the same solution set.       Explain how to describe this solution set using set notation.   The solution set is .   Runestone-powered True\/False Question  This statement is true or false.   Feedback goes here.   Runestone-powered Matching Problem  A multiple choice question     right answer 1    answer specific feedback      right answer 1    answer specific feedback      wrong answer 1    answer specific feedback      wrong answer 2    answer specific feedback     Runestone-powered Parsons Problem  Rearrange the blocks in alphebetical order       A    B    C    D         Runestone-powered Matching Problem  Match the letters with their order in the alphabet    A  1    B  2    C  3    "
 },
 {
   "id": "exercise-1",
@@ -253,13 +325,49 @@ var ptx_lunr_docs = [
   "body": "Using WebWork   Compute  The sum is .             "
 },
 {
-  "id": "exercise-3",
+  "id": "exercise-checkit",
   "level": "2",
-  "url": "sec-exercises.html#exercise-3",
+  "url": "sec-exercises.html#exercise-checkit",
   "type": "Checkpoint",
   "number": "2.8.3",
   "title": "Generated by CheckIt.",
   "body": "Generated by CheckIt  Consider the following system of linear equations.    Explain how to find a simpler system or vector equation that has the same solution set.       Explain how to describe this solution set using set notation.   The solution set is .  "
+},
+{
+  "id": "true-false",
+  "level": "2",
+  "url": "sec-exercises.html#true-false",
+  "type": "Checkpoint",
+  "number": "2.8.4",
+  "title": "Runestone-powered True\/False Question.",
+  "body": "Runestone-powered True\/False Question  This statement is true or false.   Feedback goes here.  "
+},
+{
+  "id": "some-matching",
+  "level": "2",
+  "url": "sec-exercises.html#some-matching",
+  "type": "Checkpoint",
+  "number": "2.8.5",
+  "title": "Runestone-powered Matching Problem.",
+  "body": "Runestone-powered Matching Problem  A multiple choice question     right answer 1    answer specific feedback      right answer 1    answer specific feedback      wrong answer 1    answer specific feedback      wrong answer 2    answer specific feedback    "
+},
+{
+  "id": "parsons",
+  "level": "2",
+  "url": "sec-exercises.html#parsons",
+  "type": "Checkpoint",
+  "number": "2.8.6",
+  "title": "Runestone-powered Parsons Problem.",
+  "body": "Runestone-powered Parsons Problem  Rearrange the blocks in alphebetical order       A    B    C    D        "
+},
+{
+  "id": "matching",
+  "level": "2",
+  "url": "sec-exercises.html#matching",
+  "type": "Checkpoint",
+  "number": "2.8.7",
+  "title": "Runestone-powered Matching Problem.",
+  "body": "Runestone-powered Matching Problem  Match the letters with their order in the alphabet    A  1    B  2    C  3   "
 },
 {
   "id": "sec-not-just-html-not-just-pdf",
@@ -280,121 +388,112 @@ var ptx_lunr_docs = [
   "body": " Wrapping Up  Go check back on the Codespace you created in . If it's up and running, you're ready to move on to the next section!  "
 },
 {
-  "id": "section-14",
+  "id": "sec-build-and-generate",
   "level": "1",
-  "url": "section-14.html",
+  "url": "sec-build-and-generate.html",
   "type": "Section",
   "number": "3.1",
-  "title": "Basic PreTeXt",
-  "body": " Basic PreTeXt   Static Exercises   The following examples discuss the different kinds of static exercises you can write.    Create an exercise with multiple parts, each with a separate solution.   This requires the use of task environments inside an exercise or project-like environment. For the syntax to be valid, begin with an introduction , then use a separate task for each part of the question. Each task should consist of a single statement and solution .   <exercise> <introduction> <p> <em>Anything relevent to all parts of the problem goes here.<\/em> <\/p> <\/introduction> <task> <statement> <p> <em>The first question<\/em> <\/p> <\/statement> <solution> <p> <em>The first solution<\/em> <\/p> <\/solution> <\/task> <task> <statement> <p> <em>The second question<\/em> <\/p> <\/statement> <solution> <p> <em>The second solution<\/em> <\/p> <\/solution> <\/task> <\/exercise>     WebWork Exercises   The exercises below illustrate the different kinds of interactive exercises you can write.    Write an interactive WebWork Exercise that generates two random numbers, and asks the user to enter the sum of those numbers.   This example is taken directly from .    All perl and setup must happen between the <setup><pg-setup>...<\/pg-setup><\/setup> tags, as in any WebWork problem.    Format statements as usual in PreTeXt     To reference the perl variable $a in the statement , type <var name=\"$a\"> .    To create an answer blank, where the answer is the perl variable $a , type <var name=\"$a\" width=\"5\" > . Here, @width controls the width of the answer blank.     <exercise> <webwork> <setup> <pg-code> $a = Compute(random(1,5,1)); $b = Compute(random(6,9,1)); $c = Compute(\"$a+$b\"); <\/pg-code> <\/setup> <statement> <p>Compute <m><var name=\"$a\"\/> + <var name=\"$b\"\/><\/m>.<\/p> <instruction>Type your answer without using the <c>+<\/c> sign.<\/instruction> <p>The sum is <var name=\"$c\" width=\"2\"\/>.<\/p> <\/statement> <solution> <p><m><var name=\"$a\"\/> + <var name=\"$b\"\/> = <var name=\"$c\"\/><\/m>.<\/p> <\/solution> <\/webwork> <\/exercise>    Write a WebWork problem with a popup list and a single select list. WebWork multiple select lists are not currently compatible with PreTeXt    For the PreTeXt syntax, see in the documentation.  For the setup portion of the webwork code, follow the WebWork documentation at and . Note that you only need to follow the yellow (Setup) portion of the WebWork instructions. The other sections are managed by PreTeXt.   <exercise> <webwork> <setup> <pg-code> $color_question = PopUp( [\"?\",\"Red\",\"Blue\",\"Green\"], \"Blue\" ); $linearfunction=RadioButtons(['\\(3(x-2)+1\\)','\\(2x(x+1)-3\\)','\\(2\\)'], '\\(2x(x+1)-3\\)'); <\/pg-code> <\/setup> <statement> <p> Select the best color from the list <var name=\"$color_question\" form=\"popup\"\/> <\/p> <p> Which of the following is <em>not<\/em> a linear function. <\/p> <p> <var name=\"$linearfunction\" width=\"buttons\"\/> <\/p> <\/statement> <\/webwork> <\/exercise>    Write a WebWork Exercise that asks for roots of quadratic functions, such that the functions generated have varying numbers of roots.   You can use perl control structures in the <setup><pg-setup>...<\/pg-setup><\/setup> portion of the code.  If you are comparing magnitudes, you must replace with a &lt; b and with c &gt; d .   <exercise> <webwork> <setup> <pg-code> $a = random(0.1,0.5,0.01); $b = random(0.5,3.5,0.25); $c = random(1,9,0.2); $disc = $b*$b-4*$a*$c; $f = Compute(\"$a*x^2 + $b*x + $c\"); if ($disc &gt;= 0) { $root1 = Compute(\" (-$b + sqrt($b^2 - 4*$a*$c))\/(2*$a)\"); $root2 = Compute(\" (-$b - sqrt($b^2 - 4*$a*$c))\/(2*$a)\"); $roots = List(\"$root1,$root2\"); } else{ $roots = Compute(\"DNE\"); } <\/pg-code> <\/setup> <statement> <p> Let <m>f(x) = <var name=\"$a\"\/>x^2 + <var name=\"$b\"\/>x + <var name=\"$c\"\/><\/m>. Find all <m>x<\/m> such that <m>f(x) = 0<\/m>. <\/p> <instruction> If there is more than one answer, enter your answer as a comma separated list. If there are no answers, enter <m>DNE<\/m> <\/instruction> <p> Solutions = <var name=\"$roots\" width=\"20\"\/> <\/p> <\/statement> <\/webwork> <\/exercise>    Write a WebWork Exercise that asks for roots of quadratic functions, such that the functions generated always has real roots .   There are two ways to approach this problem. First, you can manually select the random seed to ensure that all quadratics have real roots.  But you can also use perl structures like do-while to check the discriminant of the quadratic generated, and to rerandomize the problem if no real roots exist.   <exercise> <webwork> <setup> <pg-code> do{ $a = random(0.1,0.5,0.01); $b = random(0.5,3.5,0.25); $c = random(1,9,0.2); $disc = $b*$b-4*$a*$c; } while ( 0 &gt; $disc ) ; $f = Compute(\"$a*x^2 + $b*x + $c\"); $root1 = Compute(\" (-$b + sqrt($b^2 - 4*$a*$c))\/(2*$a)\"); $root2 = Compute(\" (-$b - sqrt($b^2 - 4*$a*$c))\/(2*$a)\"); $roots = List($root1,$root2); <\/pg-code> <\/setup> <statement> <p> Let <m>f(x) = <var name=\"$a\"\/>x^2 + <var name=\"$b\"\/>x + <var name=\"$c\"\/><\/m>. Find all <m>x<\/m> such that <m>f(x) = 0<\/m>. <\/p> <instruction> If there is more than one answer, enter your answer as a comma separated list. <\/instruction> <p> Solutions = <var name=\"$roots\" width=\"20\"\/> <\/p> <\/statement> <\/webwork> <\/exercise>      Create the folowing images using TikZ            Use two image environments, each containing a latex-image environment. To display the images side by side, use the sidebyside environment. To get the sizes and spacing even and uniform, you will need to set @widths and @margins in the sidebyside environment.  Remember that the < and > symbols are restricted. For lines, it is eaisest to use latex or stealth as your arrow style. If you must use < and > in your TikZ code, you must replace the symbols with &lt; and &gt; respectively.    <sidebyside widths=\"33% 33%\" margins=\"11%\" valign=\"middle\"> <image width=\"25%\" xml:id=\"tikz_quick_eg\"> <latex-image> \\begin{tikzpicture} \\draw[fill=red,opacity=0.2] (0,0) circle (1.15); \\draw[fill=blue,opacity=0.2] (1,0) circle (1.15); \\end{tikzpicture} <\/latex-image> <\/image> <image width=\"33%\" xml:id=\"image_tikz_eg\"> <latex-image> \\begin{tikzpicture} \\\\ Shade the enclosed area first \\draw[color=white,fill=green,opacity=0.33] (1,0) -- (1,{cos(1 r)+2}) -- plot[domain= 1:3] ({\\x},{cos(\\x r)+2}) -- (3,{cos(3 r)+2}) -- (3,0) -- (1,0); \\\\ Draw the axes \\draw[latex-latex] (-1,0) -- (5,0); \\draw[latex-latex] (0,-1) -- (0,4); \\\\ Plot the function \\draw [thick,domain=-1:4.5] plot ({\\x},{cos(\\x r)+2}); \\node [thick,above right] at (4.5,{cos(4.5 r) + 2}){$f$}; \\\\ Draw the boundaries \\draw[red] (1,3) -- (1,-0.25) node [below] {$a$}; \\draw[red] (3,3) -- (3,-0.25) node [below] {$b$}; \\\\ Label the area \\draw[&lt;- , very thick] (2,0.5) -- (2.2,-1) node[below] {area between $f$ and $x$-axis over $[a,b]$}; \\end{tikzpicture} <\/latex-image> <\/image> <\/sidebyside>      Create the following interactive JSXGraph graphic     See for the pretext reference.  It is important to note that JessieCode has a different syntax than classic JSXGraph, but has the benefit of being able to write the code directly in the PreTeXt file.  You can see several examples of JessieCode syntax by going to and scrolling down to \"Element functions\", and by reading .  Generally, a line of JessieCode can be found by finding the relevant JSXGraph object and attributes, and rewriting this as a function of the same name followed by properties in <<...>>. For example, b1.create('point',[1,2], {name:'X', size:4}); becomes point(1,2) << name:'X', size:4 >> ; . In PreTeXt, < and > is replaced by &lt; and &gt; , and the code gets a bit messy.  Many, but not all, features of JSXGraph are available in JessieCode. You can find a collection of examples written using classic JSXGraph, and the full JSXGraph Documentation . With a bit of experimentation, it is often possible to translate most JSXGraph code into JessieCode.    <interactive platform=\"jsxgraph\" width=\"50%\"> <slate xml:id=\"jsxgraph-slope-via-tangent\" surface=\"jessiecode\" axis=\"true\" grid=\"true\" > \/\/ Set the graph window. \/\/ The order of values is [xmin, ymax, xmax, ymin] \/\/ keepaspectratio=true forces the x and y scales to be equal $board.setBoundingBox( [ -5, 10, 7, -6 ] , keepaspectratio=false) ; \/\/ Create the slider xslider = slider( \/\/ Specify slider location [0.5,-3], [5.5,-3], \/\/ Specify smallest\/starting\/largest value for slider [-5,1,7]) &lt;&lt; name:\"a\", snapWidth:0.01 &gt;&gt; ; \/\/ Define a function and its tangent line at the current slider value \/\/ This will allow us to reference them in several places f1 = function(x) { return 1\/5*(x+3)*(x-2)*(x-5)-1; } ; tangentline = function(x) { x0 = xslider.Value(); m = (f1(x0+0.00001) - f1(x0))\/0.00001; return m*(x-x0) + f1(x0) ; } ; \/\/ Graph the function and its tangent line f1Graph = functiongraph( f1 ) &lt;&lt; strokeColor:\"blue\" &gt;&gt;; tangentGraph = functiongraph( tangentline ) &lt;&lt; strokeColor:\"black\", dash:3 &gt;&gt;; \/\/ Display the equation of the current tangent line text( 1.5,5.5,function() { x0 = xslider.Value(); m = (f1(x0+0.00001) - f1(x0))\/0.00001; y0 = f1(x0); return \"y = \"+ trunc(m,2) + \" ( x- \" + trunc(x0,2) + \" ) + \" + trunc(y0,2) ; } ) &lt;&lt; color:\"black\", fontSize:16 &gt;&gt; ; \/\/ Graph the lines from the point to the x and y axis line( [function() {return xslider.Value();} , function() {return f1(xslider.Value());}],[0,function() {return f1(xslider.Value());}] ) &lt;&lt; color:\"red\", straightFirst:false, straightLast:false, dash:1 &gt;&gt; ; line( [function() {return xslider.Value();} , function() {return f1(xslider.Value());}],[function() {return xslider.Value();}, 0 ] ) &lt;&lt; color:\"red\", straightFirst:false, straightLast:false, dash:1 &gt;&gt; ; \/\/ Draw a dot at the current point on the function point( function() {return xslider.Value();} , function() {return f1(xslider.Value());}) &lt;&lt; name:\"(a,f(a))\", color:\"red\" &gt;&gt; ; \/\/ Label the x and y values of the current point text( -0.75, function() {return f1(xslider.Value());}, \"f(a)\") &lt;&lt; color:\"red\" &gt;&gt; ; text( function() {return xslider.Value();} , -0.25 , \"a\") &lt;&lt; color:\"red\" &gt;&gt; ; <\/slate> <\/interactive>      Create the following table using the pretext tabular environment.     1  2  3    4  5  6     <tabular> <col right=\"medium\" \/><col right=\"medium\" \/><col \/> <row bottom=\"medium\"> <cell>1<\/cell> <cell>2<\/cell> <cell>3<\/cell> <\/row> <row> <cell>4<\/cell> <cell>5<\/cell> <cell>6<\/cell> <\/row> <\/tabular>    Create the same table using a latex array environment.    <me> \\begin{array}{c|c|c} 1 \\amp 2 \\amp 3 \\\\ \\hline 4 \\amp 5 \\amp 6 \\end{array} <\/me>    "
+  "title": "Build and Generate",
+  "body": " Build and Generate  Inside the VS Code window you opened through codespaces, have a .ptx file open. You can build your entire project in a few different ways.   Click the green triangle in the top-right corner of the window (hovering will show Build (select target) ). A window will pop up asking for a target to build. To start just select web .    In the Explorer panel on the left-hand side of the window, you can expand the PreTeXt Commands menu and select the Build option.    You can type pretext build web from the terminal (this uses the CLI directly).    You can use the keyboard shortcut CTRL+ALT+b (or perhaps CMD instead of CTRL if you have a Mac).     If your documentment contains some more complicated elements, you might need to generate them for them to show up. The elements that require this are (depending on what your build target is):  <latex-image>  <sagemath>  <asymptote>  <youtube> (for thumbnail previews)  <webwork>  <codelense>    You can generate assets in much the same way you run a build. There is a button on the top-right of the window, and option in the PreTeXt Commands menu, you can type pretext generate in the terminal, or use the keyboard shortcut CTRL+ALT+g .   Note that generating assets requires additional software. If you started the default codespace, then this is not necessarily installed. You can fix this by entering the following command in the terminal:  sudo bash .\/.devcontainer\/postCreateCommand.sh  Alternatively, when you create a codespace, you can click the three dots next to the + and select the devcontainer that has pretext-full in its name.  Once you install this software once, you should be good to go as long as your codespace exists.   "
 },
 {
-  "id": "exploration-1",
+  "id": "p-86",
   "level": "2",
-  "url": "section-14.html#exploration-1",
-  "type": "Exploration",
+  "url": "sec-build-and-generate.html#p-86",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "target "
+},
+{
+  "id": "p-91",
+  "level": "2",
+  "url": "sec-build-and-generate.html#p-91",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "generate "
+},
+{
+  "id": "note-2",
+  "level": "2",
+  "url": "sec-build-and-generate.html#note-2",
+  "type": "Note",
   "number": "3.1.1",
-  "title": "Static Exercises.",
-  "body": " Static Exercises   The following examples discuss the different kinds of static exercises you can write.    Create an exercise with multiple parts, each with a separate solution.   This requires the use of task environments inside an exercise or project-like environment. For the syntax to be valid, begin with an introduction , then use a separate task for each part of the question. Each task should consist of a single statement and solution .   <exercise> <introduction> <p> <em>Anything relevent to all parts of the problem goes here.<\/em> <\/p> <\/introduction> <task> <statement> <p> <em>The first question<\/em> <\/p> <\/statement> <solution> <p> <em>The first solution<\/em> <\/p> <\/solution> <\/task> <task> <statement> <p> <em>The second question<\/em> <\/p> <\/statement> <solution> <p> <em>The second solution<\/em> <\/p> <\/solution> <\/task> <\/exercise>   "
-},
-{
-  "id": "exploration-2",
-  "level": "2",
-  "url": "section-14.html#exploration-2",
-  "type": "Exploration",
-  "number": "3.1.2",
-  "title": "WebWork Exercises.",
-  "body": " WebWork Exercises   The exercises below illustrate the different kinds of interactive exercises you can write.    Write an interactive WebWork Exercise that generates two random numbers, and asks the user to enter the sum of those numbers.   This example is taken directly from .    All perl and setup must happen between the <setup><pg-setup>...<\/pg-setup><\/setup> tags, as in any WebWork problem.    Format statements as usual in PreTeXt     To reference the perl variable $a in the statement , type <var name=\"$a\"> .    To create an answer blank, where the answer is the perl variable $a , type <var name=\"$a\" width=\"5\" > . Here, @width controls the width of the answer blank.     <exercise> <webwork> <setup> <pg-code> $a = Compute(random(1,5,1)); $b = Compute(random(6,9,1)); $c = Compute(\"$a+$b\"); <\/pg-code> <\/setup> <statement> <p>Compute <m><var name=\"$a\"\/> + <var name=\"$b\"\/><\/m>.<\/p> <instruction>Type your answer without using the <c>+<\/c> sign.<\/instruction> <p>The sum is <var name=\"$c\" width=\"2\"\/>.<\/p> <\/statement> <solution> <p><m><var name=\"$a\"\/> + <var name=\"$b\"\/> = <var name=\"$c\"\/><\/m>.<\/p> <\/solution> <\/webwork> <\/exercise>    Write a WebWork problem with a popup list and a single select list. WebWork multiple select lists are not currently compatible with PreTeXt    For the PreTeXt syntax, see in the documentation.  For the setup portion of the webwork code, follow the WebWork documentation at and . Note that you only need to follow the yellow (Setup) portion of the WebWork instructions. The other sections are managed by PreTeXt.   <exercise> <webwork> <setup> <pg-code> $color_question = PopUp( [\"?\",\"Red\",\"Blue\",\"Green\"], \"Blue\" ); $linearfunction=RadioButtons(['\\(3(x-2)+1\\)','\\(2x(x+1)-3\\)','\\(2\\)'], '\\(2x(x+1)-3\\)'); <\/pg-code> <\/setup> <statement> <p> Select the best color from the list <var name=\"$color_question\" form=\"popup\"\/> <\/p> <p> Which of the following is <em>not<\/em> a linear function. <\/p> <p> <var name=\"$linearfunction\" width=\"buttons\"\/> <\/p> <\/statement> <\/webwork> <\/exercise>    Write a WebWork Exercise that asks for roots of quadratic functions, such that the functions generated have varying numbers of roots.   You can use perl control structures in the <setup><pg-setup>...<\/pg-setup><\/setup> portion of the code.  If you are comparing magnitudes, you must replace with a &lt; b and with c &gt; d .   <exercise> <webwork> <setup> <pg-code> $a = random(0.1,0.5,0.01); $b = random(0.5,3.5,0.25); $c = random(1,9,0.2); $disc = $b*$b-4*$a*$c; $f = Compute(\"$a*x^2 + $b*x + $c\"); if ($disc &gt;= 0) { $root1 = Compute(\" (-$b + sqrt($b^2 - 4*$a*$c))\/(2*$a)\"); $root2 = Compute(\" (-$b - sqrt($b^2 - 4*$a*$c))\/(2*$a)\"); $roots = List(\"$root1,$root2\"); } else{ $roots = Compute(\"DNE\"); } <\/pg-code> <\/setup> <statement> <p> Let <m>f(x) = <var name=\"$a\"\/>x^2 + <var name=\"$b\"\/>x + <var name=\"$c\"\/><\/m>. Find all <m>x<\/m> such that <m>f(x) = 0<\/m>. <\/p> <instruction> If there is more than one answer, enter your answer as a comma separated list. If there are no answers, enter <m>DNE<\/m> <\/instruction> <p> Solutions = <var name=\"$roots\" width=\"20\"\/> <\/p> <\/statement> <\/webwork> <\/exercise>    Write a WebWork Exercise that asks for roots of quadratic functions, such that the functions generated always has real roots .   There are two ways to approach this problem. First, you can manually select the random seed to ensure that all quadratics have real roots.  But you can also use perl structures like do-while to check the discriminant of the quadratic generated, and to rerandomize the problem if no real roots exist.   <exercise> <webwork> <setup> <pg-code> do{ $a = random(0.1,0.5,0.01); $b = random(0.5,3.5,0.25); $c = random(1,9,0.2); $disc = $b*$b-4*$a*$c; } while ( 0 &gt; $disc ) ; $f = Compute(\"$a*x^2 + $b*x + $c\"); $root1 = Compute(\" (-$b + sqrt($b^2 - 4*$a*$c))\/(2*$a)\"); $root2 = Compute(\" (-$b - sqrt($b^2 - 4*$a*$c))\/(2*$a)\"); $roots = List($root1,$root2); <\/pg-code> <\/setup> <statement> <p> Let <m>f(x) = <var name=\"$a\"\/>x^2 + <var name=\"$b\"\/>x + <var name=\"$c\"\/><\/m>. Find all <m>x<\/m> such that <m>f(x) = 0<\/m>. <\/p> <instruction> If there is more than one answer, enter your answer as a comma separated list. <\/instruction> <p> Solutions = <var name=\"$roots\" width=\"20\"\/> <\/p> <\/statement> <\/webwork> <\/exercise>   "
-},
-{
-  "id": "exploration-3",
-  "level": "2",
-  "url": "section-14.html#exploration-3",
-  "type": "Exploration",
-  "number": "3.1.3",
   "title": "",
-  "body": "  Create the folowing images using TikZ            Use two image environments, each containing a latex-image environment. To display the images side by side, use the sidebyside environment. To get the sizes and spacing even and uniform, you will need to set @widths and @margins in the sidebyside environment.  Remember that the < and > symbols are restricted. For lines, it is eaisest to use latex or stealth as your arrow style. If you must use < and > in your TikZ code, you must replace the symbols with &lt; and &gt; respectively.    <sidebyside widths=\"33% 33%\" margins=\"11%\" valign=\"middle\"> <image width=\"25%\" xml:id=\"tikz_quick_eg\"> <latex-image> \\begin{tikzpicture} \\draw[fill=red,opacity=0.2] (0,0) circle (1.15); \\draw[fill=blue,opacity=0.2] (1,0) circle (1.15); \\end{tikzpicture} <\/latex-image> <\/image> <image width=\"33%\" xml:id=\"image_tikz_eg\"> <latex-image> \\begin{tikzpicture} \\\\ Shade the enclosed area first \\draw[color=white,fill=green,opacity=0.33] (1,0) -- (1,{cos(1 r)+2}) -- plot[domain= 1:3] ({\\x},{cos(\\x r)+2}) -- (3,{cos(3 r)+2}) -- (3,0) -- (1,0); \\\\ Draw the axes \\draw[latex-latex] (-1,0) -- (5,0); \\draw[latex-latex] (0,-1) -- (0,4); \\\\ Plot the function \\draw [thick,domain=-1:4.5] plot ({\\x},{cos(\\x r)+2}); \\node [thick,above right] at (4.5,{cos(4.5 r) + 2}){$f$}; \\\\ Draw the boundaries \\draw[red] (1,3) -- (1,-0.25) node [below] {$a$}; \\draw[red] (3,3) -- (3,-0.25) node [below] {$b$}; \\\\ Label the area \\draw[&lt;- , very thick] (2,0.5) -- (2.2,-1) node[below] {area between $f$ and $x$-axis over $[a,b]$}; \\end{tikzpicture} <\/latex-image> <\/image> <\/sidebyside>   "
+  "body": " Note that generating assets requires additional software. If you started the default codespace, then this is not necessarily installed. You can fix this by entering the following command in the terminal:  sudo bash .\/.devcontainer\/postCreateCommand.sh  Alternatively, when you create a codespace, you can click the three dots next to the + and select the devcontainer that has pretext-full in its name.  Once you install this software once, you should be good to go as long as your codespace exists.  "
 },
 {
-  "id": "exploration-4",
-  "level": "2",
-  "url": "section-14.html#exploration-4",
-  "type": "Exploration",
-  "number": "3.1.4",
-  "title": "",
-  "body": "  Create the following interactive JSXGraph graphic     See for the pretext reference.  It is important to note that JessieCode has a different syntax than classic JSXGraph, but has the benefit of being able to write the code directly in the PreTeXt file.  You can see several examples of JessieCode syntax by going to and scrolling down to \"Element functions\", and by reading .  Generally, a line of JessieCode can be found by finding the relevant JSXGraph object and attributes, and rewriting this as a function of the same name followed by properties in <<...>>. For example, b1.create('point',[1,2], {name:'X', size:4}); becomes point(1,2) << name:'X', size:4 >> ; . In PreTeXt, < and > is replaced by &lt; and &gt; , and the code gets a bit messy.  Many, but not all, features of JSXGraph are available in JessieCode. You can find a collection of examples written using classic JSXGraph, and the full JSXGraph Documentation . With a bit of experimentation, it is often possible to translate most JSXGraph code into JessieCode.    <interactive platform=\"jsxgraph\" width=\"50%\"> <slate xml:id=\"jsxgraph-slope-via-tangent\" surface=\"jessiecode\" axis=\"true\" grid=\"true\" > \/\/ Set the graph window. \/\/ The order of values is [xmin, ymax, xmax, ymin] \/\/ keepaspectratio=true forces the x and y scales to be equal $board.setBoundingBox( [ -5, 10, 7, -6 ] , keepaspectratio=false) ; \/\/ Create the slider xslider = slider( \/\/ Specify slider location [0.5,-3], [5.5,-3], \/\/ Specify smallest\/starting\/largest value for slider [-5,1,7]) &lt;&lt; name:\"a\", snapWidth:0.01 &gt;&gt; ; \/\/ Define a function and its tangent line at the current slider value \/\/ This will allow us to reference them in several places f1 = function(x) { return 1\/5*(x+3)*(x-2)*(x-5)-1; } ; tangentline = function(x) { x0 = xslider.Value(); m = (f1(x0+0.00001) - f1(x0))\/0.00001; return m*(x-x0) + f1(x0) ; } ; \/\/ Graph the function and its tangent line f1Graph = functiongraph( f1 ) &lt;&lt; strokeColor:\"blue\" &gt;&gt;; tangentGraph = functiongraph( tangentline ) &lt;&lt; strokeColor:\"black\", dash:3 &gt;&gt;; \/\/ Display the equation of the current tangent line text( 1.5,5.5,function() { x0 = xslider.Value(); m = (f1(x0+0.00001) - f1(x0))\/0.00001; y0 = f1(x0); return \"y = \"+ trunc(m,2) + \" ( x- \" + trunc(x0,2) + \" ) + \" + trunc(y0,2) ; } ) &lt;&lt; color:\"black\", fontSize:16 &gt;&gt; ; \/\/ Graph the lines from the point to the x and y axis line( [function() {return xslider.Value();} , function() {return f1(xslider.Value());}],[0,function() {return f1(xslider.Value());}] ) &lt;&lt; color:\"red\", straightFirst:false, straightLast:false, dash:1 &gt;&gt; ; line( [function() {return xslider.Value();} , function() {return f1(xslider.Value());}],[function() {return xslider.Value();}, 0 ] ) &lt;&lt; color:\"red\", straightFirst:false, straightLast:false, dash:1 &gt;&gt; ; \/\/ Draw a dot at the current point on the function point( function() {return xslider.Value();} , function() {return f1(xslider.Value());}) &lt;&lt; name:\"(a,f(a))\", color:\"red\" &gt;&gt; ; \/\/ Label the x and y values of the current point text( -0.75, function() {return f1(xslider.Value());}, \"f(a)\") &lt;&lt; color:\"red\" &gt;&gt; ; text( function() {return xslider.Value();} , -0.25 , \"a\") &lt;&lt; color:\"red\" &gt;&gt; ; <\/slate> <\/interactive>   "
-},
-{
-  "id": "exploration-5",
-  "level": "2",
-  "url": "section-14.html#exploration-5",
-  "type": "Exploration",
-  "number": "3.1.5",
-  "title": "",
-  "body": "  Create the following table using the pretext tabular environment.     1  2  3    4  5  6     <tabular> <col right=\"medium\" \/><col right=\"medium\" \/><col \/> <row bottom=\"medium\"> <cell>1<\/cell> <cell>2<\/cell> <cell>3<\/cell> <\/row> <row> <cell>4<\/cell> <cell>5<\/cell> <cell>6<\/cell> <\/row> <\/tabular>    Create the same table using a latex array environment.    <me> \\begin{array}{c|c|c} 1 \\amp 2 \\amp 3 \\\\ \\hline 4 \\amp 5 \\amp 6 \\end{array} <\/me>   "
-},
-{
-  "id": "section-15",
+  "id": "sec-previewing",
   "level": "1",
-  "url": "section-15.html",
+  "url": "sec-previewing.html",
   "type": "Section",
   "number": "3.2",
-  "title": "Basic Principles and Frequently Asked Questions",
-  "body": " Basic Principles and Frequently Asked Questions     Nesting Environments  All normal text should be contained inside p environments. Moreover, a p environment should only contain text, math, and lists.    Never Write  <p> The frog is a majestic creature: <image source=\"frog.gif\" width=\"100%\"> <\/image> <\/p>    Always Write  <p> The frog is a majestic creature: <\/p> <image source=\"frog.gif\" width=\"100%\"> <\/image>    Some environments have more complex rules about how they can be combined.  For example, the example , exercise , project , and task environments are essentially the only environments that can contain solution , hint , and answer sub-environments. However , these sub-environments are only allowed in a very specific format. If solutions are to be used, they must be paired with a statement (and optionally hint, answer) and no other divisions , not even a paragraph.    Never Write  <example> <p> A paragraph, ending in a question. <\/p> <solution> <p> A solution to the question in the paragraph. <\/p> <\/solution> <\/example>    Always Write  <example> <statement> <p> A paragraph, ending in a question. <\/p> <\/statement> <solution> <p> A solution to the question in the paragraph. <\/p> <\/solution> <\/example>      References  To reference content on the web, write <url href=\"\">Display Text\/<\/url> , or write <url href=\"\" \/> if you would like the full URL displayed, or  If you would like to reference text inside the PreTeXt document, place that text inside an environment, and include the attribute xml:id=\"REFNAME\" in its opening tag. To reference the element elsewhere in the document, type <xref ref=\"REFNAME\"\/>     Emphasizing Text   em  emphasizes , while alert  shoults .  To add a title without creating a new (sub*)section, use the paragraphs environment.  <paragraphs> <title>Title<\/title> <p> Paragraph text. <\/p> <\/paragraphs>    Summarizing Concepts  Use the assemblage environment to summarize content, such as a list of formulas. Assemblages are not numbered, so when you reference them you need to add text='custom' or text='title' . For example, you would need to type to any < xref text='title' ref=\"REFNAME\" \/>     Restrictions on Environments  By design, PreTeXt imposes a rigid framework on the logical environments that can be used. In fact, some use the name PreTeXt to refer to this framework itself (as distinguished from its current implementation).  This framework is intended to balance two conflicting goals:   Allow the author to focus on content as opposed to presentation    Facilitate the OER principles of Adapting and Remixing existing works.   These principles are in tension because many authors will instinctively use different categories and logical divisions as they author their books. However, when authors are given free rein to develop their own logical divisions, it becomes very difficult to \"remix\" (combine sections of) books written by different authors.  It is therefore necessary to draw the line somewhere. Over many years of careful work, the authors of PreTeXt have come up with one way of drawing this line, that can be made to work for a wide range of mathematical texts.    Principles for the (Current) Web Interfae  In theory, the PreTeXt language can compile into a variety of different web formats, each with a different philosophy of how to present information to the user. This is another reason why it is important to carefully follow the syntax as intended, rather than hacking together different elemnts based on their behavior.  At the same time, it will be valuable for an author to understand the core design principles of the current web format.     Collapsed Details Emphasizes Overall Structure . By default, many (even most) environments are collapsed (knowled) when a user first visits the section. This helps emphasize the overall structure of the material, and can almost act as an automatic summary of the section. As a student goes through the material, they expand the relevant element they are working on, deepening their knowledge of the material.     References Show a Web of Knowledge . Make regular use of the built in environments such as definition , theorem , example , and figure , and make sure you use unique identifiers with the @xml:id attribute.  Whenever you reference this attribute PreTeXt creates a link which, when you click on it, expands and displays the previous content (e.g. definition) in the current context. Students can also click on the \"show in context\" link to go back to the section where this was originally introduced.  This helps emphasize how the web of mathematical knowledge develops across larger divisions such as sections, chapters, and parts.      Mastering PreTeXt Syntax  When you use a more complex environment for the first time or in a new way, double check the PreTeXt schema .  The Content of the XML Representation Summary tells you what type of content the environment is allowed to contain. Be careful when reading the Schema, and refer to the abbreviations in the documentation .  For example, consider the entry for the exercise environment. Even though the exercise environment permits p and solution environments, they cannot be used at the same time, as they are in separate Groupings ( ) that are combined by a Choice |. If you want to use a solution in an exercise , the exercise must consist of a statement followed by zero or more hint , answer , or solution environments.  You can also use the Schema to see where an environment can be used, by looking at the Included in content model of elements section of the page. This will help you make sure that you are placing your environment in a valid location. For example the exercise environment can be used in (among other places) sections and subsections, but not inside of another exercise.    Uniquely Flexible Environments   task environments can be placed in example , exercise , and project-like environments. Task environments can contain text and images, but they can also contain solution environments, and can even contain nested task environments.   Note: PreTeXt does not have a general use \"details\" environment. The fn (footnote) environment is officially restricted to text only, even though it currently compiles correctly with content including images, display math, etc.  The task environment provides an alternative (and officially approved) approach to incorporating knowled text throughout examples and project-like environments: simply write the main content in the statement for the main content, the knowled content in the solution , and add an instruction to the reader to come up with the hidden content on their own.  Nested lists are available, since li elements can contain new list environments.     "
+  "title": "Previewing",
+  "body": " Previewing  You can check the output of what you built using the View command. Again, you can access this in multiple ways: top-right icon or PreTeXt Commands menu. When you use either of these, you will get a choice for your viewer. We currently suggest using Live Preview , although on codespace this requires a few extra steps:   When the side preview opens, it will ask you if you want to open in an external browser. Click Open in browser .    Now close that new tab that opens, and also close the side panel in VS Code that opened.    Finally select View again, and it should just work. You can drag the VS Code tab to un-split the window to make it easier to view.     You can also experiment with the CLI view command, by selecting that from the pop-up menu, or by typing pretext view web in the terminal. This should pop up a new browser tab with the preview. The only reason we caution against this currently is that the local server that gets started to preview the files will keep running as long as your codespace is active, and we don't understand how this affects resource use.  When you make edits to your source files, you will need to build again, and then refresh the preview window to see the changes.  "
 },
 {
-  "id": "section-16",
+  "id": "p-96",
+  "level": "2",
+  "url": "sec-previewing.html#p-96",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "View "
+},
+{
+  "id": "sec-saving",
   "level": "1",
-  "url": "section-16.html",
+  "url": "sec-saving.html",
   "type": "Section",
   "number": "3.3",
-  "title": "Interactive Activities",
-  "body": " Interactive Activities    Create the following exercises using the native PreTeXt markup language (do not use the webwork environment).    Write a True\/False question.    Write a Multiple Choice question.    Write a Parson's Problem question.    Write a Matching question.    True\/False Question  A True\/false question   Feedback   Matching Problem  A multiple choice question     right answer 1    answer specific feedback      right answer 1    answer specific feedback      wrong answer 1    answer specific feedback      wrong answer 2    answer specific feedback     Parsons Problem  Rearrange the blocks in alphebetical order       A    B    C    D         Matching Problem  Match the letters with their order in the alphabet    A  1    B  2    C  3    "
+  "title": "Saving your work",
+  "body": " Saving your work  Using codespaces will keep all your files in the cloud on GitHub's server. As long as you don't delete your codespace, your files will be saved there. However, you will want to push these files to your git repository on GitHub to make this save perminent. This has the benefit of allowing collaborators to access your files as well (your codespace is unique to your account).  There is a lot to learn about git, but luckily using VS Code lets you do everything you need using menus (you don't need to use the command line, unless you want to). Everything can be controlled using the Source Control view: it should be third from the top on the very left of the window, an icon with splitting paths, and likely a badge showing how many files you have changed.  Here are the basic concepts you need to understand.   The program git keeps track of all the changes you make to files inside of your repository (in this case, the folder containing your project).    Once you have edited your files and are happy with all of them, you tell git to track the set of changes as a commit . This creates a handy breakpoint you could return to if you want to go back to an earlier version.  There are two steps to creating a commit (which you can often do all at once in practice):   You stage the files you want to update in the commit.  You commit the stage files including a commit message .   Doing this in two steps can be helpful if you want to commit only some of the files that have changed.    Once you have one or more commits, you need to sync these changes with GitHub. To upload your changes, you push the repository. To download changes that you are someone else made, you pull the repository.     Now, how do we do these things in VS Code? Start by looking at the Source Control view. You will notice a list of files that were changed. You can click on any of these to see what the changes are (you will see a side-by-side view of the original and updated version).  If you are comfortable staging and committing in one step, you can simply write yourself a short message in the textbox above the big green Commit button, and click the button. If you want to stage first, click the + next to each file under changes to stage them.  The green button should now turn into a Sync button. When you click that, it will do a quick pull and then a push, to sync changes with GitHub.  The only small point about using git is that no all files will be tracked. This is on purpose, since temporary files really should not be remembered using this version control setting. Which files or types of files are ignored by git is controled by the .gitignore file in your repository.  In particular, we do not track the output of builds. Git is used to track progress on your source, which you build into output at any time. If you want others to be able to see the output of your work without building it themselves, you need to deploy your work.  "
 },
 {
-  "id": "exploration-6",
+  "id": "p-102",
   "level": "2",
-  "url": "section-16.html#exploration-6",
-  "type": "Exploration",
-  "number": "3.3.1",
+  "url": "sec-saving.html#p-102",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
   "title": "",
-  "body": "  Create the following exercises using the native PreTeXt markup language (do not use the webwork environment).    Write a True\/False question.    Write a Multiple Choice question.    Write a Parson's Problem question.    Write a Matching question.   "
+  "body": "push git repository "
 },
 {
-  "id": "true-false",
+  "id": "p-103",
   "level": "2",
-  "url": "section-16.html#true-false",
-  "type": "Checkpoint",
-  "number": "3.3.1",
-  "title": "True\/False Question.",
-  "body": "True\/False Question  A True\/false question   Feedback  "
+  "url": "sec-saving.html#p-103",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Source Control "
 },
 {
-  "id": "some-matching",
+  "id": "p-104",
   "level": "2",
-  "url": "section-16.html#some-matching",
-  "type": "Checkpoint",
-  "number": "3.3.2",
-  "title": "Matching Problem.",
-  "body": "Matching Problem  A multiple choice question     right answer 1    answer specific feedback      right answer 1    answer specific feedback      wrong answer 1    answer specific feedback      wrong answer 2    answer specific feedback    "
+  "url": "sec-saving.html#p-104",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "git repository commit stage commit commit message push pull "
 },
 {
-  "id": "parsons",
-  "level": "2",
-  "url": "section-16.html#parsons",
-  "type": "Checkpoint",
-  "number": "3.3.3",
-  "title": "Parsons Problem.",
-  "body": "Parsons Problem  Rearrange the blocks in alphebetical order       A    B    C    D        "
+  "id": "sec-deploy",
+  "level": "1",
+  "url": "sec-deploy.html",
+  "type": "Section",
+  "number": "3.4",
+  "title": "Deploy",
+  "body": " Deploy  So you have worked tirelessly to prepare course notes or a book, built and previewed, synced changes using git, and now you are ready to share the results of your efforts with the world. It's time to deploy your project.  With our codespace setup this is simple. From the PreTeXt Commands menu, click on Deploy to GitHub . This will automatically take the most recent build of your web target and host it through GitHub Pages . Watch the output pane for a link to your published site. (It can take a few minutes for the site to get set up or updated; there should be another link to view the progress of the GitHub action that reports the progress.)  "
 },
 {
-  "id": "matching",
+  "id": "p-116",
   "level": "2",
-  "url": "section-16.html#matching",
-  "type": "Checkpoint",
-  "number": "3.3.4",
-  "title": "Matching Problem.",
-  "body": "Matching Problem  Match the letters with their order in the alphabet    A  1    B  2    C  3   "
+  "url": "sec-deploy.html#p-116",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "deploy "
 },
 {
   "id": "ch-help",
@@ -403,12 +502,12 @@ var ptx_lunr_docs = [
   "type": "Appendix",
   "number": "A",
   "title": "Getting Help",
-  "body": " Getting Help  Here we collect a number of useful resources to help you when you are stuck. The official PreTeXt site has lots of resources, but we understand it can be overwhelming.   Official documentation  Note that the official PreTeXt Guide can be hard to use because there is so much stuff in it. Additionally, some of the documentation is out of date. Still, if you know where to look, it is a great resource.  Here are some sections that we find especially helpful:    Basics Reference : A listing of the main elements of PreTeXt including snippets of the code that create them. This is one of the few places in the guide that has examples of the markup.     Publication File Reference : When you are ready to start changing how your output looks, you can use the publication file , which is described in this part of the guide.     PreTeXt Schema : The official list of elements and where they can go is given in the PreTeXt Schema, which is described here. Also you can check out the schema browser to actually view the schema.     Getting PreTeXt : If you want to install PreTeXt on your own computer, this early part of the guide gives you directions. It should be updated with information on CodeSpaces soon as well, if you need a refresher.   Finally, note that the search in PreTeXt now works really well, and searching for a feature will usually get you pointed in the right spot.    Examples  The Examples page on the PreTeXt site contains a number of useful live examples. Links are provided to web, pdf, and source (on GitHub). For some of the examples, there is also an annotated version available. We find these especially helpful since you can view source to see exactly how each bit of the example was marked up in code.  Here are some of the most useful such examples:    Sample Book : This annotated sample book contains a section on interactive exercises . The PreTeXt developers use this book for testing, so you can see the latest (sometimes experimental) features available.     Sample Article : Not particularly well organized (it is also a proving ground for developers) but this contains almost every variation of every feature of PreTeXt . Using the search and view source makes this an invaluable resource.       Community Support  There is a very active google group for support: pretext-support . You should also subscribe to the low-traffic pretext-announce to get updates.   "
+  "body": " Getting Help  Here we collect a number of useful resources to help you when you are stuck. The official PreTeXt site has lots of resources, but we understand it can be overwhelming.   Official documentation  Note that the official PreTeXt Guide can be hard to use because there is so much stuff in it. Additionally, some of the documentation is out of date. Still, if you know where to look, it is a great resource.  Here are some sections that we find especially helpful:    Basics Reference : A listing of the main elements of PreTeXt including snippets of the code that create them. This is one of the few places in the guide that has examples of the markup.     Publication File Reference : When you are ready to start changing how your output looks, you can use the publication file , which is described in this part of the guide.     PreTeXt Schema : The official list of elements and where they can go is given in the PreTeXt Schema, which is described here. Also you can check out the schema browser to actually view the schema.     Getting PreTeXt : If you want to install PreTeXt on your own computer, this early part of the guide gives you directions. It should be updated with information on CodeSpaces soon as well, if you need a refresher.   Finally, note that the search in PreTeXt now works really well, and searching for a feature will usually get you pointed in the right spot.    Examples  The Examples page on the PreTeXt site contains a number of useful live examples. Links are provided to web, pdf, and source (on GitHub). For some of the examples, there is also an annotated version available. We find these especially helpful since you can view source to see exactly how each bit of the example was marked up in code.  Here are some of the most useful such examples:    Sample Book : This annotated sample book contains a section on interactive exercises . The PreTeXt developers use this book for testing, so you can see the latest (sometimes experimental) features available.     Sample Article : Not particularly well organized (it is also a proving ground for developers) but this contains almost every variation of every feature of PreTeXt . Using the search and view source makes this an invaluable resource.       Community Support  There is a very active google group for support: pretext-support . You should also subscribe to the low-traffic pretext-announce to get updates.  This spring we will host daily virtual drop-in sessions to support authoring and devlopement of PreTeXt. Information will be posted to the pretext-announce google group.   "
 },
 {
-  "id": "p-150",
+  "id": "p-120",
   "level": "2",
-  "url": "ch-help.html#p-150",
+  "url": "ch-help.html#p-120",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
