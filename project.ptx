@@ -22,7 +22,7 @@
       <format>pdf</format>
       <source>source/main.ptx</source>
       <publication>publication/publication.ptx</publication>
-      <output-dir>output/html/print</output-dir>
+      <output-dir>output/web/print</output-dir>
     </target>
     <target name="subset">
       <format>html</format>
