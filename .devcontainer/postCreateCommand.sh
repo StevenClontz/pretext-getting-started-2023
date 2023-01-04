@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 echo "Install LaTeX"
 apt update && apt install -y texlive texlive-latex-extra texlive-fonts-extra texlive-xetex texlive-science --no-install-recommends
 
