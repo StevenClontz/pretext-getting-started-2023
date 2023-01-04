@@ -75,9 +75,101 @@
                 </ol>
             </list>
     </section>
+    <section xml:id="sec-divisions">
+        <title>Books and Divisions</title>
+        <p>
+There are several documents you can write in <pretext/>, such as
+<c>&lt;article&gt;</c>s and <c>&lt;slideshow&gt;</c>s. This tutorial will
+focus on <c>&lt;book&gt;</c>s.
+        </p>
+        <p>
+A <c>&lt;book&gt;</c> typically includes
+<c>&lt;frontmatter&gt;</c>, and <c>&lt;backmatter&gt;</c>.
+        </p>
+        <p>
+Between <c>&lt;frontmatter&gt;</c>, and <c>&lt;backmatter&gt;</c>
+is either several <c>&lt;chapter&gt;</c>s
+or <c>&lt;part&gt;</c>s. If used, <c>&lt;part&gt;</c>s are subdivided into
+<c>&lt;chapter&gt;</c>s. Then <c>&lt;chapter&gt;</c>s subdivide into
+<c>&lt;section&gt;</c>s, and <c>&lt;section&gt;</c>s can have
+<c>&lt;subsection&gt;</c>s.
+        </p>
+        <p>
+Each of these subdivisions needs a <c>&lt;title&gt;</c>, and 
+may have an <c>&lt;introduction&gt;</c> or
+<c>&lt;conclusion&gt;</c>.
+        </p>
+        <p>
+<xref ref="listing-book-source"/> puts these elements together for
+a simple <pretext/> project.
+        </p>
+        <listing xml:id="listing-book-source">
+            <caption>Source of a simple <pretext /> book project.</caption>
+            <program language="xml">
+                <input>
+            <![CDATA[
+<pretext xml:lang="en-US">
+  <!-- (author configurations go in docinfo) -->
+  <docinfo>
+    <macros>
+      \newcommand{\R}{\mathbb R}
+    </macros>
+  </docinfo>
+
+
+  <book xml:id="my-great-book">
+    <title>My Great Book</title>
+    <subtitle>An example to get you started</subtitle>
+
+    <frontmatter xml:id="frontmatter">
+      <titlepage>
+        <author>
+          <personname>You</personname>
+          <department>Your department</department>
+          <institution>Your institution</institution>
+        </author>
+        <date>
+          <today />
+        </date>
+      </titlepage>
+    </frontmatter>
+
+    <chapter xml:id="chapter-welcome">
+      <title>Welcome!</title>
+      <introduction>
+        <p>This chapter is about the real numbers <m>\R</m></p>
+      </introduction>
+
+      <section xml:id="section-getting-started">
+        <title>Let's get started</title>
+        <p>Hello</p>
+      </section>
+
+    </chapter>
+
+    <backmatter xml:id="backmatter">
+      <title>Backmatter</title>
+
+      <colophon>
+        <p> This book was authored in <pretext />. </p>
+      </colophon>
+
+    </backmatter>
+
+  </book>
+
+</pretext>
+            ]]>
+                </input>
+            </program>
+        </listing>
+
+
+    </section>
     <section xml:id="sec-paragraphs">
         <title>Paragraphs, Lists, and Blocks</title>
-        <p>TODO</p>
+        <p>    
+        </p>
     </section>
     <section xml:id="sec-figures">
         <title>Figures and Diagrams</title>
