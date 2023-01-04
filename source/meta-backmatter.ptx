@@ -6,7 +6,7 @@
 <!-- solutions in the next.  Then there is an appendix    -->
 <!-- with all notation generated, and finally the index.  -->
 <backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta-backmatter">
-
+  <xi:include href="./ch-help.ptx" />
   <appendix>
     <title>Copyright and Licensing</title>
     <p><copyright /> 2023 Steven Clontz and Oscar Levin.</p>

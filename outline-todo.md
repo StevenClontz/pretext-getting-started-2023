@@ -31,7 +31,7 @@ Each day is 2 hours (9-11am Thursday and Saturday).
 
 - Introductions.
   - Should participants introduce themselves?  Where they are from, what they want to get out of this?
-- Brief overview of how PreTeXt works (what the parts are). 
+- Brief overview of how PreTeXt works (what the parts are).
   - Your source is plain text XML files that contains the content organized in tags that describe the semantic structure of the document.
   - When you "build" an output format, PreTeXt uses XSL stylesheets to transform your source into HTML or LaTeX files (or LaTeX and then builds that into PDF).
   - The PreTeXT-CLI (Command Line Interface) streamlines the process of invoking the stylesheets to do this build
