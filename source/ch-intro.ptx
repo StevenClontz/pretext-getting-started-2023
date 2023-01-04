@@ -75,10 +75,150 @@
                 </ol>
             </list>
     </section>
+    <section xml:id="sec-xml">
+        <title><pretext/> is XML</title>
+        <p>
+Since <pretext /> uses the XML markup language, all content is structured in terms
+of <term>elements</term>. The root <c>pretext</c> element nests many other elements
+inside of it. This is accomplished by surrounding everything with a starting
+<c>&lt;pretext&gt;</c> <term>tag</term> and an ending <c>&lt;/pretext&gt;</c> tag.
+(Folks with HTML experience will find this pattern familiar, akin to the <q>HTML</q>
+root element.)
+        </p>
+        <p>
+<xref ref="listing-simple"/> is a very simple <pretext />/XML document.
+        </p>
+        <listing xml:id="listing-simple">
+            <caption>Source of a simple <pretext /> book project.</caption>
+            <program language="xml">
+                <input>
+                    <![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext>
+    <article>
+        <title>Hello world!</title>
+        <p>Welcome to PreTeXt!</p>
+    </article>
+</pretext>
+                    ]]>
+                </input>
+            </program>
+        </listing>
+    </section>
+    <section xml:id="sec-divisions">
+        <title>Books and Divisions</title>
+        <p>
+There are several documents you can write in <pretext/>, such as
+<c>&lt;article&gt;</c>s and <c>&lt;slideshow&gt;</c>s. This tutorial will
+focus on <c>&lt;book&gt;</c>s.
+        </p>
+        <p>
+A <c>&lt;book&gt;</c> typically includes
+<c>&lt;frontmatter&gt;</c>, and <c>&lt;backmatter&gt;</c>.
+        </p>
+        <p>
+Between <c>&lt;frontmatter&gt;</c>, and <c>&lt;backmatter&gt;</c>
+are either several <c>&lt;chapter&gt;</c>s
+or <c>&lt;part&gt;</c>s. If used, <c>&lt;part&gt;</c>s are subdivided into
+<c>&lt;chapter&gt;</c>s. Then <c>&lt;chapter&gt;</c>s subdivide into
+<c>&lt;section&gt;</c>s, and <c>&lt;section&gt;</c>s can have
+<c>&lt;subsection&gt;</c>s.
+        </p>
+        <p>
+Each of these subdivisions needs a <c>&lt;title&gt;</c>, and 
+may have an <c>&lt;introduction&gt;</c> or
+<c>&lt;conclusion&gt;</c>.
+        </p>
+        <p>
+<xref ref="listing-book-source"/> puts these elements together for
+a simple <pretext/> project.
+        </p>
+        <listing xml:id="listing-book-source">
+            <caption>Source of a simple <pretext /> book project.</caption>
+            <program language="xml">
+                <input>
+            <![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<pretext xml:lang="en-US">
+  <!-- (author configurations go in docinfo) -->
+  <docinfo>
+    <macros>
+      \newcommand{\R}{\mathbb R}
+    </macros>
+  </docinfo>
+
+
+  <book xml:id="my-great-book">
+    <title>My Great Book</title>
+    <subtitle>An example to get you started</subtitle>
+
+    <frontmatter xml:id="frontmatter">
+      <titlepage>
+        <author>
+          <personname>You</personname>
+          <department>Your department</department>
+          <institution>Your institution</institution>
+        </author>
+        <date>
+          <today />
+        </date>
+      </titlepage>
+    </frontmatter>
+
+    <chapter xml:id="chapter-welcome">
+      <title>Welcome!</title>
+      <introduction>
+        <p>This chapter is about the real numbers <m>\R</m></p>
+      </introduction>
+
+      <section xml:id="section-getting-started">
+        <title>Let's get started</title>
+        <p>Hello</p>
+      </section>
+
+    </chapter>
+
+    <backmatter xml:id="backmatter">
+      <title>Backmatter</title>
+
+      <colophon>
+        <p> This book was authored in <pretext />. </p>
+      </colophon>
+
+    </backmatter>
+
+  </book>
+
+</pretext>
+            ]]>
+                </input>
+            </program>
+        </listing>
+    </section>
+
     <section xml:id="sec-paragraphs">
         <title>Paragraphs, Lists, and Blocks</title>
-        <p>TODO</p>
+        <p>
+    Within each division (chapter, section, etc., see <xref ref="sec-divisions"/>) of your book,
+    you likely want some content (e.g. what you're reading right now!).
+        </p>
+        <p>
+    Written content is usually structured as <term>paragraphs</term>, <c>&lt;p&gt;</c> for short.
+    If you've ever written <abbr>HTML</abbr>, this tag may be familiar to you, but be warned:
+    <em><pretext/> is not HTML</em>! However, there is some overlap: you can <em>emphasize</em>
+    words or phrases with <c>&lt;em&gt;</c> for instance. However, while HTML uses the full word
+    <q>code</q> for its tag, <pretext /> uses the shortened <c>&lt;c&gt;</c> tag (which is what
+    we're using for expressing these tags).
+        </p>
+        <p>
+    For users coming from LaTeX, rest assured your mathematical formulas work in <pretext />.
+    Inline mathmode <m>ax^2+bx+c=0</m> is invoked with <c>&lt;m&gt;ax^2+bx+c=0&lt;/m&gt;</c>,
+    while display mathematics
+    like <me>x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</me> is available via
+    <c>&lt;me&gt;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}&lt;/me&gt;</c>.
+        </p>
     </section>
+
     <section xml:id="sec-figures">
         <title>Figures and Diagrams</title>
         <p>TODO</p>
