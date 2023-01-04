@@ -27,6 +27,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -45,7 +58,8 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.2/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
@@ -246,9 +260,9 @@ eBookConfig.enable_chatcodes =  false;
 <li><div class="toc-item"><a href="sec-paragraphs.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Paragraphs, Lists, and Blocks</span></a></div></li>
 <li><div class="toc-item"><a href="sec-figures.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Figures and Diagrams</span></a></div></li>
 <li><div class="toc-item"><a href="sec-interactives.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Interactives</span></a></div></li>
-<li><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Authoring an Exercise</span></a></div></li>
 <li><div class="toc-item"><a href="sec-not-just-html-not-just-pdf.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Not Just HTML, Not Just PDF</span></a></div></li>
-<li><div class="toc-item"><a href="sec-intro-conclusion.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Conclusion</span></a></div></li>
+<li><div class="toc-item"><a href="sec-wrapup.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Wrapping Up</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -275,12 +289,12 @@ eBookConfig.enable_chatcodes =  false;
 <article class="exploration project-like" id="exploration-1"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Static Exercises.</span>
 </h3>
-<div class="introduction" id="introduction-3"><div class="para" id="p-55">The following examples discuss the different kinds of static exercises you can write.</div></div>
-<article class="task exercise-like" id="task-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="p-56">Create an exercise with multiple parts, each with a separate solution.</div>
+<div class="introduction" id="introduction-4"><div class="para" id="p-67">The following examples discuss the different kinds of static exercises you can write.</div></div>
+<article class="task exercise-like" id="task-3"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-68">Create an exercise with multiple parts, each with a separate solution.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><div class="para" id="p-57">This requires the use of <code class="code-inline tex2jax_ignore">task</code> environments inside an <code class="code-inline tex2jax_ignore">exercise</code> or  <code class="code-inline tex2jax_ignore">project-like</code> environment. For the syntax to be valid, begin with an <code class="code-inline tex2jax_ignore">introduction</code>, then use a separate <code class="code-inline tex2jax_ignore">task</code> for each part of the question. Each <code class="code-inline tex2jax_ignore">task</code> should consist of a single <code class="code-inline tex2jax_ignore">statement</code> and <code class="code-inline tex2jax_ignore">solution</code>.</div></div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><div class="para" id="p-69">This requires the use of <code class="code-inline tex2jax_ignore">task</code> environments inside an <code class="code-inline tex2jax_ignore">exercise</code> or  <code class="code-inline tex2jax_ignore">project-like</code> environment. For the syntax to be valid, begin with an <code class="code-inline tex2jax_ignore">introduction</code>, then use a separate <code class="code-inline tex2jax_ignore">task</code> for each part of the question. Each <code class="code-inline tex2jax_ignore">task</code> should consist of a single <code class="code-inline tex2jax_ignore">statement</code> and <code class="code-inline tex2jax_ignore">solution</code>.</div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
   &lt;introduction&gt;
     &lt;p&gt;
       &lt;em&gt;Anything relevent to all parts of the problem goes here.&lt;/em&gt;
@@ -315,19 +329,19 @@ eBookConfig.enable_chatcodes =  false;
 </div></article></article><article class="exploration project-like" id="exploration-2"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">WebWork Exercises.</span>
 </h3>
-<div class="introduction" id="introduction-4"><div class="para" id="p-58">The exercises below illustrate the different kinds of <em class="emphasis">interactive</em> exercises you can write.</div></div>
-<article class="task exercise-like" id="task-2"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="p-59">Write an interactive WebWork Exercise that generates two random numbers, and asks the user to enter the sum of those numbers.</div>
+<div class="introduction" id="introduction-5"><div class="para" id="p-70">The exercises below illustrate the different kinds of <em class="emphasis">interactive</em> exercises you can write.</div></div>
+<article class="task exercise-like" id="task-4"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-71">Write an interactive WebWork Exercise that generates two random numbers, and asks the user to enter the sum of those numbers.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like">
-<div class="para" id="p-60">This example is taken directly from <a class="external" href="https://pretextbook.org/doc/guide/html/webwork-source.html" target="_blank"><code class="code-inline tex2jax_ignore">https://pretextbook.org/doc/guide/html/webwork-source.html</code></a>.</div> <ol class="decimal">
-<li id="li-24"><div class="para" id="p-61">All perl and setup must happen between the <code class="code-inline tex2jax_ignore">&lt;setup&gt;&lt;pg-setup&gt;...&lt;/pg-setup&gt;&lt;/setup&gt;</code> tags, as in any WebWork problem.</div></li>
-<li id="li-25"><div class="para" id="p-62">Format statements as usual in PreTeXt</div></li>
-<li id="li-26"><div class="para" id="p-63">To reference the perl variable <code class="code-inline tex2jax_ignore">$a</code> in the <code class="code-inline tex2jax_ignore">statement</code>, type <code class="code-inline tex2jax_ignore">&lt;var name="$a"&gt;</code>.</div></li>
-<li id="li-27"><div class="para" id="p-64">To create an answer blank, where the answer is the perl variable <code class="code-inline tex2jax_ignore">$a</code>, type <code class="code-inline tex2jax_ignore">&lt;var name="$a" width="5" &gt;</code>. Here, <code class="code-inline tex2jax_ignore">@width</code> controls the width of the answer blank.</div></li>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like">
+<div class="para" id="p-72">This example is taken directly from <a class="external" href="https://pretextbook.org/doc/guide/html/webwork-source.html" target="_blank"><code class="code-inline tex2jax_ignore">https://pretextbook.org/doc/guide/html/webwork-source.html</code></a>.</div> <ol class="decimal">
+<li id="li-24"><div class="para" id="p-73">All perl and setup must happen between the <code class="code-inline tex2jax_ignore">&lt;setup&gt;&lt;pg-setup&gt;...&lt;/pg-setup&gt;&lt;/setup&gt;</code> tags, as in any WebWork problem.</div></li>
+<li id="li-25"><div class="para" id="p-74">Format statements as usual in PreTeXt</div></li>
+<li id="li-26"><div class="para" id="p-75">To reference the perl variable <code class="code-inline tex2jax_ignore">$a</code> in the <code class="code-inline tex2jax_ignore">statement</code>, type <code class="code-inline tex2jax_ignore">&lt;var name="$a"&gt;</code>.</div></li>
+<li id="li-27"><div class="para" id="p-76">To create an answer blank, where the answer is the perl variable <code class="code-inline tex2jax_ignore">$a</code>, type <code class="code-inline tex2jax_ignore">&lt;var name="$a" width="5" &gt;</code>. Here, <code class="code-inline tex2jax_ignore">@width</code> controls the width of the answer blank.</div></li>
 </ol>
 </div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
   &lt;webwork&gt;
     &lt;setup&gt;
       &lt;pg-code&gt;
@@ -349,14 +363,14 @@ eBookConfig.enable_chatcodes =  false;
   &lt;/webwork&gt;
 &lt;/exercise&gt;
 </pre></div></div>
-</div></article><article class="task exercise-like" id="task-3"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="p-65">Write a WebWork problem with a popup list and a single select list.<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-7" id="fn-7"><sup> 1 </sup></a>
+</div></article><article class="task exercise-like" id="task-5"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-77">Write a WebWork problem with a popup list and a single select list.<a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-7" id="fn-7"><sup> 1 </sup></a>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like">
-<div class="para" id="p-66">For the PreTeXt syntax, see <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "" missing or not unique]</code> in the documentation.</div> <div class="para" id="p-67">For the <code class="code-inline tex2jax_ignore">setup</code> portion of the <code class="code-inline tex2jax_ignore">webwork</code> code, follow the WebWork documentation at <a class="external" href="https://webwork.maa.org/wiki/PopUpLists" target="_blank"><code class="code-inline tex2jax_ignore">https://webwork.maa.org/wiki/PopUpLists</code></a> and <a class="external" href="https://webwork.maa.org/wiki/MultipleChoiceRadio1" target="_blank"><code class="code-inline tex2jax_ignore">https://webwork.maa.org/wiki/MultipleChoiceRadio1</code></a>.  Note that you only need to follow the yellow (Setup) portion of the WebWork instructions.  The other sections are managed by PreTeXt.</div>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like">
+<div class="para" id="p-78">For the PreTeXt syntax, see <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "" missing or not unique]</code> in the documentation.</div> <div class="para" id="p-79">For the <code class="code-inline tex2jax_ignore">setup</code> portion of the <code class="code-inline tex2jax_ignore">webwork</code> code, follow the WebWork documentation at <a class="external" href="https://webwork.maa.org/wiki/PopUpLists" target="_blank"><code class="code-inline tex2jax_ignore">https://webwork.maa.org/wiki/PopUpLists</code></a> and <a class="external" href="https://webwork.maa.org/wiki/MultipleChoiceRadio1" target="_blank"><code class="code-inline tex2jax_ignore">https://webwork.maa.org/wiki/MultipleChoiceRadio1</code></a>.  Note that you only need to follow the yellow (Setup) portion of the WebWork instructions.  The other sections are managed by PreTeXt.</div>
 </div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-3" id="solution-3"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-3"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
   &lt;webwork&gt;
     &lt;setup&gt;
       &lt;pg-code&gt;
@@ -382,13 +396,13 @@ eBookConfig.enable_chatcodes =  false;
   &lt;/webwork&gt;
 &lt;/exercise&gt;
 </pre></div></div>
-</div></article><article class="task exercise-like" id="task-4"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<div class="para" id="p-68">Write a WebWork Exercise that asks for roots of quadratic functions, such that the functions generated have <em class="emphasis">varying numbers</em> of roots.</div>
+</div></article><article class="task exercise-like" id="task-6"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="p-80">Write a WebWork Exercise that asks for roots of quadratic functions, such that the functions generated have <em class="emphasis">varying numbers</em> of roots.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like">
-<div class="para" id="p-69">You can use perl control structures in the  <code class="code-inline tex2jax_ignore">&lt;setup&gt;&lt;pg-setup&gt;...&lt;/pg-setup&gt;&lt;/setup&gt;</code> portion of the code.</div> <div class="para" id="p-70">If you are comparing magnitudes, you <em class="emphasis">must</em> replace <span class="process-math">\(a \lt b\)</span> with <code class="code-inline tex2jax_ignore">a &amp;lt; b</code> and <span class="process-math">\(c \gt d\)</span> with <code class="code-inline tex2jax_ignore">c &amp;gt; d</code>.</div>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-5" id="hint-5"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-5"><div class="hint solution-like">
+<div class="para" id="p-81">You can use perl control structures in the  <code class="code-inline tex2jax_ignore">&lt;setup&gt;&lt;pg-setup&gt;...&lt;/pg-setup&gt;&lt;/setup&gt;</code> portion of the code.</div> <div class="para" id="p-82">If you are comparing magnitudes, you <em class="emphasis">must</em> replace <span class="process-math">\(a \lt b\)</span> with <code class="code-inline tex2jax_ignore">a &amp;lt; b</code> and <span class="process-math">\(c \gt d\)</span> with <code class="code-inline tex2jax_ignore">c &amp;gt; d</code>.</div>
 </div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-4" id="solution-4"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-4"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
   &lt;webwork&gt;
     &lt;setup&gt;
       &lt;pg-code&gt;
@@ -421,13 +435,13 @@ eBookConfig.enable_chatcodes =  false;
   &lt;/webwork&gt;
 &lt;/exercise&gt;
 </pre></div></div>
-</div></article><article class="task exercise-like" id="task-5"><h4 class="heading"><span class="codenumber">(d)</span></h4>
-<div class="para" id="p-71">Write a WebWork Exercise that asks for roots of quadratic functions, such that the functions generated <em class="emphasis">always has real roots</em>.</div>
+</div></article><article class="task exercise-like" id="task-7"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="p-83">Write a WebWork Exercise that asks for roots of quadratic functions, such that the functions generated <em class="emphasis">always has real roots</em>.</div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-5" id="hint-5"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-5"><div class="hint solution-like">
-<div class="para" id="p-72">There are two ways to approach this problem. First, you can manually select the random seed to ensure that all quadratics have real roots.</div> <div class="para" id="p-73">But you can also use perl structures like <code class="code-inline tex2jax_ignore">do-while</code> to check the discriminant of the quadratic generated, and to rerandomize the problem if no real roots exist.</div>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-6" id="hint-6"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-6"><div class="hint solution-like">
+<div class="para" id="p-84">There are two ways to approach this problem. First, you can manually select the random seed to ensure that all quadratics have real roots.</div> <div class="para" id="p-85">But you can also use perl structures like <code class="code-inline tex2jax_ignore">do-while</code> to check the discriminant of the quadratic generated, and to rerandomize the problem if no real roots exist.</div>
 </div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-5" id="solution-5"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-5"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
   &lt;webwork&gt;
     &lt;setup&gt;
       &lt;pg-code&gt;
@@ -461,15 +475,15 @@ eBookConfig.enable_chatcodes =  false;
 </div></article></article><article class="exploration project-like" id="exploration-3"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-74">Create the folowing images using TikZ</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:11%;margin-right:11%;">
+<div class="para" id="p-86">Create the folowing images using TikZ</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:11%;margin-right:11%;">
 <div class="sbspanel middle" style="width:42.3076923076923%;"><img src="generated/latex-image/tikz_quick_eg.svg" role="img" class="contained"></div>
 <div class="sbspanel middle" style="width:42.3076923076923%;"><img src="generated/latex-image/image_tikz_eg.svg" role="img" class="contained"></div>
 </div></div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-6" id="hint-6"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-6"><div class="hint solution-like">
-<div class="para" id="p-75">Use two <code class="code-inline tex2jax_ignore">image</code> environments, each containing a <code class="code-inline tex2jax_ignore">latex-image</code> environment. To display the images side by side, use the <code class="code-inline tex2jax_ignore">sidebyside</code> environment. To get the sizes and spacing even and uniform, you will need to set <code class="code-inline tex2jax_ignore">@widths</code> and <code class="code-inline tex2jax_ignore">@margins</code> in the <code class="code-inline tex2jax_ignore">sidebyside</code> environment.</div> <div class="para" id="p-76">Remember that the &lt; and &gt; symbols are restricted. For lines, it is eaisest to use <code class="code-inline tex2jax_ignore">latex</code> or <code class="code-inline tex2jax_ignore">stealth</code> as your arrow style. If you must use  &lt; and &gt; in your TikZ code, you must replace the symbols with <code class="code-inline tex2jax_ignore">&amp;lt;</code> and <code class="code-inline tex2jax_ignore">&amp;gt;</code> respectively.</div>
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-7" id="hint-7"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like">
+<div class="para" id="p-87">Use two <code class="code-inline tex2jax_ignore">image</code> environments, each containing a <code class="code-inline tex2jax_ignore">latex-image</code> environment. To display the images side by side, use the <code class="code-inline tex2jax_ignore">sidebyside</code> environment. To get the sizes and spacing even and uniform, you will need to set <code class="code-inline tex2jax_ignore">@widths</code> and <code class="code-inline tex2jax_ignore">@margins</code> in the <code class="code-inline tex2jax_ignore">sidebyside</code> environment.</div> <div class="para" id="p-88">Remember that the &lt; and &gt; symbols are restricted. For lines, it is eaisest to use <code class="code-inline tex2jax_ignore">latex</code> or <code class="code-inline tex2jax_ignore">stealth</code> as your arrow style. If you must use  &lt; and &gt; in your TikZ code, you must replace the symbols with <code class="code-inline tex2jax_ignore">&amp;lt;</code> and <code class="code-inline tex2jax_ignore">&amp;gt;</code> respectively.</div>
 </div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-6" id="solution-6"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-6"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;sidebyside  widths="33% 33%" margins="11%" valign="middle"&gt;
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;sidebyside  widths="33% 33%" margins="11%" valign="middle"&gt;
   &lt;image width="25%" xml:id="tikz_quick_eg"&gt;
     &lt;latex-image&gt;
       \begin{tikzpicture}
@@ -513,11 +527,11 @@ eBookConfig.enable_chatcodes =  false;
 </div></article><article class="exploration project-like" id="exploration-4"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-77">Create the following interactive JSXGraph graphic</div> <iframe id="interactive-1" width="300" height="300" src="interactive-1-if.html"></iframe><div class="solutions">
-<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-7" id="hint-7"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-7"><div class="hint solution-like">
-<div class="para" id="p-78">See <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "" missing or not unique]</code> for the pretext reference.</div> <div class="para" id="p-79">It is important to note that JessieCode has a different syntax than classic JSXGraph, but has the benefit of being able to write the code directly in the PreTeXt file.</div> <div class="para" id="p-80">You can see several examples of JessieCode syntax by going to <a class="external" href="https://github.com/jsxgraph/JessieCode" target="_blank"><code class="code-inline tex2jax_ignore">https://github.com/jsxgraph/JessieCode</code></a> and scrolling down to "Element functions", and by reading <a class="external" href="https://jsxgraph.uni-bayreuth.de/wp/docs_jessiecode/" target="_blank"><code class="code-inline tex2jax_ignore">https://jsxgraph.uni-bayreuth.de/wp/docs_jessiecode/</code></a>.</div> <div class="para" id="p-81">Generally, a line of JessieCode can be found by finding the relevant JSXGraph object and attributes, and rewriting this as a function of the same name followed by properties in &lt;&lt;...&gt;&gt;. For example, <code class="code-inline tex2jax_ignore">b1.create('point',[1,2], {name:'X', size:4});</code> becomes <code class="code-inline tex2jax_ignore">point(1,2) &lt;&lt; name:'X', size:4 &gt;&gt; ;</code>. In PreTeXt, &lt; and &gt; is replaced by &amp;lt; and &amp;gt; , and the code gets a bit messy.</div> <div class="para" id="p-82">Many, but not all, features of JSXGraph are available in JessieCode. You can find a <a class="external" href="http://jsxgraph.uni-bayreuth.de/wiki/index.php?title=Category:Examples" target="_blank">collection of examples</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 2 </sup></a> written using classic JSXGraph, and the full <a class="external" href="https://jsxgraph.uni-bayreuth.de/docs/" target="_blank">JSXGraph Documentation</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 3 </sup></a>. With a bit of experimentation, it is often possible to translate most JSXGraph code into JessieCode.</div>
+<div class="para" id="p-89">Create the following interactive JSXGraph graphic</div> <iframe id="interactive-1" width="300" height="300" src="interactive-1-if.html"></iframe><div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-8" id="hint-8"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like">
+<div class="para" id="p-90">See <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "" missing or not unique]</code> for the pretext reference.</div> <div class="para" id="p-91">It is important to note that JessieCode has a different syntax than classic JSXGraph, but has the benefit of being able to write the code directly in the PreTeXt file.</div> <div class="para" id="p-92">You can see several examples of JessieCode syntax by going to <a class="external" href="https://github.com/jsxgraph/JessieCode" target="_blank"><code class="code-inline tex2jax_ignore">https://github.com/jsxgraph/JessieCode</code></a> and scrolling down to "Element functions", and by reading <a class="external" href="https://jsxgraph.uni-bayreuth.de/wp/docs_jessiecode/" target="_blank"><code class="code-inline tex2jax_ignore">https://jsxgraph.uni-bayreuth.de/wp/docs_jessiecode/</code></a>.</div> <div class="para" id="p-93">Generally, a line of JessieCode can be found by finding the relevant JSXGraph object and attributes, and rewriting this as a function of the same name followed by properties in &lt;&lt;...&gt;&gt;. For example, <code class="code-inline tex2jax_ignore">b1.create('point',[1,2], {name:'X', size:4});</code> becomes <code class="code-inline tex2jax_ignore">point(1,2) &lt;&lt; name:'X', size:4 &gt;&gt; ;</code>. In PreTeXt, &lt; and &gt; is replaced by &amp;lt; and &amp;gt; , and the code gets a bit messy.</div> <div class="para" id="p-94">Many, but not all, features of JSXGraph are available in JessieCode. You can find a <a class="external" href="http://jsxgraph.uni-bayreuth.de/wiki/index.php?title=Category:Examples" target="_blank">collection of examples</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 2 </sup></a> written using classic JSXGraph, and the full <a class="external" href="https://jsxgraph.uni-bayreuth.de/docs/" target="_blank">JSXGraph Documentation</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 3 </sup></a>. With a bit of experimentation, it is often possible to translate most JSXGraph code into JessieCode.</div>
 </div></div>
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-7" id="solution-7"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-7"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;interactive platform="jsxgraph" width="50%"&gt;
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;interactive platform="jsxgraph" width="50%"&gt;
   &lt;slate xml:id="jsxgraph-slope-via-tangent"  surface="jessiecode" axis="true" grid="true" &gt;
 
     // Set the graph window.  
@@ -613,8 +627,8 @@ eBookConfig.enable_chatcodes =  false;
 </div></article><article class="exploration project-like" id="exploration-5"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
 </h3>
-<article class="task exercise-like" id="task-6"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="p-83">Create the following table using the pretext <code class="code-inline tex2jax_ignore">tabular</code> environment.</div> <div class="tabular-box natural-width"><table class="tabular">
+<article class="task exercise-like" id="task-8"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-95">Create the following table using the pretext <code class="code-inline tex2jax_ignore">tabular</code> environment.</div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b2 r2 l0 t0 lines">1</td>
 <td class="l m b2 r2 l0 t0 lines">2</td>
@@ -627,7 +641,7 @@ eBookConfig.enable_chatcodes =  false;
 </tr>
 </table></div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-8" id="solution-8"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-8"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;tabular&gt;
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-10" id="solution-10"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-10"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;tabular&gt;
   &lt;col right="medium" /&gt;&lt;col right="medium" /&gt;&lt;col /&gt; 
   &lt;row bottom="medium"&gt;
     &lt;cell&gt;1&lt;/cell&gt;
@@ -641,8 +655,8 @@ eBookConfig.enable_chatcodes =  false;
   &lt;/row&gt;
 &lt;/tabular&gt;
 </pre></div></div>
-</div></article><article class="task exercise-like" id="task-7"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para logical" id="p-84">
+</div></article><article class="task exercise-like" id="task-9"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="p-96">
 <div class="para">Create the same table using a <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> array environment.</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -654,7 +668,7 @@ eBookConfig.enable_chatcodes =  false;
 </div>
 </div>
 <div class="solutions">
-<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-9" id="solution-9"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-9"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;me&gt;
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-11" id="solution-11"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-11"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;me&gt;
   \begin{array}{c|c|c} 
     1 \amp 2 \amp 3 \\ \hline
     4 \amp 5 \amp 6

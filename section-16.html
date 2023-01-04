@@ -27,6 +27,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -45,7 +58,8 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.2/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
@@ -246,9 +260,9 @@ eBookConfig.enable_chatcodes =  false;
 <li><div class="toc-item"><a href="sec-paragraphs.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Paragraphs, Lists, and Blocks</span></a></div></li>
 <li><div class="toc-item"><a href="sec-figures.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Figures and Diagrams</span></a></div></li>
 <li><div class="toc-item"><a href="sec-interactives.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Interactives</span></a></div></li>
-<li><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Authoring an Exercise</span></a></div></li>
 <li><div class="toc-item"><a href="sec-not-just-html-not-just-pdf.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Not Just HTML, Not Just PDF</span></a></div></li>
-<li><div class="toc-item"><a href="sec-intro-conclusion.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Conclusion</span></a></div></li>
+<li><div class="toc-item"><a href="sec-wrapup.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Wrapping Up</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -274,52 +288,52 @@ eBookConfig.enable_chatcodes =  false;
 <article class="exploration project-like" id="exploration-6"><h3 class="heading">
 <span class="type">Exploration</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span>
 </h3>
-<div class="introduction" id="introduction-5"><div class="para" id="p-113">Create the following exercises using the native PreTeXt markup language (do not use the <code class="code-inline tex2jax_ignore">webwork</code> environment).</div></div>
-<article class="task exercise-like" id="task-8"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<div class="para" id="p-114">Write a True/False question.</div></article><article class="task exercise-like" id="task-9"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<div class="para" id="p-115">Write a Multiple Choice question.</div></article><article class="task exercise-like" id="task-10"><h4 class="heading"><span class="codenumber">(c)</span></h4>
-<div class="para" id="p-116">Write a Parson's Problem question.</div></article><article class="task exercise-like" id="task-11"><h4 class="heading"><span class="codenumber">(d)</span></h4>
-<div class="para" id="p-117">Write a Matching question.</div></article></article><article class="exercise exercise-like" id="true-false"><h3 class="heading">
+<div class="introduction" id="introduction-6"><div class="para" id="p-125">Create the following exercises using the native PreTeXt markup language (do not use the <code class="code-inline tex2jax_ignore">webwork</code> environment).</div></div>
+<article class="task exercise-like" id="task-10"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-126">Write a True/False question.</div></article><article class="task exercise-like" id="task-11"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-127">Write a Multiple Choice question.</div></article><article class="task exercise-like" id="task-12"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="p-128">Write a Parson's Problem question.</div></article><article class="task exercise-like" id="task-13"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="p-129">Write a Matching question.</div></article></article><article class="exercise exercise-like" id="true-false"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">True/False Question.</span>
 </h3>
 <div class="ptx-runestone-container"><div class="runestone"><ul data-component="multiplechoice" data-multipleanswers="false" id="true-false">
-<div class="para" id="p-118">A True/false question</div>
+<div class="para" id="p-130">A True/false question</div>
 <li data-component="answer" id="true-false_opt_t" data-correct=""><p>True.</p></li>
-<li data-component="feedback" id="true-false_opt_t"><div class="para" id="p-119">Feedback</div></li>
+<li data-component="feedback" id="true-false_opt_t"><div class="para" id="p-131">Feedback</div></li>
 <li data-component="answer" id="true-false_opt_f"><p>False.</p></li>
-<li data-component="feedback" id="true-false_opt_f"><div class="para" id="p-119">Feedback</div></li>
+<li data-component="feedback" id="true-false_opt_f"><div class="para" id="p-131">Feedback</div></li>
 </ul></div></div></article><article class="exercise exercise-like" id="some-matching"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Matching Problem.</span>
 </h3>
 <div class="ptx-runestone-container"><div class="runestone"><ul data-component="multiplechoice" id="some-matching" data-multipleanswers="true" data-random="">
-<div class="para" id="p-120">A multiple choice question</div>
-<li data-component="answer" id="some-matching_opt_a" data-correct=""><div class="para" id="p-121">right answer 1</div></li>
-<li data-component="feedback" id="some-matching_opt_a"><div class="para" id="p-122">answer specific feedback</div></li>
-<li data-component="answer" id="some-matching_opt_b" data-correct=""><div class="para" id="p-123">right answer 1</div></li>
-<li data-component="feedback" id="some-matching_opt_b"><div class="para" id="p-124">answer specific feedback</div></li>
-<li data-component="answer" id="some-matching_opt_c"><div class="para" id="p-125">wrong answer 1</div></li>
-<li data-component="feedback" id="some-matching_opt_c"><div class="para" id="p-126">answer specific feedback</div></li>
-<li data-component="answer" id="some-matching_opt_d"><div class="para" id="p-127">wrong answer 2</div></li>
-<li data-component="feedback" id="some-matching_opt_d"><div class="para" id="p-128">answer specific feedback</div></li>
+<div class="para" id="p-132">A multiple choice question</div>
+<li data-component="answer" id="some-matching_opt_a" data-correct=""><div class="para" id="p-133">right answer 1</div></li>
+<li data-component="feedback" id="some-matching_opt_a"><div class="para" id="p-134">answer specific feedback</div></li>
+<li data-component="answer" id="some-matching_opt_b" data-correct=""><div class="para" id="p-135">right answer 1</div></li>
+<li data-component="feedback" id="some-matching_opt_b"><div class="para" id="p-136">answer specific feedback</div></li>
+<li data-component="answer" id="some-matching_opt_c"><div class="para" id="p-137">wrong answer 1</div></li>
+<li data-component="feedback" id="some-matching_opt_c"><div class="para" id="p-138">answer specific feedback</div></li>
+<li data-component="answer" id="some-matching_opt_d"><div class="para" id="p-139">wrong answer 2</div></li>
+<li data-component="feedback" id="some-matching_opt_d"><div class="para" id="p-140">answer specific feedback</div></li>
 </ul></div></div></article><article class="exercise exercise-like" id="parsons"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Parsons Problem.</span>
 </h3>
 <div class="ptx-runestone-container"><div class="runestone parsons_section" style="max-width: none;"><div data-component="parsons" class="parsons" id="parsons">
-<div class="parsons_question parsons-text"><div class="para" id="p-129">Rearrange the blocks in alphebetical order</div></div>
-<pre class="parsonsblocks" data-question_label="" style="visibility: hidden;" data-language="natural" data-noindent="true"><div class="para" id="p-130">A</div>
+<div class="parsons_question parsons-text"><div class="para" id="p-141">Rearrange the blocks in alphebetical order</div></div>
+<pre class="parsonsblocks" data-question_label="" style="visibility: hidden;" data-language="natural" data-noindent="true"><div class="para" id="p-142">A</div>
 ---
-<div class="para" id="p-131">B</div>
+<div class="para" id="p-143">B</div>
 ---
-<div class="para" id="p-132">C</div>
+<div class="para" id="p-144">C</div>
 ---
-<div class="para" id="p-133">D</div>
+<div class="para" id="p-145">D</div>
 ---
-<div class="para" id="p-134"><span class="process-math">\(103\)</span></div> #distractor</pre>
+<div class="para" id="p-146"><span class="process-math">\(103\)</span></div> #distractor</pre>
 </div></div></div></article><article class="exercise exercise-like" id="matching"><h3 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Matching Problem.</span>
 </h3>
 <div class="ptx-runestone-container"><div class="runestone"><ul data-component="dragndrop" data-question_label="" style="visibility: hidden;" id="matching">
-<span data-subcomponent="question"><div class="para" id="p-135">Match the letters with their order in the alphabet</div></span><li data-subcomponent="draggable" id="matching_drag1">A</li>
+<span data-subcomponent="question"><div class="para" id="p-147">Match the letters with their order in the alphabet</div></span><li data-subcomponent="draggable" id="matching_drag1">A</li>
 <li data-subcomponent="dropzone" for="matching_drag1">1</li>
 <li data-subcomponent="draggable" id="matching_drag2">B</li>
 <li data-subcomponent="dropzone" for="matching_drag2">2</li>

@@ -27,6 +27,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -45,7 +58,8 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.2/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
@@ -246,9 +260,9 @@ eBookConfig.enable_chatcodes =  false;
 <li><div class="toc-item"><a href="sec-paragraphs.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Paragraphs, Lists, and Blocks</span></a></div></li>
 <li><div class="toc-item"><a href="sec-figures.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Figures and Diagrams</span></a></div></li>
 <li><div class="toc-item"><a href="sec-interactives.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Interactives</span></a></div></li>
-<li><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Authoring an Exercise</span></a></div></li>
 <li><div class="toc-item"><a href="sec-not-just-html-not-just-pdf.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Not Just HTML, Not Just PDF</span></a></div></li>
-<li><div class="toc-item"><a href="sec-intro-conclusion.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Conclusion</span></a></div></li>
+<li><div class="toc-item"><a href="sec-wrapup.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Wrapping Up</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -272,29 +286,29 @@ eBookConfig.enable_chatcodes =  false;
 <section class="appendix" id="ch-help"><h2 class="heading">
 <span class="type">Appendix</span> <span class="codenumber">A</span> <span class="title">Getting Help</span>
 </h2>
-<div class="para" id="p-136">Here we collect a number of useful resources to help you when you are stuck.  The official <a class="external" href="https://pretextbook.org/" target="_blank">PreTeXt site</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-14" id="fn-14"><sup> 1 </sup></a> has lots of resources, but we understand it can be overwhelming.</div>
-<section class="paragraphs" id="paragraphs-7"><h2 class="heading"><span class="title">Official documentation.</span></h2> <div class="para" id="p-137">Note that the official <a class="external" href="https://pretextbook.org/doc/guide/html/guide-toc.html" target="_blank">PreTeXt Guide</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-15" id="fn-15"><sup> 2 </sup></a> can be hard to use because there is so much stuff in it.  Additionally, some of the documentation is out of date.  Still, if you know where to look, it is a great resource.</div> <div class="para logical" id="p-138">
+<div class="para" id="p-148">Here we collect a number of useful resources to help you when you are stuck.  The official <a class="external" href="https://pretextbook.org/" target="_blank">PreTeXt site</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-14" id="fn-14"><sup> 1 </sup></a> has lots of resources, but we understand it can be overwhelming.</div>
+<section class="paragraphs" id="paragraphs-7"><h2 class="heading"><span class="title">Official documentation.</span></h2> <div class="para" id="p-149">Note that the official <a class="external" href="https://pretextbook.org/doc/guide/html/guide-toc.html" target="_blank">PreTeXt Guide</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-15" id="fn-15"><sup> 2 </sup></a> can be hard to use because there is so much stuff in it.  Additionally, some of the documentation is out of date.  Still, if you know where to look, it is a great resource.</div> <div class="para logical" id="p-150">
 <div class="para">Here are some sections that we find especially helpful:</div>
 <ul class="disc">
-<li id="li-40"><div class="para" id="p-139">
+<li id="li-40"><div class="para" id="p-151">
 <a class="external" href="https://pretextbook.org/doc/guide/html/part-basics.html" target="_blank">Basics Reference</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-16" id="fn-16"><sup> 3 </sup></a>: A listing of the main elements of PreTeXt including snippets of the code that create them.  This is one of the few places in the guide that has examples of the markup.</div></li>
-<li id="li-41"><div class="para" id="p-140">
+<li id="li-41"><div class="para" id="p-152">
 <a class="external" href="https://pretextbook.org/doc/guide/html/publication-file-reference.html" target="_blank">Publication File Reference</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-17" id="fn-17"><sup> 4 </sup></a>: When you are ready to start changing how your output looks, you can use the <dfn class="terminology">publication file</dfn>, which is described in this part of the guide.</div></li>
-<li id="li-42"><div class="para" id="p-141">
+<li id="li-42"><div class="para" id="p-153">
 <a class="external" href="https://pretextbook.org/doc/guide/html/schema.html" target="_blank">PreTeXt Schema</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-18" id="fn-18"><sup> 5 </sup></a>: The official list of elements and where they can go is given in the PreTeXt Schema, which is described here.  Also you can check out the <a class="external" href="https://pretextbook.org/doc/schema/" target="_blank">schema browser</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-19" id="fn-19"><sup> 6 </sup></a> to actually view the schema.</div></li>
-<li id="li-43"><div class="para" id="p-142">
+<li id="li-43"><div class="para" id="p-154">
 <a class="external" href="https://pretextbook.org/doc/guide/html/quickstart-getting-pretext.html" target="_blank">Getting PreTeXt</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-20" id="fn-20"><sup> 7 </sup></a>: If you want to install PreTeXt on your own computer, this early part of the guide gives you directions.  It should be updated with information on CodeSpaces soon as well, if you need a refresher.</div></li>
 </ul>
 <div class="para">Finally, note that the search in PreTeXt now works really well, and searching for a feature will usually get you pointed in the right spot.</div>
-</div></section><section class="paragraphs" id="paragraphs-8"><h2 class="heading"><span class="title">Examples.</span></h2> <div class="para" id="p-143">The <a class="external" href="https://pretextbook.org/examples.html" target="_blank">Examples</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-21" id="fn-21"><sup> 8 </sup></a> page on the PreTeXt site contains a number of useful live examples.  Links are provided to web, pdf, and source (on GitHub).  For some of the examples, there is also an <em class="emphasis">annotated</em> version available.  We find these especially helpful since you can “view source” to see exactly how each bit of the example was marked up in code.</div> <div class="para logical" id="p-144">
+</div></section><section class="paragraphs" id="paragraphs-8"><h2 class="heading"><span class="title">Examples.</span></h2> <div class="para" id="p-155">The <a class="external" href="https://pretextbook.org/examples.html" target="_blank">Examples</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-21" id="fn-21"><sup> 8 </sup></a> page on the PreTeXt site contains a number of useful live examples.  Links are provided to web, pdf, and source (on GitHub).  For some of the examples, there is also an <em class="emphasis">annotated</em> version available.  We find these especially helpful since you can “view source” to see exactly how each bit of the example was marked up in code.</div> <div class="para logical" id="p-156">
 <div class="para">Here are some of the most useful such examples:</div>
 <ul class="disc">
-<li id="li-44"><div class="para" id="p-145">
+<li id="li-44"><div class="para" id="p-157">
 <a class="external" href="https://pretextbook.org/examples/sample-book/annotated/" target="_blank">Sample Book</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-22" id="fn-22"><sup> 9 </sup></a>: This annotated sample book contains a section on <a class="external" href="https://pretextbook.org/examples/sample-book/annotated/interactive-exercises.html" target="_blank">interactive exercises</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-23" id="fn-23"><sup> 10 </sup></a>.  The PreTeXt developers use this book for testing, so you can see the latest (sometimes experimental) features available.</div></li>
-<li id="li-45"><div class="para" id="p-146">
+<li id="li-45"><div class="para" id="p-158">
 <a class="external" href="https://pretextbook.org/examples/sample-article/annotated" target="_blank">Sample Article</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-24" id="fn-24"><sup> 11 </sup></a>: Not particularly well organized (it is also a proving ground for developers) but this contains almost every variation of every feature of PreTeXt.  Using the search and “view source” makes this an invaluable resource.</div></li>
 </ul>
-</div></section><section class="paragraphs" id="paragraphs-9"><h2 class="heading"><span class="title">Community Support.</span></h2> <div class="para" id="p-147">There is a very active google group for support: <a class="external" href="https://groups.google.com/g/pretext-support" target="_blank">pretext-support</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-25" id="fn-25"><sup> 12 </sup></a>.  You should also subscribe to the low-traffic <a class="external" href="https://groups.google.com/g/pretext-announce" target="_blank">pretext-announce</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-26" id="fn-26"><sup> 13 </sup></a> to get updates.</div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-14"><div class="fn"><code class="code-inline tex2jax_ignore">pretextbook.org/</code></div></div>
+</div></section><section class="paragraphs" id="paragraphs-9"><h2 class="heading"><span class="title">Community Support.</span></h2> <div class="para" id="p-159">There is a very active google group for support: <a class="external" href="https://groups.google.com/g/pretext-support" target="_blank">pretext-support</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-25" id="fn-25"><sup> 12 </sup></a>.  You should also subscribe to the low-traffic <a class="external" href="https://groups.google.com/g/pretext-announce" target="_blank">pretext-announce</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-26" id="fn-26"><sup> 13 </sup></a> to get updates.</div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-14"><div class="fn"><code class="code-inline tex2jax_ignore">pretextbook.org/</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-15"><div class="fn"><code class="code-inline tex2jax_ignore">pretextbook.org/doc/guide/html/guide-toc.html</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-16"><div class="fn"><code class="code-inline tex2jax_ignore">pretextbook.org/doc/guide/html/part-basics.html</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-17"><div class="fn"><code class="code-inline tex2jax_ignore">pretextbook.org/doc/guide/html/publication-file-reference.html</code></div></div>

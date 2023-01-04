@@ -13,9 +13,14 @@
 <body class="ignore-math">
 <div class="hint solution-like">
 <h4 class="heading">
-<span class="type">Hint</span><span class="space"> </span><span class="codenumber">3.1.2.b.1</span><span class="period">.</span>
+<span class="type">Hint</span><span class="space"> </span><span class="codenumber">3.1.2.a.1</span><span class="period">.</span>
 </h4>
-<div class="para">For the PreTeXt syntax, see <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "" missing or not unique]</code> in the documentation.</div> <div class="para">For the <code class="code-inline tex2jax_ignore">setup</code> portion of the <code class="code-inline tex2jax_ignore">webwork</code> code, follow the WebWork documentation at <a class="external" href="https://webwork.maa.org/wiki/PopUpLists" target="_blank"><code class="code-inline tex2jax_ignore">https://webwork.maa.org/wiki/PopUpLists</code></a> and <a class="external" href="https://webwork.maa.org/wiki/MultipleChoiceRadio1" target="_blank"><code class="code-inline tex2jax_ignore">https://webwork.maa.org/wiki/MultipleChoiceRadio1</code></a>.  Note that you only need to follow the yellow (Setup) portion of the WebWork instructions.  The other sections are managed by PreTeXt.</div>
+<div class="para">This example is taken directly from <a class="external" href="https://pretextbook.org/doc/guide/html/webwork-source.html" target="_blank"><code class="code-inline tex2jax_ignore">https://pretextbook.org/doc/guide/html/webwork-source.html</code></a>.</div> <ol class="decimal">
+<li><div class="para">All perl and setup must happen between the <code class="code-inline tex2jax_ignore">&lt;setup&gt;&lt;pg-setup&gt;...&lt;/pg-setup&gt;&lt;/setup&gt;</code> tags, as in any WebWork problem.</div></li>
+<li><div class="para">Format statements as usual in PreTeXt</div></li>
+<li><div class="para">To reference the perl variable <code class="code-inline tex2jax_ignore">$a</code> in the <code class="code-inline tex2jax_ignore">statement</code>, type <code class="code-inline tex2jax_ignore">&lt;var name="$a"&gt;</code>.</div></li>
+<li><div class="para">To create an answer blank, where the answer is the perl variable <code class="code-inline tex2jax_ignore">$a</code>, type <code class="code-inline tex2jax_ignore">&lt;var name="$a" width="5" &gt;</code>. Here, <code class="code-inline tex2jax_ignore">@width</code> controls the width of the answer blank.</div></li>
+</ol>
 </div>
 <span class="incontext"><a href="section-14.html#hint-3" class="internal">in-context</a></span>
 </body>

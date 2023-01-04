@@ -8,7 +8,7 @@
 <html lang="en-US">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Exercises</title>
+<title>Authoring an Exercise</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -27,6 +27,19 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: "tex2jax_ignore|ignore-math",
     processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
   },
   chtml: {
     scale: 0.98,
@@ -45,7 +58,8 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://webwork-ptx.aimath.org/webwork2_files/js/apps/MathView/mathview.css" rel="stylesheet">
+<script src="https://pretextbook.org/js/0.2/pretext-webwork/2.17/pretext-webwork.js"></script><script src="https://webwork-ptx.aimath.org/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
@@ -246,9 +260,9 @@ eBookConfig.enable_chatcodes =  false;
 <li><div class="toc-item"><a href="sec-paragraphs.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Paragraphs, Lists, and Blocks</span></a></div></li>
 <li><div class="toc-item"><a href="sec-figures.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Figures and Diagrams</span></a></div></li>
 <li><div class="toc-item"><a href="sec-interactives.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Interactives</span></a></div></li>
-<li class="active"><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Authoring an Exercise</span></a></div></li>
 <li><div class="toc-item"><a href="sec-not-just-html-not-just-pdf.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Not Just HTML, Not Just PDF</span></a></div></li>
-<li><div class="toc-item"><a href="sec-intro-conclusion.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Conclusion</span></a></div></li>
+<li><div class="toc-item"><a href="sec-wrapup.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Wrapping Up</span></a></div></li>
 </ul>
 </li>
 <li>
@@ -269,9 +283,56 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-exercises"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.8</span> <span class="title">Exercises</span>
+<span class="type">Section</span> <span class="codenumber">2.8</span> <span class="title">Authoring an Exercise</span>
 </h2>
-<div class="para" id="p-50">TODO</div></section></div>
+<article class="exercise exercise-like" id="exercise-1"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.8.1</span><span class="period">.</span><span class="space"> </span><span class="title">Manually-authored exercise.</span>
+</h3>
+<div class="para" id="p-50">What is <span class="process-math">\(2+2\text{?}\)</span>
+</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><div class="para" id="p-51">We're being a bit tricky here...</div></div></div>
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-1" id="answer-1"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-1"><div class="answer solution-like"><div class="para" id="p-52"><span class="process-math">\(22\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-1" id="solution-1"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-1"><div class="solution solution-like"><div class="para" id="p-53">
+<span class="process-math">\(22\text{,}\)</span> where <span class="process-math">\(+\)</span> is the concatenation operator.</div></div></div>
+</div></article><article class="exercise exercise-like" id="exercise-2"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.8.2</span><span class="period">.</span><span class="space"> </span><span class="title">Using WebWork.</span>
+</h3>
+<div id="webwork-1" class="exercise-wrapper" data-domain="https://webwork-ptx.aimath.org" data-seed="1" data-localize-correct="Correct" data-localize-incorrect="Incorrect" data-localize-blank="Blank" data-localize-submit="Submit" data-localize-check-responses="Check Responses" data-localize-reveal="Reveal" data-localize-randomize="Randomize" data-localize-reset="Reset" data-problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiTGltaXRlZE51bWVyaWMiKTsKJGEgPSBDb21wdXRlKHJhbmRvbSgxLCA5LCAxKSk7CiRiID0gQ29tcHV0ZShyYW5kb20oMSwgOSwgMSkpOwokYyA9ICRhICsgJGI7CgpCRUdJTl9QR01MCkNvbXB1dGUgW2BbJGFdICsgWyRiXVx0ZXh0ey59YF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1R5cGUgeW91ciBhbnN3ZXIgd2l0aG91dCB1c2luZyB0aGUgW3wrfF0qIHNpZ24uJylAXSoqCgpUaGUgc3VtIGlzIFtfXXskY317Mn0uCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KW2BbJGFdICsgWyRiXSA9IFskY11cdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" data-courseID="anonymous" data-userID="anonymous" data-coursePassword="anonymous" aria-live="polite">
+<div class="problem-contents">
+<div class="para" id="p-54">Compute <span class="process-math">\({1} + {7}\text{.}\)</span>
+</div> <div class="para" id="p-55">The sum is <span class="fillin underline" role="img" aria-label="2-character blank" style="width: 0.909090909090909em;"></span>.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-2" id="answer-2"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-2"><div class="answer solution-like"><div class="para" id="p-56"><span class="process-math">\(8\)</span></div></div></div>
+<a href="" data-knowl="" class="id-ref solution-knowl original" data-refid="hk-solution-2" id="solution-2"><span class="type">Solution</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-solution-2"><div class="solution solution-like"><div class="para" id="p-57"><span class="process-math">\({1} + {7} = {8}\text{.}\)</span></div></div></div>
+</div>
+</div>
+<div class="problem-buttons"><button class="webwork-button" onclick="handleWW('webwork-1')">Activate</button></div>
+</div></article><article class="exercise exercise-like" id="exercise-3"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.8.3</span><span class="period">.</span><span class="space"> </span><span class="title">Generated by CheckIt.</span>
+</h3>
+<div class="introduction" id="introduction-3"><div class="para logical" id="p-58">
+<div class="para">Consider the following  system of linear equations.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{matrix} 4 \, x_{1} &amp; + &amp; 3 \, x_{2} &amp; + &amp; 18 \, x_{3} &amp; - &amp; 11 \, x_{4} &amp; = &amp; -14 \\ -3 \, x_{1} &amp; + &amp; x_{2} &amp; - &amp; 7 \, x_{3} &amp; + &amp; 5 \, x_{4} &amp; = &amp; 4 \\ 3 \, x_{1} &amp; + &amp; 3 \, x_{2} &amp; + &amp; 15 \, x_{3} &amp; - &amp; 9 \, x_{4} &amp; = &amp; -12 \\ \end{matrix}
+\end{equation*}
+</div>
+</div></div>
+<article class="task exercise-like" id="task-1"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-59">Explain how to find a simpler system or vector equation that has the same solution set.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-3" id="answer-3"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-3"><div class="answer solution-like"><div class="para logical" id="p-60"><div class="displaymath process-math">
+\begin{equation*}
+\mathrm{RREF}\left[\begin{array}{cccc|c} 4 &amp; 3 &amp; 18 &amp; -11 &amp; -14 \\ -3 &amp; 1 &amp; -7 &amp; 5 &amp; 4 \\ 3 &amp; 3 &amp; 15 &amp; -9 &amp; -12 \end{array}\right]=\left[\begin{array}{cccc|c} 1 &amp; 0 &amp; 3 &amp; -2 &amp; -2 \\ 0 &amp; 1 &amp; 2 &amp; -1 &amp; -2 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]
+\end{equation*}
+</div></div></div></div>
+</div></article><article class="task exercise-like" id="task-2"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-61">Explain how to describe this solution set using set notation.</div>
+<div class="solutions">
+<a href="" data-knowl="" class="id-ref answer-knowl original" data-refid="hk-answer-4" id="answer-4"><span class="type">Answer</span><span class="period">.</span></a><div class="hidden-content tex2jax_ignore" id="hk-answer-4"><div class="answer solution-like"><div class="para" id="p-62">The solution set is <span class="process-math">\(\left\{ \left[\begin{array}{c} -3 \, a + 2 \, b - 2 \\ -2 \, a + b - 2 \\ a \\ b \end{array}\right] \,\middle|\, a,b \in\mathbb R \right\}\text{.}\)</span>
+</div></div></div>
+</div></article></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-interactives.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-not-just-html-not-just-pdf.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
