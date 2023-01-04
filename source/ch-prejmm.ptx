@@ -38,12 +38,29 @@
         </p>
     </section>
     <section>
+        <title>Apply for your GitHub Education discount</title>
+        <p>
+            Educators and non-profit researchers can get many of GitHub's paid features
+            for free.
+        </p>
+        <p>
+            Apply at
+            <url href="https://education.github.com/discount_requests/pack_application">Education.GitHub.com</url>
+            to unlock these features (in our experience, applications are usually processed quickly for <c>.edu</c>
+            email addresses).
+        </p>
+    </section>
+    <section>
         <title>And that's it!</title>
         <p>
             Even just a couple months ago, the process to get started writing PreTeXt
-            involved several more steps. But the community is streamlining this experience 
+            involved several more steps. (Raise your hand if you don't care what a
+            <q>PATH variable</q> is!)
+        </p>
+        <p>
+            The community is streamlining this experience
             daily, and we look forward to sharing how easy writing in PreTeXt is when we meet 
-            you at the JMM in January!
+            you at the JMM!
         </p>
     </section>
 </chapter>

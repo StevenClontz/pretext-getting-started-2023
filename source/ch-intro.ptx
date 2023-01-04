@@ -2,23 +2,29 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-intro">
     <title>Write Once, Read Anywhere</title>
     <objectives>
-    <!-- <introduction>
-        <p>
-            At the end of this section, you'll be able to: 
-        </p>
-    </introduction> -->
-    <ol>
-        <li>
+        <introduction>
             <p>
-                Identify several features of PreTeXt.
+                At the end of this chapter, you'll
             </p>
-        </li>
-       <li>
-            <p>
-                Have a working GitHub Codespaces environment to start playing with.
-            </p>
-        </li>
-    </ol>
+        </introduction>
+        <ol>
+            <li>
+                <p>
+                    Become aware of the eleven PreTeXt Principles.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Be able to identify several features of PreTeXt.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Have a working GitHub Codespaces environment to suitable for
+                    authoring and editing in PreTeXt.
+                </p>
+            </li>
+        </ol>
     </objectives>
     <section xml:id="sec-setting-up-codespaces">
         <title>Setting up Codespaces</title>
@@ -33,6 +39,14 @@
         <p> Follow the instructions at <url href="https://github.com/PreTeXtBook/pretext-codespace" />
             to get started. Let this run for a few minutes in the background while you review the
             rest of this section. </p>
+    </section>
+    <section xml:id="sec-principles">
+        <title>PreTeXt Principles</title>
+        <p>
+            A more detailed monograph on 
+            <url href="https://pretextbook.org/doc/guide/html/philosophy.html">PreTeXt's philosophy</url>
+            is availabe in the PreTeXt Guide.
+        </p>
     </section>
     <section xml:id="sec-paragraphs">
         <title>Paragraphs, Lists, and Blocks</title>
