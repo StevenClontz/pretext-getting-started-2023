@@ -1,44 +1,47 @@
 {
     "name": "PreTeXt-Full",
+    "image": "mcr.microsoft.com/devcontainers/python:3",
     "features": {
-          "ghcr.io/rocker-org/devcontainer-features/pandoc:1": {}
-      },
-      "forwardPorts": [
-          27377,
-          27378
-      ],
-      "portsAttributes": {
-          "27378": {
-              "label": "CodeChat",
-              "onAutoForward": "openPreview",
-              "requireLocalPort": true,
-              "elevateIfNeeded": true,
-              "protocol": "https"
-          }
-      },
-    "onCreateCommand": "pip install CodeChat_Server pretext && pretext new -d .",
+      "ghcr.io/devcontainers/features/node:1": {},
+      "ghcr.io/rocker-org/devcontainer-features/pandoc:1": {}
+    },
+    // "forwardPorts": [
+    // 	27377,
+    // 	27378
+    // ],
+    // "portsAttributes": {
+    // 	"27378": {
+    // 		"label": "CodeChat",
+    // 		"onAutoForward": "openPreview",
+    // 		"requireLocalPort": true,
+    // 		"elevateIfNeeded": true,
+    // 		"protocol": "https"
+    // 	}
+    // },
+    "onCreateCommand": "pip install pretext && pretext new -d .",
     // Use 'postCreateCommand' to run commands after the container is created.
     "postCreateCommand": "sudo bash ./.devcontainer/postCreateCommand.sh",
   
-      // Configure tool-specific properties.
-      "customizations": {
-          "codespaces": {
-              "openFiles": [
-                  "project.ptx",
-                  "source/main.ptx"
-              ]
+    // Configure tool-specific properties.
+    "customizations": {
+      "codespaces": {
+        "openFiles": [
+          "source/main.ptx",
+          "project.ptx",
+          "publication/publication.ptx"
+        ]
+      },
+      "vscode": {
+        "settings": {
+          "editor.quickSuggestions": {
+            "other": "off"
           },
-          "vscode": {
-              "settings": {
-                  "CodeChat.CodeChatServer.Command": "CodeChat_Server"
-              },
-              "extensions": [
-                  "CodeChat.codechat",
-                  "oscarlevin.pretext-tools"
-              ]
-          }
+          "editor.snippetSuggestions": "top"
+        },
+        "extensions": ["ms-vscode.live-server", "oscarlevin.pretext-tools"]
       }
+    }
   
-      // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-      // "remoteUser": "root"
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root"
   }
