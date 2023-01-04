@@ -335,28 +335,148 @@ useful for leaving notes for yourself or future editors... -->
                 </description>
             </image>
         </figure>
-<figure xml:id="figure-asymptote-levers">
-  <caption>Lever Demonstration generated from Asymptote code</caption>
-  <image xml:id="asymptote-lever">
-    <description>Moments on a lever</description>
+<figure xml:id="figure-tikz-electronics">
+  <caption>Electronics Diagram generated with Tikz code</caption>
+  <image xml:id="tikz-electronics">
+    <description>A pile of electronic components wired together</description>
+      <latex-image><![CDATA[ 
+      \tikzset{%
+        block/.style    = {draw, thick, rectangle, minimum height = 3em,
+          minimum width = 3em},
+        sum/.style      = {draw, circle, node distance = 2cm}, % Adder
+        input/.style    = {coordinate}, % Input
+        output/.style   = {coordinate} % Output
+      }
+      % Defining string as labels of certain blocks.
+      \newcommand{\suma}{\Large$+$}
+      \newcommand{\inte}{$\displaystyle \int$}
+      \newcommand{\derv}{\huge$\frac{d}{dt}$}
+      \begin{tikzpicture}[auto, thick, node distance=2cm, >=triangle 45]
+      \draw
+          % Drawing the blocks of first filter :
+          node at (0,0)[right=-3mm]{\Large \textbullet}
+          node [input, name=input1] {}
+          node [sum, right of=input1] (suma1) {\suma}
+          node [block, right of=suma1] (inte1) {\inte}
+               node at (6.8,0)[block] (Q1) {\Large $Q_1$}
+               node [block, below of=inte1] (ret1) {\Large$T_1$};
+          % Joining blocks.
+          % Commands \draw with options like [->] must be written individually
+          \draw[->](input1) -- node {$X(Z)$}(suma1);
+          \draw[->](suma1) -- node {} (inte1);
+          \draw[->](inte1) -- node {} (Q1);
+          \draw[->](ret1) -| node[near end]{} (suma1);
+          % Adder
+      \draw
+          node at (5.4,-4) [sum, name=suma2] {\suma}
+              % Second stage of filter
+          node at  (1,-6) [sum, name=suma3] {\suma}
+          node [block, right of=suma3] (inte2) {\inte}
+          node [sum, right of=inte2] (suma4) {\suma}
+          node [block, right of=suma4] (inte3) {\inte}
+          node [block, right of=inte3] (Q2) {\Large$Q_2$}
+          node at (9,-8) [block, name=ret2] {\Large$T_2$}
+      ;
+          % Joining the blocks of second filter
+          \draw[->] (suma3) -- node {} (inte2);
+          \draw[->] (inte2) -- node {} (suma4);
+          \draw[->] (suma4) -- node {} (inte3);
+          \draw[->] (inte3) -- node {} (Q2);
+          \draw[->] (ret2) -| (suma3);
+          \draw[->] (ret2) -| (suma4);
+               % Third stage of filter:
+          % Defining nodes:
+      \draw
+          node at (11.5, 0) [sum, name=suma5]{\suma}
+          node [output, right of=suma5]{}
+          node [block, below of=suma5] (deriv1){\derv}
+          node [output, right of=suma5] (sal2){}
+      ;
+          % Joining the blocks:
+          \draw[->] (suma2) -| node {}(suma3);
+          \draw[->] (Q1) -- (8,0) |- node {}(ret1);
+          \draw[->] (8,0) |- (suma2);
+          \draw[->] (5.4,0) -- (suma2);
+          \draw[->] (Q1) -- node {}(suma5);
+          \draw[->] (deriv1) -- node {}(suma5);
+          \draw[->] (Q2) -| node {}(deriv1);
+              \draw[<->] (ret2) -| node {}(deriv1);
+              \draw[->] (suma5) -- node {$Y(Z)$}(sal2);
+              % Drawing nodes with \textbullet
+      \draw
+          node at (8,0) {\textbullet}
+          node at (8,-2){\textbullet}
+          node at (5.4,0){\textbullet}
+              node at (5,-8){\textbullet}
+              node at (11.5,-6){\textbullet}
+              ;
+          % Boxing and labelling noise shapers
+          \draw [color=gray,thick](-0.5,-3) rectangle (9,1);
+          %\node at (-0.5,1) [above=5mm, right=0mm] {\textsc{first-order noise shaper}};
+          \draw [color=gray,thick](-0.5,-9) rectangle (12.5,-5);
+          %\node at (-0.5,-9) [below=5mm, right=0mm] {\textsc{second-order noise shaper}};
+      \end{tikzpicture}
+      ]]>
+      </latex-image>
+  </image>
+</figure>
+<figure xml:id="figure-asymptote-contour-plot">
+  <caption>Contour Plot generated from Asymptote code</caption>
+  <image xml:id="asymptote-contour">
       <asymptote>
-      size(200,0);
-      pair z0=(0,0);
-      pair z1=(2,0);
-      pair z2=(5,0);
-      pair zf=z1+0.75*(z2-z1);
-      draw(z1--z2);
-      dot(z1,red+0.15cm);
-      dot(z2,darkgreen+0.3cm);
-      label("$m$",z1,1.2N,red);
-      label("$M$",z2,1.5N,darkgreen);
-      label("$\hat{\ }$",zf,0.2*S,fontsize(24pt)+blue);
-      pair s=-0.2*I;
-      draw("$x$",z0+s--z1+s,N,red,Arrows,Bars,PenMargins);
-      s=-0.5*I;
-      draw("$\bar{x}$",z0+s--zf+s,blue,Arrows,Bars,PenMargins);
-      s=-0.95*I;
-      draw("$X$",z0+s--z2+s,darkgreen,Arrows,Bars,PenMargins);
+      import graph;
+      import palette;
+      size(10cm,10cm,IgnoreAspect);
+      real f(real x, real y) {
+        return 0.9*pow10(2*sin(x/5+2*y^0.25)) + 0.1*(1+cos(10*log(y)));
+      }
+      scale(Linear,Log,Log);
+      pen[] Palette=BWRainbow();
+      bounds range=image(f,Automatic,(0,1),(100,100),nx=200,Palette);
+      xaxis("$x$",BottomTop,LeftTicks,above=true);
+      yaxis("$y$",LeftRight,RightTicks,above=true);
+      palette("$f(x,y)$",range,(0,200),(100,250),Top,Palette,
+              PaletteTicks(ptick=linewidth(0.5*linewidth())));
+      </asymptote>
+  </image>
+</figure>
+<figure xml:id="figure-asymptote-workcone">
+  <caption>Work Cone generated from Asymptote code</caption>
+  <image xml:id="asymptote-workcone" width="50%">
+      <asymptote>
+      import solids;
+      size(0,150);
+      currentprojection=orthographic(0,-30,5);
+      real r=4;
+      real h=10;
+      real s=8;
+      real x=r*s/h;
+      real sr=5;
+      real xr=r*sr/h;
+      real s1=sr-0.1;
+      real x1=r*s1/h;
+      real s2=sr+0.2;
+      real x2=r*s2/h;
+      render render=render(compression=0,merge=true);
+      draw(scale(x1,x1,-s1)*shift(-Z)*unitcone,lightblue+opacity(0.5),render);
+      path3 p=(x2,0,s2)--(x,0,s+0.005);
+      revolution a=revolution(p,Z);
+      draw(surface(a),lightblue+opacity(0.5),render);
+      path3 q=(x,0,s)--(r,0,h);
+      revolution b=revolution(q,Z);
+      draw(surface(b),white+opacity(0.5),render);
+      draw((-r-1,0,0)--(r+1,0,0));
+      draw((0,0,0)--(0,0,h+1),dashed);
+      path3 w=(x1,0,s1)--(x2,0,s2)--(0,0,s2);
+      revolution b=revolution(w,Z);
+      draw(surface(b),blue+opacity(0.5),render);
+      draw(circle((0,0,s2),x2));
+      draw(circle((0,0,s1),x1));
+      draw("$x$",(xr,0,0)--(xr,0,sr),red,Arrow3,PenMargin3);
+      draw("$r$",(0,0,sr)--(xr,0,sr),N,red);
+      draw((string) r,(0,0,h)--(r,0,h),N,red);
+      draw((string) h,(r,0,0)--(r,0,h),red,Arrow3,PenMargin3);
+      draw((string) s,(-x,0,0)--(-x,0,s),W,red,Arrow3,Bar3,PenMargin3);
       </asymptote>
   </image>
 </figure>
@@ -380,7 +500,21 @@ runge()
                 </sageplot>
             </image>
         </figure>
+<figure xml:id="figure-sage-implicit-surface">
+  <caption>An implicitly defined 3D surface generated with SageMath code</caption>
+  <image xml:id="sageplot-implicit-surface" width="80%" margins="15% 5%">
+      <sageplot variant="3d" aspect="1.0">
+      var('x y z')
+      T = RDF(golden_ratio)
+      p = 2 - (cos(x + T*y) + cos(x - T*y) + cos(y + T*z) + cos(y - T*z) + cos(z - T*x) + cos(z + T*x))
+      r = 4.77
+      implicit_plot3d(p, (x, -r, r), (y, -r, r), (z, -r, r), plot_points=50, frame=False)
+      </sageplot>
+  </image>
+</figure>
     </section>
+
+
     <section xml:id="sec-interactives">
         <title>Interactives</title>
         <p>TODO</p>
