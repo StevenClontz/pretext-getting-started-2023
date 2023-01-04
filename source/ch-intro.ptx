@@ -87,6 +87,9 @@ root element.)
         </p>
         <p>
 <xref ref="listing-simple"/> is a very simple <pretext />/XML document.
+(The first line is boilerplate that lets various programs know the rest of the
+file is XML, and the third-to-last line is an example of a comment that
+won't appear in the output.)
         </p>
         <listing xml:id="listing-simple">
             <caption>Source of a simple <pretext /> book project.</caption>
@@ -98,6 +101,7 @@ root element.)
     <article>
         <title>Hello world!</title>
         <p>Welcome to PreTeXt!</p>
+        <!-- TODO: find something more to say... -->
     </article>
 </pretext>
                     ]]>
@@ -130,8 +134,9 @@ may have an <c>&lt;introduction&gt;</c> or
 <c>&lt;conclusion&gt;</c>.
         </p>
         <p>
-<xref ref="listing-book-source"/> puts these elements together for
-a simple <pretext/> project.
+<xref ref="listing-book-source"/> puts some of these elements together for
+a simple <pretext/> project (information on the other elements will come
+in later sections).
         </p>
         <listing xml:id="listing-book-source">
             <caption>Source of a simple <pretext /> book project.</caption>
@@ -173,7 +178,12 @@ a simple <pretext/> project.
 
       <section xml:id="section-getting-started">
         <title>Let's get started</title>
-        <p>Hello</p>
+        <p>Can you solve <m>ax^2+bx+c=0</m>?</p>
+      </section>
+
+      <section xml:id="section-learning-more">
+        <title>But wait, there's more!</title>
+        <p>Did you know that <me>x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</me>?</p>
       </section>
 
     </chapter>
@@ -199,24 +209,118 @@ a simple <pretext/> project.
     <section xml:id="sec-paragraphs">
         <title>Paragraphs, Lists, and Blocks</title>
         <p>
-    Within each division (chapter, section, etc., see <xref ref="sec-divisions"/>) of your book,
-    you likely want some content (e.g. what you're reading right now!).
+Within each division (chapter, section, etc., see <xref ref="sec-divisions"/>) of your book,
+you likely want some content (e.g. what you're reading right now!).
         </p>
         <p>
-    Written content is usually structured as <term>paragraphs</term>, <c>&lt;p&gt;</c> for short.
-    If you've ever written <abbr>HTML</abbr>, this tag may be familiar to you, but be warned:
-    <em><pretext/> is not HTML</em>! However, there is some overlap: you can <em>emphasize</em>
-    words or phrases with <c>&lt;em&gt;</c> for instance. However, while HTML uses the full word
-    <q>code</q> for its tag, <pretext /> uses the shortened <c>&lt;c&gt;</c> tag (which is what
-    we're using for expressing these tags).
+Written content is usually structured as <term>paragraphs</term>, <c>&lt;p&gt;</c> for short.
+If you've ever written <abbr>HTML</abbr>, this tag may be familiar to you, but be warned:
+while PreTeXt is XML (<xref ref="sec-xml"/>),
+<em><pretext/> is not HTML</em>! There is some overlap: you can <em>emphasize</em>
+words or phrases with <c>&lt;em&gt;</c> for instance. However, while HTML uses the full word
+<q>code</q> for its tag, <pretext /> uses the shortened <c>&lt;c&gt;</c> tag.
         </p>
         <p>
-    For users coming from LaTeX, rest assured your mathematical formulas work in <pretext />.
-    Inline mathmode <m>ax^2+bx+c=0</m> is invoked with <c>&lt;m&gt;ax^2+bx+c=0&lt;/m&gt;</c>,
-    while display mathematics
-    like <me>x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</me> is available via
-    <c>&lt;me&gt;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}&lt;/me&gt;</c>.
+Note that these elements are all <term>semantic</term>: they express the <em>meaning</em>
+of content, not its presentation. For example, the word <q>semantic</q> was a <c>&lt;term&gt;</c>
+we just defined, while we merely emphasized <q>meaning</q> with <c>&lt;em&gt;</c>.
+The presentation of these concepts may vary by output format, likely using some combination of
+boldface, italics, or underlining.
         </p>
+        <paragraphs>
+            <title>Heads up!</title>
+            <p>
+We'll talk about customizing presentation later,
+but it's important to remember that the PreTeXt community separates such
+<q>publication</q> decisions away from the work of
+<q>authoring</q> content.
+            </p>
+        </paragraphs>
+        <p>
+For users coming from LaTeX, rest assured your mathematical formulas work in <pretext />.
+Inline mathmode <m>ax^2+bx+c=0</m> is invoked with <c>&lt;m&gt;ax^2+bx+c=0&lt;/m&gt;</c>,
+while display mathematics
+like <me>x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}</me> is available via
+<c>&lt;me&gt;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}&lt;/me&gt;</c>.
+(Users from LaTeX will also appreciate that quotes are surrounded with <c>&lt;q&gt;</c>
+in PreTeXt to handle the different way quotation marks are handled in LaTeX vs
+most other markup languages.)
+        </p>
+        <p>
+You may also have lists withinn paragraphs, ordered <c>&lt;ol&gt;</c> and unordered <c>&lt;ul&gt;</c>,
+nested as needed. Each list item is represented by <c>&lt;li&gt;</c>.
+            <ul>
+                <li>
+                    <p>
+                        A single item.
+                    </p>
+                </li>
+                <li>
+                    <p> An item with an ordered list.
+                        <ol>
+                            <li>
+                                <p>
+                                    First item.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Second item.
+                                </p>
+                            </li>
+                        </ol>
+                    </p>
+                </li>
+            </ul>
+        </p>
+        <p>
+Of course, often you have important <term>blocks</term> of content to include,
+such as <c>&lt;definition&gt;</c>s or <c>&lt;claim&gt;</c>s.
+        </p>
+        <definition xml:id="def-pretext">
+            <statement>
+                <p>
+<term>PreTeXt</term> is an uncomplicated XML language for describing
+scholarly documents.
+                </p>
+            </statement>
+        </definition>
+        <claim xml:id="claim-pretext">
+            <statement>
+                <p>
+PreTeXt is the language that will replace LaTeX.
+                </p>
+            </statement>
+            <proof>
+                <p>
+Left to the reader.
+                </p>
+            </proof>
+        </claim>
+        <p>
+Such content is automatically numbered appropriately. Each of the
+blocks above is structured with a <c>&lt;statement&gt;</c>,
+and <xref ref="claim-pretext"/> additionally features a <c>&lt;proof&gt;</c>.
+        </p>
+        <p>
+Content is often <q>knowled</q>. A <term>knowl</term> is a piece of context-independent
+information that is useful to transclude elsewhere in the HTML build of your document.
+For example, in the HTML build for this document,
+the above proof is knowled by default, and clicking the referenced <q>Claim</q>
+in the previous paragraph expands its knowl to reveal the claim for the reader.
+        </p>
+        <note>
+            <p>
+Because this document was edited directly on GitHub using Codespaces, and served
+with GitHub pages, finding its source is simple: head to its
+<url href="https://github.com/StevenClontz/ptx-jmm-2023/">repository</url>
+and find the
+<url href="https://github.com/StevenClontz/ptx-jmm-2023/blob/main/source/ch-intro.ptx">corresponding source file</url>.
+Check the link out to see exactly how each claim, list, etc. in this chapter was marked up!
+<!-- Hey, glad you found me! This is a comment that's only available in the source code,
+useful for leaving notes for yourself or future editors... -->
+            </p>
+        </note>
     </section>
 
     <section xml:id="sec-figures">
