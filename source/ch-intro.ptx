@@ -336,7 +336,7 @@ useful for leaving notes for yourself or future editors... -->
             </image>
         </figure>
 <figure xml:id="figure-asymptote-levers">
-  <caption>Asymptote Lever Demonstration</caption>
+  <caption>Lever Demonstration generated from Asymptote code</caption>
   <image xml:id="asymptote-lever">
     <description>Moments on a lever</description>
       <asymptote>
