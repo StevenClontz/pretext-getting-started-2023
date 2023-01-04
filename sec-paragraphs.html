@@ -45,7 +45,8 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -209,7 +210,7 @@ eBookConfig.enable_chatcodes =  false;
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-principles.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-intro.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-figures.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-divisions.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-intro.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-figures.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
@@ -240,36 +241,81 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural">
 <li><div class="toc-item"><a href="sec-setting-up-codespaces.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Setting up Codespaces</span></a></div></li>
 <li><div class="toc-item"><a href="sec-principles.html" class="internal"><span class="codenumber">2.2</span> <span class="title">PreTeXt Principles</span></a></div></li>
-<li class="active"><div class="toc-item"><a href="sec-paragraphs.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Paragraphs, Lists, and Blocks</span></a></div></li>
-<li><div class="toc-item"><a href="sec-figures.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Figures and Diagrams</span></a></div></li>
-<li><div class="toc-item"><a href="sec-interactives.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Interactives</span></a></div></li>
-<li><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="sec-not-just-html-not-just-pdf.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Not Just HTML, Not Just PDF</span></a></div></li>
-<li><div class="toc-item"><a href="sec-intro-conclusion.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Conclusion</span></a></div></li>
+<li><div class="toc-item"><a href="sec-xml.html" class="internal"><span class="codenumber">2.3</span> <span class="title">PreTeXt is XML</span></a></div></li>
+<li><div class="toc-item"><a href="sec-divisions.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Books and Divisions</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="sec-paragraphs.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Paragraphs, Lists, and Blocks</span></a></div></li>
+<li><div class="toc-item"><a href="sec-figures.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Figures and Diagrams</span></a></div></li>
+<li><div class="toc-item"><a href="sec-interactives.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Interactives</span></a></div></li>
+<li><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-not-just-html-not-just-pdf.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Not Just HTML, Not Just PDF</span></a></div></li>
+<li><div class="toc-item"><a href="sec-intro-conclusion.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Conclusion</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="ch-examples.html" class="internal"><span class="codenumber">3</span> <span class="title">Some Examples</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="section-12.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Basic PreTeXt</span></a></div></li>
-<li><div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Basic Principles and Frequently Asked Questions</span></a></div></li>
-<li><div class="toc-item"><a href="section-14.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Interactive Activities</span></a></div></li>
+<li><div class="toc-item"><a href="section-14.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Basic PreTeXt</span></a></div></li>
+<li><div class="toc-item"><a href="section-15.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Basic Principles and Frequently Asked Questions</span></a></div></li>
+<li><div class="toc-item"><a href="section-16.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Interactive Activities</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="meta-backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="appendix-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Copyright and Licensing</span></a></div></li>
-<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Acknowledgement</span></a></div></li>
+<li><div class="toc-item"><a href="ch-help.html" class="internal"><span class="codenumber">A</span> <span class="title">Getting Help</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Copyright and Licensing</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-3.html" class="internal"><span class="codenumber">C</span> <span class="title">Acknowledgement</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-paragraphs"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">2.3</span> <span class="title">Paragraphs, Lists, and Blocks</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="sec-paragraphs"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Paragraphs, Lists, and Blocks</span>
 </h2>
-<div class="para" id="p-24">TODO</div></section></div>
+<div class="para" id="p-31">Within each division (chapter, section, etc., see <a href="sec-divisions.html" class="internal" title="Section 2.4: Books and Divisions">Section 2.4</a>) of your book, you likely want some content (e.g. what you're reading right now!).</div>
+<div class="para" id="p-32">Written content is usually structured as <dfn class="terminology">paragraphs</dfn>, <code class="code-inline tex2jax_ignore">&lt;p&gt;</code> for short. If you've ever written <abbr class="abbreviation">HTML</abbr>, this tag may be familiar to you, but be warned: while PreTeXt is XML (<a href="sec-xml.html" class="internal" title="Section 2.3: PreTeXt is XML">Section 2.3</a>), <em class="emphasis">PreTeXt is not HTML</em>! There is some overlap: you can <em class="emphasis">emphasize</em> words or phrases with <code class="code-inline tex2jax_ignore">&lt;em&gt;</code> for instance. However, while HTML uses the full word “code” for its tag, PreTeXt uses the shortened <code class="code-inline tex2jax_ignore">&lt;c&gt;</code> tag.</div>
+<div class="para" id="p-33">Note that these elements are all <dfn class="terminology">semantic</dfn>: they express the <em class="emphasis">meaning</em> of content, not its presentation. For example, the word “semantic” was a <code class="code-inline tex2jax_ignore">&lt;term&gt;</code> we just defined, while we merely emphasized “meaning” with <code class="code-inline tex2jax_ignore">&lt;em&gt;</code>. The presentation of these concepts may vary by output format, likely using some combination of boldface, italics, or underlining.</div>
+<section class="paragraphs" id="paragraphs-2"><h3 class="heading"><span class="title">Heads up!</span></h3> <div class="para" id="p-34">We'll talk about customizing presentation later, but it's important to remember that the PreTeXt community separates such “publication” decisions away from the work of “authoring” content.</div></section><div class="para logical" id="p-35">
+<div class="para">For users coming from LaTeX, rest assured your mathematical formulas work in PreTeXt. Inline mathmode <span class="process-math">\(ax^2+bx+c=0\)</span> is invoked with <code class="code-inline tex2jax_ignore">&lt;m&gt;ax^2+bx+c=0&lt;/m&gt;</code>, while display mathematics like</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{equation*}
+</div>
+<div class="para">is available via <code class="code-inline tex2jax_ignore">&lt;me&gt;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}&lt;/me&gt;</code>. (Users from LaTeX will also appreciate that quotes are surrounded with <code class="code-inline tex2jax_ignore">&lt;q&gt;</code> in PreTeXt to handle the different way quotation marks are handled in LaTeX vs most other markup languages.)</div>
+</div>
+<div class="para logical" id="p-36">
+<div class="para">You may also have lists withinn paragraphs, ordered <code class="code-inline tex2jax_ignore">&lt;ol&gt;</code> and unordered <code class="code-inline tex2jax_ignore">&lt;ul&gt;</code>, nested as needed. Each list item is represented by <code class="code-inline tex2jax_ignore">&lt;li&gt;</code>.</div>
+<ul class="disc">
+<li id="li-20"><div class="para" id="p-37">A single item.</div></li>
+<li id="li-21"><div class="para logical" id="p-38">
+<div class="para">An item with an ordered list.</div>
+<ol class="decimal">
+<li id="li-22"><div class="para" id="p-39">First item.</div></li>
+<li id="li-23"><div class="para" id="p-40">Second item.</div></li>
+</ol>
+</div></li>
+</ul>
+</div>
+<div class="para" id="p-41">Of course, often you have important <dfn class="terminology">blocks</dfn> of content to include, such as <code class="code-inline tex2jax_ignore">&lt;definition&gt;</code>s or <code class="code-inline tex2jax_ignore">&lt;claim&gt;</code>s.</div>
+<article class="definition definition-like" id="def-pretext"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-42">
+<dfn class="terminology">PreTeXt</dfn> is an uncomplicated XML language for describing scholarly documents.</div></article><article class="claim theorem-like" id="claim-pretext"><h3 class="heading">
+<span class="type">Claim</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-43">PreTeXt is the language that will replace LaTeX.</div></article><article class="hiddenproof" id="proof-1"><a href="" data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><div class="para" id="p-44">Left to the reader.</div></article></div>
+<div class="para" id="p-45">Such content is automatically numbered appropriately. Each of the blocks above is structured with a <code class="code-inline tex2jax_ignore">&lt;statement&gt;</code>, and <a href="" class="xref" data-knowl="./knowl/claim-pretext.html" title="Claim 2.5.2">Claim 2.5.2</a> additionally features a <code class="code-inline tex2jax_ignore">&lt;proof&gt;</code>.</div>
+<div class="para" id="p-46">Content is often “knowled”. A <dfn class="terminology">knowl</dfn> is a piece of context-independent information that is useful to transclude elsewhere in the HTML build of your document. For example, in the HTML build for this document, the above proof is knowled by default, and clicking the referenced “Claim” in the previous paragraph expands its knowl to reveal the claim for the reader.</div>
+<article class="note remark-like" id="note-1"><h3 class="heading">
+<span class="type">Note</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-47">Because this document was edited directly on GitHub using Codespaces, and served with GitHub pages, finding its source is simple: head to its <a class="external" href="https://github.com/StevenClontz/ptx-jmm-2023/" target="_blank">repository</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-5" id="fn-5"><sup> 1 </sup></a> and find the <a class="external" href="https://github.com/StevenClontz/ptx-jmm-2023/blob/main/source/ch-intro.ptx" target="_blank">corresponding source file</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-6" id="fn-6"><sup> 2 </sup></a>. Check the link out to see exactly how each claim, list, etc. in this chapter was marked up! </div></article></section><div class="hidden-content tex2jax_ignore" id="hk-fn-5"><div class="fn"><code class="code-inline tex2jax_ignore">github.com/StevenClontz/ptx-jmm-2023/</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-6"><div class="fn"><code class="code-inline tex2jax_ignore">github.com/StevenClontz/ptx-jmm-2023/blob/main/source/ch-intro.ptx</code></div></div>
+</div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-principles.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-figures.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="sec-divisions.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-figures.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div class="ptx-page-footer">

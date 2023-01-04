@@ -45,7 +45,8 @@ window.MathJax = {
     )}
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/components/prism-core.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js"></script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
 <script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -209,7 +210,7 @@ eBookConfig.enable_chatcodes =  false;
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-setting-up-codespaces.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-intro.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-paragraphs.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-setting-up-codespaces.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-intro.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="sec-xml.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
@@ -240,27 +241,30 @@ eBookConfig.enable_chatcodes =  false;
 <ul class="structural">
 <li><div class="toc-item"><a href="sec-setting-up-codespaces.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Setting up Codespaces</span></a></div></li>
 <li class="active"><div class="toc-item"><a href="sec-principles.html" class="internal"><span class="codenumber">2.2</span> <span class="title">PreTeXt Principles</span></a></div></li>
-<li><div class="toc-item"><a href="sec-paragraphs.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Paragraphs, Lists, and Blocks</span></a></div></li>
-<li><div class="toc-item"><a href="sec-figures.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Figures and Diagrams</span></a></div></li>
-<li><div class="toc-item"><a href="sec-interactives.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Interactives</span></a></div></li>
-<li><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Exercises</span></a></div></li>
-<li><div class="toc-item"><a href="sec-not-just-html-not-just-pdf.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Not Just HTML, Not Just PDF</span></a></div></li>
-<li><div class="toc-item"><a href="sec-intro-conclusion.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Conclusion</span></a></div></li>
+<li><div class="toc-item"><a href="sec-xml.html" class="internal"><span class="codenumber">2.3</span> <span class="title">PreTeXt is XML</span></a></div></li>
+<li><div class="toc-item"><a href="sec-divisions.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Books and Divisions</span></a></div></li>
+<li><div class="toc-item"><a href="sec-paragraphs.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Paragraphs, Lists, and Blocks</span></a></div></li>
+<li><div class="toc-item"><a href="sec-figures.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Figures and Diagrams</span></a></div></li>
+<li><div class="toc-item"><a href="sec-interactives.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Interactives</span></a></div></li>
+<li><div class="toc-item"><a href="sec-exercises.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Exercises</span></a></div></li>
+<li><div class="toc-item"><a href="sec-not-just-html-not-just-pdf.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Not Just HTML, Not Just PDF</span></a></div></li>
+<li><div class="toc-item"><a href="sec-intro-conclusion.html" class="internal"><span class="codenumber">2.10</span> <span class="title">Conclusion</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="ch-examples.html" class="internal"><span class="codenumber">3</span> <span class="title">Some Examples</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="section-12.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Basic PreTeXt</span></a></div></li>
-<li><div class="toc-item"><a href="section-13.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Basic Principles and Frequently Asked Questions</span></a></div></li>
-<li><div class="toc-item"><a href="section-14.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Interactive Activities</span></a></div></li>
+<li><div class="toc-item"><a href="section-14.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Basic PreTeXt</span></a></div></li>
+<li><div class="toc-item"><a href="section-15.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Basic Principles and Frequently Asked Questions</span></a></div></li>
+<li><div class="toc-item"><a href="section-16.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Interactive Activities</span></a></div></li>
 </ul>
 </li>
 <li>
 <div class="toc-item"><a href="meta-backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
 <ul class="structural">
-<li><div class="toc-item"><a href="appendix-1.html" class="internal"><span class="codenumber">A</span> <span class="title">Copyright and Licensing</span></a></div></li>
-<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Acknowledgement</span></a></div></li>
+<li><div class="toc-item"><a href="ch-help.html" class="internal"><span class="codenumber">A</span> <span class="title">Getting Help</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-2.html" class="internal"><span class="codenumber">B</span> <span class="title">Copyright and Licensing</span></a></div></li>
+<li><div class="toc-item"><a href="appendix-3.html" class="internal"><span class="codenumber">C</span> <span class="title">Acknowledgement</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -284,7 +288,7 @@ eBookConfig.enable_chatcodes =  false;
 </ol></div></figure></section><div class="hidden-content tex2jax_ignore" id="hk-fn-4"><div class="fn"><code class="code-inline tex2jax_ignore">pretextbook.org/doc/guide/html/philosophy.html</code></div></div>
 </div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-setting-up-codespaces.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-paragraphs.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="sec-setting-up-codespaces.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-xml.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div class="ptx-page-footer">

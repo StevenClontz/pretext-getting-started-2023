@@ -73,20 +73,128 @@ var ptx_lunr_docs = [
   "body": " PreTeXt Principles   PreTeXt is a markup language that captures the structure of textbooks and research papers.  PreTeXt is human-readable and human-writable.  PreTeXt documents serve as a single source which can be easily converted to multiple other formats, current and future.  PreTeXt respects the good design practices which have been developed over the past centuries.  PreTeXt makes it easy for authors to implement features which are both common and reasonable.  PreTeXt supports online documents which make use of the full capabilities of the Web.  PreTeXt output is styled by selecting from a list of available templates, relieving the author of the burden involved in micromanaging the output format.  PreTeXt is free: the software is available at no cost, with an open license. The use of PreTeXt does not impose any constraints on documents prepared with the system.  PreTeXt is not a closed system: documents can be converted to latex and then developed using standard latex tools.  PreTeXt recognizes that scholarly documents involve the interaction of authors, publishers, scholars, curators, instructors, students, and readers, with each group having its own needs and goals.  PreTeXt recognizes the inherent value in producing material that is accessible to everyone.   "
 },
 {
+  "id": "sec-xml",
+  "level": "1",
+  "url": "sec-xml.html",
+  "type": "Section",
+  "number": "2.3",
+  "title": "PreTeXt is XML",
+  "body": " PreTeXt is XML  Since PreTeXt uses the XML markup language, all content is structured in terms of elements . The root pretext element nests many other elements inside of it. This is accomplished by surrounding everything with a starting <pretext>  tag and an ending <\/pretext> tag. (Folks with HTML experience will find this pattern familiar, akin to the HTML root element.)   is a very simple PreTeXt \/XML document. (The first line is boilerplate that lets various programs know the rest of the file is XML, and the third-to-last line is an example of a comment that won't appear in the output.)   Source of a simple PreTeXt book project.   <?xml version=\"1.0\" encoding=\"UTF-8\"?> <pretext> <article> <title>Hello world!<\/title> <p>Welcome to PreTeXt!<\/p> <!-- TODO: find something more to say... --> <\/article> <\/pretext>    "
+},
+{
+  "id": "p-24",
+  "level": "2",
+  "url": "sec-xml.html#p-24",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "elements tag "
+},
+{
+  "id": "listing-simple",
+  "level": "2",
+  "url": "sec-xml.html#listing-simple",
+  "type": "Listing",
+  "number": "2.3.1",
+  "title": "",
+  "body": " Source of a simple PreTeXt book project.   <?xml version=\"1.0\" encoding=\"UTF-8\"?> <pretext> <article> <title>Hello world!<\/title> <p>Welcome to PreTeXt!<\/p> <!-- TODO: find something more to say... --> <\/article> <\/pretext>   "
+},
+{
+  "id": "sec-divisions",
+  "level": "1",
+  "url": "sec-divisions.html",
+  "type": "Section",
+  "number": "2.4",
+  "title": "Books and Divisions",
+  "body": " Books and Divisions  There are several documents you can write in PreTeXt , such as <article> s and <slideshow> s. This tutorial will focus on <book> s.  A <book> typically includes <frontmatter> , and <backmatter> .  Between <frontmatter> , and <backmatter> are either several <chapter> s or <part> s. If used, <part> s are subdivided into <chapter> s. Then <chapter> s subdivide into <section> s, and <section> s can have <subsection> s.  Each of these subdivisions needs a <title> , and may have an <introduction> or <conclusion> .   puts some of these elements together for a simple PreTeXt project (information on the other elements will come in later sections).   Source of a simple PreTeXt book project.   <?xml version=\"1.0\" encoding=\"UTF-8\"?> <pretext xml:lang=\"en-US\"> <!-- (author configurations go in docinfo) --> <docinfo> <macros> \\newcommand{\\R}{\\mathbb R} <\/macros> <\/docinfo> <book xml:id=\"my-great-book\"> <title>My Great Book<\/title> <subtitle>An example to get you started<\/subtitle> <frontmatter xml:id=\"frontmatter\"> <titlepage> <author> <personname>You<\/personname> <department>Your department<\/department> <institution>Your institution<\/institution> <\/author> <date> <today \/> <\/date> <\/titlepage> <\/frontmatter> <chapter xml:id=\"chapter-welcome\"> <title>Welcome!<\/title> <introduction> <p>This chapter is about the real numbers <m>\\R<\/m><\/p> <\/introduction> <section xml:id=\"section-getting-started\"> <title>Let's get started<\/title> <p>Can you solve <m>ax^2+bx+c=0<\/m>?<\/p> <\/section> <section xml:id=\"section-learning-more\"> <title>But wait, there's more!<\/title> <p>Did you know that <me>x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}<\/me>?<\/p> <\/section> <\/chapter> <backmatter xml:id=\"backmatter\"> <title>Backmatter<\/title> <colophon> <p> This book was authored in <pretext \/>. <\/p> <\/colophon> <\/backmatter> <\/book> <\/pretext>    "
+},
+{
+  "id": "listing-book-source",
+  "level": "2",
+  "url": "sec-divisions.html#listing-book-source",
+  "type": "Listing",
+  "number": "2.4.1",
+  "title": "",
+  "body": " Source of a simple PreTeXt book project.   <?xml version=\"1.0\" encoding=\"UTF-8\"?> <pretext xml:lang=\"en-US\"> <!-- (author configurations go in docinfo) --> <docinfo> <macros> \\newcommand{\\R}{\\mathbb R} <\/macros> <\/docinfo> <book xml:id=\"my-great-book\"> <title>My Great Book<\/title> <subtitle>An example to get you started<\/subtitle> <frontmatter xml:id=\"frontmatter\"> <titlepage> <author> <personname>You<\/personname> <department>Your department<\/department> <institution>Your institution<\/institution> <\/author> <date> <today \/> <\/date> <\/titlepage> <\/frontmatter> <chapter xml:id=\"chapter-welcome\"> <title>Welcome!<\/title> <introduction> <p>This chapter is about the real numbers <m>\\R<\/m><\/p> <\/introduction> <section xml:id=\"section-getting-started\"> <title>Let's get started<\/title> <p>Can you solve <m>ax^2+bx+c=0<\/m>?<\/p> <\/section> <section xml:id=\"section-learning-more\"> <title>But wait, there's more!<\/title> <p>Did you know that <me>x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}<\/me>?<\/p> <\/section> <\/chapter> <backmatter xml:id=\"backmatter\"> <title>Backmatter<\/title> <colophon> <p> This book was authored in <pretext \/>. <\/p> <\/colophon> <\/backmatter> <\/book> <\/pretext>   "
+},
+{
   "id": "sec-paragraphs",
   "level": "1",
   "url": "sec-paragraphs.html",
   "type": "Section",
-  "number": "2.3",
+  "number": "2.5",
   "title": "Paragraphs, Lists, and Blocks",
-  "body": " Paragraphs, Lists, and Blocks  TODO  "
+  "body": " Paragraphs, Lists, and Blocks  Within each division (chapter, section, etc., see ) of your book, you likely want some content (e.g. what you're reading right now!).  Written content is usually structured as paragraphs , <p> for short. If you've ever written HTML , this tag may be familiar to you, but be warned: while PreTeXt is XML ( ), PreTeXt is not HTML ! There is some overlap: you can emphasize words or phrases with <em> for instance. However, while HTML uses the full word code for its tag, PreTeXt uses the shortened <c> tag.  Note that these elements are all semantic : they express the meaning of content, not its presentation. For example, the word semantic was a <term> we just defined, while we merely emphasized meaning with <em> . The presentation of these concepts may vary by output format, likely using some combination of boldface, italics, or underlining.   Heads up!  We'll talk about customizing presentation later, but it's important to remember that the PreTeXt community separates such publication decisions away from the work of authoring content.   For users coming from LaTeX, rest assured your mathematical formulas work in PreTeXt . Inline mathmode is invoked with <m>ax^2+bx+c=0<\/m> , while display mathematics like is available via <me>x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}<\/me> . (Users from LaTeX will also appreciate that quotes are surrounded with <q> in PreTeXt to handle the different way quotation marks are handled in LaTeX vs most other markup languages.)  You may also have lists withinn paragraphs, ordered <ol> and unordered <ul> , nested as needed. Each list item is represented by <li> .   A single item.    An item with an ordered list.   First item.    Second item.        Of course, often you have important blocks of content to include, such as <definition> s or <claim> s.     PreTeXt is an uncomplicated XML language for describing scholarly documents.      PreTeXt is the language that will replace LaTeX.    Left to the reader.    Such content is automatically numbered appropriately. Each of the blocks above is structured with a <statement> , and additionally features a <proof> .  Content is often knowled . A knowl is a piece of context-independent information that is useful to transclude elsewhere in the HTML build of your document. For example, in the HTML build for this document, the above proof is knowled by default, and clicking the referenced Claim in the previous paragraph expands its knowl to reveal the claim for the reader.   Because this document was edited directly on GitHub using Codespaces, and served with GitHub pages, finding its source is simple: head to its repository and find the corresponding source file . Check the link out to see exactly how each claim, list, etc. in this chapter was marked up!    "
+},
+{
+  "id": "p-32",
+  "level": "2",
+  "url": "sec-paragraphs.html#p-32",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "paragraphs "
+},
+{
+  "id": "p-33",
+  "level": "2",
+  "url": "sec-paragraphs.html#p-33",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "semantic "
+},
+{
+  "id": "p-41",
+  "level": "2",
+  "url": "sec-paragraphs.html#p-41",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "blocks "
+},
+{
+  "id": "def-pretext",
+  "level": "2",
+  "url": "sec-paragraphs.html#def-pretext",
+  "type": "Definition",
+  "number": "2.5.1",
+  "title": "",
+  "body": "   PreTeXt is an uncomplicated XML language for describing scholarly documents.   "
+},
+{
+  "id": "claim-pretext",
+  "level": "2",
+  "url": "sec-paragraphs.html#claim-pretext",
+  "type": "Claim",
+  "number": "2.5.2",
+  "title": "",
+  "body": "  PreTeXt is the language that will replace LaTeX.    Left to the reader.   "
+},
+{
+  "id": "p-46",
+  "level": "2",
+  "url": "sec-paragraphs.html#p-46",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "knowl "
+},
+{
+  "id": "note-1",
+  "level": "2",
+  "url": "sec-paragraphs.html#note-1",
+  "type": "Note",
+  "number": "2.5.3",
+  "title": "",
+  "body": " Because this document was edited directly on GitHub using Codespaces, and served with GitHub pages, finding its source is simple: head to its repository and find the corresponding source file . Check the link out to see exactly how each claim, list, etc. in this chapter was marked up!   "
 },
 {
   "id": "sec-figures",
   "level": "1",
   "url": "sec-figures.html",
   "type": "Section",
-  "number": "2.4",
+  "number": "2.6",
   "title": "Figures and Diagrams",
   "body": " Figures and Diagrams  TODO   Photograph taken from AIM Press Release on braille.   Photograph of a hand tracing over braille code. A cartoon thought bubble contains the quadratic formula in standard mathematical notation, matching the contents of the braille code in the photograph.     Sage polynomial approximations of      "
 },
@@ -95,7 +203,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-figures.html#figure-braille",
   "type": "Figure",
-  "number": "2.4.1",
+  "number": "2.6.1",
   "title": "",
   "body": " Photograph taken from AIM Press Release on braille.   Photograph of a hand tracing over braille code. A cartoon thought bubble contains the quadratic formula in standard mathematical notation, matching the contents of the braille code in the photograph.   "
 },
@@ -104,7 +212,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-figures.html#figure-sage-polynomial-approximation",
   "type": "Figure",
-  "number": "2.4.2",
+  "number": "2.6.2",
   "title": "",
   "body": " Sage polynomial approximations of     "
 },
@@ -113,7 +221,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-interactives.html",
   "type": "Section",
-  "number": "2.5",
+  "number": "2.7",
   "title": "Interactives",
   "body": " Interactives  TODO  "
 },
@@ -122,7 +230,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-exercises.html",
   "type": "Section",
-  "number": "2.6",
+  "number": "2.8",
   "title": "Exercises",
   "body": " Exercises  TODO  "
 },
@@ -131,7 +239,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-not-just-html-not-just-pdf.html",
   "type": "Section",
-  "number": "2.7",
+  "number": "2.9",
   "title": "Not Just HTML, Not Just PDF",
   "body": " Not Just HTML, Not Just PDF  This document is available in HTML format at , and the same document is available in a PDF format at .  Obtaining these formats are as easy as running pretext build web and pretext build print respectively. PreTeXt supports other types of output as well, including Jupyter notebooks, ePub, and tacticle braille code.  You're encouraged to view authoring in PreTeXt as an investment : you may not need the braille output today, but the little extra thought and care required to author in PreTeXt will allow you to provide this version of your document to a blind student tomorrow.  "
 },
@@ -140,14 +248,14 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-intro-conclusion.html",
   "type": "Section",
-  "number": "2.8",
+  "number": "2.10",
   "title": "Conclusion",
   "body": " Conclusion  Go check back on your Codespace. If it's up and running, you're ready to move on to the next section!  "
 },
 {
-  "id": "section-12",
+  "id": "section-14",
   "level": "1",
-  "url": "section-12.html",
+  "url": "section-14.html",
   "type": "Section",
   "number": "3.1",
   "title": "Basic PreTeXt",
@@ -156,7 +264,7 @@ var ptx_lunr_docs = [
 {
   "id": "exploration-1",
   "level": "2",
-  "url": "section-12.html#exploration-1",
+  "url": "section-14.html#exploration-1",
   "type": "Exploration",
   "number": "3.1.1",
   "title": "Static Exercises.",
@@ -165,7 +273,7 @@ var ptx_lunr_docs = [
 {
   "id": "exploration-2",
   "level": "2",
-  "url": "section-12.html#exploration-2",
+  "url": "section-14.html#exploration-2",
   "type": "Exploration",
   "number": "3.1.2",
   "title": "WebWork Exercises.",
@@ -174,7 +282,7 @@ var ptx_lunr_docs = [
 {
   "id": "exploration-3",
   "level": "2",
-  "url": "section-12.html#exploration-3",
+  "url": "section-14.html#exploration-3",
   "type": "Exploration",
   "number": "3.1.3",
   "title": "",
@@ -183,7 +291,7 @@ var ptx_lunr_docs = [
 {
   "id": "exploration-4",
   "level": "2",
-  "url": "section-12.html#exploration-4",
+  "url": "section-14.html#exploration-4",
   "type": "Exploration",
   "number": "3.1.4",
   "title": "",
@@ -192,25 +300,25 @@ var ptx_lunr_docs = [
 {
   "id": "exploration-5",
   "level": "2",
-  "url": "section-12.html#exploration-5",
+  "url": "section-14.html#exploration-5",
   "type": "Exploration",
   "number": "3.1.5",
   "title": "",
   "body": "  Create the following table using the pretext tabular environment.     1  2  3    4  5  6     <tabular> <col right=\"medium\" \/><col right=\"medium\" \/><col \/> <row bottom=\"medium\"> <cell>1<\/cell> <cell>2<\/cell> <cell>3<\/cell> <\/row> <row> <cell>4<\/cell> <cell>5<\/cell> <cell>6<\/cell> <\/row> <\/tabular>    Create the same table using a latex array environment.    <me> \\begin{array}{c|c|c} 1 \\amp 2 \\amp 3 \\\\ \\hline 4 \\amp 5 \\amp 6 \\end{array} <\/me>   "
 },
 {
-  "id": "section-13",
+  "id": "section-15",
   "level": "1",
-  "url": "section-13.html",
+  "url": "section-15.html",
   "type": "Section",
   "number": "3.2",
   "title": "Basic Principles and Frequently Asked Questions",
   "body": " Basic Principles and Frequently Asked Questions     Nesting Environments  All normal text should be contained inside p environments. Moreover, a p environment should only contain text, math, and lists.    Never Write  <p> The frog is a majestic creature: <image source=\"frog.gif\" width=\"100%\"> <\/image> <\/p>    Always Write  <p> The frog is a majestic creature: <\/p> <image source=\"frog.gif\" width=\"100%\"> <\/image>    Some environments have more complex rules about how they can be combined.  For example, the example , exercise , project , and task environments are essentially the only environments that can contain solution , hint , and answer sub-environments. However , these sub-environments are only allowed in a very specific format. If solutions are to be used, they must be paired with a statement (and optionally hint, answer) and no other divisions , not even a paragraph.    Never Write  <example> <p> A paragraph, ending in a question. <\/p> <solution> <p> A solution to the question in the paragraph. <\/p> <\/solution> <\/example>    Always Write  <example> <statement> <p> A paragraph, ending in a question. <\/p> <\/statement> <solution> <p> A solution to the question in the paragraph. <\/p> <\/solution> <\/example>      References  To reference content on the web, write <url href=\"\">Display Text\/<\/url> , or write <url href=\"\" \/> if you would like the full URL displayed, or  If you would like to reference text inside the PreTeXt document, place that text inside an environment, and include the attribute xml:id=\"REFNAME\" in its opening tag. To reference the element elsewhere in the document, type <xref ref=\"REFNAME\"\/>     Emphasizing Text   em  emphasizes , while alert  shoults .  To add a title without creating a new (sub*)section, use the paragraphs environment.  <paragraphs> <title>Title<\/title> <p> Paragraph text. <\/p> <\/paragraphs>    Summarizing Concepts  Use the assemblage environment to summarize content, such as a list of formulas. Assemblages are not numbered, so when you reference them you need to add text='custom' or text='title' . For example, you would need to type to any < xref text='title' ref=\"REFNAME\" \/>     Restrictions on Environments  By design, PreTeXt imposes a rigid framework on the logical environments that can be used. In fact, some use the name PreTeXt to refer to this framework itself (as distinguished from its current implementation).  This framework is intended to balance two conflicting goals:   Allow the author to focus on content as opposed to presentation    Facilitate the OER principles of Adapting and Remixing existing works.   These principles are in tension because many authors will instinctively use different categories and logical divisions as they author their books. However, when authors are given free rein to develop their own logical divisions, it becomes very difficult to \"remix\" (combine sections of) books written by different authors.  It is therefore necessary to draw the line somewhere. Over many years of careful work, the authors of PreTeXt have come up with one way of drawing this line, that can be made to work for a wide range of mathematical texts.    Principles for the (Current) Web Interfae  In theory, the PreTeXt language can compile into a variety of different web formats, each with a different philosophy of how to present information to the user. This is another reason why it is important to carefully follow the syntax as intended, rather than hacking together different elemnts based on their behavior.  At the same time, it will be valuable for an author to understand the core design principles of the current web format.     Collapsed Details Emphasizes Overall Structure . By default, many (even most) environments are collapsed (knowled) when a user first visits the section. This helps emphasize the overall structure of the material, and can almost act as an automatic summary of the section. As a student goes through the material, they expand the relevant element they are working on, deepening their knowledge of the material.     References Show a Web of Knowledge . Make regular use of the built in environments such as definition , theorem , example , and figure , and make sure you use unique identifiers with the @xml:id attribute.  Whenever you reference this attribute PreTeXt creates a link which, when you click on it, expands and displays the previous content (e.g. definition) in the current context. Students can also click on the \"show in context\" link to go back to the section where this was originally introduced.  This helps emphasize how the web of mathematical knowledge develops across larger divisions such as sections, chapters, and parts.      Mastering PreTeXt Syntax  When you use a more complex environment for the first time or in a new way, double check the PreTeXt schema .  The Content of the XML Representation Summary tells you what type of content the environment is allowed to contain. Be careful when reading the Schema, and refer to the abbreviations in the documentation .  For example, consider the entry for the exercise environment. Even though the exercise environment permits p and solution environments, they cannot be used at the same time, as they are in separate Groupings ( ) that are combined by a Choice |. If you want to use a solution in an exercise , the exercise must consist of a statement followed by zero or more hint , answer , or solution environments.  You can also use the Schema to see where an environment can be used, by looking at the Included in content model of elements section of the page. This will help you make sure that you are placing your environment in a valid location. For example the exercise environment can be used in (among other places) sections and subsections, but not inside of another exercise.    Uniquely Flexible Environments   task environments can be placed in example , exercise , and project-like environments. Task environments can contain text and images, but they can also contain solution environments, and can even contain nested task environments.   Note: PreTeXt does not have a general use \"details\" environment. The fn (footnote) environment is officially restricted to text only, even though it currently compiles correctly with content including images, display math, etc.  The task environment provides an alternative (and officially approved) approach to incorporating knowled text throughout examples and project-like environments: simply write the main content in the statement for the main content, the knowled content in the solution , and add an instruction to the reader to come up with the hidden content on their own.  Nested lists are available, since li elements can contain new list environments.     "
 },
 {
-  "id": "section-14",
+  "id": "section-16",
   "level": "1",
-  "url": "section-14.html",
+  "url": "section-16.html",
   "type": "Section",
   "number": "3.3",
   "title": "Interactive Activities",
@@ -219,7 +327,7 @@ var ptx_lunr_docs = [
 {
   "id": "exploration-6",
   "level": "2",
-  "url": "section-14.html#exploration-6",
+  "url": "section-16.html#exploration-6",
   "type": "Exploration",
   "number": "3.3.1",
   "title": "",
@@ -228,7 +336,7 @@ var ptx_lunr_docs = [
 {
   "id": "true-false",
   "level": "2",
-  "url": "section-14.html#true-false",
+  "url": "section-16.html#true-false",
   "type": "Checkpoint",
   "number": "3.3.1",
   "title": "True\/False Question.",
@@ -237,7 +345,7 @@ var ptx_lunr_docs = [
 {
   "id": "some-matching",
   "level": "2",
-  "url": "section-14.html#some-matching",
+  "url": "section-16.html#some-matching",
   "type": "Checkpoint",
   "number": "3.3.2",
   "title": "Matching Problem.",
@@ -246,7 +354,7 @@ var ptx_lunr_docs = [
 {
   "id": "parsons",
   "level": "2",
-  "url": "section-14.html#parsons",
+  "url": "section-16.html#parsons",
   "type": "Checkpoint",
   "number": "3.3.3",
   "title": "Parsons Problem.",
@@ -255,20 +363,29 @@ var ptx_lunr_docs = [
 {
   "id": "matching",
   "level": "2",
-  "url": "section-14.html#matching",
+  "url": "section-16.html#matching",
   "type": "Checkpoint",
   "number": "3.3.4",
   "title": "Matching Problem.",
   "body": "Matching Problem  Match the letters with their order in the alphabet    A  1    B  2    C  3   "
 },
 {
-  "id": "appendix-1",
+  "id": "ch-help",
   "level": "1",
-  "url": "appendix-1.html",
+  "url": "ch-help.html",
   "type": "Appendix",
   "number": "A",
-  "title": "Copyright and Licensing",
-  "body": " Copyright and Licensing  copyright 2023 Steven Clontz and Oscar Levin.  This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit CreativeCommons.org   "
+  "title": "Getting Help",
+  "body": " Getting Help  Here we collect a number of useful resources to help you when you are stuck. The official PreTeXt site has lots of resources, but we understand it can be overwhelming.   Official documentation  Note that the official PreTeXt Guide can be hard to use because there is so much stuff in it. Additionally, some of the documentation is out of date. Still, if you know where to look, it is a great resource.  Here are some sections that we find especially helpful:    Basics Reference : A listing of the main elements of PreTeXt including snippets of the code that create them. This is one of the few places in the guide that has examples of the markup.     Publication File Reference : When you are ready to start changing how your output looks, you can use the publication file , which is described in this part of the guide.     PreTeXt Schema : The official list of elements and where they can go is given in the PreTeXt Schema, which is described here. Also you can check out the schema browser to actually view the schema.     Getting PreTeXt : If you want to install PreTeXt on your own computer, this early part of the guide gives you directions. It should be updated with information on CodeSpaces soon as well, if you need a refresher.   Finally, note that the search in PreTeXt now works really well, and searching for a feature will usually get you pointed in the right spot.    Examples  The Examples page on the PreTeXt site contains a number of useful live examples. Links are provided to web, pdf, and source (on GitHub). For some of the examples, there is also an annotated version available. We find these especially helpful since you can view source to see exactly how each bit of the example was marked up in code.  Here are some of the most useful such examples:    Sample Book : This annotated sample book contains a section on interactive exercises . The PreTeXt developers use this book for testing, so you can see the latest (sometimes experimental) features available.     Sample Article : Not particularly well organized (it is also a proving ground for developers) but this contains almost every variation of every feature of PreTeXt . Using the search and view source makes this an invaluable resource.       Community Support  There is a very active google group for support: pretext-support . You should also subscribe to the low-traffic pretext-announce to get updates.   "
+},
+{
+  "id": "p-138",
+  "level": "2",
+  "url": "ch-help.html#p-138",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "publication file "
 },
 {
   "id": "appendix-2",
@@ -276,6 +393,15 @@ var ptx_lunr_docs = [
   "url": "appendix-2.html",
   "type": "Appendix",
   "number": "B",
+  "title": "Copyright and Licensing",
+  "body": " Copyright and Licensing  copyright 2023 Steven Clontz and Oscar Levin.  This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit CreativeCommons.org   "
+},
+{
+  "id": "appendix-3",
+  "level": "1",
+  "url": "appendix-3.html",
+  "type": "Appendix",
+  "number": "C",
   "title": "Acknowledgement",
   "body": " Acknowledgement  We would like to thank the American Institute of Mathematics for sponsoring us to present this Professional Enhancement Program at the 2023 Joint Mathematics Meeting.  "
 }
