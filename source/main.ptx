@@ -21,7 +21,6 @@
     <xi:include href="./ch-prejmm.ptx" />
     <xi:include href="./ch-intro.ptx" />
     <xi:include href="./ch-workflow.ptx" />
-    <xi:include href="./ch-examples.ptx" />
 
 
     <!-- Finaly we place the backmatter in its own file and inlcude-->
