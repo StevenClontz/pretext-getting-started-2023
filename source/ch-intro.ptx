@@ -379,10 +379,12 @@ runge()
             extra thought and care required to author in PreTeXt will allow you to provide this
             version of your document to a blind student tomorrow. </p>
     </section>
-    <section xml:id="sec-intro-conclusion">
-        <title>Conclusion</title>
+    <section xml:id="sec-wrapup">
+        <title>Wrapping Up</title>
         <p>
-            Go check back on your Codespace. If it's up and running, you're ready to
+            Go check back on the Codespace you created in 
+            <xref ref="sec-setting-up-codespaces"/>.
+            If it's up and running, you're ready to
             move on to the next section!
         </p>
     </section>
