@@ -22,6 +22,8 @@
     <xi:include href="./ch-intro.ptx" />
     <xi:include href="./ch-workflow.ptx" />
     <xi:include href="./ch-exercises.ptx" />
+    <xi:include href="./ch-publication.ptx" />
+    <xi:include href="./ch-project.ptx" />
 
 
     <!-- Finaly we place the backmatter in its own file and inlcude-->
