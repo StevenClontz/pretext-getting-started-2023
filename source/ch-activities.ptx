@@ -46,7 +46,6 @@ Nest the following PreTeXt elements in order to produce the <q>Graphing a Deriva
                 </program>
             </statement>
         </activity>
-    </section>
 
 <!-- 
     <subsection>
@@ -88,6 +87,80 @@ Nest the following PreTeXt elements in order to produce the <q>Graphing a Deriva
         </exercise>
     </subsection>
  -->
+        <activity>
+            <introduction>
+                <p>
+Consider the following concerning the first two pages (leading up until the <q>Units</q> header)
+of <url href="https://www.math.miami.edu/~ec/book/ch03.pdf">Elements of Abstract and Linear Algebra</url>.
+                </p>
+            </introduction>
+            <task>
+                <statement>
+                    <p>
+Consider how this content might be scaffolded in terms of paragraphs, theorems, statements, proofs, and
+so on (not necessarily in PreTeXt terms).
+                    </p>
+                </statement>
+            </task>
+            <task>
+                <statement>
+                    <p>
+Nest the following PreTeXt elements in order to reproduce this portion of <title>Elements</title>.
+                    </p>
+                    <program language="xml">
+                        <input><![CDATA[ 
+<todo/>
+                        ]]></input>
+                    </program>
+                </statement>
+            </task>
+        </activity>
 
+    </section>
+
+    <section xml:id="sec-rings">
+        <title>Rings</title>
+        <introduction>
+            <p>Rings are additive abelian groups with a second operation...</p>
+            <p>Suppose <m>R</m> is an additive abelian group...</p>
+            <p><ol>
+                <li><p>If <m>a,b,c\in R</m>... (associative)</p></li>
+                <li><p>If <m>a,b,c\in R</m>... (distribuative)</p></li>
+                <li><p><m>R</m> has a multiplicative identity...</p></li>
+                <li><p>If <m>a,b\in R</m>... (commutative)</p></li>
+            </ol></p>
+            <definition>
+                <statement>
+                    <p>If 1,2,3 are satisfied...</p>
+                </statement>
+            </definition>
+            <example>
+                <statement>
+                    <p>The basic commutative rings in mathematics are the integers <m>\mathbf Z</m>...</p>
+                </statement>
+            </example>
+            <p>The next two theorems show that ring mulitplication...</p>
+            <theorem>
+                <statement>
+                    <p>Suppose <m>R</m> is a ring and <m>a,b\in R</m>.</p>
+                    <p><ol>
+                        <li><p><m>a\cdot \underline{0}=\underline{0}\cdot=\underline{0}</m>...</p></li>
+                        <li><p><m>(-a)\cdot b=a\cdot(-b)=-(a\cdot b)</m>.</p></li>
+                    </ol></p>
+                </statement>
+            </theorem>
+            <p>Recall that, since <m>R</m> is an additive abelien group...</p>
+            <theorem>
+                <statement>
+                    <p>Suppose <m>a,b\in R</m> and <m>n,m\in \mathbf Z</m>.</p>
+                    <p><ol>
+                        <li><p><m>(na)\cdot(mb)=(nm)(a\cdot b)</m>...</p></li>
+                        <li><p>Let <m>\underline{n}=n\underline{1}</m>. For example...</p></li>
+                    </ol></p>
+                </statement>
+            </theorem>
+            
+        </introduction>
+    </section>
 
 </chapter>
