@@ -75,8 +75,8 @@ window.MathJax = {
 <link href="https://pretextbook.org/css/0.6/navbar_crc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/toc_crc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_green_plum.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 <!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -224,7 +224,7 @@ eBookConfig.enable_chatcodes =  false;
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-18.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-examples.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="section-20.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="section-18.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-exercises.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="section-20.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
@@ -275,7 +275,7 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="ch-examples.html" class="internal"><span class="codenumber">4</span> <span class="title">Some Examples</span></a></div>
+<div class="toc-item"><a href="ch-exercises.html" class="internal"><span class="codenumber">4</span> <span class="title">Practice Exercises</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="section-18.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Basic PreTeXt</span></a></div></li>
 <li class="active"><div class="toc-item"><a href="section-19.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Basic Principles and Frequently Asked Questions</span></a></div></li>
@@ -295,10 +295,10 @@ eBookConfig.enable_chatcodes =  false;
 <section class="section" id="section-19"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Basic Principles and Frequently Asked Questions</span>
 </h2>
-<div class="para logical" id="p-149"><dl class="description-list">
+<div class="para logical" id="p-150"><dl class="description-list">
 <dt id="li-45">Nesting Environments</dt>
 <dd>
-<div class="para" id="p-150">All normal text should be contained inside <code class="code-inline tex2jax_ignore">p</code> environments. Moreover, a <code class="code-inline tex2jax_ignore">p</code> environment should <em class="emphasis">only</em> contain text, math, and lists.</div>
+<div class="para" id="p-151">All normal text should be contained inside <code class="code-inline tex2jax_ignore">p</code> environments. Moreover, a <code class="code-inline tex2jax_ignore">p</code> environment should <em class="emphasis">only</em> contain text, math, and lists.</div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel top" style="width:45%;"><section class="paragraphs" id="paragraphs-3"><h4 class="heading"><span class="title">Never Write.</span></h4>
 <pre class="code-block tex2jax_ignore">&lt;p&gt;
@@ -315,8 +315,8 @@ eBookConfig.enable_chatcodes =  false;
 &lt;/image&gt;
 </pre></section></div>
 </div></div>
-<div class="para" id="p-151">Some environments have more complex rules about how they can be combined.</div>
-<div class="para" id="p-152">For example, the <code class="code-inline tex2jax_ignore">example</code>, <code class="code-inline tex2jax_ignore">exercise</code>, <code class="code-inline tex2jax_ignore">project</code>, and <code class="code-inline tex2jax_ignore">task</code> environments are essentially the only environments that can contain <code class="code-inline tex2jax_ignore">solution</code>, <code class="code-inline tex2jax_ignore">hint</code>, and <code class="code-inline tex2jax_ignore">answer</code> sub-environments. <em class="emphasis">However</em>, these sub-environments are only allowed in a very specific format.  If solutions are to be used, they <em class="emphasis">must</em> be paired with a <code class="code-inline tex2jax_ignore">statement</code> (and optionally hint, answer) and <em class="emphasis">no other divisions</em>, not even a paragraph.</div>
+<div class="para" id="p-152">Some environments have more complex rules about how they can be combined.</div>
+<div class="para" id="p-153">For example, the <code class="code-inline tex2jax_ignore">example</code>, <code class="code-inline tex2jax_ignore">exercise</code>, <code class="code-inline tex2jax_ignore">project</code>, and <code class="code-inline tex2jax_ignore">task</code> environments are essentially the only environments that can contain <code class="code-inline tex2jax_ignore">solution</code>, <code class="code-inline tex2jax_ignore">hint</code>, and <code class="code-inline tex2jax_ignore">answer</code> sub-environments. <em class="emphasis">However</em>, these sub-environments are only allowed in a very specific format.  If solutions are to be used, they <em class="emphasis">must</em> be paired with a <code class="code-inline tex2jax_ignore">statement</code> (and optionally hint, answer) and <em class="emphasis">no other divisions</em>, not even a paragraph.</div>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
 <div class="sbspanel top" style="width:45%;"><section class="paragraphs" id="paragraphs-5"><h4 class="heading"><span class="title">Never Write.</span></h4>
 <pre class="code-block tex2jax_ignore">&lt;example&gt;
@@ -348,15 +348,15 @@ eBookConfig.enable_chatcodes =  false;
 </dd>
 <dt id="li-46">References</dt>
 <dd>
-<div class="para" id="p-153">To reference content on the web, write <code class="code-inline tex2jax_ignore">&lt;url href=""&gt;Display Text/&lt;/url&gt;</code>, or write <code class="code-inline tex2jax_ignore">&lt;url href="" /&gt;</code> if you would like the full URL displayed, or</div>
-<div class="para" id="p-154">If you would like to reference text inside the PreTeXt document, place that text inside an environment, and include the attribute <code class="code-inline tex2jax_ignore">xml:id="REFNAME"</code> in its opening tag. To reference the element elsewhere in the document, type <code class="code-inline tex2jax_ignore">&lt;xref ref="REFNAME"/&gt;</code>
+<div class="para" id="p-154">To reference content on the web, write <code class="code-inline tex2jax_ignore">&lt;url href=""&gt;Display Text/&lt;/url&gt;</code>, or write <code class="code-inline tex2jax_ignore">&lt;url href="" /&gt;</code> if you would like the full URL displayed, or</div>
+<div class="para" id="p-155">If you would like to reference text inside the PreTeXt document, place that text inside an environment, and include the attribute <code class="code-inline tex2jax_ignore">xml:id="REFNAME"</code> in its opening tag. To reference the element elsewhere in the document, type <code class="code-inline tex2jax_ignore">&lt;xref ref="REFNAME"/&gt;</code>
 </div>
 </dd>
 <dt id="li-47">Emphasizing Text</dt>
 <dd>
-<div class="para" id="p-155">
+<div class="para" id="p-156">
 <code class="code-inline tex2jax_ignore">em</code> <em class="emphasis">emphasizes</em>, while <code class="code-inline tex2jax_ignore">alert</code> <em class="alert">shoults</em>.</div>
-<div class="para" id="p-156">To add a title without creating a new (sub*)section, use the <code class="code-inline tex2jax_ignore">paragraphs</code> environment.</div>
+<div class="para" id="p-157">To add a title without creating a new (sub*)section, use the <code class="code-inline tex2jax_ignore">paragraphs</code> environment.</div>
 <pre class="code-block tex2jax_ignore">&lt;paragraphs&gt;
   &lt;title&gt;Title&lt;/title&gt;
   &lt;p&gt;
@@ -366,51 +366,51 @@ eBookConfig.enable_chatcodes =  false;
 </pre>
 </dd>
 <dt id="li-48">Summarizing Concepts</dt>
-<dd><div class="para" id="p-157">Use the <code class="code-inline tex2jax_ignore">assemblage</code> environment to summarize content, such as a list of formulas. Assemblages are not numbered, so when you reference them you need to add <code class="code-inline tex2jax_ignore">text='custom'</code> or <code class="code-inline tex2jax_ignore">text='title'</code>.  For example, you would need to type  to any <code class="code-inline tex2jax_ignore">&lt; xref text='title' ref="REFNAME" /&gt;</code>
+<dd><div class="para" id="p-158">Use the <code class="code-inline tex2jax_ignore">assemblage</code> environment to summarize content, such as a list of formulas. Assemblages are not numbered, so when you reference them you need to add <code class="code-inline tex2jax_ignore">text='custom'</code> or <code class="code-inline tex2jax_ignore">text='title'</code>.  For example, you would need to type  to any <code class="code-inline tex2jax_ignore">&lt; xref text='title' ref="REFNAME" /&gt;</code>
 </div></dd>
 <dt id="li-49">Restrictions on Environments</dt>
 <dd>
-<div class="para" id="p-158">By design, PreTeXt imposes a rigid framework on the logical environments that can be used.  In fact, some use the name PreTeXt to refer to this framework itself (as distinguished from its current implementation).</div>
-<div class="para logical" id="p-159">
+<div class="para" id="p-159">By design, PreTeXt imposes a rigid framework on the logical environments that can be used.  In fact, some use the name PreTeXt to refer to this framework itself (as distinguished from its current implementation).</div>
+<div class="para logical" id="p-160">
 <div class="para">This framework is intended to balance two conflicting goals:</div>
 <ol class="decimal">
-<li id="li-50"><div class="para" id="p-160">Allow the author to focus on content as opposed to presentation</div></li>
-<li id="li-51"><div class="para" id="p-161">Facilitate the OER principles of Adapting and Remixing existing works.</div></li>
+<li id="li-50"><div class="para" id="p-161">Allow the author to focus on content as opposed to presentation</div></li>
+<li id="li-51"><div class="para" id="p-162">Facilitate the OER principles of Adapting and Remixing existing works.</div></li>
 </ol>
 <div class="para">These principles are in tension because many authors will instinctively use different categories and logical divisions as they author their books. However, when authors are given free rein to develop their own logical divisions, it becomes very difficult to "remix" (combine sections of) books written by different authors.</div>
 </div>
-<div class="para" id="p-162">It is therefore necessary to draw the line somewhere.  Over many years of careful work, the authors of PreTeXt have come up with one way of drawing this line, that can be made to work for a wide range of mathematical texts.</div>
+<div class="para" id="p-163">It is therefore necessary to draw the line somewhere.  Over many years of careful work, the authors of PreTeXt have come up with one way of drawing this line, that can be made to work for a wide range of mathematical texts.</div>
 </dd>
 <dt id="li-52">Principles for the (Current) Web Interfae</dt>
 <dd>
-<div class="para" id="p-163">In theory, the PreTeXt language can compile into a variety of different web formats, each with a different philosophy of how to present information to the user. This is another reason why it is important to carefully follow the syntax as intended, rather than hacking together different elemnts based on their behavior.</div>
-<div class="para" id="p-164">At the same time, it will be valuable for an author to understand the core design principles of the <em class="emphasis">current</em> web format.</div>
+<div class="para" id="p-164">In theory, the PreTeXt language can compile into a variety of different web formats, each with a different philosophy of how to present information to the user. This is another reason why it is important to carefully follow the syntax as intended, rather than hacking together different elemnts based on their behavior.</div>
+<div class="para" id="p-165">At the same time, it will be valuable for an author to understand the core design principles of the <em class="emphasis">current</em> web format.</div>
 <ul class="disc">
-<li id="li-53"><div class="para" id="p-165">
+<li id="li-53"><div class="para" id="p-166">
 <em class="emphasis">Collapsed Details Emphasizes Overall Structure</em>. By default, many (even most) environments are collapsed (knowled) when a user first visits the section. This helps emphasize the overall structure of the material, and can almost act as an automatic summary of the section. As a student goes through the material, they expand the relevant element they are working on, deepening their knowledge of the material.</div></li>
 <li id="li-54">
-<div class="para" id="p-166">
+<div class="para" id="p-167">
 <em class="emphasis">References Show a Web of Knowledge</em>. Make regular use of the built in environments such as <code class="code-inline tex2jax_ignore">definition</code>, <code class="code-inline tex2jax_ignore">theorem</code>, <code class="code-inline tex2jax_ignore">example</code>, and <code class="code-inline tex2jax_ignore">figure</code>, and make sure you use unique identifiers with the <code class="code-inline tex2jax_ignore">@xml:id</code>  attribute.</div>
-<div class="para" id="p-167">Whenever you reference this attribute PreTeXt creates a link which, when you click on it, expands and displays the previous content (e.g. definition) in the current context. Students can also click on the "show in context" link to go back to the section where this was originally introduced.</div>
-<div class="para" id="p-168">This helps emphasize how the web of mathematical knowledge develops across larger divisions such as sections, chapters, and parts.</div>
+<div class="para" id="p-168">Whenever you reference this attribute PreTeXt creates a link which, when you click on it, expands and displays the previous content (e.g. definition) in the current context. Students can also click on the "show in context" link to go back to the section where this was originally introduced.</div>
+<div class="para" id="p-169">This helps emphasize how the web of mathematical knowledge develops across larger divisions such as sections, chapters, and parts.</div>
 </li>
 </ul>
 </dd>
 <dt id="li-55">Mastering PreTeXt Syntax</dt>
 <dd>
-<div class="para" id="p-169">When you use a more complex environment for the first time or in a new way, double check the PreTeXt schema <a class="external" href="https://pretextbook.org/doc/schema/" target="_blank"><code class="code-inline tex2jax_ignore">https://pretextbook.org/doc/schema/</code></a>.</div>
-<div class="para" id="p-170">The <em class="emphasis">Content</em> of the <em class="alert">XML Representation Summary</em> tells you what type of content the environment is allowed to contain. Be careful when reading the Schema, and refer to the abbreviations in <a class="external" href="https://pretextbook.org/doc/guide/html/schema-reading-relaxng.html" target="_blank">the documentation</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-12" id="fn-12"><sup> 1 </sup></a>.</div>
-<div class="para" id="p-171">For example, consider the entry for the <a class="external" href="https://pretextbook.org/doc/schema/schemas/pretext_xsd/elements/exercise.html" target="_blank"><code class="code-inline tex2jax_ignore">exercise</code></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-13" id="fn-13"><sup> 2 </sup></a> environment. Even though the <code class="code-inline tex2jax_ignore">exercise</code> environment permits <code class="code-inline tex2jax_ignore">p</code> and <code class="code-inline tex2jax_ignore">solution</code> environments, they cannot be used at the same time, as they are in separate Groupings ( ) that are combined by a Choice |.  If you want to use a <code class="code-inline tex2jax_ignore">solution</code> in an <code class="code-inline tex2jax_ignore">exercise</code>, the exercise must consist of a <code class="code-inline tex2jax_ignore">statement</code> followed by zero or more <code class="code-inline tex2jax_ignore">hint</code>, <code class="code-inline tex2jax_ignore">answer</code>, or <code class="code-inline tex2jax_ignore">solution</code> environments.</div>
-<div class="para" id="p-172">You can also use the Schema to see where an environment can be used, by looking at the <em class="alert">Included in content model of elements</em> section of the page. This will help you make sure that you are placing your environment in a valid location. For example the <a class="external" href="https://pretextbook.org/doc/schema/schemas/pretext_xsd/elements/exercise.html" target="_blank"><code class="code-inline tex2jax_ignore">exercise</code></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-14" id="fn-14"><sup> 3 </sup></a> environment can be used in (among other places) sections and subsections, but not inside of another exercise.</div>
+<div class="para" id="p-170">When you use a more complex environment for the first time or in a new way, double check the PreTeXt schema <a class="external" href="https://pretextbook.org/doc/schema/" target="_blank"><code class="code-inline tex2jax_ignore">https://pretextbook.org/doc/schema/</code></a>.</div>
+<div class="para" id="p-171">The <em class="emphasis">Content</em> of the <em class="alert">XML Representation Summary</em> tells you what type of content the environment is allowed to contain. Be careful when reading the Schema, and refer to the abbreviations in <a class="external" href="https://pretextbook.org/doc/guide/html/schema-reading-relaxng.html" target="_blank">the documentation</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-12" id="fn-12"><sup> 1 </sup></a>.</div>
+<div class="para" id="p-172">For example, consider the entry for the <a class="external" href="https://pretextbook.org/doc/schema/schemas/pretext_xsd/elements/exercise.html" target="_blank"><code class="code-inline tex2jax_ignore">exercise</code></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-13" id="fn-13"><sup> 2 </sup></a> environment. Even though the <code class="code-inline tex2jax_ignore">exercise</code> environment permits <code class="code-inline tex2jax_ignore">p</code> and <code class="code-inline tex2jax_ignore">solution</code> environments, they cannot be used at the same time, as they are in separate Groupings ( ) that are combined by a Choice |.  If you want to use a <code class="code-inline tex2jax_ignore">solution</code> in an <code class="code-inline tex2jax_ignore">exercise</code>, the exercise must consist of a <code class="code-inline tex2jax_ignore">statement</code> followed by zero or more <code class="code-inline tex2jax_ignore">hint</code>, <code class="code-inline tex2jax_ignore">answer</code>, or <code class="code-inline tex2jax_ignore">solution</code> environments.</div>
+<div class="para" id="p-173">You can also use the Schema to see where an environment can be used, by looking at the <em class="alert">Included in content model of elements</em> section of the page. This will help you make sure that you are placing your environment in a valid location. For example the <a class="external" href="https://pretextbook.org/doc/schema/schemas/pretext_xsd/elements/exercise.html" target="_blank"><code class="code-inline tex2jax_ignore">exercise</code></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-14" id="fn-14"><sup> 3 </sup></a> environment can be used in (among other places) sections and subsections, but not inside of another exercise.</div>
 </dd>
 <dt id="li-56">Uniquely Flexible Environments</dt>
 <dd>
-<div class="para" id="p-173">
-<a class="external" href="https://pretextbook.org/doc/schema/schemas/pretext_xsd/elements/task.html" target="_blank"><code class="code-inline tex2jax_ignore">task</code></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-15" id="fn-15"><sup> 4 </sup></a> environments can be placed in <code class="code-inline tex2jax_ignore">example</code>, <code class="code-inline tex2jax_ignore">exercise</code>, and <code class="code-inline tex2jax_ignore">project-like</code> environments. Task environments can contain text and images, but they can also contain <code class="code-inline tex2jax_ignore">solution</code> environments, and can even contain nested <code class="code-inline tex2jax_ignore">task</code> environments.</div>
 <div class="para" id="p-174">
+<a class="external" href="https://pretextbook.org/doc/schema/schemas/pretext_xsd/elements/task.html" target="_blank"><code class="code-inline tex2jax_ignore">task</code></a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-15" id="fn-15"><sup> 4 </sup></a> environments can be placed in <code class="code-inline tex2jax_ignore">example</code>, <code class="code-inline tex2jax_ignore">exercise</code>, and <code class="code-inline tex2jax_ignore">project-like</code> environments. Task environments can contain text and images, but they can also contain <code class="code-inline tex2jax_ignore">solution</code> environments, and can even contain nested <code class="code-inline tex2jax_ignore">task</code> environments.</div>
+<div class="para" id="p-175">
 <em class="alert">Note:</em> PreTeXt does not have a general use "details" environment.  The <code class="code-inline tex2jax_ignore">fn</code> (footnote) environment is officially restricted to text only, even though it currently compiles correctly with content including images, display math, etc.</div>
-<div class="para" id="p-175">The <code class="code-inline tex2jax_ignore">task</code> environment provides an alternative (and officially approved) approach to incorporating knowled text throughout examples and project-like environments: simply write the main content in the <code class="code-inline tex2jax_ignore">statement</code> for the main content, the knowled content in the <code class="code-inline tex2jax_ignore">solution</code>, and add an instruction to the reader to come up with the hidden content on their own.</div>
-<div class="para" id="p-176">Nested lists are available, since <code class="code-inline tex2jax_ignore">li</code> elements can contain new list environments.</div>
+<div class="para" id="p-176">The <code class="code-inline tex2jax_ignore">task</code> environment provides an alternative (and officially approved) approach to incorporating knowled text throughout examples and project-like environments: simply write the main content in the <code class="code-inline tex2jax_ignore">statement</code> for the main content, the knowled content in the <code class="code-inline tex2jax_ignore">solution</code>, and add an instruction to the reader to come up with the hidden content on their own.</div>
+<div class="para" id="p-177">Nested lists are available, since <code class="code-inline tex2jax_ignore">li</code> elements can contain new list environments.</div>
 </dd>
 </dl></div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-12"><div class="fn"><code class="code-inline tex2jax_ignore">pretextbook.org/doc/guide/html/schema-reading-relaxng.html</code></div></div>
 <div class="hidden-content tex2jax_ignore" id="hk-fn-13"><div class="fn"><code class="code-inline tex2jax_ignore">pretextbook.org/doc/schema/schemas/pretext_xsd/elements/exercise.html</code></div></div>

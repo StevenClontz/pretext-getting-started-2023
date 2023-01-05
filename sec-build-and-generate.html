@@ -75,8 +75,8 @@ window.MathJax = {
 <link href="https://pretextbook.org/css/0.6/navbar_crc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/toc_crc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_oscarlevin.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_green_plum.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 <!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -275,6 +275,14 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li>
+<div class="toc-item"><a href="ch-exercises.html" class="internal"><span class="codenumber">4</span> <span class="title">Practice Exercises</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="section-18.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Basic PreTeXt</span></a></div></li>
+<li><div class="toc-item"><a href="section-19.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Basic Principles and Frequently Asked Questions</span></a></div></li>
+<li><div class="toc-item"><a href="section-20.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Interactive Activities</span></a></div></li>
+</ul>
+</li>
+<li>
 <div class="toc-item"><a href="meta-backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="ch-help.html" class="internal"><span class="codenumber">A</span> <span class="title">Getting Help</span></a></div></li>
@@ -286,16 +294,16 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-build-and-generate"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Build and Generate</span>
 </h2>
-<div class="para logical" id="p-86">
+<div class="para logical" id="p-87">
 <div class="para">Inside the VS Code window you opened through codespaces, have a .ptx file open.  You can build your entire project in a few different ways.</div>
 <ul class="disc">
-<li id="li-24"><div class="para" id="p-87">Click the green triangle in the top-right corner of the window (hovering will show “Build (select target)”).  A window will pop up asking for a <dfn class="terminology">target</dfn> to build.  To start just select “web”.</div></li>
-<li id="li-25"><div class="para" id="p-88">In the “Explorer” panel on the left-hand side of the window, you can expand the “PreTeXt Commands” menu and select the Build option.</div></li>
-<li id="li-26"><div class="para" id="p-89">You can type <code class="code-inline tex2jax_ignore">pretext build web</code> from the terminal (this uses the CLI directly).</div></li>
-<li id="li-27"><div class="para" id="p-90">You can use the keyboard shortcut <code class="code-inline tex2jax_ignore">CTRL+ALT+b</code> (or perhaps <code class="code-inline tex2jax_ignore">CMD</code> instead of <code class="code-inline tex2jax_ignore">CTRL</code> if you have a Mac).</div></li>
+<li id="li-24"><div class="para" id="p-88">Click the green triangle in the top-right corner of the window (hovering will show “Build (select target)”).  A window will pop up asking for a <dfn class="terminology">target</dfn> to build.  To start just select “web”.</div></li>
+<li id="li-25"><div class="para" id="p-89">In the “Explorer” panel on the left-hand side of the window, you can expand the “PreTeXt Commands” menu and select the Build option.</div></li>
+<li id="li-26"><div class="para" id="p-90">You can type <code class="code-inline tex2jax_ignore">pretext build web</code> from the terminal (this uses the CLI directly).</div></li>
+<li id="li-27"><div class="para" id="p-91">You can use the keyboard shortcut <code class="code-inline tex2jax_ignore">CTRL+ALT+b</code> (or perhaps <code class="code-inline tex2jax_ignore">CMD</code> instead of <code class="code-inline tex2jax_ignore">CTRL</code> if you have a Mac).</div></li>
 </ul>
 </div>
-<div class="para logical" id="p-91">
+<div class="para logical" id="p-92">
 <div class="para">If your documentment contains some more complicated elements, you might need to <dfn class="terminology">generate</dfn> them for them to show up.  The elements that require this are (depending on what your build target is):</div>
 <ul class="disc">
 <li id="li-28"><div class="para" id="p-derived-li-28"><code class="code-inline tex2jax_ignore">&lt;latex-image&gt;</code></div></li>
@@ -307,14 +315,14 @@ eBookConfig.enable_chatcodes =  false;
 <li id="li-33"><div class="para" id="p-derived-li-33"><code class="code-inline tex2jax_ignore">&lt;codelense&gt;</code></div></li>
 </ul>
 </div>
-<div class="para" id="p-92">You can generate assets in much the same way you run a build.  There is a button on the top-right of the window, and option in the “PreTeXt Commands” menu, you can type <code class="code-inline tex2jax_ignore">pretext generate</code> in the terminal, or use the keyboard shortcut <code class="code-inline tex2jax_ignore">CTRL+ALT+g</code>.</div>
+<div class="para" id="p-93">You can generate assets in much the same way you run a build.  There is a button on the top-right of the window, and option in the “PreTeXt Commands” menu, you can type <code class="code-inline tex2jax_ignore">pretext generate</code> in the terminal, or use the keyboard shortcut <code class="code-inline tex2jax_ignore">CTRL+ALT+g</code>.</div>
 <article class="note remark-like" id="note-2"><h3 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="p-93">Note that generating assets requires additional software.  If you started the default codespace, then this is not necessarily installed.  You can fix this by entering the following command in the terminal:</div>
+<div class="para" id="p-94">Note that generating assets requires additional software.  If you started the default codespace, then this is not necessarily installed.  You can fix this by entering the following command in the terminal:</div>
 <pre class="code-block tex2jax_ignore">sudo bash ./.devcontainer/postCreateCommand.sh
 </pre>
-<div class="para" id="p-94">Alternatively, when you create a codespace, you can click the three dots next to the + and select the devcontainer that has “pretext-full” in its name.</div> <div class="para" id="p-95">Once you install this software once, you should be good to go as long as your codespace exists.</div></article></section></div>
+<div class="para" id="p-95">Alternatively, when you create a codespace, you can click the three dots next to the + and select the devcontainer that has “pretext-full” in its name.</div> <div class="para" id="p-96">Once you install this software once, you should be good to go as long as your codespace exists.</div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-workflow.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-previewing.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
