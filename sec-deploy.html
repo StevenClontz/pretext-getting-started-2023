@@ -75,8 +75,8 @@ window.MathJax = {
 <link href="https://pretextbook.org/css/0.6/navbar_crc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/toc_crc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_oscarlevin.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_green_plum.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 <!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -224,7 +224,7 @@ eBookConfig.enable_chatcodes =  false;
 <span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
 </ol>
 </li>
-</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-saving.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-workflow.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="ch-exercises.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="sec-saving.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-workflow.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="ch-activities.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
 <input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
 </div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
@@ -275,12 +275,8 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="ch-exercises.html" class="internal"><span class="codenumber">4</span> <span class="title">Practice Exercises</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-18.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Basic PreTeXt</span></a></div></li>
-<li><div class="toc-item"><a href="section-19.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Basic Principles and Frequently Asked Questions</span></a></div></li>
-<li><div class="toc-item"><a href="section-20.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Interactive Activities</span></a></div></li>
-</ul>
+<div class="toc-item"><a href="ch-activities.html" class="internal"><span class="codenumber">4</span> <span class="title">Some Activities</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-calc-example.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Adapting a Calculus lesson</span></a></div></li></ul>
 </li>
 <li>
 <div class="toc-item"><a href="meta-backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
@@ -295,11 +291,11 @@ eBookConfig.enable_chatcodes =  false;
 <section class="section" id="sec-deploy"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Deploy</span>
 </h2>
-<div class="para" id="p-117">So you have worked tirelessly to prepare course notes or a book, built and previewed, synced changes using git, and now you are ready to share the results of your efforts with the world.  It's time to <dfn class="terminology">deploy</dfn> your project.</div>
-<div class="para" id="p-118">With our codespace setup this is simple.  From the “PreTeXt Commands” menu, click on “Deploy to GitHub”.  This will automatically take the most recent build of your web target and host it through <a class="external" href="https://pages.github.com/" target="_blank">GitHub Pages</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 1 </sup></a>.  Watch the output pane for a link to your published site. (It can take a few minutes for the site to get set up or updated; there should be another link to view the progress of the GitHub “action” that reports the progress.)</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-8"><div class="fn"><code class="code-inline tex2jax_ignore">pages.github.com/</code></div></div>
+<div class="para" id="p-116">So you have worked tirelessly to prepare course notes or a book, built and previewed, synced changes using git, and now you are ready to share the results of your efforts with the world.  It's time to <dfn class="terminology">deploy</dfn> your project.</div>
+<div class="para" id="p-117">With our codespace setup this is simple.  From the “PreTeXt Commands” menu, click on “Deploy to GitHub”.  This will automatically take the most recent build of your web target and host it through <a class="external" href="https://pages.github.com/" target="_blank">GitHub Pages</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 1 </sup></a>.  Watch the output pane for a link to your published site. (It can take a few minutes for the site to get set up or updated; there should be another link to view the progress of the GitHub “action” that reports the progress.)</div></section><div class="hidden-content tex2jax_ignore" id="hk-fn-8"><div class="fn"><code class="code-inline tex2jax_ignore">pages.github.com/</code></div></div>
 </div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="sec-saving.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="ch-exercises.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+<a class="previous-button button" href="sec-saving.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="ch-activities.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
 </div>
 <div class="ptx-page-footer">

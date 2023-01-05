@@ -276,11 +276,15 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li>
 <div class="toc-item"><a href="ch-exercises.html" class="internal"><span class="codenumber">4</span> <span class="title">Practice Exercises</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="ch-exercises.html#section-18" class="internal"><span class="codenumber">4.1</span> <span class="title">Basic PreTeXt</span></a></div></li></ul>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch-exercises.html#section-18" class="internal"><span class="codenumber">4.1</span> <span class="title">Basic PreTeXt</span></a></div></li>
+<li><div class="toc-item"><a href="ch-exercises.html#sec-blocks-practice" class="internal"><span class="codenumber">4.2</span> <span class="title">Blocks</span></a></div></li>
+<li><div class="toc-item"><a href="ch-exercises.html#sec-bonus-practice" class="internal"><span class="codenumber">4.3</span> <span class="title">Challenges</span></a></div></li>
+</ul>
 </li>
 <li class="active">
 <div class="toc-item"><a href="ch-activities.html" class="internal"><span class="codenumber">5</span> <span class="title">Some Activities</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="ch-activities.html#sec-calc-example" class="internal"><span class="codenumber">5.1</span> <span class="title">Adapting a Calculus lesson</span></a></div></li></ul>
+<ul class="structural"><li><div class="toc-item"><a href="ch-activities.html#sec-calc-example" class="internal"><span class="codenumber">5.1</span> <span class="title">Adapting existing content</span></a></div></li></ul>
 </li>
 <li>
 <div class="toc-item"><a href="meta-backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
@@ -296,12 +300,12 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Chapter</span> <span class="codenumber">5</span> <span class="title">Some Activities</span>
 </h2>
 <section class="section" id="sec-calc-example"><h3 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Adapting a Calculus lesson</span>
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Adapting existing content</span>
 </h3>
 <article class="activity project-like" id="activity-1"><h4 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-122">Nest the following PreTeXt elements in order to produce the “Graphing a Derivative” subsection of <a class="external" href="https://openstax.org/books/calculus-volume-1/pages/3-2-the-derivative-as-a-function#fs-id1169737770972" target="_blank">OpenStax Calculus Volume 1 Section 3.2</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 1 </sup></a>.</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-xml">&lt;caption&gt;The derivative &lt;m&gt;f'(x)&lt;/m&gt; is positive everywhere because the function &lt;m&gt;f(x)&lt;/m&gt; is increasing.&lt;/caption&gt;
+<div class="para" id="p-147">Nest the following PreTeXt elements in order to produce the “Graphing a Derivative” subsection of <a class="external" href="https://openstax.org/books/calculus-volume-1/pages/3-2-the-derivative-as-a-function#fs-id1169737770972" target="_blank">OpenStax Calculus Volume 1 Section 3.2</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 1 </sup></a>.</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-xml">&lt;caption&gt;The derivative &lt;m&gt;f'(x)&lt;/m&gt; is positive everywhere because the function &lt;m&gt;f(x)&lt;/m&gt; is increasing.&lt;/caption&gt;
 &lt;caption&gt;The derivative &lt;m&gt;f'(x)\lt 0&lt;/m&gt; where the function &lt;m&gt;f(x)&lt;/m&gt; is decreasing and &lt;m&gt;f'(x)\gt 0&lt;/m&gt; where &lt;m&gt;f(x)&lt;/m&gt; is increasing...&lt;/caption&gt;
 &lt;description&gt;The function f(x) = the square root of x is graphed as is its derivative f'(x) = 1/(2 times the square root of x).&lt;/description&gt;
 &lt;description&gt;Two functions are graphed here: f(x) and f'(x). The function f(x) is the same as the above graph, that is, roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2). The function f'(x) is an downward-facing parabola with vertex near (0.5, 1.75), y-intercept (0, 1.5), and x-intercepts (-1.9, 0) and (3, 0).&lt;/description&gt;
@@ -327,7 +331,44 @@ eBookConfig.enable_chatcodes =  false;
 &lt;subsection&gt;&lt;/subsection&gt;
 &lt;title&gt;Graphing a Derivative&lt;/title&gt;
 &lt;title&gt;Sketching a Derivative Using a Function&lt;/title&gt;
-</code></pre></div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn"><code class="code-inline tex2jax_ignore">openstax.org/books/calculus-volume-1/pages/3-2-the-derivative-as-a-function#fs-id1169737770972</code></div></div>
+</code></pre></div></article><article class="activity project-like" id="activity-2"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span>
+</h4>
+<div class="introduction" id="introduction-6"><div class="para" id="p-148">Consider the following concerning the first two pages (leading up until the “Units” header) of <a class="external" href="https://www.math.miami.edu/~ec/book/ch03.pdf" target="_blank">Elements of Abstract and Linear Algebra</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-10" id="fn-10"><sup> 2 </sup></a>.</div></div>
+<article class="task exercise-like" id="task-17"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-149">Consider how this content might be scaffolded in terms of paragraphs, theorems, statements, proofs, and so on (not necessarily in PreTeXt terms).</div></article><article class="task exercise-like" id="task-18"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-150">Nest the following PreTeXt elements in order to reproduce this portion of .</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-xml">&lt;definition&gt;&lt;/definition&gt;
+&lt;example&gt;&lt;/example&gt;
+&lt;introduction&gt;&lt;/introduction&gt;
+&lt;li&gt;&lt;p&gt;If &lt;m&gt;a,b,c\in R&lt;/m&gt;... (associative)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;m&gt;(-a)\cdot b=a\cdot(-b)=-(a\cdot b)&lt;/m&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If &lt;m&gt;a,b,c\in R&lt;/m&gt;... (distribuative)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;m&gt;(na)\cdot(mb)=(nm)(a\cdot b)&lt;/m&gt;...&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;m&gt;a\cdot \underline{0}=\underline{0}\cdot=\underline{0}&lt;/m&gt;...&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;m&gt;R&lt;/m&gt; has a multiplicative identity...&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Let &lt;m&gt;\underline{n}=n\underline{1}&lt;/m&gt;. For example...&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If &lt;m&gt;a,b\in R&lt;/m&gt;... (commutative)&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;Suppose &lt;m&gt;R&lt;/m&gt; is an additive abelian group...&lt;/p&gt;
+&lt;p&gt;The next two theorems show that ring mulitplication...&lt;/p&gt;
+&lt;p&gt;Suppose &lt;m&gt;R&lt;/m&gt; is a ring and &lt;m&gt;a,b\in R&lt;/m&gt;.&lt;/p&gt;
+&lt;p&gt;Suppose &lt;m&gt;a,b\in R&lt;/m&gt; and &lt;m&gt;n,m\in \mathbf Z&lt;/m&gt;.&lt;/p&gt;
+&lt;p&gt;Rings are additive abelian groups with a second operation...&lt;/p&gt;
+&lt;p&gt;The basic commutative rings in mathematics are the integers &lt;m&gt;\mathbf Z&lt;/m&gt;...&lt;/p&gt;
+&lt;p&gt;Recall that, since &lt;m&gt;R&lt;/m&gt; is an additive abelien group...&lt;/p&gt;
+&lt;p&gt;If 1,2,3 are satisfied...&lt;/p&gt;
+&lt;p&gt;&lt;ol&gt;&lt;/ol&gt;&lt;/p&gt;
+&lt;p&gt;&lt;ol&gt;&lt;/ol&gt;&lt;/p&gt;
+&lt;p&gt;&lt;ol&gt;&lt;/ol&gt;&lt;/p&gt;
+&lt;section&gt;&lt;/section&gt;
+&lt;statement&gt;&lt;/statement&gt;
+&lt;statement&gt;&lt;/statement&gt;
+&lt;statement&gt;&lt;/statement&gt;
+&lt;theorem&gt;&lt;/theorem&gt;
+&lt;title&gt;Rings&lt;/title&gt;
+&lt;theorem&gt;&lt;/theorem&gt;
+&lt;statement&gt;&lt;/statement&gt;
+</code></pre></div></article></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn"><code class="code-inline tex2jax_ignore">openstax.org/books/calculus-volume-1/pages/3-2-the-derivative-as-a-function#fs-id1169737770972</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-10"><div class="fn"><code class="code-inline tex2jax_ignore">www.math.miami.edu/~ec/book/ch03.pdf</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-exercises.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="meta-backmatter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>

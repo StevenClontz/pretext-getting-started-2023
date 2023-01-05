@@ -394,16 +394,106 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "4",
   "title": "Practice Exercises",
-  "body": " Practice Exercises   Let's get our hands dirty and try writing some PreTeXt. If you have some ideas of what you want to try, go for it. Otherwise, try to implement as many of the following as you can.     Basic PreTeXt   Lists and Paragraphs   Write a numbered list of your favorite three animals and an unnumbered list of your three favorite numbers (in no particular order). Put text introducing the lists between them.    You can use the <ol> tag for ordered lists, and <ul> for unordered lists. Each item should be inside <li> s.    For the content around the lists, you will want them to be in <p> tags. Note also that the list themselves must be nested in these paragraphs. You can't have lists floating on their own.    <p> Here is my list of animals: <ol> <li>Shark<\/li> <li>Sloth<\/li> <li>Slork<\/li> <\/ol> <\/p> <p> My favorite numbers, in no particular order, happen to be: <ul> <li>1<\/li> <li>2<\/li> <li>3<\/li> <\/ul> <\/p>     "
+  "body": " Practice Exercises   Let's get our hands dirty and try writing some PreTeXt. If you have some ideas of what you want to try, go for it. Otherwise, try to implement as many of the following as you can.     Basic PreTeXt   Paragraph contents   Write a paragraph of text that includes an emphasized word, a quotted word, and inline math using a varialbe like or .    Write the definition of a term inside a paragraph (not as a numbered definition). The defined word should be clear when you ready it. For example: a slark is a hybrid of a sloth and a shark.    Write a paragraph that includes a math equation on a displayed line. Like this: .     Lists and Paragraphs   Write a numbered list of your favorite three animals and an unnumbered list of your three favorite numbers (in no particular order). Put text introducing the lists between them.    You can use the <ol> tag for ordered lists, and <ul> for unordered lists. Each item should be inside <li> s.    For the content around the lists, you will want them to be in <p> tags. Note also that the list themselves must be nested in these paragraphs. You can't have lists floating on their own.    <p> Here is my list of animals: <ol> <li>Shark<\/li> <li>Sloth<\/li> <li>Slork<\/li> <\/ol> <\/p> <p> My favorite numbers, in no particular order, happen to be: <ul> <li>1<\/li> <li>2<\/li> <li>3<\/li> <\/ul> <\/p>      Create the following table using the pretext tabular environment.     1  2  3    4  5  6     <tabular> <col right=\"medium\" \/><col right=\"medium\" \/><col \/> <row bottom=\"medium\"> <cell>1<\/cell> <cell>2<\/cell> <cell>3<\/cell> <\/row> <row> <cell>4<\/cell> <cell>5<\/cell> <cell>6<\/cell> <\/row> <\/tabular>    Create the same table using a latex array environment.    <me> \\begin{array}{c|c|c} 1 \\amp 2 \\amp 3 \\\\ \\hline 4 \\amp 5 \\amp 6 \\end{array} <\/me>      Blocks    Write a numbered definition. Don't forget to highlight the word that is being defined.    Oh no! You just realized that your definition is actually more of an axiom. What are you going to do!?!?      Write a lemma. Since it is probably obvious, you can leave off the proof.    Write a theorem, and include a proof. The proof should use (and reference) the lemma (which means you need to go back and identify the lemma some how).    What other types of mathematical statements might you want to include now? Maybe you put a remark or a note or a corollary? What would you want to do? What can you do?      Write a numbered example.    Sometimes an example is of a problem you would ask students to solve. You might include a hint or solution for such examples. Give an example of such a thing, with a hint and solution.      Write an activity that you would want your students to try. Give your activity a hint.    Sometimes an activity has multiple parts. You could give each part as an item on a numbered list, but that would not allow parts to have their own hint\/answer\/solution.  Instead, you can make each part its own <task> . Try writing a multi-part activity, some parts having hints, others having a solution.    Exercises can appear at the end of a section, in an <exercises> division, or they can be checkpoint exercises that show up in the middle of a section.    Write a checkpoint exercise. Up to you whether it gets parts (i.e. tasks).     What we learned  You can do lots of things in PreTeXt .     Write a summary box like the one above. You might say that such a box assembles the concepts you have discussed...      Challenges  Want to push yourself a bit? Try some of these bonus activities    Replicated the following:       Table of Values        1  1    2  4    3  9          Create the folowing images using TikZ            Use two image environments, each containing a latex-image environment. To display the images side by side, use the sidebyside environment. To get the sizes and spacing even and uniform, you will need to set @widths and @margins in the sidebyside environment.  Remember that the < and > symbols are restricted. For lines, it is eaisest to use latex or stealth as your arrow style. If you must use < and > in your TikZ code, you must replace the symbols with &lt; and &gt; respectively.    <sidebyside widths=\"33% 33%\" margins=\"11%\" valign=\"middle\"> <image width=\"25%\" xml:id=\"tikz_quick_eg\"> <latex-image> \\begin{tikzpicture} \\draw[fill=red,opacity=0.2] (0,0) circle (1.15); \\draw[fill=blue,opacity=0.2] (1,0) circle (1.15); \\end{tikzpicture} <\/latex-image> <\/image> <image width=\"33%\" xml:id=\"image_tikz_eg\"> <latex-image> \\begin{tikzpicture} \\\\ Shade the enclosed area first \\draw[color=white,fill=green,opacity=0.33] (1,0) -- (1,{cos(1 r)+2}) -- plot[domain= 1:3] ({\\x},{cos(\\x r)+2}) -- (3,{cos(3 r)+2}) -- (3,0) -- (1,0); \\\\ Draw the axes \\draw[latex-latex] (-1,0) -- (5,0); \\draw[latex-latex] (0,-1) -- (0,4); \\\\ Plot the function \\draw [thick,domain=-1:4.5] plot ({\\x},{cos(\\x r)+2}); \\node [thick,above right] at (4.5,{cos(4.5 r) + 2}){$f$}; \\\\ Draw the boundaries \\draw[red] (1,3) -- (1,-0.25) node [below] {$a$}; \\draw[red] (3,3) -- (3,-0.25) node [below] {$b$}; \\\\ Label the area \\draw[&lt;- , very thick] (2,0.5) -- (2.2,-1) node[below] {area between $f$ and $x$-axis over $[a,b]$}; \\end{tikzpicture} <\/latex-image> <\/image> <\/sidebyside>     "
 },
 {
   "id": "exploration-1",
   "level": "2",
   "url": "ch-exercises.html#exploration-1",
-  "type": "Exploration",
+  "type": "Practice",
   "number": "4.1.1",
+  "title": "Paragraph contents.",
+  "body": " Paragraph contents   Write a paragraph of text that includes an emphasized word, a quotted word, and inline math using a varialbe like or .    Write the definition of a term inside a paragraph (not as a numbered definition). The defined word should be clear when you ready it. For example: a slark is a hybrid of a sloth and a shark.    Write a paragraph that includes a math equation on a displayed line. Like this: .   "
+},
+{
+  "id": "exploration-2",
+  "level": "2",
+  "url": "ch-exercises.html#exploration-2",
+  "type": "Practice",
+  "number": "4.1.2",
   "title": "Lists and Paragraphs.",
   "body": " Lists and Paragraphs   Write a numbered list of your favorite three animals and an unnumbered list of your three favorite numbers (in no particular order). Put text introducing the lists between them.    You can use the <ol> tag for ordered lists, and <ul> for unordered lists. Each item should be inside <li> s.    For the content around the lists, you will want them to be in <p> tags. Note also that the list themselves must be nested in these paragraphs. You can't have lists floating on their own.    <p> Here is my list of animals: <ol> <li>Shark<\/li> <li>Sloth<\/li> <li>Slork<\/li> <\/ol> <\/p> <p> My favorite numbers, in no particular order, happen to be: <ul> <li>1<\/li> <li>2<\/li> <li>3<\/li> <\/ul> <\/p>   "
+},
+{
+  "id": "exploration-3",
+  "level": "2",
+  "url": "ch-exercises.html#exploration-3",
+  "type": "Practice",
+  "number": "4.1.3",
+  "title": "",
+  "body": "  Create the following table using the pretext tabular environment.     1  2  3    4  5  6     <tabular> <col right=\"medium\" \/><col right=\"medium\" \/><col \/> <row bottom=\"medium\"> <cell>1<\/cell> <cell>2<\/cell> <cell>3<\/cell> <\/row> <row> <cell>4<\/cell> <cell>5<\/cell> <cell>6<\/cell> <\/row> <\/tabular>    Create the same table using a latex array environment.    <me> \\begin{array}{c|c|c} 1 \\amp 2 \\amp 3 \\\\ \\hline 4 \\amp 5 \\amp 6 \\end{array} <\/me>   "
+},
+{
+  "id": "exploration-4",
+  "level": "2",
+  "url": "ch-exercises.html#exploration-4",
+  "type": "Practice",
+  "number": "4.2.1",
+  "title": "",
+  "body": "  Write a numbered definition. Don't forget to highlight the word that is being defined.    Oh no! You just realized that your definition is actually more of an axiom. What are you going to do!?!?   "
+},
+{
+  "id": "exploration-5",
+  "level": "2",
+  "url": "ch-exercises.html#exploration-5",
+  "type": "Practice",
+  "number": "4.2.2",
+  "title": "",
+  "body": "  Write a lemma. Since it is probably obvious, you can leave off the proof.    Write a theorem, and include a proof. The proof should use (and reference) the lemma (which means you need to go back and identify the lemma some how).    What other types of mathematical statements might you want to include now? Maybe you put a remark or a note or a corollary? What would you want to do? What can you do?   "
+},
+{
+  "id": "exploration-6",
+  "level": "2",
+  "url": "ch-exercises.html#exploration-6",
+  "type": "Practice",
+  "number": "4.2.3",
+  "title": "",
+  "body": "  Write a numbered example.    Sometimes an example is of a problem you would ask students to solve. You might include a hint or solution for such examples. Give an example of such a thing, with a hint and solution.   "
+},
+{
+  "id": "exploration-7",
+  "level": "2",
+  "url": "ch-exercises.html#exploration-7",
+  "type": "Practice",
+  "number": "4.2.4",
+  "title": "",
+  "body": "  Write an activity that you would want your students to try. Give your activity a hint.    Sometimes an activity has multiple parts. You could give each part as an item on a numbered list, but that would not allow parts to have their own hint\/answer\/solution.  Instead, you can make each part its own <task> . Try writing a multi-part activity, some parts having hints, others having a solution.   "
+},
+{
+  "id": "exploration-8",
+  "level": "2",
+  "url": "ch-exercises.html#exploration-8",
+  "type": "Practice",
+  "number": "4.2.5",
+  "title": "",
+  "body": "  Write a checkpoint exercise. Up to you whether it gets parts (i.e. tasks).   "
+},
+{
+  "id": "exploration-9",
+  "level": "2",
+  "url": "ch-exercises.html#exploration-9",
+  "type": "Practice",
+  "number": "4.2.6",
+  "title": "",
+  "body": "  Write a summary box like the one above. You might say that such a box assembles the concepts you have discussed...   "
+},
+{
+  "id": "investigation-1",
+  "level": "2",
+  "url": "ch-exercises.html#investigation-1",
+  "type": "Challenge",
+  "number": "4.3.1",
+  "title": "",
+  "body": "  Replicated the following:       Table of Values        1  1    2  4    3  9       "
+},
+{
+  "id": "investigation-2",
+  "level": "2",
+  "url": "ch-exercises.html#investigation-2",
+  "type": "Challenge",
+  "number": "4.3.2",
+  "title": "",
+  "body": "  Create the folowing images using TikZ            Use two image environments, each containing a latex-image environment. To display the images side by side, use the sidebyside environment. To get the sizes and spacing even and uniform, you will need to set @widths and @margins in the sidebyside environment.  Remember that the < and > symbols are restricted. For lines, it is eaisest to use latex or stealth as your arrow style. If you must use < and > in your TikZ code, you must replace the symbols with &lt; and &gt; respectively.    <sidebyside widths=\"33% 33%\" margins=\"11%\" valign=\"middle\"> <image width=\"25%\" xml:id=\"tikz_quick_eg\"> <latex-image> \\begin{tikzpicture} \\draw[fill=red,opacity=0.2] (0,0) circle (1.15); \\draw[fill=blue,opacity=0.2] (1,0) circle (1.15); \\end{tikzpicture} <\/latex-image> <\/image> <image width=\"33%\" xml:id=\"image_tikz_eg\"> <latex-image> \\begin{tikzpicture} \\\\ Shade the enclosed area first \\draw[color=white,fill=green,opacity=0.33] (1,0) -- (1,{cos(1 r)+2}) -- plot[domain= 1:3] ({\\x},{cos(\\x r)+2}) -- (3,{cos(3 r)+2}) -- (3,0) -- (1,0); \\\\ Draw the axes \\draw[latex-latex] (-1,0) -- (5,0); \\draw[latex-latex] (0,-1) -- (0,4); \\\\ Plot the function \\draw [thick,domain=-1:4.5] plot ({\\x},{cos(\\x r)+2}); \\node [thick,above right] at (4.5,{cos(4.5 r) + 2}){$f$}; \\\\ Draw the boundaries \\draw[red] (1,3) -- (1,-0.25) node [below] {$a$}; \\draw[red] (3,3) -- (3,-0.25) node [below] {$b$}; \\\\ Label the area \\draw[&lt;- , very thick] (2,0.5) -- (2.2,-1) node[below] {area between $f$ and $x$-axis over $[a,b]$}; \\end{tikzpicture} <\/latex-image> <\/image> <\/sidebyside>   "
 },
 {
   "id": "ch-activities",
@@ -412,7 +502,7 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "5",
   "title": "Some Activities",
-  "body": " Some Activities   Adapting a Calculus lesson    Nest the following PreTeXt elements in order to produce the Graphing a Derivative subsection of OpenStax Calculus Volume 1 Section 3.2 .   <caption>The derivative <m>f'(x)<\/m> is positive everywhere because the function <m>f(x)<\/m> is increasing.<\/caption> <caption>The derivative <m>f'(x)\\lt 0<\/m> where the function <m>f(x)<\/m> is decreasing and <m>f'(x)\\gt 0<\/m> where <m>f(x)<\/m> is increasing...<\/caption> <description>The function f(x) = the square root of x is graphed as is its derivative f'(x) = 1\/(2 times the square root of x).<\/description> <description>Two functions are graphed here: f(x) and f'(x). The function f(x) is the same as the above graph, that is, roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2). The function f'(x) is an downward-facing parabola with vertex near (0.5, 1.75), y-intercept (0, 1.5), and x-intercepts (-1.9, 0) and (3, 0).<\/description> <description>The function f(x) = x squared - 2x is graphed as is its derivative f'(x) = 2x - 2.<\/description> <description>The function f(x) is roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2).<\/description> <example><\/example> <exercise><\/exercise> <figure><\/figure> <figure><\/figure> <image source=\"solution-image.jpg\"><\/image> <image source=\"fx-sqrt-x.jpg\"><\/image> <image source=\"exercise-image.jpg\"><\/image> <image source=\"fx-x2-2x.jpg\"><\/image> <p>We have already discussed how to graph a function...<\/p> <p>In Example 3.12 we found that for <m>f(x)=x^2-2x,f'(x)=2x-2<\/m>...<\/p> <p>Sketch the graph of <m>f(x)=x^2-4<\/m>...<\/p> <p>In Example 3.11 we found that for <m>f(x)=\\sqrt{x},f'(x)=1\/2\\sqrt{x}<\/m>...<\/p> <p>The solution is shown in the following graph. Observe that...<\/p> <p>Use the following graph of <m>f(x)<\/m> to sketch a graph of <m>f'(x)<\/m>.<\/p> <solution><\/solution> <statement><\/statement> <statement><\/statement> <subsection><\/subsection> <title>Graphing a Derivative<\/title> <title>Sketching a Derivative Using a Function<\/title>       "
+  "body": " Some Activities   Adapting existing content    Nest the following PreTeXt elements in order to produce the Graphing a Derivative subsection of OpenStax Calculus Volume 1 Section 3.2 .   <caption>The derivative <m>f'(x)<\/m> is positive everywhere because the function <m>f(x)<\/m> is increasing.<\/caption> <caption>The derivative <m>f'(x)\\lt 0<\/m> where the function <m>f(x)<\/m> is decreasing and <m>f'(x)\\gt 0<\/m> where <m>f(x)<\/m> is increasing...<\/caption> <description>The function f(x) = the square root of x is graphed as is its derivative f'(x) = 1\/(2 times the square root of x).<\/description> <description>Two functions are graphed here: f(x) and f'(x). The function f(x) is the same as the above graph, that is, roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2). The function f'(x) is an downward-facing parabola with vertex near (0.5, 1.75), y-intercept (0, 1.5), and x-intercepts (-1.9, 0) and (3, 0).<\/description> <description>The function f(x) = x squared - 2x is graphed as is its derivative f'(x) = 2x - 2.<\/description> <description>The function f(x) is roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2).<\/description> <example><\/example> <exercise><\/exercise> <figure><\/figure> <figure><\/figure> <image source=\"solution-image.jpg\"><\/image> <image source=\"fx-sqrt-x.jpg\"><\/image> <image source=\"exercise-image.jpg\"><\/image> <image source=\"fx-x2-2x.jpg\"><\/image> <p>We have already discussed how to graph a function...<\/p> <p>In Example 3.12 we found that for <m>f(x)=x^2-2x,f'(x)=2x-2<\/m>...<\/p> <p>Sketch the graph of <m>f(x)=x^2-4<\/m>...<\/p> <p>In Example 3.11 we found that for <m>f(x)=\\sqrt{x},f'(x)=1\/2\\sqrt{x}<\/m>...<\/p> <p>The solution is shown in the following graph. Observe that...<\/p> <p>Use the following graph of <m>f(x)<\/m> to sketch a graph of <m>f'(x)<\/m>.<\/p> <solution><\/solution> <statement><\/statement> <statement><\/statement> <subsection><\/subsection> <title>Graphing a Derivative<\/title> <title>Sketching a Derivative Using a Function<\/title>        Consider the following concerning the first two pages (leading up until the Units header) of Elements of Abstract and Linear Algebra .    Consider how this content might be scaffolded in terms of paragraphs, theorems, statements, proofs, and so on (not necessarily in PreTeXt terms).    Nest the following PreTeXt elements in order to reproduce this portion of Elements .   <definition><\/definition> <example><\/example> <introduction><\/introduction> <li><p>If <m>a,b,c\\in R<\/m>... (associative)<\/p><\/li> <li><p><m>(-a)\\cdot b=a\\cdot(-b)=-(a\\cdot b)<\/m>.<\/p><\/li> <li><p>If <m>a,b,c\\in R<\/m>... (distribuative)<\/p><\/li> <li><p><m>(na)\\cdot(mb)=(nm)(a\\cdot b)<\/m>...<\/p><\/li> <li><p><m>a\\cdot \\underline{0}=\\underline{0}\\cdot=\\underline{0}<\/m>...<\/p><\/li> <li><p><m>R<\/m> has a multiplicative identity...<\/p><\/li> <li><p>Let <m>\\underline{n}=n\\underline{1}<\/m>. For example...<\/p><\/li> <li><p>If <m>a,b\\in R<\/m>... (commutative)<\/p><\/li> <p>Suppose <m>R<\/m> is an additive abelian group...<\/p> <p>The next two theorems show that ring mulitplication...<\/p> <p>Suppose <m>R<\/m> is a ring and <m>a,b\\in R<\/m>.<\/p> <p>Suppose <m>a,b\\in R<\/m> and <m>n,m\\in \\mathbf Z<\/m>.<\/p> <p>Rings are additive abelian groups with a second operation...<\/p> <p>The basic commutative rings in mathematics are the integers <m>\\mathbf Z<\/m>...<\/p> <p>Recall that, since <m>R<\/m> is an additive abelien group...<\/p> <p>If 1,2,3 are satisfied...<\/p> <p><ol><\/ol><\/p> <p><ol><\/ol><\/p> <p><ol><\/ol><\/p> <section><\/section> <statement><\/statement> <statement><\/statement> <statement><\/statement> <theorem><\/theorem> <title>Rings<\/title> <theorem><\/theorem> <statement><\/statement>       "
 },
 {
   "id": "activity-1",
@@ -424,6 +514,15 @@ var ptx_lunr_docs = [
   "body": "  Nest the following PreTeXt elements in order to produce the Graphing a Derivative subsection of OpenStax Calculus Volume 1 Section 3.2 .   <caption>The derivative <m>f'(x)<\/m> is positive everywhere because the function <m>f(x)<\/m> is increasing.<\/caption> <caption>The derivative <m>f'(x)\\lt 0<\/m> where the function <m>f(x)<\/m> is decreasing and <m>f'(x)\\gt 0<\/m> where <m>f(x)<\/m> is increasing...<\/caption> <description>The function f(x) = the square root of x is graphed as is its derivative f'(x) = 1\/(2 times the square root of x).<\/description> <description>Two functions are graphed here: f(x) and f'(x). The function f(x) is the same as the above graph, that is, roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2). The function f'(x) is an downward-facing parabola with vertex near (0.5, 1.75), y-intercept (0, 1.5), and x-intercepts (-1.9, 0) and (3, 0).<\/description> <description>The function f(x) = x squared - 2x is graphed as is its derivative f'(x) = 2x - 2.<\/description> <description>The function f(x) is roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2).<\/description> <example><\/example> <exercise><\/exercise> <figure><\/figure> <figure><\/figure> <image source=\"solution-image.jpg\"><\/image> <image source=\"fx-sqrt-x.jpg\"><\/image> <image source=\"exercise-image.jpg\"><\/image> <image source=\"fx-x2-2x.jpg\"><\/image> <p>We have already discussed how to graph a function...<\/p> <p>In Example 3.12 we found that for <m>f(x)=x^2-2x,f'(x)=2x-2<\/m>...<\/p> <p>Sketch the graph of <m>f(x)=x^2-4<\/m>...<\/p> <p>In Example 3.11 we found that for <m>f(x)=\\sqrt{x},f'(x)=1\/2\\sqrt{x}<\/m>...<\/p> <p>The solution is shown in the following graph. Observe that...<\/p> <p>Use the following graph of <m>f(x)<\/m> to sketch a graph of <m>f'(x)<\/m>.<\/p> <solution><\/solution> <statement><\/statement> <statement><\/statement> <subsection><\/subsection> <title>Graphing a Derivative<\/title> <title>Sketching a Derivative Using a Function<\/title>    "
 },
 {
+  "id": "activity-2",
+  "level": "2",
+  "url": "ch-activities.html#activity-2",
+  "type": "Activity",
+  "number": "5.1.2",
+  "title": "",
+  "body": "  Consider the following concerning the first two pages (leading up until the Units header) of Elements of Abstract and Linear Algebra .    Consider how this content might be scaffolded in terms of paragraphs, theorems, statements, proofs, and so on (not necessarily in PreTeXt terms).    Nest the following PreTeXt elements in order to reproduce this portion of Elements .   <definition><\/definition> <example><\/example> <introduction><\/introduction> <li><p>If <m>a,b,c\\in R<\/m>... (associative)<\/p><\/li> <li><p><m>(-a)\\cdot b=a\\cdot(-b)=-(a\\cdot b)<\/m>.<\/p><\/li> <li><p>If <m>a,b,c\\in R<\/m>... (distribuative)<\/p><\/li> <li><p><m>(na)\\cdot(mb)=(nm)(a\\cdot b)<\/m>...<\/p><\/li> <li><p><m>a\\cdot \\underline{0}=\\underline{0}\\cdot=\\underline{0}<\/m>...<\/p><\/li> <li><p><m>R<\/m> has a multiplicative identity...<\/p><\/li> <li><p>Let <m>\\underline{n}=n\\underline{1}<\/m>. For example...<\/p><\/li> <li><p>If <m>a,b\\in R<\/m>... (commutative)<\/p><\/li> <p>Suppose <m>R<\/m> is an additive abelian group...<\/p> <p>The next two theorems show that ring mulitplication...<\/p> <p>Suppose <m>R<\/m> is a ring and <m>a,b\\in R<\/m>.<\/p> <p>Suppose <m>a,b\\in R<\/m> and <m>n,m\\in \\mathbf Z<\/m>.<\/p> <p>Rings are additive abelian groups with a second operation...<\/p> <p>The basic commutative rings in mathematics are the integers <m>\\mathbf Z<\/m>...<\/p> <p>Recall that, since <m>R<\/m> is an additive abelien group...<\/p> <p>If 1,2,3 are satisfied...<\/p> <p><ol><\/ol><\/p> <p><ol><\/ol><\/p> <p><ol><\/ol><\/p> <section><\/section> <statement><\/statement> <statement><\/statement> <statement><\/statement> <theorem><\/theorem> <title>Rings<\/title> <theorem><\/theorem> <statement><\/statement>    "
+},
+{
   "id": "ch-help",
   "level": "1",
   "url": "ch-help.html",
@@ -433,9 +532,9 @@ var ptx_lunr_docs = [
   "body": " Getting Help  Here we collect a number of useful resources to help you when you are stuck. The official PreTeXt site has lots of resources, but we understand it can be overwhelming.   Official documentation  Note that the official PreTeXt Guide can be hard to use because there is so much stuff in it. Additionally, some of the documentation is out of date. Still, if you know where to look, it is a great resource.  Here are some sections that we find especially helpful:    Basics Reference : A listing of the main elements of PreTeXt including snippets of the code that create them. This is one of the few places in the guide that has examples of the markup.     Publication File Reference : When you are ready to start changing how your output looks, you can use the publication file , which is described in this part of the guide.     PreTeXt Schema : The official list of elements and where they can go is given in the PreTeXt Schema, which is described here. Also you can check out the schema browser to actually view the schema.     Getting PreTeXt : If you want to install PreTeXt on your own computer, this early part of the guide gives you directions. It should be updated with information on CodeSpaces soon as well, if you need a refresher.   Finally, note that the search in PreTeXt now works really well, and searching for a feature will usually get you pointed in the right spot.    Examples  The Examples page on the PreTeXt site contains a number of useful live examples. Links are provided to web, pdf, and source (on GitHub). For some of the examples, there is also an annotated version available. We find these especially helpful since you can view source to see exactly how each bit of the example was marked up in code.  Here are some of the most useful such examples:    Sample Book : This annotated sample book contains a section on interactive exercises . The PreTeXt developers use this book for testing, so you can see the latest (sometimes experimental) features available.     Sample Article : Not particularly well organized (it is also a proving ground for developers) but this contains almost every variation of every feature of PreTeXt . Using the search and view source makes this an invaluable resource.       Community Support  There is a very active google group for support: pretext-support . You should also subscribe to the low-traffic pretext-announce to get updates.  This spring we will host daily virtual drop-in sessions to support authoring and devlopement of PreTeXt. Information will be posted to the pretext-announce google group.   "
 },
 {
-  "id": "p-125",
+  "id": "p-153",
   "level": "2",
-  "url": "ch-help.html#p-125",
+  "url": "ch-help.html#p-153",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",

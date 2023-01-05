@@ -276,11 +276,15 @@ eBookConfig.enable_chatcodes =  false;
 </li>
 <li class="active">
 <div class="toc-item"><a href="ch-exercises.html" class="internal"><span class="codenumber">4</span> <span class="title">Practice Exercises</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="ch-exercises.html#section-18" class="internal"><span class="codenumber">4.1</span> <span class="title">Basic PreTeXt</span></a></div></li></ul>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch-exercises.html#section-18" class="internal"><span class="codenumber">4.1</span> <span class="title">Basic PreTeXt</span></a></div></li>
+<li><div class="toc-item"><a href="ch-exercises.html#sec-blocks-practice" class="internal"><span class="codenumber">4.2</span> <span class="title">Blocks</span></a></div></li>
+<li><div class="toc-item"><a href="ch-exercises.html#sec-bonus-practice" class="internal"><span class="codenumber">4.3</span> <span class="title">Challenges</span></a></div></li>
+</ul>
 </li>
 <li>
 <div class="toc-item"><a href="ch-activities.html" class="internal"><span class="codenumber">5</span> <span class="title">Some Activities</span></a></div>
-<ul class="structural"><li><div class="toc-item"><a href="ch-activities.html#sec-calc-example" class="internal"><span class="codenumber">5.1</span> <span class="title">Adapting a Calculus lesson</span></a></div></li></ul>
+<ul class="structural"><li><div class="toc-item"><a href="ch-activities.html#sec-calc-example" class="internal"><span class="codenumber">5.1</span> <span class="title">Adapting existing content</span></a></div></li></ul>
 </li>
 <li>
 <div class="toc-item"><a href="meta-backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
@@ -298,9 +302,118 @@ eBookConfig.enable_chatcodes =  false;
 <span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Basic PreTeXt</span>
 </h3>
 <article class="exploration project-like" id="exploration-1"><h4 class="heading">
-<span class="type">Exploration</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Lists and Paragraphs.</span>
+<span class="type">Practice</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Paragraph contents.</span>
 </h4>
-<div class="para" id="p-119">Write a numbered list of your favorite three animals and an unnumbered list of your three favorite numbers (in no particular order).  Put text introducing the lists between them.</div></article></section></section></div>
+<article class="task exercise-like" id="task-3"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-119">Write a paragraph of text that includes an <em class="emphasis">emphasized</em> word, a “quotted” word, and inline math using a varialbe like <span class="process-math">\(x\)</span> or <span class="process-math">\(y\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-4"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-120">Write the definition of a term inside a paragraph (not as a numbered definition).  The defined word should be clear when you ready it.  For example: a <dfn class="terminology">slark</dfn> is a hybrid of a sloth and a shark.</div></article><article class="task exercise-like" id="task-5"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para logical" id="p-121">
+<div class="para">Write a paragraph that includes a math equation on a displayed line.  Like this:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(x) = \begin{cases} 1 \amp x = 1 \\ 0 \amp x \ne 1\end{cases}\text{.}
+\end{equation*}
+</div>
+</div></article></article><article class="exploration project-like" id="exploration-2"><h4 class="heading">
+<span class="type">Practice</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Lists and Paragraphs.</span>
+</h4>
+<div class="para" id="p-122">Write a numbered list of your favorite three animals and an unnumbered list of your three favorite numbers (in no particular order).  Put text introducing the lists between them.</div></article><article class="exploration project-like" id="exploration-3"><h4 class="heading">
+<span class="type">Practice</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
+</h4>
+<article class="task exercise-like" id="task-6"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-125">Create the following table using the pretext <code class="code-inline tex2jax_ignore">tabular</code> environment.</div> <div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b2 r2 l0 t0 lines">1</td>
+<td class="l m b2 r2 l0 t0 lines">2</td>
+<td class="l m b2 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">4</td>
+<td class="l m b0 r2 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+</tr>
+</table></div></article><article class="task exercise-like" id="task-7"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para logical" id="p-126">
+<div class="para">Create the same table using a <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> array environment.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{c|c|c} 
+1 \amp 2 \amp 3 \\ \hline
+4 \amp 5 \amp 6
+\end{array}
+\end{equation*}
+</div>
+</div></article></article></section><section class="section" id="sec-blocks-practice"><h3 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.2</span> <span class="title">Blocks</span>
+</h3>
+<article class="exploration project-like" id="exploration-4"><h4 class="heading">
+<span class="type">Practice</span><span class="space"> </span><span class="codenumber">4.2.1</span><span class="period">.</span>
+</h4>
+<article class="task exercise-like" id="task-8"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-127">Write a numbered definition.  Don't forget to highlight the word that is being defined.</div></article><article class="task exercise-like" id="task-9"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-128">Oh no!  You just realized that your definition is actually more of an axiom.  What are you going to do!?!?</div></article></article><article class="exploration project-like" id="exploration-5"><h4 class="heading">
+<span class="type">Practice</span><span class="space"> </span><span class="codenumber">4.2.2</span><span class="period">.</span>
+</h4>
+<article class="task exercise-like" id="task-10"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-129">Write a lemma.  Since it is probably obvious, you can leave off the proof.</div></article><article class="task exercise-like" id="task-11"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-130">Write a theorem, and include a proof.  The proof should use (and reference) the lemma (which means you need to go back and identify the lemma some how).</div></article><article class="task exercise-like" id="task-12"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<div class="para" id="p-131">What other types of mathematical statements might you want to include now?  Maybe you put a remark or a note or a corollary?  What would you want to do?  What can you do?</div></article></article><article class="exploration project-like" id="exploration-6"><h4 class="heading">
+<span class="type">Practice</span><span class="space"> </span><span class="codenumber">4.2.3</span><span class="period">.</span>
+</h4>
+<article class="task exercise-like" id="task-13"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-132">Write a numbered example.</div></article><article class="task exercise-like" id="task-14"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-133">Sometimes an example is of a problem you would ask students to solve.  You might include a hint or solution for such examples.  Give an example of such a thing, with a hint and solution.</div></article></article><article class="exploration project-like" id="exploration-7"><h4 class="heading">
+<span class="type">Practice</span><span class="space"> </span><span class="codenumber">4.2.4</span><span class="period">.</span>
+</h4>
+<article class="task exercise-like" id="task-15"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<div class="para" id="p-134">Write an <dfn class="terminology">activity</dfn> that you would want your students to try.  Give your activity a hint.</div></article><article class="task exercise-like" id="task-16"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<div class="para" id="p-135">Sometimes an activity has multiple parts.  You could give each part as an item on a numbered list, but that would not allow parts to have their own hint/answer/solution.</div> <div class="para" id="p-136">Instead, you can make each part its own <code class="code-inline tex2jax_ignore">&lt;task&gt;</code>.  Try writing a multi-part activity, some parts having hints, others having a solution.</div></article></article><div class="para" id="p-137">Exercises can appear at the end of a section, in an <code class="code-inline tex2jax_ignore">&lt;exercises&gt;</code> division, or they can be “checkpoint” exercises that show up in the middle of a section.</div>
+<article class="exploration project-like" id="exploration-8"><h4 class="heading">
+<span class="type">Practice</span><span class="space"> </span><span class="codenumber">4.2.5</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-138">Write a checkpoint exercise.  Up to you whether it gets parts (i.e. tasks).</div></article><article class="assemblage assemblage-like" id="assemblage-example-for-exercise"><h4 class="heading"><span class="title">What we learned.</span></h4>
+<div class="para" id="p-139">You can do lots of things in PreTeXt.</div></article><article class="exploration project-like" id="exploration-9"><h4 class="heading">
+<span class="type">Practice</span><span class="space"> </span><span class="codenumber">4.2.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-140">Write a summary box like the one above.  You might say that such a box “assembles” the concepts you have discussed...</div></article></section><section class="section" id="sec-bonus-practice"><h3 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.3</span> <span class="title">Challenges</span>
+</h3>
+<div class="para" id="p-141">Want to push yourself a bit?  Try some of these bonus activities</div>
+<article class="investigation project-like" id="investigation-1"><h4 class="heading">
+<span class="type">Challenge</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-142">Replicated the following:</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel middle" style="width:50%;"><div class="para logical" id="p-143"><div class="displaymath process-math">
+\begin{equation*}
+f(x) = x^2
+\end{equation*}
+</div></div></div>
+<div class="sbspanel fixed-width middle" style="width:50%;"><figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.3.1<span class="period">.</span></span><span class="space"> </span>Table of Values</figcaption><table class="tabular">
+<tr>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(x\)</span></td>
+<td class="l m b2 r0 l0 t0 lines"><span class="process-math">\(f(x)\)</span></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+</tr>
+</table></figure></div>
+</div></div></article><article class="investigation project-like" id="investigation-2"><h4 class="heading">
+<span class="type">Challenge</span><span class="space"> </span><span class="codenumber">4.3.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-144">Create the folowing images using TikZ</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:11%;margin-right:11%;">
+<div class="sbspanel middle" style="width:42.3076923076923%;"><img src="generated/latex-image/tikz_quick_eg.svg" role="img" class="contained"></div>
+<div class="sbspanel middle" style="width:42.3076923076923%;"><img src="generated/latex-image/image_tikz_eg.svg" role="img" class="contained"></div>
+</div></div></article></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-workflow.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="ch-activities.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

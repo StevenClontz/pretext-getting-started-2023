@@ -13,102 +13,23 @@
 <body class="ignore-math">
 <div class="solution solution-like">
 <h4 class="heading">
-<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.1.5.1</span><span class="period">.</span>
+<span class="type">Solution</span><span class="space"> </span><span class="codenumber">4.1.5.a.1</span><span class="period">.</span>
 </h4>
-<pre class="code-block tex2jax_ignore">&lt;interactive platform="jsxgraph" width="50%"&gt;
-  &lt;slate xml:id="jsxgraph-slope-via-tangent"  surface="jessiecode" axis="true" grid="true" &gt;
-
-    // Set the graph window.  
-    //  The order of values is [xmin, ymax, xmax, ymin]
-    //  keepaspectratio=true forces the x and y scales to be equal
-    $board.setBoundingBox( [ -5, 10, 7, -6 ] , keepaspectratio=false) ;
-
-    // Create the slider 
-    xslider = slider(
-          // Specify slider location
-            [0.5,-3], [5.5,-3], 
-          // Specify smallest/starting/largest value for slider
-            [-5,1,7])
-        &amp;lt;&amp;lt;
-            name:"a",
-            snapWidth:0.01
-        &amp;gt;&amp;gt;  ;      
-      
-      // Define a function and its tangent line at the current slider value
-      // This will allow us to reference them in several places
-      f1 = function(x) { 
-        return 1/5*(x+3)*(x-2)*(x-5)-1;
-      } ;
-      tangentline = function(x) {
-        x0 =  xslider.Value();
-        m = (f1(x0+0.00001) - f1(x0))/0.00001;
-        return m*(x-x0) + f1(x0) ; 
-      } ;
-
-      // Graph the function and its tangent line 
-      f1Graph = functiongraph( f1 )  
-        &amp;lt;&amp;lt; 
-            strokeColor:"blue"  
-        &amp;gt;&amp;gt;;
-      tangentGraph = functiongraph( tangentline )  
-        &amp;lt;&amp;lt; 
-            strokeColor:"black",
-            dash:3  
-        &amp;gt;&amp;gt;;
-
-      // Display the equation of the current tangent line
-      text( 1.5,5.5,function() {
-            x0 =  xslider.Value();
-            m = (f1(x0+0.00001) - f1(x0))/0.00001;
-            y0 = f1(x0);
-            return  "y  =  "+ trunc(m,2) + " ( x- " + trunc(x0,2) + " )  +  " + trunc(y0,2) ;
-            } 
-          ) 
-                &amp;lt;&amp;lt; 
-                  color:"black",
-                  fontSize:16
-                &amp;gt;&amp;gt; ;
-
-      // Graph the lines from the point to the x and y axis
-      line( [function() {return xslider.Value();} ,
-                  function() {return f1(xslider.Value());}],[0,function() {return f1(xslider.Value());}] )
-                &amp;lt;&amp;lt; 
-                  color:"red",
-                  straightFirst:false, 
-                  straightLast:false,
-                  dash:1
-                &amp;gt;&amp;gt; ;
-      line( [function() {return xslider.Value();} ,
-                  function() {return f1(xslider.Value());}],[function() {return xslider.Value();}, 0 ] )
-                &amp;lt;&amp;lt; 
-                  color:"red",
-                  straightFirst:false, 
-                  straightLast:false,
-                  dash:1
-                &amp;gt;&amp;gt; ;
-
-
-      // Draw a dot at the current point on the function
-      point( function() {return xslider.Value();} ,
-                  function() {return f1(xslider.Value());}) 
-                &amp;lt;&amp;lt; 
-                  name:"(a,f(a))",
-                  color:"red" 
-                &amp;gt;&amp;gt; ;
-      // Label the x and y values of the current point
-      text( -0.75, function() {return f1(xslider.Value());}, "f(a)") 
-                &amp;lt;&amp;lt; 
-                  color:"red" 
-                &amp;gt;&amp;gt; ;
-      text( function() {return xslider.Value();} , -0.25 , "a") 
-                &amp;lt;&amp;lt; 
-                  color:"red" 
-                &amp;gt;&amp;gt; ;
-
-  &lt;/slate&gt;
-&lt;/interactive&gt;
+<pre class="code-block tex2jax_ignore">&lt;tabular&gt;
+  &lt;col right="medium" /&gt;&lt;col right="medium" /&gt;&lt;col /&gt; 
+  &lt;row bottom="medium"&gt;
+    &lt;cell&gt;1&lt;/cell&gt;
+    &lt;cell&gt;2&lt;/cell&gt;
+    &lt;cell&gt;3&lt;/cell&gt;
+  &lt;/row&gt;
+  &lt;row&gt;
+    &lt;cell&gt;4&lt;/cell&gt;
+    &lt;cell&gt;5&lt;/cell&gt;
+    &lt;cell&gt;6&lt;/cell&gt;
+  &lt;/row&gt;
+&lt;/tabular&gt;
 </pre>
 </div>
-<span class="incontext"><a href="ch-exercises.html#solution-10" class="internal">in-context</a></span>
+<span class="incontext"><a href="section-18.html#solution-10" class="internal">in-context</a></span>
 </body>
 </html>

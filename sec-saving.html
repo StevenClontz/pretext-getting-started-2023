@@ -75,8 +75,8 @@ window.MathJax = {
 <link href="https://pretextbook.org/css/0.6/navbar_crc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/toc_crc.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/style_oscarlevin.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.6/colors_green_plum.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
 <link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
 <!--** eBookCongig is necessary to configure interactive       **-->
 <!--** Runestone components to run locally in reader's browser **-->
@@ -275,12 +275,8 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="ch-exercises.html" class="internal"><span class="codenumber">4</span> <span class="title">Practice Exercises</span></a></div>
-<ul class="structural">
-<li><div class="toc-item"><a href="section-18.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Basic PreTeXt</span></a></div></li>
-<li><div class="toc-item"><a href="section-19.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Basic Principles and Frequently Asked Questions</span></a></div></li>
-<li><div class="toc-item"><a href="section-20.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Interactive Activities</span></a></div></li>
-</ul>
+<div class="toc-item"><a href="ch-activities.html" class="internal"><span class="codenumber">4</span> <span class="title">Some Activities</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="sec-calc-example.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Adapting a Calculus lesson</span></a></div></li></ul>
 </li>
 <li>
 <div class="toc-item"><a href="meta-backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
@@ -294,31 +290,31 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-saving"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Saving your work</span>
 </h2>
-<div class="para" id="p-103">Using codespaces will keep all your files “in the cloud” on GitHub's server.  As long as you don't delete your codespace, your files will be saved there.  However, you will want to <dfn class="terminology">push</dfn> these files to your <dfn class="terminology">git repository</dfn> on GitHub to make this save perminent.  This has the benefit of allowing collaborators to access your files as well (your codespace is unique to your account).</div>
-<div class="para" id="p-104">There is a <em class="emphasis">lot</em> to learn about git, but luckily using VS Code lets you do everything you need using menus (you don't need to use the command line, unless you want to).  Everything can be controlled using the <dfn class="terminology">Source Control</dfn> view: it should be third from the top on the very left of the window, an icon with splitting paths, and likely a badge showing how many files you have changed.</div>
-<div class="para logical" id="p-105">
+<div class="para" id="p-102">Using codespaces will keep all your files “in the cloud” on GitHub's server.  As long as you don't delete your codespace, your files will be saved there.  However, you will want to <dfn class="terminology">push</dfn> these files to your <dfn class="terminology">git repository</dfn> on GitHub to make this save perminent.  This has the benefit of allowing collaborators to access your files as well (your codespace is unique to your account).</div>
+<div class="para" id="p-103">There is a <em class="emphasis">lot</em> to learn about git, but luckily using VS Code lets you do everything you need using menus (you don't need to use the command line, unless you want to).  Everything can be controlled using the <dfn class="terminology">Source Control</dfn> view: it should be third from the top on the very left of the window, an icon with splitting paths, and likely a badge showing how many files you have changed.</div>
+<div class="para logical" id="p-104">
 <div class="para">Here are the basic concepts you need to understand.</div>
 <ul class="disc">
-<li id="li-37"><div class="para" id="p-106">The program <dfn class="terminology">git</dfn> keeps track of all the changes you make to files inside of your <dfn class="terminology">repository</dfn> (in this case, the folder containing your project).</div></li>
+<li id="li-37"><div class="para" id="p-105">The program <dfn class="terminology">git</dfn> keeps track of all the changes you make to files inside of your <dfn class="terminology">repository</dfn> (in this case, the folder containing your project).</div></li>
 <li id="li-38">
-<div class="para" id="p-107">Once you have edited your files and are happy with all of them, you tell git to track the set of changes as a <dfn class="terminology">commit</dfn>.  This creates a handy <em class="emphasis">breakpoint</em> you could return to if you want to go back to an earlier version.</div>
-<div class="para logical" id="p-108">
+<div class="para" id="p-106">Once you have edited your files and are happy with all of them, you tell git to track the set of changes as a <dfn class="terminology">commit</dfn>.  This creates a handy <em class="emphasis">breakpoint</em> you could return to if you want to go back to an earlier version.</div>
+<div class="para logical" id="p-107">
 <div class="para">There are two steps to creating a commit (which you can often do all at once in practice):</div>
 <ol class="decimal"><li id="li-39">
-<div class="para" id="p-109">You <dfn class="terminology">stage</dfn> the files you want to update in the commit.</div>
-<div class="para" id="p-110">You <dfn class="terminology">commit</dfn> the stage files including a <dfn class="terminology">commit message</dfn>.</div>
+<div class="para" id="p-108">You <dfn class="terminology">stage</dfn> the files you want to update in the commit.</div>
+<div class="para" id="p-109">You <dfn class="terminology">commit</dfn> the stage files including a <dfn class="terminology">commit message</dfn>.</div>
 </li></ol>
 <div class="para">Doing this in two steps can be helpful if you want to commit only some of the files that have changed.</div>
 </div>
 </li>
-<li id="li-40"><div class="para" id="p-111">Once you have one or more commits, you need to sync these changes with GitHub.  To “upload” your changes, you <dfn class="terminology">push</dfn> the repository.  To download changes that you are someone else made, you <dfn class="terminology">pull</dfn> the repository.</div></li>
+<li id="li-40"><div class="para" id="p-110">Once you have one or more commits, you need to sync these changes with GitHub.  To “upload” your changes, you <dfn class="terminology">push</dfn> the repository.  To download changes that you are someone else made, you <dfn class="terminology">pull</dfn> the repository.</div></li>
 </ul>
 </div>
-<div class="para" id="p-112">Now, how do we do these things in VS Code?  Start by looking at the Source Control view.  You will notice a list of files that were changed.  You can click on any of these to see what the changes are (you will see a side-by-side view of the original and updated version).</div>
-<div class="para" id="p-113">If you are comfortable staging and committing in one step, you can simply write yourself a short message in the textbox above the big green “Commit” button, and click the button.  If you want to stage first, click the + next to each file under “changes” to stage them.</div>
-<div class="para" id="p-114">The green button should now turn into a “Sync” button.  When you click that, it will do a quick pull and then a push, to sync changes with GitHub.</div>
-<div class="para" id="p-115">The only small point about using git is that no all files will be tracked.  This is on purpose, since temporary files really should not be “remembered” using this version control setting.  Which files or types of files are ignored by git is controled by the “.gitignore” file in your repository.</div>
-<div class="para" id="p-116">In particular, we do not track the output of builds.  Git is used to track progress on your source, which you build into output at any time.  If you want others to be able to see the output of your work without building it themselves, you need to deploy your work.</div></section></div>
+<div class="para" id="p-111">Now, how do we do these things in VS Code?  Start by looking at the Source Control view.  You will notice a list of files that were changed.  You can click on any of these to see what the changes are (you will see a side-by-side view of the original and updated version).</div>
+<div class="para" id="p-112">If you are comfortable staging and committing in one step, you can simply write yourself a short message in the textbox above the big green “Commit” button, and click the button.  If you want to stage first, click the + next to each file under “changes” to stage them.</div>
+<div class="para" id="p-113">The green button should now turn into a “Sync” button.  When you click that, it will do a quick pull and then a push, to sync changes with GitHub.</div>
+<div class="para" id="p-114">The only small point about using git is that no all files will be tracked.  This is on purpose, since temporary files really should not be “remembered” using this version control setting.  Which files or types of files are ignored by git is controled by the “.gitignore” file in your repository.</div>
+<div class="para" id="p-115">In particular, we do not track the output of builds.  Git is used to track progress on your source, which you build into output at any time.  If you want others to be able to see the output of your work without building it themselves, you need to deploy your work.</div></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="sec-previewing.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="sec-deploy.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

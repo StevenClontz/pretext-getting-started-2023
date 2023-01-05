@@ -10,35 +10,45 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body class="ignore-math"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;exercise&gt;
-  &lt;webwork&gt;
-    &lt;setup&gt;
-      &lt;pg-code&gt;
-        do{
-          $a = random(0.1,0.5,0.01);
-          $b = random(0.5,3.5,0.25);
-          $c = random(1,9,0.2);
-          $disc = $b*$b-4*$a*$c;
-        } while ( 0 &amp;gt; $disc ) ;
-        $f = Compute("$a*x^2 + $b*x + $c");
-        $root1 = Compute(" (-$b + sqrt($b^2 - 4*$a*$c))/(2*$a)");
-        $root2 = Compute(" (-$b - sqrt($b^2 - 4*$a*$c))/(2*$a)");
-        $roots = List($root1,$root2);
-      &lt;/pg-code&gt;
-    &lt;/setup&gt;
-  
-    &lt;statement&gt;
-      &lt;p&gt;
-        Let &lt;m&gt;f(x) = &lt;var name="$a"/&gt;x^2 + &lt;var name="$b"/&gt;x + &lt;var name="$c"/&gt;&lt;/m&gt;.  Find all &lt;m&gt;x&lt;/m&gt; such that &lt;m&gt;f(x) = 0&lt;/m&gt;.
-      &lt;/p&gt;
-      &lt;instruction&gt;
-        If there is more than one answer, enter your answer as a comma separated list.
-      &lt;/instruction&gt;
-      &lt;p&gt;
-        Solutions = &lt;var name="$roots" width="20"/&gt;
-      &lt;/p&gt;
-    &lt;/statement&gt;
-  &lt;/webwork&gt;
-&lt;/exercise&gt;
+<body class="ignore-math"><div class="solution solution-like"><pre class="code-block tex2jax_ignore">&lt;sidebyside  widths="33% 33%" margins="11%" valign="middle"&gt;
+  &lt;image width="25%" xml:id="tikz_quick_eg"&gt;
+    &lt;latex-image&gt;
+      \begin{tikzpicture}
+        \draw[fill=red,opacity=0.2] (0,0) circle (1.15);
+        \draw[fill=blue,opacity=0.2] (1,0) circle (1.15);
+        \end{tikzpicture}
+    &lt;/latex-image&gt;
+  &lt;/image&gt;
+
+  &lt;image width="33%" xml:id="image_tikz_eg"&gt;
+    &lt;latex-image&gt;
+      \begin{tikzpicture} 
+        \\ Shade the enclosed area first
+        \draw[color=white,fill=green,opacity=0.33] 
+          (1,0) 
+          -- (1,{cos(1 r)+2}) 
+          -- plot[domain= 1:3] ({\x},{cos(\x r)+2}) 
+          -- (3,{cos(3 r)+2})
+          -- (3,0)
+          -- (1,0);
+
+        \\ Draw the axes
+        \draw[latex-latex] (-1,0) -- (5,0);
+        \draw[latex-latex] (0,-1) -- (0,4);
+
+        \\ Plot the function
+        \draw [thick,domain=-1:4.5] plot ({\x},{cos(\x r)+2});
+        \node [thick,above right] at (4.5,{cos(4.5 r) + 2}){$f$};
+
+        \\ Draw the boundaries
+        \draw[red] (1,3) -- (1,-0.25) node [below] {$a$};
+        \draw[red] (3,3) -- (3,-0.25) node [below] {$b$};
+
+        \\ Label the area
+        \draw[&amp;lt;- , very thick] (2,0.5) -- (2.2,-1) node[below] {area between $f$ and $x$-axis over $[a,b]$};
+      \end{tikzpicture}
+    &lt;/latex-image&gt;
+  &lt;/image&gt;
+&lt;/sidebyside&gt;
 </pre></div></body>
 </html>
