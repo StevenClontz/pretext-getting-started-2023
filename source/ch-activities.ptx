@@ -4,7 +4,7 @@
     <title>Some Activities</title>
 
     <section xml:id="sec-calc-example">
-        <title>Adapting a Calculus lesson</title>
+        <title>Adapting existing content</title>
         
         <activity>
             <statement>
@@ -109,7 +109,36 @@ Nest the following PreTeXt elements in order to reproduce this portion of <title
                     </p>
                     <program language="xml">
                         <input><![CDATA[ 
-<todo/>
+<definition></definition>
+<example></example>
+<introduction></introduction>
+<li><p>If <m>a,b,c\in R</m>... (associative)</p></li>
+<li><p><m>(-a)\cdot b=a\cdot(-b)=-(a\cdot b)</m>.</p></li>
+<li><p>If <m>a,b,c\in R</m>... (distribuative)</p></li>
+<li><p><m>(na)\cdot(mb)=(nm)(a\cdot b)</m>...</p></li>
+<li><p><m>a\cdot \underline{0}=\underline{0}\cdot=\underline{0}</m>...</p></li>
+<li><p><m>R</m> has a multiplicative identity...</p></li>
+<li><p>Let <m>\underline{n}=n\underline{1}</m>. For example...</p></li>
+<li><p>If <m>a,b\in R</m>... (commutative)</p></li>
+<p>Suppose <m>R</m> is an additive abelian group...</p>
+<p>The next two theorems show that ring mulitplication...</p>
+<p>Suppose <m>R</m> is a ring and <m>a,b\in R</m>.</p>
+<p>Suppose <m>a,b\in R</m> and <m>n,m\in \mathbf Z</m>.</p>
+<p>Rings are additive abelian groups with a second operation...</p>
+<p>The basic commutative rings in mathematics are the integers <m>\mathbf Z</m>...</p>
+<p>Recall that, since <m>R</m> is an additive abelien group...</p>
+<p>If 1,2,3 are satisfied...</p>
+<p><ol></ol></p>
+<p><ol></ol></p>
+<p><ol></ol></p>
+<section></section>
+<statement></statement>
+<statement></statement>
+<statement></statement>
+<theorem></theorem>
+<title>Rings</title>
+<theorem></theorem>
+<statement></statement>
                         ]]></input>
                     </program>
                 </statement>
@@ -117,7 +146,7 @@ Nest the following PreTeXt elements in order to reproduce this portion of <title
         </activity>
 
     </section>
-
+<!-- 
     <section xml:id="sec-rings">
         <title>Rings</title>
         <introduction>
@@ -161,6 +190,7 @@ Nest the following PreTeXt elements in order to reproduce this portion of <title
             </theorem>
             
         </introduction>
-    </section>
+    </section> 
+-->
 
 </chapter>
