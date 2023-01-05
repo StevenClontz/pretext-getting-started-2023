@@ -11,6 +11,7 @@
 <publication>
   <common>
     <chunking level="1"/>
+    <exercise-project solution="no" hint="no"/>
   </common>
   <!-- Set where external assets and generated assets will be   -->
   <!-- stored or created.  Directories are relative to the main -->
