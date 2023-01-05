@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-activities" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Some Activities</title>
+
+    <section xml:id="sec-calc-example">
+        <title>Adapting a Calculus lesson</title>
+        
+        <activity>
+            <statement>
+                <p>
+Nest the following PreTeXt elements in order to produce the <q>Graphing a Derivative</q> subsection of
+<url href="https://openstax.org/books/calculus-volume-1/pages/3-2-the-derivative-as-a-function#fs-id1169737770972">
+    OpenStax Calculus Volume 1 Section 3.2
+</url>.
+                </p>
+                <program language="xml">
+                    <input><![CDATA[ 
+<caption>The derivative <m>f'(x)</m> is positive everywhere because the function <m>f(x)</m> is increasing.</caption>
+<caption>The derivative <m>f'(x)\lt 0</m> where the function <m>f(x)</m> is decreasing and <m>f'(x)\gt 0</m> where <m>f(x)</m> is increasing...</caption>
+<description>The function f(x) = the square root of x is graphed as is its derivative f'(x) = 1/(2 times the square root of x).</description>
+<description>Two functions are graphed here: f(x) and f'(x). The function f(x) is the same as the above graph, that is, roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2). The function f'(x) is an downward-facing parabola with vertex near (0.5, 1.75), y-intercept (0, 1.5), and x-intercepts (-1.9, 0) and (3, 0).</description>
+<description>The function f(x) = x squared - 2x is graphed as is its derivative f'(x) = 2x - 2.</description>
+<description>The function f(x) is roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2).</description>
+<example></example>
+<exercise></exercise>
+<figure></figure>
+<figure></figure>
+<image source="solution-image.jpg"></image>
+<image source="fx-sqrt-x.jpg"></image>
+<image source="exercise-image.jpg"></image>
+<image source="fx-x2-2x.jpg"></image>
+<p>We have already discussed how to graph a function...</p>
+<p>In Example 3.12 we found that for <m>f(x)=x^2-2x,f'(x)=2x-2</m>...</p>
+<p>Sketch the graph of <m>f(x)=x^2-4</m>...</p>
+<p>In Example 3.11 we found that for <m>f(x)=\sqrt{x},f'(x)=1/2\sqrt{x}</m>...</p>
+<p>The solution is shown in the following graph. Observe that...</p>
+<p>Use the following graph of <m>f(x)</m> to sketch a graph of <m>f'(x)</m>.</p>
+<solution></solution>
+<statement></statement>
+<statement></statement>
+<subsection></subsection>
+<title>Graphing a Derivative</title>
+<title>Sketching a Derivative Using a Function</title>
+                    ]]></input>
+                </program>
+            </statement>
+        </activity>
+    </section>
+
+<!-- 
+    <subsection>
+        <title>Graphing a Derivative</title>
+        <p>We have already discussed how to graph a function...</p>
+        <p>In Example 3.11 we found that for <m>f(x)=\sqrt{x},f'(x)=1/2\sqrt{x}</m>...</p>
+        <figure>
+            <caption>The derivative <m>f'(x)</m> is positive everywhere because the function <m>f(x)</m> is increasing.</caption>
+            <image source="fx-sqrt-x.jpg">
+                <description>The function f(x) = the square root of x is graphed as is its derivative f'(x) = 1/(2 times the square root of x).</description>
+            </image>
+        </figure>
+        <p>In Example 3.12 we found that for <m>f(x)=x^2-2x,f'(x)=2x-2</m>...</p>
+        <figure>
+            <caption>The derivative <m>f'(x)\lt 0</m> where the function <m>f(x)</m> is decreasing and <m>f'(x)\gt 0</m> where <m>f(x)</m> is increasing...</caption>
+            <image source="fx-x2-2x.jpg">
+                <description>The function f(x) = x squared - 2x is graphed as is its derivative f'(x) = 2x - 2.</description>
+            </image>
+        </figure>
+        <example>
+            <title>Sketching a Derivative Using a Function</title>
+            <statement>
+                <p>Use the following graph of <m>f(x)</m> to sketch a graph of <m>f'(x)</m>.</p>
+                <image source="exercise-image.jpg">
+                    <description>The function f(x) is roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2).</description>
+                </image>
+            </statement>
+            <solution>
+                <p>The solution is shown in the following graph. Observe that...</p>
+                <image source="solution-image.jpg">
+                    <description>Two functions are graphed here: f(x) and f'(x). The function f(x) is the same as the above graph, that is, roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2). The function f'(x) is an downward-facing parabola with vertex near (0.5, 1.75), y-intercept (0, 1.5), and x-intercepts (-1.9, 0) and (3, 0).</description>
+                </image>
+            </solution>
+        </example>
+        <exercise>
+            <statement>
+                <p>Sketch the graph of <m>f(x)=x^2-4</m>...</p>
+            </statement>
+        </exercise>
+    </subsection>
+ -->
+
+
+</chapter>
