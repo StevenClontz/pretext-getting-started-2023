@@ -1,4 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-publication">
-    <title>Publication Files</title>
+    <title>Publishing </title>
+    <!-- Oscar does this. -->
+    <introduction>
+        <p>
+            By <term>publishing</term>, we mean here the process of finalizing the presentation and look of the output you get from PreTeXt.  We stress again the philosophical distinction between <term>author</term> and <term>publisher</term> in <pretext />, since there is great value in focusing on just one of these two types of tasks at a time.
+        </p>
+
+        <p>
+            Another aspect of the publishing process is that of creating the physical book and making it available in bookstores, or making the the web version available on your own website.  The latter can be done automatically through GitHub pages using the <c>pretext deploy</c> function, but perhaps you also want to have a separate landing page that links to a version of the book you are celling on Amazon.com.  However, these steps are beyond the scope of this guide (as for suggestions on the PreTeXt-support group if you would like some assistance getting started with these steps). 
+        </p>
+
+        <p>
+            For this chapter we will assume you are trying to produce a single <term>version</term> of your book and want to control the presentation and look of that version.  You can still produce this version in multiple <term>formats</term> (web, pdf, epub), and which you want to produce might change what you do slightly.
+        </p>
+    </introduction>
+
+    <section xml:id="sec-publication-file">
+        <title>The publication file</title>
+        
+        <p>
+            <pretext /> controls publisher options in a <term>publication file</term>.  The default location of this file is in the folder <c>publication</c> and is itself called <c>publication.ptx</c>.  Open this file and take a look.
+        </p>
+
+        <p>
+            What you will see is more <init>XML</init>, but a different set of tags than what you would write in your <pretext /> source.  The version of the publication file that came with your codespace was (at the one time) the almost complete list of options with default values provided.  This should make it easy to modify values and experiment with different settings.
+        </p>
+
+        <p>
+            As new settings are introduced, you can find documentation ins the <url href="https://pretextbook.org/doc/guide/html/publication-file-reference.html">Publication File Reference</url> part of the guide.
+        </p>
+
+        <remark>
+            <p>
+                Eventually you may want to have different versions of your document, and you can do this with different publication files.  In <xref ref="ch-project"/> we will consider how to manage multiple publication files easily.
+            </p>
+        </remark>
+
+        <p>
+            Next we will dive deeper into the different sorts of things that can be configured with this file.
+        </p>
+    </section>
+
+    <section xml:id="sec-showing-and-hiding-things">
+        <title>Showing and Hiding things</title>
+        
+        <p>
+            We have seen that some <term>blocks</term>, like proofs, solutions, examples, are sometimes <em>hidden</em> behind a <term>knowl</term>: when you click on the title, the content expands to reveal itself.  Most of the blocks can be <q>knowled</q> or not.
+        </p>
+
+        <p>
+            To edit these settings, look for the element <tag>html</tag>, and inside that <tage>knowl</tage>.  This element has a number of <term>attributes</term> (the PreTeXt guide marks attributes with the <c>@</c> symbol, by the way).  You can specify whether elements should be knowled or not by changing the value of the attributes between yes and no. 
+        </p>
+
+        <p>
+            Whether exercises are knowled depends on the type of exercises.  <pretext /> distinguishes five types of exercise-like elements, since they have hints/answers/solutions that you might want to hide: 
+            <ul>
+                <li>
+                    <p>
+                        inline, which show up as <q>checkpoints</q>; these are exercises mixed with other content in a divisions.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        divisional; these are exercises that belong to an <tag>exercises</tag> division.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        project; these are the entire project-like element like <tag>activity</tag>, <tag>investigation</tag> etc.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        worksheet; essentially a project but its a division itself, and can contain spacing for students to work in when printed.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        readingquestions; these are questions in a <tag>reading-questions</tag> division.  These were exercises designed to get a text box that students can type short answers to questions at the end of a section.
+                    </p>
+                </li>
+            </ul>
+        </p>
+
+        <p>
+            You can control whether the entire exercise-like element is knowled, but their hints/answers/solutions are always knowled (no spoilers!).  The only solution you can can choose to not knowl is that of an example, and that is controlled by these knowl switches.
+        </p>
+
+        <p>
+            You can, however, control which parts of exercises show up at all.  This is set in a different section of the publication file: <c>publication/common/exercise-inline</c> (that is, in the <tag>common</tag> block in the <tag>exercise-inline</tag> element).  You can replace <c>exercise-inline</c> by any of the five exercise types.  Then as attributes, specify yes or no for the <attr>statement</attr>, <attr>hint</attr>, <attr>answer</attr>, <attr>solution</attr>.  
+        </p>
+
+        <p>
+            This controls what shows up in the output, in all formats, at the position that the exercise was authored.  There are also ways to redisplay any parts of these exercises later, to give a list of all solutions in the back of the book, say.  See <url href="https://pretextbook.org/doc/guide/html/topic-exercises-solutions.html#topic-solutions-division">Exercises and Solutions</url> from the guide.
+        </p>
+    </section>
+
+    <section xml:id="sec-numbering">
+        <title>Numbering</title>
+        
+        <p>
+            There are a few settings that control how things are numbered.  Most of these live inside the <tag>numbering</tag> element of the publication file.
+            <ul>
+                <li>
+                    <p>
+                        The <tage>division</tage> element and its attributes says how <q>deep</q> the numbering goes (i.e., do you put numbers on subsubsection?).  This is set as a natural number as the value of the <attr>level</attr> attribute.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Also in this element you can specify whether parts are <term>structural</term> or <term>decorative</term>.  This essentially says whether chapter number should restart in each part.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        You can also set the number of the first chapter here using the <attr>chapter-start</attr> attribute.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        There are four different types of elements that can be numbered independently: <term>blocks</term>, <term>projects</term>, <term>equations</term>, and <term>footnotes</term>.  You can control how specific the numbering are for each of these by giving the corresponding element a <attr>level</attr> attribute.
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </section>
+
+    <section xml:id="sec-formatting">
+        <title>Formatting</title>
+        <p>
+            While there are some ways to control the look of the pdf, that is beyond the scope of this guide.  Web output can be controlled more easily, selecting from a small number of predefined styles.  
+        </p>
+
+        <p>
+            This is a feature that is currently under active development, so we will not say much here, but instead refer you again to the <url href="https://pretextbook.org/doc/guide/html/publication-file-reference.html">Publication File Reference</url> part of the guide.
+        </p>
+    </section>
 </chapter>

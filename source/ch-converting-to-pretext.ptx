@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-converting-to-pretext">
+    <title>Converting To PreTeXt</title>
+    <introduction>
+      <p>
+        Suppose you have materials written in another format, such as MS Word or <latex />, and would like to convert these to <pretext />.  Alas, there is not a perfect way to make this happen, but what follows is some general advice to get you started.  We would love to hear what sort of workflow you would like to see so we can improve this experience.
+      </p>
+      <warning>
+        <p>
+          Your goal in doing a conversion should be to move all your materials into <pretext /> and then always work from the <pretext /> source, converting back to other formats as needed.  It is simply not feasible to keep converting to <pretext />, since this process is not automatic.
+      </p>
+        
+      </warning>
+    </introduction>
+    <section xml:id="sec-pandoc">
+      <title>Using Pandoc</title>
+      <p>
+        If you have a number of individual documents that you would like to convert, from pretty much any format, consider trying <url href="https://pandoc.org/">Pandoc</url>.  This command-line tool can read in lots of different formats and output in lots of different formats.  Unfortunately, <pretext /> is not a default output format, so you need to use a custom <term>writer</term>.  Download the this <url href="https://raw.githubusercontent.com/oscarlevin/pandoc-pretext/master/pretext.lua">writer</url> and put it somewhere you will remember.   
+      </p>
+
+      <p>
+        Documentation for how to use this tool is available on its <url href="https://github.com/oscarlevin/pandoc-pretext">GitHub repository</url>.
+      </p>
+    </section>
+    
+    <section xml:id="sec-using-the-community">
+      <title>Using the community</title>
+      <p>
+        If you have a mostly complete project, written entirely in not-too-customized <latex />, David Farmer has volunteered to help you convert the entire project to likely 90% correct working <pretext />.  See <url href="https://pretextbook.org/conversions.html" /> for details.
+      </p>
+    </section>
+
+    <section xml:id="sec-by-hand">
+      <title>By hand</title>
+      <p>
+        If you have some familiarity with Regex, you can use VS Code's find/replace tools to clean up text that you copied/pasted into your document.  For example, if you entered <c>\$(.*?)\$</c> in the search bar (with the <q>.*</q> setting selected), and put <c>&lt;m&gt;$1&lt;/m&gt;</c> in the replace box, you can easily replace all math in your document with the correct syntax. 
+      </p>
+    </section>
+</chapter>
