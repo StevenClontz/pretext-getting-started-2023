@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="ch-project">
     <title>Managing Your Project</title>
+    <section xml:id="sec-file-and-directory-structure">
+        <title>File and directory structure</title>
+    </section>
+    <section xml:id="sec-project-ptx">
+        <title>Project.ptx</title>
+    </section>
+    <section xml:id="sec-versions">
+        <title>Versions</title>
+    </section>
+    <section xml:id="sec-building-subsets">
+        <title>Building subsets</title>
+    </section>
+    <section xml:id="sec-codespaces-github-pages">
+        <title>Codespaces, GitHub, and GitHub Pages</title>
+    </section>
 </chapter>
