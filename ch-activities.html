@@ -275,15 +275,17 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 <li>
-<div class="toc-item"><a href="ch-exercises.html" class="internal"><span class="codenumber">4</span> <span class="title">Practice Activities</span></a></div>
+<div class="toc-item"><a href="ch-exercises.html" class="internal"><span class="codenumber">4</span> <span class="title">Practice Exercises</span></a></div>
 <ul class="structural">
 <li><div class="toc-item"><a href="ch-exercises.html#section-18" class="internal"><span class="codenumber">4.1</span> <span class="title">Basic PreTeXt</span></a></div></li>
 <li><div class="toc-item"><a href="ch-exercises.html#sec-blocks-practice" class="internal"><span class="codenumber">4.2</span> <span class="title">Blocks</span></a></div></li>
 <li><div class="toc-item"><a href="ch-exercises.html#sec-bonus-practice" class="internal"><span class="codenumber">4.3</span> <span class="title">Challenges</span></a></div></li>
-<li><div class="toc-item"><a href="ch-exercises.html#sec-adapting-example" class="internal"><span class="codenumber">4.4</span> <span class="title">Adapting existing content</span></a></div></li>
 </ul>
 </li>
-<li class="active"><div class="toc-item"><a href="ch-activities.html" class="internal"><span class="codenumber">5</span> <span class="title">Some Activities</span></a></div></li>
+<li class="active">
+<div class="toc-item"><a href="ch-activities.html" class="internal"><span class="codenumber">5</span> <span class="title">Some Activities</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="ch-activities.html#sec-calc-example" class="internal"><span class="codenumber">5.1</span> <span class="title">Adapting a Calculus lesson</span></a></div></li></ul>
+</li>
 <li>
 <div class="toc-item"><a href="meta-backmatter.html" class="internal"><span class="title">Back Matter</span></a></div>
 <ul class="structural">
@@ -293,9 +295,44 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-activities"><h2 class="heading">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="chapter" id="ch-activities"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">5</span> <span class="title">Some Activities</span>
-</h2></section></div>
+</h2>
+<section class="section" id="sec-calc-example"><h3 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Adapting a Calculus lesson</span>
+</h3>
+<article class="activity project-like" id="activity-1"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.1.1</span><span class="period">.</span>
+</h4>
+<div class="para" id="p-147">Nest the following PreTeXt elements in order to produce the “Graphing a Derivative” subsection of <a class="external" href="https://openstax.org/books/calculus-volume-1/pages/3-2-the-derivative-as-a-function#fs-id1169737770972" target="_blank">OpenStax Calculus Volume 1 Section 3.2</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 1 </sup></a>.</div> <div class="code-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><pre class="program"><code class="language-xml">&lt;caption&gt;The derivative &lt;m&gt;f'(x)&lt;/m&gt; is positive everywhere because the function &lt;m&gt;f(x)&lt;/m&gt; is increasing.&lt;/caption&gt;
+&lt;caption&gt;The derivative &lt;m&gt;f'(x)\lt 0&lt;/m&gt; where the function &lt;m&gt;f(x)&lt;/m&gt; is decreasing and &lt;m&gt;f'(x)\gt 0&lt;/m&gt; where &lt;m&gt;f(x)&lt;/m&gt; is increasing...&lt;/caption&gt;
+&lt;description&gt;The function f(x) = the square root of x is graphed as is its derivative f'(x) = 1/(2 times the square root of x).&lt;/description&gt;
+&lt;description&gt;Two functions are graphed here: f(x) and f'(x). The function f(x) is the same as the above graph, that is, roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2). The function f'(x) is an downward-facing parabola with vertex near (0.5, 1.75), y-intercept (0, 1.5), and x-intercepts (-1.9, 0) and (3, 0).&lt;/description&gt;
+&lt;description&gt;The function f(x) = x squared - 2x is graphed as is its derivative f'(x) = 2x - 2.&lt;/description&gt;
+&lt;description&gt;The function f(x) is roughly sinusoidal, starting at (-4, 3), decreasing to a local minimum at (-2, 2), then increasing to a local maximum at (3, 6), and getting cut off at (7, 2).&lt;/description&gt;
+&lt;example&gt;&lt;/example&gt;
+&lt;exercise&gt;&lt;/exercise&gt;
+&lt;figure&gt;&lt;/figure&gt;
+&lt;figure&gt;&lt;/figure&gt;
+&lt;image source="solution-image.jpg"&gt;&lt;/image&gt;
+&lt;image source="fx-sqrt-x.jpg"&gt;&lt;/image&gt;
+&lt;image source="exercise-image.jpg"&gt;&lt;/image&gt;
+&lt;image source="fx-x2-2x.jpg"&gt;&lt;/image&gt;
+&lt;p&gt;We have already discussed how to graph a function...&lt;/p&gt;
+&lt;p&gt;In Example 3.12 we found that for &lt;m&gt;f(x)=x^2-2x,f'(x)=2x-2&lt;/m&gt;...&lt;/p&gt;
+&lt;p&gt;Sketch the graph of &lt;m&gt;f(x)=x^2-4&lt;/m&gt;...&lt;/p&gt;
+&lt;p&gt;In Example 3.11 we found that for &lt;m&gt;f(x)=\sqrt{x},f'(x)=1/2\sqrt{x}&lt;/m&gt;...&lt;/p&gt;
+&lt;p&gt;The solution is shown in the following graph. Observe that...&lt;/p&gt;
+&lt;p&gt;Use the following graph of &lt;m&gt;f(x)&lt;/m&gt; to sketch a graph of &lt;m&gt;f'(x)&lt;/m&gt;.&lt;/p&gt;
+&lt;solution&gt;&lt;/solution&gt;
+&lt;statement&gt;&lt;/statement&gt;
+&lt;statement&gt;&lt;/statement&gt;
+&lt;subsection&gt;&lt;/subsection&gt;
+&lt;title&gt;Graphing a Derivative&lt;/title&gt;
+&lt;title&gt;Sketching a Derivative Using a Function&lt;/title&gt;
+</code></pre></div></article></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn"><code class="code-inline tex2jax_ignore">openstax.org/books/calculus-volume-1/pages/3-2-the-derivative-as-a-function#fs-id1169737770972</code></div></div>
+</div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-exercises.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="meta-backmatter.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>

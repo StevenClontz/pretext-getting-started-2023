@@ -514,6 +514,87 @@ var ptx_lunr_docs = [
   "body": "  Consider the following concerning the first two pages (leading up until the Units header) of Elements of Abstract and Linear Algebra .    Consider how this content might be scaffolded in terms of paragraphs, theorems, statements, proofs, and so on (not necessarily in PreTeXt terms).    Nest the following PreTeXt elements in order to reproduce this portion of Elements .   <definition><\/definition> <example><\/example> <introduction><\/introduction> <li><p>If <m>a,b,c\\in R<\/m>... (associative)<\/p><\/li> <li><p><m>(-a)\\cdot b=a\\cdot(-b)=-(a\\cdot b)<\/m>.<\/p><\/li> <li><p>If <m>a,b,c\\in R<\/m>... (distribuative)<\/p><\/li> <li><p><m>(na)\\cdot(mb)=(nm)(a\\cdot b)<\/m>...<\/p><\/li> <li><p><m>a\\cdot \\underline{0}=\\underline{0}\\cdot=\\underline{0}<\/m>...<\/p><\/li> <li><p><m>R<\/m> has a multiplicative identity...<\/p><\/li> <li><p>Let <m>\\underline{n}=n\\underline{1}<\/m>. For example...<\/p><\/li> <li><p>If <m>a,b\\in R<\/m>... (commutative)<\/p><\/li> <p>Suppose <m>R<\/m> is an additive abelian group...<\/p> <p>The next two theorems show that ring mulitplication...<\/p> <p>Suppose <m>R<\/m> is a ring and <m>a,b\\in R<\/m>.<\/p> <p>Suppose <m>a,b\\in R<\/m> and <m>n,m\\in \\mathbf Z<\/m>.<\/p> <p>Rings are additive abelian groups with a second operation...<\/p> <p>The basic commutative rings in mathematics are the integers <m>\\mathbf Z<\/m>...<\/p> <p>Recall that, since <m>R<\/m> is an additive abelien group...<\/p> <p>If 1,2,3 are satisfied...<\/p> <p><ol><\/ol><\/p> <p><ol><\/ol><\/p> <p><ol><\/ol><\/p> <section><\/section> <statement><\/statement> <statement><\/statement> <statement><\/statement> <theorem><\/theorem> <title>Rings<\/title> <theorem><\/theorem> <statement><\/statement>    "
 },
 {
+  "id": "ch-publication",
+  "level": "1",
+  "url": "ch-publication.html",
+  "type": "Chapter",
+  "number": "5",
+  "title": "Publishing",
+  "body": " Publishing    By publishing , we mean here the process of finalizing the presentation and look of the output you get from PreTeXt. We stress again the philosophical distinction between author and publisher in PreTeXt , since there is great value in focusing on just one of these two types of tasks at a time.  Another aspect of the publishing process is that of creating the physical book and making it available in bookstores, or making the the web version available on your own website. The latter can be done automatically through GitHub pages using the pretext deploy function, but perhaps you also want to have a separate landing page that links to a version of the book you are celling on Amazon.com. However, these steps are beyond the scope of this guide (as for suggestions on the PreTeXt-support group if you would like some assistance getting started with these steps).  For this chapter we will assume you are trying to produce a single version of your book and want to control the presentation and look of that version. You can still produce this version in multiple formats (web, pdf, epub), and which you want to produce might change what you do slightly.    The publication file   PreTeXt controls publisher options in a publication file . The default location of this file is in the folder publication and is itself called publication.ptx . Open this file and take a look.  What you will see is more XML , but a different set of tags than what you would write in your PreTeXt source. The version of the publication file that came with your codespace was (at the one time) the almost complete list of options with default values provided. This should make it easy to modify values and experiment with different settings.  As new settings are introduced, you can find documentation ins the Publication File Reference part of the guide.   Eventually you may want to have different versions of your document, and you can do this with different publication files. In we will consider how to manage multiple publication files easily.   Next we will dive deeper into the different sorts of things that can be configured with this file.    Showing and Hiding things  We have seen that some blocks , like proofs, solutions, examples, are sometimes hidden behind a knowl : when you click on the title, the content expands to reveal itself. Most of the blocks can be knowled or not.  To edit these settings, look for the element <html> , and inside that <knowl\/> . This element has a number of attributes (the PreTeXt guide marks attributes with the @ symbol, by the way). You can specify whether elements should be knowled or not by changing the value of the attributes between yes and no.  Whether exercises are knowled depends on the type of exercises. PreTeXt distinguishes five types of exercise-like elements, since they have hints\/answers\/solutions that you might want to hide:   inline, which show up as checkpoints ; these are exercises mixed with other content in a divisions.    divisional; these are exercises that belong to an <exercises> division.    project; these are the entire project-like element like <activity> , <investigation> etc.    worksheet; essentially a project but its a division itself, and can contain spacing for students to work in when printed.    readingquestions; these are questions in a <reading-questions> division. These were exercises designed to get a text box that students can type short answers to questions at the end of a section.     You can control whether the entire exercise-like element is knowled, but their hints\/answers\/solutions are always knowled (no spoilers!). The only solution you can can choose to not knowl is that of an example, and that is controlled by these knowl switches.  You can, however, control which parts of exercises show up at all. This is set in a different section of the publication file: publication\/common\/exercise-inline (that is, in the <common> block in the <exercise-inline> element). You can replace exercise-inline by any of the five exercise types. Then as attributes, specify yes or no for the statement , hint , answer , solution .  This controls what shows up in the output, in all formats, at the position that the exercise was authored. There are also ways to redisplay any parts of these exercises later, to give a list of all solutions in the back of the book, say. See Exercises and Solutions from the guide.    Numbering  There are a few settings that control how things are numbered. Most of these live inside the <numbering> element of the publication file.   The <division\/> element and its attributes says how deep the numbering goes (i.e., do you put numbers on subsubsection?). This is set as a natural number as the value of the level attribute.    Also in this element you can specify whether parts are structural or decorative . This essentially says whether chapter number should restart in each part.    You can also set the number of the first chapter here using the chapter-start attribute.    There are four different types of elements that can be numbered independently: blocks , projects , equations , and footnotes . You can control how specific the numbering are for each of these by giving the corresponding element a level attribute.       Formatting  While there are some ways to control the look of the pdf, that is beyond the scope of this guide. Web output can be controlled more easily, selecting from a small number of predefined styles.  This is a feature that is currently under active development, so we will not say much here, but instead refer you again to the Publication File Reference part of the guide.   "
+},
+{
+  "id": "p-151",
+  "level": "2",
+  "url": "ch-publication.html#p-151",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "publishing author publisher "
+},
+{
+  "id": "p-153",
+  "level": "2",
+  "url": "ch-publication.html#p-153",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "version formats "
+},
+{
+  "id": "p-154",
+  "level": "2",
+  "url": "ch-publication.html#p-154",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "publication file "
+},
+{
+  "id": "remark-1",
+  "level": "2",
+  "url": "ch-publication.html#remark-1",
+  "type": "Remark",
+  "number": "5.1.1",
+  "title": "",
+  "body": " Eventually you may want to have different versions of your document, and you can do this with different publication files. In we will consider how to manage multiple publication files easily.  "
+},
+{
+  "id": "p-159",
+  "level": "2",
+  "url": "ch-publication.html#p-159",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "blocks knowl "
+},
+{
+  "id": "p-160",
+  "level": "2",
+  "url": "ch-publication.html#p-160",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "attributes "
+},
+{
+  "id": "p-170",
+  "level": "2",
+  "url": "ch-publication.html#p-170",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "structural decorative blocks projects equations footnotes "
+},
+{
+  "id": "ch-project",
+  "level": "1",
+  "url": "ch-project.html",
+  "type": "Chapter",
+  "number": "6",
+  "title": "Managing Your Project",
+  "body": " Managing Your Project  "
+},
+{
   "id": "ch-help",
   "level": "1",
   "url": "ch-help.html",
@@ -523,9 +604,9 @@ var ptx_lunr_docs = [
   "body": " Getting Help  Here we collect a number of useful resources to help you when you are stuck. The official PreTeXt site has lots of resources, but we understand it can be overwhelming.   Official documentation  Note that the official PreTeXt Guide can be hard to use because there is so much stuff in it. Additionally, some of the documentation is out of date. Still, if you know where to look, it is a great resource.  Here are some sections that we find especially helpful:    Basics Reference : A listing of the main elements of PreTeXt including snippets of the code that create them. This is one of the few places in the guide that has examples of the markup.     Publication File Reference : When you are ready to start changing how your output looks, you can use the publication file , which is described in this part of the guide.     PreTeXt Schema : The official list of elements and where they can go is given in the PreTeXt Schema, which is described here. Also you can check out the schema browser to actually view the schema.     Getting PreTeXt : If you want to install PreTeXt on your own computer, this early part of the guide gives you directions. It should be updated with information on CodeSpaces soon as well, if you need a refresher.   Finally, note that the search in PreTeXt now works really well, and searching for a feature will usually get you pointed in the right spot.    Examples  The Examples page on the PreTeXt site contains a number of useful live examples. Links are provided to web, pdf, and source (on GitHub). For some of the examples, there is also an annotated version available. We find these especially helpful since you can view source to see exactly how each bit of the example was marked up in code.  Here are some of the most useful such examples:    Sample Book : This annotated sample book contains a section on interactive exercises . The PreTeXt developers use this book for testing, so you can see the latest (sometimes experimental) features available.     Sample Article : Not particularly well organized (it is also a proving ground for developers) but this contains almost every variation of every feature of PreTeXt . Using the search and view source makes this an invaluable resource.       Community Support  There is a very active google group for support: pretext-support . You should also subscribe to the low-traffic pretext-announce to get updates.  This spring we will host daily virtual drop-in sessions to support authoring and devlopement of PreTeXt. Information will be posted to the pretext-announce google group.   "
 },
 {
-  "id": "p-153",
+  "id": "p-179",
   "level": "2",
-  "url": "ch-help.html#p-153",
+  "url": "ch-help.html#p-179",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
