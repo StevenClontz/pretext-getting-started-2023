@@ -16,16 +16,11 @@
   <section xml:id="sec-build-and-generate">
     <title>Build and Generate</title>
     <p>
-      Inside the VS Code window you opened through codespaces, have a .ptx file open.  You can build your entire project in a few different ways.
+      Inside the VS Code window you opened through codespaces, have a <c>.ptx</c> file open.  You can build your entire project in a few different ways.
       <ul>
         <li>
           <p>
-            Click the green triangle in the top-right corner of the window (hovering will show <q>Run PreTeXt</q>).  A window will pop up asking what PreTeXt command you want.  To start just select <q>Quick Build</q>.
-          </p>
-        </li>
-        <li>
-          <p>
-            In the <term>Status Bar</term> at the bottom of the VS Code window, there is a <q>PreTeXt</q> button (center left, next to a triangle). Clicking it will bring up the same select menu to pick a PreTeXt command.
+            Click the <q>PreTeXt</q> button in the VS Code status bar (just left of center on the bottom of the window), or use the keyboard shortcut <c>CTRL+ALT+p</c>, to bring up the PreTeXt Commands menu.  Select <q>Build</q> from the menu.  This will bring up a list of build targets.  Select <q>web</q> from the list.  This will build your entire project, and put the output in the <c>build/web</c> folder.
           </p>
         </li>
         <li>
@@ -35,11 +30,17 @@
         </li>
         <li>
           <p>
-            You can use the keyboard shortcut <c>CTRL+ALT+b</c> (or perhaps <c>CMD</c> instead of <c>CTRL</c> if you have a Mac).
+            You can use the keyboard shortcut <c>CTRL+ALT+b</c>.  This will build the project using the last build target you used.  If you haven't built yet, it will use the default build target, which is <q>web</q>.
           </p>
         </li>
       </ul>
     </p>
+
+    <note>
+      <p>
+        All shortcuts listed in this guide assume you are using Windows or Linux.  If you are using a Mac, you will need to use <c>CMD</c> instead of <c>CTRL</c>.
+      </p>
+    </note>
 
     <p>
       If your documentment contains some more complicated elements, you might need to <term>generate</term> them for them to show up.  The elements that require this are (depending on what your build target is):
@@ -54,19 +55,19 @@
     </p>
 
     <p>
-      You can generate assets in much the same way you run a build.  Either of the <q>Run PreTeXt</q> buttons will give a <c>Generate</c> choice, you can type <c>pretext generate</c> in the terminal, or use the keyboard shortcut <c>CTRL+ALT+g</c>.
+      You can generate assets in much the same way you run a build.  The <pretext /> command menu has a <c>Generate</c> choice that you select, and then select your target (different target formats have different requirements for what is generated).  You can also type <c>pretext generate</c> in the terminal, or use the keyboard shortcut <c>CTRL+ALT+g</c>.
     </p>
 
     <note>  
       <p>
-        Note that generating assets requires additional software, like <latex /> or Sage.  If you started the default codespace, then this is not necessarily installed.  You can fix this by entering the following command in the terminal:
+        Note that generating assets requires additional software, like <latex /> or Sage.  Depending on your codespace setup, you can likely fix erorrs by entering the following command in the terminal:
       </p>
       <pre>
         sudo bash ./.devcontainer/postCreateCommand.sh
       </pre>
-      <p>
+      <!-- <p>
         Alternatively, when you create a codespace, you can click the three dots next to the + and select the devcontainer that has <q>pretext-full</q> in its name. 
-      </p>
+      </p> -->
       <p>
         Once you install this software once, you should be good to go as long as your codespace exists.
       </p>
@@ -76,16 +77,16 @@
   <section xml:id="sec-previewing">
     <title>Previewing</title>
     <p>
-      You can check the output of what you built using the <term>View</term> command.  Again, you can access this in multiple ways: top-right icon or PreTeXt Commands menu.  When you use either of these, you will get a choice for your viewer.  We currently suggest using <q>Live Preview</q>, although on codespace this requires a few extra steps:
+      You can check the output of what you built using the <term>View</term> command.  Again, you can access this in multiple ways. If you use the <pretext /> Commands menu ans select <q>view</q>, you will get a choice for your viewer.  We currently suggest using <q>Live Preview</q>, although on codespace this requires a few extra steps:
       <ol>
         <li>
           <p>
-            When the side preview opens, it will ask you if you want to open in an external browser.  Click <q>Open in browser</q>.
+            When the side preview opens, it will ask you if you want to open in an external browser.  Click <q>Open in browser</q>.  If you don't see the pop-up, you can clicke on <q>Port: 3000</q> in the bottom status bar of VS Code and select <q>Open in browser</q> from the pop-up menu.
           </p>
         </li>
         <li>
           <p>
-            Now close that new tab that opens, and also close the side panel in VS Code that opened.
+            Now close the new tab that opens, and also close the side panel in VS Code that opened.
           </p>
         </li>
         <li>
@@ -180,7 +181,7 @@
     </p>
 
     <p>
-      With our codespace setup this is simple.  From the <q>PreTeXt Commands</q> menu, click on <q>Deploy to GitHub</q>.  This will automatically take the most recent build of your web target and host it through <url href="https://pages.github.com/">GitHub Pages</url>.  Watch the output pane for a link to your published site. (It can take a few minutes for the site to get set up or updated; there should be another link to view the progress of the GitHub <q>action</q> that reports the progress.)
+      With our codespace setup this is simple.  From the <q>PreTeXt Commands</q> menu, click on <q>Deploy</q>.  This will automatically take the most recent build of your web target and host it through <url href="https://pages.github.com/">GitHub Pages</url>.  Watch the output pane for a link to your published site. (It can take a few minutes for the site to get set up or updated; there should be another link to view the progress of the GitHub <q>action</q> that reports the progress.)
     </p>
   </section>
 </chapter>

@@ -15,10 +15,15 @@
     <section xml:id="sec-pandoc">
       <title>Using Pandoc</title>
       <p>
-        If you have a number of individual documents that you would like to convert, from pretty much any format, consider trying <url href="https://pandoc.org/">Pandoc</url>.  This command-line tool can read in lots of different formats and output in lots of different formats.  Unfortunately, <pretext /> is not a default output format, so you need to use a custom <term>writer</term>.  Download the this <url href="https://raw.githubusercontent.com/oscarlevin/pandoc-pretext/master/pretext.lua">writer</url> and put it somewhere you will remember.   
+        If you have a number of individual documents that you would like to convert, from pretty much any format, consider trying <url href="https://pandoc.org/">Pandoc</url>.  This command-line tool can read in lots of different formats and output in lots of different formats.  Unfortunately, <pretext /> is not a default output format, so you need to use a custom <term>writer</term>. 
       </p>
 
       <p>
+        The pretext-tools VS Code extension has a shortcut for using the custom writer and pandoc, assuming you have pandoc installed (which you will if you use a codespace).  You will need to upload the file you want to convert, either by dragging it to the Explorer menu in VS Code.  Then open the Command Pallet with <c>CTRL+SHIFT+P</c> and start typing <q>pretext: convert file to pretext</q> and select the item to shows up.  You will be prompted for the name of the file you want to convert.  The file will be converted and opened in a new tab.  You can then copy/paste the contents into your main documents.
+      </p>
+
+      <p>
+        You can also use Pandoc outside of VS Code.  Install pandoc from their website.  Then download the this <url href="https://raw.githubusercontent.com/oscarlevin/pandoc-pretext/master/pretext.lua">writer</url> and put it somewhere you will remember.   
         Documentation for how to use this tool is available on its <url href="https://github.com/oscarlevin/pandoc-pretext">GitHub repository</url>.
       </p>
     </section>
