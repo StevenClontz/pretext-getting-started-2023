@@ -18,7 +18,7 @@
     <!-- out for now and write this when the book is more complete -->
     <xi:include href="./meta-frontmatter.ptx" />
     
-    <xi:include href="./ch-prejmm.ptx" />
+    <xi:include href="./ch-pre-workshop.ptx" />
     <xi:include href="./ch-intro.ptx" />
     <xi:include href="./ch-workflow.ptx" />
     <xi:include href="./ch-exercises.ptx" />
