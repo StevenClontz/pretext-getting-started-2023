@@ -1,6 +1,6 @@
 {
-    "name": "PreTeXt-Full",
-    "image": "mcr.microsoft.com/devcontainers/python:3",
+    "name": "PreTeXt-Small",
+    "image": "oscarlevin/pretext:small",
     "features": {
       "ghcr.io/devcontainers/features/node:1": {},
       "ghcr.io/rocker-org/devcontainer-features/pandoc:1": {}
@@ -18,9 +18,9 @@
     // 		"protocol": "https"
     // 	}
     // },
-    "onCreateCommand": "pip install pretext && pretext new -d .",
+//     "onCreateCommand": "pip install pretext && pretext new -d .",
     // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "sudo bash ./.devcontainer/postCreateCommand.sh",
+//     "postCreateCommand": "sudo bash ./.devcontainer/postCreateCommand.sh",
   
     // Configure tool-specific properties.
     "customizations": {
