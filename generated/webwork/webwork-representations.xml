@@ -13,11 +13,11 @@
       <solution><p><m>{1} + {7} = {8}\text{.}</m></p>
 </solution>
     </static>
-    <server-data problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIk1hdGhPYmplY3RzLnBsIiwiUEdNTC5wbCIsIkFuc3dlckZvcm1hdEhlbHAucGwiLCJQQ0NtYWNyb3MucGwiLCJQR2NvdXJzZS5wbCIsKTtURVhUKGJlZ2lucHJvYmxlbSgpKTsKQ29udGV4dCgiTGltaXRlZE51bWVyaWMiKTsKJGEgPSBDb21wdXRlKHJhbmRvbSgxLCA5LCAxKSk7CiRiID0gQ29tcHV0ZShyYW5kb20oMSwgOSwgMSkpOwokYyA9ICRhICsgJGI7CgpCRUdJTl9QR01MCkNvbXB1dGUgW2BbJGFdICsgWyRiXVx0ZXh0ey59YF0KCltAS2V5Ym9hcmRJbnN0cnVjdGlvbnMoJ1R5cGUgeW91ciBhbnN3ZXIgd2l0aG91dCB1c2luZyB0aGUgW3wrfF0qIHNpZ24uJylAXSoqCgpUaGUgc3VtIGlzIFtfXXskY317Mn0uCgoKRU5EX1BHTUwKCkJFR0lOX1BHTUxfU09MVVRJT04KW2BbJGFdICsgWyRiXSA9IFskY11cdGV4dHsufWBdCgoKRU5EX1BHTUxfU09MVVRJT04KCkVORERPQ1VNRU5UKCk7" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <server-data problemSource="RE9DVU1FTlQoKTsKbG9hZE1hY3JvcygiUEdzdGFuZGFyZC5wbCIsIlBHTUwucGwiLCJBbnN3ZXJGb3JtYXRIZWxwLnBsIiwiUENDbWFjcm9zLnBsIiwiUEdjb3Vyc2UucGwiLCk7VEVYVChiZWdpbnByb2JsZW0oKSk7CkNvbnRleHQoIkxpbWl0ZWROdW1lcmljIik7CiRhID0gQ29tcHV0ZShyYW5kb20oMSwgOSwgMSkpOwokYiA9IENvbXB1dGUocmFuZG9tKDEsIDksIDEpKTsKJGMgPSAkYSArICRiOwoKQkVHSU5fUEdNTApDb21wdXRlIFtgWyRhXSArIFskYl1cdGV4dHsufWBdCgpbQEtleWJvYXJkSW5zdHJ1Y3Rpb25zKCdUeXBlIHlvdXIgYW5zd2VyIHdpdGhvdXQgdXNpbmcgdGhlIFt8K3xdKiBzaWduLicpQF0qKgoKVGhlIHN1bSBpcyBbX117JGN9ezJ9LgoKCkVORF9QR01MCgpCRUdJTl9QR01MX1NPTFVUSU9OCltgWyRhXSArIFskYl0gPSBbJGNdXHRleHR7Ln1gXQoKCkVORF9QR01MX1NPTFVUSU9OCgpFTkRET0NVTUVOVCgpOw==" domain="https://webwork-ptx.aimath.org" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg><![CDATA[
 #############################################
 ###       Generated from PreTeXt source      
-###       on 2023-01-05T13:30:30Z       
+###       on 2023-05-15T18:42:23Z       
 ###   A recent stable commit (2022-07-01):   
 ### 6c761d3dba23af92cba35001c852aac04ae99a5f 
 ###                                          
@@ -45,7 +45,6 @@ DOCUMENT();
 ############################################################
 loadMacros(
   "PGstandard.pl",
-  "MathObjects.pl",
   "PGML.pl",
   "AnswerFormatHelp.pl",
   "PCCmacros.pl",
