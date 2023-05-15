@@ -8,19 +8,7 @@
             GitHub users also can share their
             content for free on GitHub Pages!
         </p>
-        <aside>
-            <p>
-                (The program description references CoCalc.com,
-                another service that can be used to author PreTeXt,
-                but workshop plans have been updated to focus primarily on
-                GitHub workflows.)
-            </p>
-        </aside>
-        <p>
-            Wifi will be available in our room at the JMM, so
-            each participant will only need to bring their laptop.
-            No installation of software is required 
-        </p>
+
     </introduction>
     <section>
         <title>Setting up your GitHub account</title>
@@ -34,7 +22,7 @@
         <p>
             Be sure to note your GitHub username and password in your password manager
             (or however you usually keep track of login credentials) so you can log in
-            again at the Joint Mathematics Meetings.
+            again durring the workshop.
         </p>
     </section>
     <section>
@@ -53,14 +41,13 @@
     <section>
         <title>And that's it!</title>
         <p>
-            Even just a couple months ago, the process to get started writing PreTeXt
+            Even just a last year, the process to get started writing PreTeXt
             involved several more steps. (Raise your hand if you don't care what a
             <q>PATH variable</q> is!)
         </p>
         <p>
             The community is streamlining this experience
-            daily, and we look forward to sharing how easy writing in PreTeXt is when we meet 
-            you at the JMM!
+            daily, and we look forward to sharing how easy writing in PreTeXt is when we see you at the workshop
         </p>
     </section>
 </chapter>

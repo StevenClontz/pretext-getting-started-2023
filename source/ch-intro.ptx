@@ -213,17 +213,17 @@ Within each division (chapter, section, etc., see <xref ref="sec-divisions"/>) o
 you likely want some content (e.g. what you're reading right now!).
         </p>
         <p>
-Written content is usually structured as <term>paragraphs</term>, <c>&lt;p&gt;</c> for short.
+Written content is usually structured as <term>paragraphs</term>, <tag>p</tag> for short.
 If you've ever written <abbr>HTML</abbr>, this tag may be familiar to you, but be warned:
 while PreTeXt is XML (<xref ref="sec-xml"/>),
 <em><pretext/> is not HTML</em>! There is some overlap: you can <em>emphasize</em>
-words or phrases with <c>&lt;em&gt;</c> for instance. However, while HTML uses the full word
-<q>code</q> for its tag, <pretext /> uses the shortened <c>&lt;c&gt;</c> tag.
+words or phrases with <tag>em</tag> for instance. However, while HTML uses the full word
+<q>code</q> for its tag, <pretext /> uses the shortened <tag>c</tag> tag.
         </p>
         <p>
 Note that these elements are all <term>semantic</term>: they express the <em>meaning</em>
-of content, not its presentation. For example, the word <q>semantic</q> was a <c>&lt;term&gt;</c>
-we just defined, while we merely emphasized <q>meaning</q> with <c>&lt;em&gt;</c>.
+of content, not its presentation. For example, the word <q>semantic</q> was a <tag>term</tag>,
+we just defined, while we merely emphasized <q>meaning</q> with <tag>em</tag>.
 The presentation of these concepts may vary by output format, likely using some combination of
 boldface, italics, or underlining.
         </p>

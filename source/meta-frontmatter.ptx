@@ -15,18 +15,10 @@
       <department>School of Mathematical Sciences</department>
       <institution>University of Northern Colorado</institution>
     </author>
-    <date>2023 January</date>
+    <date>Summer 2023</date>
   </titlepage>
 
   <preface>
-    <paragraphs>
-      <title>Note</title>
-      <p>
-This JMM Professional Enhancement Program will be held on Thursday, January 5 between
-9 am - 11 am and Saturday, January 7 between 9 am - 11 am in Salon CD on the fourth floor 
-of the Boston Marriott Copley Place.
-      </p>
-    </paragraphs>
     <p>
       <url href="https://pretextbook.org">PreTeXt</url> is a document authoring system that allows
       you to convert the source of your document into a variety of output formats, including fully
@@ -36,7 +28,7 @@ of the Boston Marriott Copley Place.
       updates make this process much easier; there has never been a better time to get started with
       PreTeXt. </p>
     <p>
-      Participants of this PEP will be introduced to the fundamentals of authoring documents
+      Participants of this workshop will be introduced to the fundamentals of authoring documents
       with PreTeXt and gain the technical skills required to work with it. Specifically,
       participants will learn how to:
     </p>
@@ -55,7 +47,7 @@ of the Boston Marriott Copley Place.
       We will also share tips for converting existing documents into PreTeXt.
     </p>
     <p>
-      Prior to the PEP, participants should have some familiarity with LaTeX or other markup
+      Prior to the workshop, participants should have some familiarity with LaTeX or other markup
       languages.
       No previous experience working with PreTeXt or HTML/XML is assumed.
       Participants should bring a laptop that can connect to JMM's provided wifi: no prior

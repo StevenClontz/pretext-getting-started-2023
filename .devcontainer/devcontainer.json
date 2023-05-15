@@ -1,6 +1,6 @@
 {
-    "name": "PreTeXt-Small",
-    "image": "oscarlevin/pretext:small",
+    "name": "PreTeXt-Full",
+    "image": "oscarlevin/pretext:full",
     "features": {
       "ghcr.io/devcontainers/features/node:1": {},
       "ghcr.io/rocker-org/devcontainer-features/pandoc:1": {}

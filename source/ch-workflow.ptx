@@ -20,17 +20,17 @@
       <ul>
         <li>
           <p>
-            Click the green triangle in the top-right corner of the window (hovering will show <q>Build (select target)</q>).  A window will pop up asking for a <term>target</term> to build.  To start just select <q>web</q>.
+            Click the green triangle in the top-right corner of the window (hovering will show <q>Run PreTeXt</q>).  A window will pop up asking what PreTeXt command you want.  To start just select <q>Quick Build</q>.
           </p>
         </li>
         <li>
           <p>
-            In the <q>Explorer</q> panel on the left-hand side of the window, you can expand the <q>PreTeXt Commands</q> menu and select the Build option.
+            In the <term>Status Bar</term> at the bottom of the VS Code window, there is a <q>PreTeXt</q> button (center left, next to a triangle). Clicking it will bring up the same select menu to pick a PreTeXt command.
           </p>
         </li>
         <li>
           <p>
-            You can type <c>pretext build web</c> from the terminal (this uses the CLI directly).
+            You can type <c>pretext build web</c> from the terminal (this uses the CLI directly).  If you don't see a terminal window at the bottom of the screen, you can open it with <c>CTRL+`</c>.
           </p>
         </li>
         <li>
@@ -54,12 +54,12 @@
     </p>
 
     <p>
-      You can generate assets in much the same way you run a build.  There is a button on the top-right of the window, and option in the <q>PreTeXt Commands</q> menu, you can type <c>pretext generate</c> in the terminal, or use the keyboard shortcut <c>CTRL+ALT+g</c>.
+      You can generate assets in much the same way you run a build.  Either of the <q>Run PreTeXt</q> buttons will give a <c>Generate</c> choice, you can type <c>pretext generate</c> in the terminal, or use the keyboard shortcut <c>CTRL+ALT+g</c>.
     </p>
 
     <note>  
       <p>
-        Note that generating assets requires additional software.  If you started the default codespace, then this is not necessarily installed.  You can fix this by entering the following command in the terminal:
+        Note that generating assets requires additional software, like <latex /> or Sage.  If you started the default codespace, then this is not necessarily installed.  You can fix this by entering the following command in the terminal:
       </p>
       <pre>
         sudo bash ./.devcontainer/postCreateCommand.sh
