@@ -744,9 +744,9 @@ runge()
     <section xml:id="sec-not-just-html-not-just-pdf">
         <title>Not Just HTML, Not Just PDF</title>
         <p> This document is available in HTML format at <url
-                href="https://stevenclontz.github.io/ptx-jmm-2023/" />, and the same document is
+                href="https://stevenclontz.github.io/pretext-getting-started-2023/" />, and the same document is
             available in a PDF format at <url
-                href="https://stevenclontz.github.io/ptx-jmm-2023/pdf/main.pdf" />. </p>
+                href="https://stevenclontz.github.io/pretext-getting-started-2023/print/main.pdf" />. </p>
         <p> Obtaining these formats are as easy as running <c>pretext build web</c> and
             <c>pretext build print</c> respectively. PreTeXt supports other types of output as well, including
             Jupyter notebooks, ePub, and tacticle braille code.</p>
