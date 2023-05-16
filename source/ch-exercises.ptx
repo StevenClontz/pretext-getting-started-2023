@@ -16,7 +16,7 @@
     <task>
       <statement>
         <p>
-          Write a paragraph of text that includes an <em>emphasized</em> word, a <q>quotted</q> word, and inline math using a varialbe like <m>x</m> or <m>y</m>.
+          Write a paragraph of text that includes an <em>emphasized</em> word, a <q>quoted</q> word, and inline math using a variable like <m>x</m> or <m>y</m>.
         </p>
       </statement>
     </task>
