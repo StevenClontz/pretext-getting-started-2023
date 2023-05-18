@@ -3,6 +3,66 @@
     <title>Managing Your Project</title>
     <section xml:id="sec-file-and-directory-structure">
         <title>File and directory structure</title>
+        <p>
+            Here we describe the file and directory structure of a project.  PreTeXt allows a fair amount of flexibility in how you structure the project, but we believe the following are best practices.
+            <dl>
+                <li>
+                    <title><c>source</c> folder</title>
+                    <p>
+                        Contains all your <c>.ptx</c> files that hold the content of your document.  A new book starts with just a single file, but later we will see how to modularize the source to make organizing it easier.
+                    </p>
+                </li>
+                <li>
+                    <title><c>publication</c> folder</title>
+                    <p>
+                        Contains your <c>publication.ptx</c> file or files, which define the publication-specific information about your document, as we saw in <xref ref="ch-publication"/>
+                    </p>
+                </li>
+                <li>
+                    <title><c>assets</c> folder</title>
+                    <p>
+                        Put any images or other static files that you will include in your document here. This does not include images that you describe inside your source (like <tag>latex-image</tag>).  You can have subfolders as you like, and if you refer to these files in your source, you do <alert>not</alert> use <q>assets</q> as part of the file name (<pretext /> knows where to look, since this is specified in the <c>publication.ptx</c> file.)
+                    </p>
+                </li>
+                <li>
+                    <title><c>generated-assets</c> folder</title>
+                    <p>
+                        This is a folder that <pretext /> automatically creates and fills with assets that it generates from your source.  You shouldn't edit anything in this folder.  It is not tracked by git by default.
+                    </p>
+                </li>
+                <li>
+                    <title><c>output</c> folder</title>
+                    <p>
+                        Another folder created by <pretext />.  It will contain the results of <c>pretext build</c>.  In general, you should not touch anything in this folder. Not tracked by git by default.
+                    </p>
+                </li>
+                <li>
+                    <title><c>project.ptx</c> file</title>
+                    <p>
+                        This is the <term>project manifest</term> file, which you use to manage the different builds of your project.  We will describe how to use this in more detail below.
+                    </p>
+                </li>
+            </dl>
+        </p>
+        <p>
+            There are a few other files that you might see in a project, such as <c>requirements.txt</c> and <c>.gitignore</c>.  Don't worry about these for now.
+        </p>
+        <p>
+            When your project grows, you will likely want to separate your <c>main.ptx</c> source file (inside the <c>source</c> folder) into multiple <c>.ptx</c> files.  For example, you might want a single file per chapter, and even a separate file for each section.  You can do this by using the <tag>xi:include</tag> tag.  For example, if you have a file <c>source/chapter1.ptx</c> that contains the first chapter of your book, you can include it in your <c>main.ptx</c> file like this: 
+            <cd>
+                <cline>&lt;xi:include href="./chapter1.ptx" /&gt;</cline>
+            </cd>
+            In the top level tag of the file in which you use <tag>xi:include</tag> (in this case, <c>main.ptx</c>), you must add the following attribute: 
+            <cd>
+                <cline>xmlns:xi="http://www.w3.org/2001/XInclude"</cline>
+            </cd>
+        </p>    
+        <p>
+            Then in the <c>chapter1.ptx</c> file, you would start with the standard <tag>?xml version="1.0" encoding="UTF-8"?</tag> followed by the top-level tag <tag>chapter</tag>.  There can only be one top level tag in this file.  A second chapter would need to be its own file and <tag>xi:include</tag> it separately.
+        </p>
+        <p>
+            More information can be found in the <url href="https://pretextbook.org/doc/guide/html/processing-modular.html">Modular Source Files</url> section of the guide.
+        </p>
     </section>
     <section xml:id="sec-project-ptx">
         <title>Project.ptx</title>
