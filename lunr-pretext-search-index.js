@@ -592,7 +592,16 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "6",
   "title": "Managing Your Project",
-  "body": " Managing Your Project   File and directory structure    Project.ptx    Versions    Building subsets    Codespaces, GitHub, and GitHub Pages   "
+  "body": " Managing Your Project   File and directory structure  Here we describe the file and directory structure of a project. PreTeXt allows a fair amount of flexibility in how you structure the project, but we believe the following are best practices.   source folder  Contains all your .ptx files that hold the content of your document. A new book starts with just a single file, but later we will see how to modularize the source to make organizing it easier.    publication folder  Contains your publication.ptx file or files, which define the publication-specific information about your document, as we saw in     assets folder  Put any images or other static files that you will include in your document here. This does not include images that you describe inside your source (like <latex-image> ). You can have subfolders as you like, and if you refer to these files in your source, you do not use assets as part of the file name ( PreTeXt knows where to look, since this is specified in the publication.ptx file.)    generated-assets folder  This is a folder that PreTeXt automatically creates and fills with assets that it generates from your source. You shouldn't edit anything in this folder. It is not tracked by git by default.    output folder  Another folder created by PreTeXt . It will contain the results of pretext build . In general, you should not touch anything in this folder. Not tracked by git by default.    project.ptx file  This is the project manifest file, which you use to manage the different builds of your project. We will describe how to use this in more detail below.     There are a few other files that you might see in a project, such as requirements.txt and .gitignore . Don't worry about these for now.  When your project grows, you will likely want to separate your main.ptx source file (inside the source folder) into multiple .ptx files. For example, you might want a single file per chapter, and even a separate file for each section. You can do this by using the <xi:include> tag. For example, if you have a file source\/chapter1.ptx that contains the first chapter of your book, you can include it in your main.ptx file like this:  <xi:include href=\".\/chapter1.ptx\" \/>  In the top level tag of the file in which you use <xi:include> (in this case, main.ptx ), you must add the following attribute:  xmlns:xi=\"http:\/\/www.w3.org\/2001\/XInclude\"      Project.ptx    Versions    Building subsets    Codespaces, GitHub, and GitHub Pages   "
+},
+{
+  "id": "p-173",
+  "level": "2",
+  "url": "ch-project.html#p-173",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "project manifest "
 },
 {
   "id": "ch-converting-to-pretext",
@@ -613,9 +622,9 @@ var ptx_lunr_docs = [
   "body": " Your goal in doing a conversion should be to move all your materials into PreTeXt and then always work from the PreTeXt source, converting back to other formats as needed. It is simply not feasible to keep converting to PreTeXt , since this process is not automatic.  "
 },
 {
-  "id": "p-175",
+  "id": "p-184",
   "level": "2",
-  "url": "ch-converting-to-pretext.html#p-175",
+  "url": "ch-converting-to-pretext.html#p-184",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -631,9 +640,9 @@ var ptx_lunr_docs = [
   "body": " Getting Help  Here we collect a number of useful resources to help you when you are stuck. The official PreTeXt site has lots of resources, but we understand it can be overwhelming.   Official documentation  Note that the official PreTeXt Guide can be hard to use because there is so much stuff in it. Additionally, some of the documentation is out of date. Still, if you know where to look, it is a great resource.  Here are some sections that we find especially helpful:    Basics Reference : A listing of the main elements of PreTeXt including snippets of the code that create them. This is one of the few places in the guide that has examples of the markup.     Publication File Reference : When you are ready to start changing how your output looks, you can use the publication file , which is described in this part of the guide.     PreTeXt Schema : The official list of elements and where they can go is given in the PreTeXt Schema, which is described here. Also you can check out the schema browser to actually view the schema.     Getting PreTeXt : If you want to install PreTeXt on your own computer, this early part of the guide gives you directions. It should be updated with information on CodeSpaces soon as well, if you need a refresher.   Finally, note that the search in PreTeXt now works really well, and searching for a feature will usually get you pointed in the right spot.    Examples  The Examples page on the PreTeXt site contains a number of useful live examples. Links are provided to web, pdf, and source (on GitHub). For some of the examples, there is also an annotated version available. We find these especially helpful since you can view source to see exactly how each bit of the example was marked up in code.  Here are some of the most useful such examples:    Sample Book : This annotated sample book contains a section on interactive exercises . The PreTeXt developers use this book for testing, so you can see the latest (sometimes experimental) features available.     Sample Article : Not particularly well organized (it is also a proving ground for developers) but this contains almost every variation of every feature of PreTeXt . Using the search and view source makes this an invaluable resource.       Community Support  There is a very active google group for support: pretext-support . You should also subscribe to the low-traffic pretext-announce to get updates.  This spring we will host daily virtual drop-in sessions to support authoring and devlopement of PreTeXt. Information will be posted to the pretext-announce google group.   "
 },
 {
-  "id": "p-182",
+  "id": "p-191",
   "level": "2",
-  "url": "ch-help.html#p-182",
+  "url": "ch-help.html#p-191",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
