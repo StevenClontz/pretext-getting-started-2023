@@ -319,7 +319,8 @@ eBookConfig.enable_chatcodes =  false;
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="chapter" id="ch-project"><h2 class="heading">
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="chapter" id="ch-project"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">6</span> <span class="title">Managing Your Project</span>
 </h2>
 <section class="section" id="sec-file-and-directory-structure"><h3 class="heading hide-type">
@@ -357,15 +358,22 @@ eBookConfig.enable_chatcodes =  false;
 <div class="para">In the top level tag of the file in which you use <code class="code-inline tex2jax_ignore">&lt;xi:include&gt;</code> (in this case, <code class="code-inline tex2jax_ignore">main.ptx</code>), you must add the following attribute:</div>
 <pre class="code-display tex2jax_ignore">xmlns:xi="http://www.w3.org/2001/XInclude"
 </pre>
-</div></section><section class="section" id="sec-project-ptx"><h3 class="heading hide-type">
+</div>
+<div class="para" id="p-182">Then in the <code class="code-inline tex2jax_ignore">chapter1.ptx</code> file, you would start with the standard <code class="code-inline tex2jax_ignore">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code> followed by the top-level tag <code class="code-inline tex2jax_ignore">&lt;chapter&gt;</code>.  There can only be one top level tag in this file.  A second chapter would need to be its own file and <code class="code-inline tex2jax_ignore">&lt;xi:include&gt;</code> it separately.</div>
+<div class="para" id="p-183">More information can be found in the <a class="external" href="https://pretextbook.org/doc/guide/html/processing-modular.html" target="_blank">Modular Source Files</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-14" id="fn-14"><sup> 1 </sup></a> section of the guide.</div></section><section class="section" id="sec-project-ptx"><h3 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.2</span> <span class="title">Project.ptx</span>
-</h3></section><section class="section" id="sec-versions"><h3 class="heading hide-type">
+</h3>
+<div class="para" id="p-184">You will likely want to build your source file into multiple output formats.  How do you tell PreTeXt what outputs you want?  You keep track of this, and some other information, in your <code class="code-inline tex2jax_ignore">project.ptx</code> file.</div>
+<div class="para" id="p-185">The <code class="code-inline tex2jax_ignore">project.ptx</code> file is a <dfn class="terminology">project manifest</dfn> file.  It is used to manage the different builds of your project.  It is a <code class="code-inline tex2jax_ignore">.ptx</code> file, but it is not part of the content of your document.  It is used to tell PreTeXt how to build your document.</div>
+<div class="para" id="p-186">For now, take a look at the <code class="code-inline tex2jax_ignore">project.ptx</code> file in this project.  You will see that there are multiple <dfn class="terminology">targets</dfn> each with a <dfn class="terminology">name</dfn>, and a specified <code class="code-inline tex2jax_ignore">&lt;format&gt;</code>, <code class="code-inline tex2jax_ignore">&lt;source&gt;</code>, <code class="code-inline tex2jax_ignore">&lt;publication&gt;</code> (file), and <code class="code-inline tex2jax_ignore">&lt;output-dir&gt;</code> (directory).  The <code class="code-inline tex2jax_ignore">&lt;source&gt;</code> and <code class="code-inline tex2jax_ignore">&lt;publication&gt;</code> are probably the same for all targets, but they don't have to be.</div>
+<div class="para" id="p-187">For a complete description of this file and its use, see <a class="external" href="https://pretextbook.org/doc/guide/html/processing-CLI.html#cli-project-manifest" target="_blank"><code class="code-inline tex2jax_ignore">https://pretextbook.org/doc/guide/html/processing-CLI.html#cli-project-manifest</code></a>.</div></section><section class="section" id="sec-versions"><h3 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.3</span> <span class="title">Versions</span>
 </h3></section><section class="section" id="sec-building-subsets"><h3 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.4</span> <span class="title">Building subsets</span>
 </h3></section><section class="section" id="sec-codespaces-github-pages"><h3 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">6.5</span> <span class="title">Codespaces, GitHub, and GitHub Pages</span>
-</h3></section></section></div>
+</h3></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-14"><div class="fn"><code class="code-inline tex2jax_ignore">pretextbook.org/doc/guide/html/processing-modular.html</code></div></div>
+</div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-publication.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="ch-converting-to-pretext.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
 </div></main>
