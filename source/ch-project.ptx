@@ -66,6 +66,18 @@
     </section>
     <section xml:id="sec-project-ptx">
         <title>Project.ptx</title>
+        <p>
+            You will likely want to build your source file into multiple output formats.  How do you tell <pretext /> what outputs you want?  You keep track of this, and some other information, in your <c>project.ptx</c> file.
+        </p>
+        <p>
+            The <c>project.ptx</c> file is a <term>project manifest</term> file.  It is used to manage the different builds of your project.  It is a <c>.ptx</c> file, but it is not part of the content of your document.  It is used to tell <pretext /> how to build your document.
+        </p>
+        <p>
+            For now, take a look at the <c>project.ptx</c> file in this project.  You will see that there are multiple <term>targets</term> each with a <term>name</term>, and a specified <tag>format</tag>, <tag>source</tag>, <tag>publication</tag> (file), and <tag>output-dir</tag> (directory).  The <tag>source</tag> and <tag>publication</tag> are probably the same for all targets, but they don't have to be.
+        </p>
+        <p>
+            For a complete description of this file and its use, see <url href="https://pretextbook.org/doc/guide/html/processing-CLI.html#cli-project-manifest"/>.
+        </p>
     </section>
     <section xml:id="sec-versions">
         <title>Versions</title>
