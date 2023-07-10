@@ -1,5 +1,8 @@
 {
-  "cSpell.enableFiletypes": [
-    "pretext"
-  ]
+    "xml.fileAssociations": [
+        {
+            "pattern": "**/source/**.ptx",
+            "systemId": "/root/.ptx/schema/pretext.rng"
+        }
+    ]
 }
