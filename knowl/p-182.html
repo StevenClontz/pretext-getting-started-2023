@@ -12,7 +12,14 @@
 </head>
 <body class="ignore-math">
 <h4 class="heading"><span class="type">Paragraph</span></h4>
-<div class="para">Then in the <code class="code-inline tex2jax_ignore">chapter1.ptx</code> file, you would start with the standard <code class="code-inline tex2jax_ignore">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code> followed by the top-level tag <code class="code-inline tex2jax_ignore">&lt;chapter&gt;</code>.  There can only be one top level tag in this file.  A second chapter would need to be its own file and <code class="code-inline tex2jax_ignore">&lt;xi:include&gt;</code> it separately.</div>
+<div class="para logical">
+<div class="para">When your project grows, you will likely want to separate your <code class="code-inline tex2jax_ignore">main.ptx</code> source file (inside the <code class="code-inline tex2jax_ignore">source</code> folder) into multiple <code class="code-inline tex2jax_ignore">.ptx</code> files.  For example, you might want a single file per chapter, and even a separate file for each section.  You can do this by using the <code class="code-inline tex2jax_ignore">&lt;xi:include&gt;</code> tag.  For example, if you have a file <code class="code-inline tex2jax_ignore">source/chapter1.ptx</code> that contains the first chapter of your book, you can include it in your <code class="code-inline tex2jax_ignore">main.ptx</code> file like this:</div>
+<pre class="code-display tex2jax_ignore">&lt;xi:include href="./chapter1.ptx" /&gt;
+</pre>
+<div class="para">In the top level tag of the file in which you use <code class="code-inline tex2jax_ignore">&lt;xi:include&gt;</code> (in this case, <code class="code-inline tex2jax_ignore">main.ptx</code>), you must add the following attribute:</div>
+<pre class="code-display tex2jax_ignore">xmlns:xi="http://www.w3.org/2001/XInclude"
+</pre>
+</div>
 <span class="incontext"><a href="ch-project.html#p-182" class="internal">in-context</a></span>
 </body>
 </html>

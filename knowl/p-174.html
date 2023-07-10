@@ -11,8 +11,31 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body class="ignore-math">
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<div class="para">Contains all your <code class="code-inline tex2jax_ignore">.ptx</code> files that hold the content of your document.  A new book starts with just a single file, but later we will see how to modularize the source to make organizing it easier.</div>
+<h4 class="heading"><span class="type">Paragraph</span></h4>
+<div class="para logical">
+<div class="para">Here we describe the file and directory structure of a project.  PreTeXt allows a fair amount of flexibility in how you structure the project, but we believe the following are best practices.</div>
+<dl class="description-list">
+<dt>
+<code class="code-inline tex2jax_ignore">source</code> folder</dt>
+<dd><div class="para">Contains all your <code class="code-inline tex2jax_ignore">.ptx</code> files that hold the content of your document.  A new book starts with just a single file, but later we will see how to modularize the source to make organizing it easier.</div></dd>
+<dt>
+<code class="code-inline tex2jax_ignore">publication</code> folder</dt>
+<dd><div class="para">Contains your <code class="code-inline tex2jax_ignore">publication.ptx</code> file or files, which define the publication-specific information about your document, as we saw in <a href="ch-publication.html" class="internal" title="Chapter 5: Publishing">Chapter 5</a>
+</div></dd>
+<dt>
+<code class="code-inline tex2jax_ignore">assets</code> folder</dt>
+<dd><div class="para">Put any images or other static files that you will include in your document here. This does not include images that you describe inside your source (like <code class="code-inline tex2jax_ignore">&lt;latex-image&gt;</code>).  You can have subfolders as you like, and if you refer to these files in your source, you do <em class="alert">not</em> use “assets” as part of the file name (PreTeXt knows where to look, since this is specified in the <code class="code-inline tex2jax_ignore">publication.ptx</code> file.)</div></dd>
+<dt>
+<code class="code-inline tex2jax_ignore">generated-assets</code> folder</dt>
+<dd><div class="para">This is a folder that PreTeXt automatically creates and fills with assets that it generates from your source.  You shouldn’t edit anything in this folder.  It is not tracked by git by default.</div></dd>
+<dt>
+<code class="code-inline tex2jax_ignore">output</code> folder</dt>
+<dd><div class="para">Another folder created by PreTeXt.  It will contain the results of <code class="code-inline tex2jax_ignore">pretext build</code>.  In general, you should not touch anything in this folder. Not tracked by git by default.</div></dd>
+<dt>
+<code class="code-inline tex2jax_ignore">project.ptx</code> file</dt>
+<dd><div class="para">This is the <dfn class="terminology">project manifest</dfn> file, which you use to manage the different builds of your project.  We will describe how to use this in more detail below.</div></dd>
+</dl>
+</div>
 <span class="incontext"><a href="ch-project.html#p-174" class="internal">in-context</a></span>
 </body>
 </html>

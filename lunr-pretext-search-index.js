@@ -25,7 +25,7 @@ var ptx_lunr_docs = [
   "type": "Chapter",
   "number": "2",
   "title": "Write Once, Read Anywhere",
-  "body": " Write Once, Read Anywhere    At the end of this chapter, you'll     Become aware of the eleven PreTeXt Principles.    Be able to identify several features of PreTeXt.    Have a working GitHub Codespaces environment to suitable for authoring and editing in PreTeXt.      Setting up Codespaces  A Codespace is an authoring environment that lives in the cloud , that is, a virtual machine hosted by GitHub that has all of the software needed to create great accessible documents, accessible with just a web browser.  This coding environment uses a web version of Virtual Studio Code, an open-source editor, along with the PreTeXt community's custom plugins and software to get started authoring quickly.  Follow the instructions at to get started. Let this run for a few minutes in the background while you review the rest of this section.    PreTeXt Principles  A more detailed monograph on PreTeXt's philosophy is availabe in the PreTeXt Guide.   PreTeXt Principles   PreTeXt is a markup language that captures the structure of textbooks and research papers.  PreTeXt is human-readable and human-writable.  PreTeXt documents serve as a single source which can be easily converted to multiple other formats, current and future.  PreTeXt respects the good design practices which have been developed over the past centuries.  PreTeXt makes it easy for authors to implement features which are both common and reasonable.  PreTeXt supports online documents which make use of the full capabilities of the Web.  PreTeXt output is styled by selecting from a list of available templates, relieving the author of the burden involved in micromanaging the output format.  PreTeXt is free: the software is available at no cost, with an open license. The use of PreTeXt does not impose any constraints on documents prepared with the system.  PreTeXt is not a closed system: documents can be converted to latex and then developed using standard latex tools.  PreTeXt recognizes that scholarly documents involve the interaction of authors, publishers, scholars, curators, instructors, students, and readers, with each group having its own needs and goals.  PreTeXt recognizes the inherent value in producing material that is accessible to everyone.      PreTeXt is XML  Since PreTeXt uses the XML markup language, all content is structured in terms of elements . The root pretext element nests many other elements inside of it. This is accomplished by surrounding everything with a starting <pretext>  tag and an ending <\/pretext> tag. (Folks with HTML experience will find this pattern familiar, akin to the HTML root element.)   is a very simple PreTeXt \/XML document. (The first line is boilerplate that lets various programs know the rest of the file is XML, and the third-to-last line is an example of a comment that won't appear in the output.)   Source of a simple PreTeXt book project.   <?xml version=\"1.0\" encoding=\"UTF-8\"?> <pretext> <article> <title>Hello world!<\/title> <p>Welcome to PreTeXt!<\/p> <!-- TODO: find something more to say... --> <\/article> <\/pretext>      Books and Divisions  There are several documents you can write in PreTeXt , such as <article> s and <slideshow> s. This tutorial will focus on <book> s.  A <book> typically includes <frontmatter> , and <backmatter> .  Between <frontmatter> , and <backmatter> are either several <chapter> s or <part> s. If used, <part> s are subdivided into <chapter> s. Then <chapter> s subdivide into <section> s, and <section> s can have <subsection> s.  Each of these subdivisions needs a <title> , and may have an <introduction> or <conclusion> .   puts some of these elements together for a simple PreTeXt project (information on the other elements will come in later sections).   Source of a simple PreTeXt book project.   <?xml version=\"1.0\" encoding=\"UTF-8\"?> <pretext xml:lang=\"en-US\"> <!-- (author configurations go in docinfo) --> <docinfo> <macros> \\newcommand{\\R}{\\mathbb R} <\/macros> <\/docinfo> <book xml:id=\"my-great-book\"> <title>My Great Book<\/title> <subtitle>An example to get you started<\/subtitle> <frontmatter xml:id=\"frontmatter\"> <titlepage> <author> <personname>You<\/personname> <department>Your department<\/department> <institution>Your institution<\/institution> <\/author> <date> <today \/> <\/date> <\/titlepage> <\/frontmatter> <chapter xml:id=\"chapter-welcome\"> <title>Welcome!<\/title> <introduction> <p>This chapter is about the real numbers <m>\\R<\/m><\/p> <\/introduction> <section xml:id=\"section-getting-started\"> <title>Let's get started<\/title> <p>Can you solve <m>ax^2+bx+c=0<\/m>?<\/p> <\/section> <section xml:id=\"section-learning-more\"> <title>But wait, there's more!<\/title> <p>Did you know that <me>x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}<\/me>?<\/p> <\/section> <\/chapter> <backmatter xml:id=\"backmatter\"> <title>Backmatter<\/title> <colophon> <p> This book was authored in <pretext \/>. <\/p> <\/colophon> <\/backmatter> <\/book> <\/pretext>      Paragraphs, Lists, and Blocks  Within each division (chapter, section, etc., see ) of your book, you likely want some content (e.g. what you're reading right now!).  Written content is usually structured as paragraphs , <p> for short. If you've ever written HTML , this tag may be familiar to you, but be warned: while PreTeXt is XML ( ), PreTeXt is not HTML ! There is some overlap: you can emphasize words or phrases with <em> for instance. However, while HTML uses the full word code for its tag, PreTeXt uses the shortened <c> tag.  Note that these elements are all semantic : they express the meaning of content, not its presentation. For example, the word semantic was a <term> , we just defined, while we merely emphasized meaning with <em> . The presentation of these concepts may vary by output format, likely using some combination of boldface, italics, or underlining.   Heads up!  We'll talk about customizing presentation later, but it's important to remember that the PreTeXt community separates such publication decisions away from the work of authoring content.   For users coming from LaTeX, rest assured your mathematical formulas work in PreTeXt . Inline mathmode is invoked with <m>ax^2+bx+c=0<\/m> , while display mathematics like is available via <me>x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}<\/me> . (Users from LaTeX will also appreciate that quotes are surrounded with <q> in PreTeXt to handle the different way quotation marks are handled in LaTeX vs most other markup languages.)  You may also have lists withinn paragraphs, ordered <ol> and unordered <ul> , nested as needed. Each list item is represented by <li> .   A single item.    An item with an ordered list.   First item.    Second item.        Of course, often you have important blocks of content to include, such as <definition> s or <claim> s.     PreTeXt is an uncomplicated XML language for describing scholarly documents.      PreTeXt is the language that will replace LaTeX for authors.    Left to the reader.    Such content is automatically numbered appropriately. Each of the blocks above is structured with a <statement> , and additionally features a <proof> .  Content is often knowled . A knowl is a piece of context-independent information that is useful to transclude elsewhere in the HTML build of your document. For example, in the HTML build for this document, the above proof is knowled by default, and clicking the referenced Claim in the previous paragraph expands its knowl to reveal the claim for the reader.   Because this document was edited directly on GitHub using Codespaces, and served with GitHub pages, finding its source is simple: head to its repository and find the corresponding source file . Check the link out to see exactly how each claim, list, etc. in this chapter was marked up!      Figures and Diagrams   Photograph taken from AIM Press Release on braille, provided as a JPEG in the project assets directory.   Photograph of a hand tracing over braille code. A cartoon thought bubble contains the quadratic formula in standard mathematical notation, matching the contents of the braille code in the photograph.     Electronics Diagram generated with Tikz code   A pile of electronic components wired together      Contour Plot generated from Asymptote code       Work Cone generated from Asymptote code       Polynomial approximations of generated from SageMath code       An implicitly defined 3D surface generated with SageMath code        Interactives   Right Triangle Paradox powered by Geogebra     Graph of powered by Desmos     Intersection of two planes powered by CalcPlot3D     Implicit Differentiation exercises powered by CheckIt      Authoring an Exercise  Manually-authored exercise What is ? We're being a bit tricky here... , where is the concatenation operator.  Using WebWork   Compute  The sum is .              was taken from Linear Algebra for Team-Based Inquiry Learning .  Generated by CheckIt  Consider the following system of linear equations.    Explain how to find a simpler system or vector equation that has the same solution set.       Explain how to describe this solution set using set notation.   The solution set is .   Runestone-powered True\/False Question  This statement is true or false.   Feedback goes here.   Runestone-powered Matching Problem  A multiple choice question     right answer 1    answer specific feedback      right answer 1    answer specific feedback      wrong answer 1    answer specific feedback      wrong answer 2    answer specific feedback     Runestone-powered Parsons Problem  Rearrange the blocks in alphebetical order, ignoring blocks beginning with a number.       A    B    C    D         Runestone-powered Matching Problem  Match the letters with their order in the alphabet    A  1    B  2    C  3      Not Just HTML, Not Just PDF  This document is available in HTML format at , and the same document is available in a PDF format at .  Obtaining these formats are as easy as running pretext build web and pretext build print respectively. PreTeXt supports other types of output as well, including Jupyter notebooks, ePub, and tacticle braille code.  You're encouraged to view authoring in PreTeXt as an investment : you may not need the braille output today, but the little extra thought and care required to author in PreTeXt will allow you to provide this version of your document to a blind student tomorrow.    Wrapping Up  Go check back on the Codespace you created in . If it's up and running, you're ready to move on to the next section!   "
+  "body": " Write Once, Read Anywhere    At the end of this chapter, you'll     Become aware of the eleven PreTeXt Principles.    Be able to identify several features of PreTeXt.    Have a working GitHub Codespaces environment to suitable for authoring and editing in PreTeXt.      Setting up Codespaces  A Codespace is an authoring environment that lives in the cloud , that is, a virtual machine hosted by GitHub that has all of the software needed to create great accessible documents, accessible with just a web browser.  This coding environment uses a web version of Virtual Studio Code, an open-source editor, along with the PreTeXt community's custom plugins and software to get started authoring quickly.  Follow the instructions at to get started. Let this run for a few minutes in the background while you review the rest of this section.   Codespaces works best in the Chrome or Edge web browsers.     PreTeXt Principles  A more detailed monograph on PreTeXt's philosophy is availabe in the PreTeXt Guide.   PreTeXt Principles   PreTeXt is a markup language that captures the structure of textbooks and research papers.  PreTeXt is human-readable and human-writable.  PreTeXt documents serve as a single source which can be easily converted to multiple other formats, current and future.  PreTeXt respects the good design practices which have been developed over the past centuries.  PreTeXt makes it easy for authors to implement features which are both common and reasonable.  PreTeXt supports online documents which make use of the full capabilities of the Web.  PreTeXt output is styled by selecting from a list of available templates, relieving the author of the burden involved in micromanaging the output format.  PreTeXt is free: the software is available at no cost, with an open license. The use of PreTeXt does not impose any constraints on documents prepared with the system.  PreTeXt is not a closed system: documents can be converted to latex and then developed using standard latex tools.  PreTeXt recognizes that scholarly documents involve the interaction of authors, publishers, scholars, curators, instructors, students, and readers, with each group having its own needs and goals.  PreTeXt recognizes the inherent value in producing material that is accessible to everyone.      PreTeXt is XML  Since PreTeXt uses the XML markup language, all content is structured in terms of elements . The root pretext element nests many other elements inside of it. This is accomplished by surrounding everything with a starting <pretext>  tag and an ending <\/pretext> tag. (Folks with HTML experience will find this pattern familiar, akin to the HTML root element.)   is a very simple PreTeXt \/XML document. (The first line is boilerplate that lets various programs know the rest of the file is XML, and the third-to-last line is an example of a comment that won't appear in the output.)   Source of a simple PreTeXt book project.   <?xml version=\"1.0\" encoding=\"UTF-8\"?> <pretext> <article> <title>Hello world!<\/title> <p>Welcome to PreTeXt!<\/p> <!-- TODO: find something more to say... --> <\/article> <\/pretext>      Books and Divisions  There are several documents you can write in PreTeXt , such as <article> s and <slideshow> s. This tutorial will focus on <book> s.  A <book> typically includes <frontmatter> , and <backmatter> .  Between <frontmatter> , and <backmatter> are either several <chapter> s or <part> s. If used, <part> s are subdivided into <chapter> s. Then <chapter> s subdivide into <section> s, and <section> s can have <subsection> s.  Each of these subdivisions needs a <title> , and may have an <introduction> or <conclusion> .   puts some of these elements together for a simple PreTeXt project (information on the other elements will come in later sections).   Source of a simple PreTeXt book project.   <?xml version=\"1.0\" encoding=\"UTF-8\"?> <pretext xml:lang=\"en-US\"> <!-- (author configurations go in docinfo) --> <docinfo> <macros> \\newcommand{\\R}{\\mathbb R} <\/macros> <\/docinfo> <book xml:id=\"my-great-book\"> <title>My Great Book<\/title> <subtitle>An example to get you started<\/subtitle> <frontmatter xml:id=\"frontmatter\"> <titlepage> <author> <personname>You<\/personname> <department>Your department<\/department> <institution>Your institution<\/institution> <\/author> <date> <today \/> <\/date> <\/titlepage> <\/frontmatter> <chapter xml:id=\"chapter-welcome\"> <title>Welcome!<\/title> <introduction> <p>This chapter is about the real numbers <m>\\R<\/m><\/p> <\/introduction> <section xml:id=\"section-getting-started\"> <title>Let's get started<\/title> <p>Can you solve <m>ax^2+bx+c=0<\/m>?<\/p> <\/section> <section xml:id=\"section-learning-more\"> <title>But wait, there's more!<\/title> <p>Did you know that <me>x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}<\/me>?<\/p> <\/section> <\/chapter> <backmatter xml:id=\"backmatter\"> <title>Backmatter<\/title> <colophon> <p> This book was authored in <pretext \/>. <\/p> <\/colophon> <\/backmatter> <\/book> <\/pretext>      Paragraphs, Lists, and Blocks  Within each division (chapter, section, etc., see ) of your book, you likely want some content (e.g. what you're reading right now!).  Written content is usually structured as paragraphs , <p> for short. If you've ever written HTML , this tag may be familiar to you, but be warned: while PreTeXt is XML ( ), PreTeXt is not HTML ! There is some overlap: you can emphasize words or phrases with <em> for instance. However, while HTML uses the full word code for its tag, PreTeXt uses the shortened <c> tag.  Note that these elements are all semantic : they express the meaning of content, not its presentation. For example, the word semantic was a <term> , we just defined, while we merely emphasized meaning with <em> . The presentation of these concepts may vary by output format, likely using some combination of boldface, italics, or underlining.   Heads up!  We'll talk about customizing presentation later, but it's important to remember that the PreTeXt community separates such publication decisions away from the work of authoring content.   For users coming from LaTeX, rest assured your mathematical formulas work in PreTeXt . Inline mathmode is invoked with <m>ax^2+bx+c=0<\/m> , while display mathematics like is available via <me>x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}<\/me> . (Users from LaTeX will also appreciate that quotes are surrounded with <q> in PreTeXt to handle the different way quotation marks are handled in LaTeX vs most other markup languages.)  You may also have lists withinn paragraphs, ordered <ol> and unordered <ul> , nested as needed. Each list item is represented by <li> .   A single item.    An item with an ordered list.   First item.    Second item.        Of course, often you have important blocks of content to include, such as <definition> s or <claim> s.     PreTeXt is an uncomplicated XML language for describing scholarly documents.      PreTeXt is the language that will replace LaTeX for authors.    Left to the reader.    Such content is automatically numbered appropriately. Each of the blocks above is structured with a <statement> , and additionally features a <proof> .  Content is often knowled . A knowl is a piece of context-independent information that is useful to transclude elsewhere in the HTML build of your document. For example, in the HTML build for this document, the above proof is knowled by default, and clicking the referenced Claim in the previous paragraph expands its knowl to reveal the claim for the reader.   Because this document was edited directly on GitHub using Codespaces, and served with GitHub pages, finding its source is simple: head to its repository and find the corresponding source file . Check the link out to see exactly how each claim, list, etc. in this chapter was marked up!      Figures and Diagrams   Photograph taken from AIM Press Release on braille, provided as a JPEG in the project assets directory.   Photograph of a hand tracing over braille code. A cartoon thought bubble contains the quadratic formula in standard mathematical notation, matching the contents of the braille code in the photograph.     Electronics Diagram generated with Tikz code   A pile of electronic components wired together      Contour Plot generated from Asymptote code       Work Cone generated from Asymptote code       Polynomial approximations of generated from SageMath code       An implicitly defined 3D surface generated with SageMath code        Interactives   Right Triangle Paradox powered by Geogebra     Graph of powered by Desmos     Intersection of two planes powered by CalcPlot3D     Implicit Differentiation exercises powered by CheckIt      Authoring an Exercise  Manually-authored exercise What is ? We're being a bit tricky here... , where is the concatenation operator.  Using WebWork   Compute  The sum is .              was taken from Linear Algebra for Team-Based Inquiry Learning .  Generated by CheckIt  Consider the following system of linear equations.    Explain how to find a simpler system or vector equation that has the same solution set.       Explain how to describe this solution set using set notation.   The solution set is .   Runestone-powered True\/False Question  This statement is true or false.   Feedback goes here.   Runestone-powered Matching Problem  A multiple choice question     right answer 1    answer specific feedback      right answer 1    answer specific feedback      wrong answer 1    answer specific feedback      wrong answer 2    answer specific feedback     Runestone-powered Parsons Problem  Rearrange the blocks in alphebetical order, ignoring blocks beginning with a number.       A    B    C    D         Runestone-powered Matching Problem  Match the letters with their order in the alphabet    A  1    B  2    C  3      Not Just HTML, Not Just PDF  This document is available in HTML format at , and the same document is available in a PDF format at .  Obtaining these formats are as easy as running pretext build web and pretext build print respectively. PreTeXt supports other types of output as well, including Jupyter notebooks, ePub, and tacticle braille code.  You're encouraged to view authoring in PreTeXt as an investment : you may not need the braille output today, but the little extra thought and care required to author in PreTeXt will allow you to provide this version of your document to a blind student tomorrow.    Wrapping Up  Go check back on the Codespace you created in . If it's up and running, you're ready to move on to the next section!   "
 },
 {
   "id": "objectives-1",
@@ -46,6 +46,15 @@ var ptx_lunr_docs = [
   "body": "Codespace "
 },
 {
+  "id": "note-1",
+  "level": "2",
+  "url": "ch-intro.html#note-1",
+  "type": "Note",
+  "number": "2.1.1",
+  "title": "",
+  "body": " Codespaces works best in the Chrome or Edge web browsers.  "
+},
+{
   "id": "list-principles",
   "level": "2",
   "url": "ch-intro.html#list-principles",
@@ -55,9 +64,9 @@ var ptx_lunr_docs = [
   "body": " PreTeXt Principles   PreTeXt is a markup language that captures the structure of textbooks and research papers.  PreTeXt is human-readable and human-writable.  PreTeXt documents serve as a single source which can be easily converted to multiple other formats, current and future.  PreTeXt respects the good design practices which have been developed over the past centuries.  PreTeXt makes it easy for authors to implement features which are both common and reasonable.  PreTeXt supports online documents which make use of the full capabilities of the Web.  PreTeXt output is styled by selecting from a list of available templates, relieving the author of the burden involved in micromanaging the output format.  PreTeXt is free: the software is available at no cost, with an open license. The use of PreTeXt does not impose any constraints on documents prepared with the system.  PreTeXt is not a closed system: documents can be converted to latex and then developed using standard latex tools.  PreTeXt recognizes that scholarly documents involve the interaction of authors, publishers, scholars, curators, instructors, students, and readers, with each group having its own needs and goals.  PreTeXt recognizes the inherent value in producing material that is accessible to everyone.   "
 },
 {
-  "id": "p-21",
+  "id": "p-22",
   "level": "2",
-  "url": "ch-intro.html#p-21",
+  "url": "ch-intro.html#p-22",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -82,27 +91,27 @@ var ptx_lunr_docs = [
   "body": " Source of a simple PreTeXt book project.   <?xml version=\"1.0\" encoding=\"UTF-8\"?> <pretext xml:lang=\"en-US\"> <!-- (author configurations go in docinfo) --> <docinfo> <macros> \\newcommand{\\R}{\\mathbb R} <\/macros> <\/docinfo> <book xml:id=\"my-great-book\"> <title>My Great Book<\/title> <subtitle>An example to get you started<\/subtitle> <frontmatter xml:id=\"frontmatter\"> <titlepage> <author> <personname>You<\/personname> <department>Your department<\/department> <institution>Your institution<\/institution> <\/author> <date> <today \/> <\/date> <\/titlepage> <\/frontmatter> <chapter xml:id=\"chapter-welcome\"> <title>Welcome!<\/title> <introduction> <p>This chapter is about the real numbers <m>\\R<\/m><\/p> <\/introduction> <section xml:id=\"section-getting-started\"> <title>Let's get started<\/title> <p>Can you solve <m>ax^2+bx+c=0<\/m>?<\/p> <\/section> <section xml:id=\"section-learning-more\"> <title>But wait, there's more!<\/title> <p>Did you know that <me>x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}<\/me>?<\/p> <\/section> <\/chapter> <backmatter xml:id=\"backmatter\"> <title>Backmatter<\/title> <colophon> <p> This book was authored in <pretext \/>. <\/p> <\/colophon> <\/backmatter> <\/book> <\/pretext>   "
 },
 {
-  "id": "p-29",
-  "level": "2",
-  "url": "ch-intro.html#p-29",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "paragraphs "
-},
-{
   "id": "p-30",
   "level": "2",
   "url": "ch-intro.html#p-30",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
+  "body": "paragraphs "
+},
+{
+  "id": "p-31",
+  "level": "2",
+  "url": "ch-intro.html#p-31",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
   "body": "semantic "
 },
 {
-  "id": "p-38",
+  "id": "p-39",
   "level": "2",
-  "url": "ch-intro.html#p-38",
+  "url": "ch-intro.html#p-39",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -127,18 +136,18 @@ var ptx_lunr_docs = [
   "body": "  PreTeXt is the language that will replace LaTeX for authors.    Left to the reader.   "
 },
 {
-  "id": "p-43",
+  "id": "p-44",
   "level": "2",
-  "url": "ch-intro.html#p-43",
+  "url": "ch-intro.html#p-44",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "knowl "
 },
 {
-  "id": "note-1",
+  "id": "note-2",
   "level": "2",
-  "url": "ch-intro.html#note-1",
+  "url": "ch-intro.html#note-2",
   "type": "Note",
   "number": "2.5.3",
   "title": "",
@@ -307,58 +316,49 @@ var ptx_lunr_docs = [
   "body": " Codespace Workflow   Once you create content in PreTeXt, it is time to build it, perhaps generate assets (if your project has such assets), view the result to make sure it looks good, and when you are ready, deploy your web output to a live webpage for others to marvel at.  In this chapter we will walk through the steps to do this inside a codespace environment.    Build and Generate  Inside the VS Code window you opened through codespaces, have a .ptx file open. You can build your entire project in a few different ways.   Click the PreTeXt button in the VS Code status bar (just left of center on the bottom of the window), or use the keyboard shortcut CTRL+ALT+p , to bring up the PreTeXt Commands menu. Select Build from the menu. This will bring up a list of build targets. Select web from the list. This will build your entire project, and put the output in the build\/web folder.    You can type pretext build web from the terminal (this uses the CLI directly). If you don't see a terminal window at the bottom of the screen, you can open it with CTRL+` .    You can use the keyboard shortcut CTRL+ALT+b . This will build the project using the last build target you used. If you haven't built yet, it will use the default build target, which is web .      All shortcuts listed in this guide assume you are using Windows or Linux. If you are using a Mac, you will need to use CMD instead of CTRL .   If your documentment contains some more complicated elements, you might need to generate them for them to show up. The elements that require this are (depending on what your build target is):  <latex-image>  <sagemath>  <asymptote>  <youtube> (for thumbnail previews)  <webwork>  <codelense>    You can generate assets in much the same way you run a build. The PreTeXt command menu has a Generate choice that you select, and then select your target (different target formats have different requirements for what is generated). You can also type pretext generate in the terminal, or use the keyboard shortcut CTRL+ALT+g .   Note that generating assets requires additional software, like latex or Sage. Depending on your codespace setup, you can likely fix erorrs by entering the following command in the terminal:  sudo bash .\/.devcontainer\/postCreateCommand.sh   Once you install this software once, you should be good to go as long as your codespace exists.     Previewing  You can check the output of what you built using the View command. Again, you can access this in multiple ways. If you use the PreTeXt Commands menu ans select view , you will get a choice for your viewer. We currently suggest using Live Preview , although on codespace this requires a few extra steps:   When the side preview opens, it will ask you if you want to open in an external browser. Click Open in browser . If you don't see the pop-up, you can clicke on Port: 3000 in the bottom status bar of VS Code and select Open in browser from the pop-up menu.    Now close the new tab that opens, and also close the side panel in VS Code that opened.    Finally select View again, and it should just work. You can drag the VS Code tab to un-split the window to make it easier to view.     You can also experiment with the CLI view command, by selecting that from the pop-up menu, or by typing pretext view web in the terminal. This should pop up a new browser tab with the preview. The only reason we caution against this currently is that the local server that gets started to preview the files will keep running as long as your codespace is active, and we don't understand how this affects resource use.  When you make edits to your source files, you will need to build again, and then refresh the preview window to see the changes.    Saving your work  Using codespaces will keep all your files in the cloud on GitHub's server. As long as you don't delete your codespace, your files will be saved there. However, you will want to push these files to your git repository on GitHub to make this save perminent. This has the benefit of allowing collaborators to access your files as well (your codespace is unique to your account).  There is a lot to learn about git, but luckily using VS Code lets you do everything you need using menus (you don't need to use the command line, unless you want to). Everything can be controlled using the Source Control view: it should be third from the top on the very left of the window, an icon with splitting paths, and likely a badge showing how many files you have changed.  Here are the basic concepts you need to understand.   The program git keeps track of all the changes you make to files inside of your repository (in this case, the folder containing your project).    Once you have edited your files and are happy with all of them, you tell git to track the set of changes as a commit . This creates a handy breakpoint you could return to if you want to go back to an earlier version.  There are two steps to creating a commit (which you can often do all at once in practice):   You stage the files you want to update in the commit.  You commit the stage files including a commit message .   Doing this in two steps can be helpful if you want to commit only some of the files that have changed.    Once you have one or more commits, you need to sync these changes with GitHub. To upload your changes, you push the repository. To download changes that you are someone else made, you pull the repository.     Now, how do we do these things in VS Code? Start by looking at the Source Control view. You will notice a list of files that were changed. You can click on any of these to see what the changes are (you will see a side-by-side view of the original and updated version).  If you are comfortable staging and committing in one step, you can simply write yourself a short message in the textbox above the big green Commit button, and click the button. If you want to stage first, click the + next to each file under changes to stage them.  The green button should now turn into a Sync button. When you click that, it will do a quick pull and then a push, to sync changes with GitHub.  The only small point about using git is that no all files will be tracked. This is on purpose, since temporary files really should not be remembered using this version control setting. Which files or types of files are ignored by git is controled by the .gitignore file in your repository.  In particular, we do not track the output of builds. Git is used to track progress on your source, which you build into output at any time. If you want others to be able to see the output of your work without building it themselves, you need to deploy your work.    Deploy  So you have worked tirelessly to prepare course notes or a book, built and previewed, synced changes using git, and now you are ready to share the results of your efforts with the world. It's time to deploy your project.  With our codespace setup this is simple. From the PreTeXt Commands menu, click on Deploy . This will automatically take the most recent build of your web target and host it through GitHub Pages . Watch the output pane for a link to your published site. (It can take a few minutes for the site to get set up or updated; there should be another link to view the progress of the GitHub action that reports the progress.)   "
 },
 {
-  "id": "p-81",
+  "id": "p-82",
   "level": "2",
-  "url": "ch-workflow.html#p-81",
+  "url": "ch-workflow.html#p-82",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "build generate assets view deploy "
 },
 {
-  "id": "note-2",
+  "id": "note-3",
   "level": "2",
-  "url": "ch-workflow.html#note-2",
+  "url": "ch-workflow.html#note-3",
   "type": "Note",
   "number": "3.1.1",
   "title": "",
   "body": " All shortcuts listed in this guide assume you are using Windows or Linux. If you are using a Mac, you will need to use CMD instead of CTRL .  "
 },
 {
-  "id": "p-88",
+  "id": "p-89",
   "level": "2",
-  "url": "ch-workflow.html#p-88",
+  "url": "ch-workflow.html#p-89",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "generate "
 },
 {
-  "id": "note-3",
+  "id": "note-4",
   "level": "2",
-  "url": "ch-workflow.html#note-3",
+  "url": "ch-workflow.html#note-4",
   "type": "Note",
   "number": "3.1.2",
   "title": "",
   "body": " Note that generating assets requires additional software, like latex or Sage. Depending on your codespace setup, you can likely fix erorrs by entering the following command in the terminal:  sudo bash .\/.devcontainer\/postCreateCommand.sh   Once you install this software once, you should be good to go as long as your codespace exists.  "
 },
 {
-  "id": "p-92",
+  "id": "p-93",
   "level": "2",
-  "url": "ch-workflow.html#p-92",
+  "url": "ch-workflow.html#p-93",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "View "
-},
-{
-  "id": "p-98",
-  "level": "2",
-  "url": "ch-workflow.html#p-98",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "push git repository "
 },
 {
   "id": "p-99",
@@ -367,7 +367,7 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "Source Control "
+  "body": "push git repository "
 },
 {
   "id": "p-100",
@@ -376,12 +376,21 @@ var ptx_lunr_docs = [
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
+  "body": "Source Control "
+},
+{
+  "id": "p-101",
+  "level": "2",
+  "url": "ch-workflow.html#p-101",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
   "body": "git repository commit stage commit commit message push pull "
 },
 {
-  "id": "p-112",
+  "id": "p-113",
   "level": "2",
-  "url": "ch-workflow.html#p-112",
+  "url": "ch-workflow.html#p-113",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -523,27 +532,27 @@ var ptx_lunr_docs = [
   "body": " Publishing    By publishing , we mean here the process of finalizing the presentation and look of the output you get from PreTeXt. We stress again the philosophical distinction between author and publisher in PreTeXt , since there is great value in focusing on just one of these two types of tasks at a time.  Another aspect of the publishing process is that of creating the physical book and making it available in bookstores, or making the the web version available on your own website. The latter can be done automatically through GitHub pages using the pretext deploy function, but perhaps you also want to have a separate landing page that links to a version of the book you are celling on Amazon.com. However, these steps are beyond the scope of this guide (as for suggestions on the PreTeXt-support group if you would like some assistance getting started with these steps).  For this chapter we will assume you are trying to produce a single version of your book and want to control the presentation and look of that version. You can still produce this version in multiple formats (web, pdf, epub), and which you want to produce might change what you do slightly.    The publication file   PreTeXt controls publisher options in a publication file . The default location of this file is in the folder publication and is itself called publication.ptx . Open this file and take a look.  What you will see is more XML , but a different set of tags than what you would write in your PreTeXt source. The version of the publication file that came with your codespace was (at the one time) the almost complete list of options with default values provided. This should make it easy to modify values and experiment with different settings.  As new settings are introduced, you can find documentation ins the Publication File Reference part of the guide.   Eventually you may want to have different versions of your document, and you can do this with different publication files. In we will consider how to manage multiple publication files easily.   Next we will dive deeper into the different sorts of things that can be configured with this file.    Showing and Hiding things  We have seen that some blocks , like proofs, solutions, examples, are sometimes hidden behind a knowl : when you click on the title, the content expands to reveal itself. Most of the blocks can be knowled or not.  To edit these settings, look for the element <html> , and inside that <knowl\/> . This element has a number of attributes (the PreTeXt guide marks attributes with the @ symbol, by the way). You can specify whether elements should be knowled or not by changing the value of the attributes between yes and no.  Whether exercises are knowled depends on the type of exercises. PreTeXt distinguishes five types of exercise-like elements, since they have hints\/answers\/solutions that you might want to hide:   inline, which show up as checkpoints ; these are exercises mixed with other content in a divisions.    divisional; these are exercises that belong to an <exercises> division.    project; these are the entire project-like element like <activity> , <investigation> etc.    worksheet; essentially a project but its a division itself, and can contain spacing for students to work in when printed.    readingquestions; these are questions in a <reading-questions> division. These were exercises designed to get a text box that students can type short answers to questions at the end of a section.     You can control whether the entire exercise-like element is knowled, but their hints\/answers\/solutions are always knowled (no spoilers!). The only solution you can can choose to not knowl is that of an example, and that is controlled by these knowl switches.  You can, however, control which parts of exercises show up at all. This is set in a different section of the publication file: publication\/common\/exercise-inline (that is, in the <common> block in the <exercise-inline> element). You can replace exercise-inline by any of the five exercise types. Then as attributes, specify yes or no for the statement , hint , answer , solution .  This controls what shows up in the output, in all formats, at the position that the exercise was authored. There are also ways to redisplay any parts of these exercises later, to give a list of all solutions in the back of the book, say. See Exercises and Solutions from the guide.    Numbering  There are a few settings that control how things are numbered. Most of these live inside the <numbering> element of the publication file.   The <division\/> element and its attributes says how deep the numbering goes (i.e., do you put numbers on subsubsection?). This is set as a natural number as the value of the level attribute.    Also in this element you can specify whether parts are structural or decorative . This essentially says whether chapter number should restart in each part.    You can also set the number of the first chapter here using the chapter-start attribute.    There are four different types of elements that can be numbered independently: blocks , projects , equations , and footnotes . You can control how specific the numbering are for each of these by giving the corresponding element a level attribute.       Formatting  While there are some ways to control the look of the pdf, that is beyond the scope of this guide. Web output can be controlled more easily, selecting from a small number of predefined styles.  This is a feature that is currently under active development, so we will not say much here, but instead refer you again to the Publication File Reference part of the guide.   "
 },
 {
-  "id": "p-147",
+  "id": "p-148",
   "level": "2",
-  "url": "ch-publication.html#p-147",
+  "url": "ch-publication.html#p-148",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "publishing author publisher "
 },
 {
-  "id": "p-149",
+  "id": "p-150",
   "level": "2",
-  "url": "ch-publication.html#p-149",
+  "url": "ch-publication.html#p-150",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "version formats "
 },
 {
-  "id": "p-150",
+  "id": "p-151",
   "level": "2",
-  "url": "ch-publication.html#p-150",
+  "url": "ch-publication.html#p-151",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -559,27 +568,27 @@ var ptx_lunr_docs = [
   "body": " Eventually you may want to have different versions of your document, and you can do this with different publication files. In we will consider how to manage multiple publication files easily.  "
 },
 {
-  "id": "p-155",
-  "level": "2",
-  "url": "ch-publication.html#p-155",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "blocks knowl "
-},
-{
   "id": "p-156",
   "level": "2",
   "url": "ch-publication.html#p-156",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
+  "body": "blocks knowl "
+},
+{
+  "id": "p-157",
+  "level": "2",
+  "url": "ch-publication.html#p-157",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
   "body": "attributes "
 },
 {
-  "id": "p-166",
+  "id": "p-167",
   "level": "2",
-  "url": "ch-publication.html#p-166",
+  "url": "ch-publication.html#p-167",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -595,18 +604,9 @@ var ptx_lunr_docs = [
   "body": " Managing Your Project   File and directory structure  Here we describe the file and directory structure of a project. PreTeXt allows a fair amount of flexibility in how you structure the project, but we believe the following are best practices.   source folder  Contains all your .ptx files that hold the content of your document. A new book starts with just a single file, but later we will see how to modularize the source to make organizing it easier.    publication folder  Contains your publication.ptx file or files, which define the publication-specific information about your document, as we saw in     assets folder  Put any images or other static files that you will include in your document here. This does not include images that you describe inside your source (like <latex-image> ). You can have subfolders as you like, and if you refer to these files in your source, you do not use assets as part of the file name ( PreTeXt knows where to look, since this is specified in the publication.ptx file.)    generated-assets folder  This is a folder that PreTeXt automatically creates and fills with assets that it generates from your source. You shouldn't edit anything in this folder. It is not tracked by git by default.    output folder  Another folder created by PreTeXt . It will contain the results of pretext build . In general, you should not touch anything in this folder. Not tracked by git by default.    project.ptx file  This is the project manifest file, which you use to manage the different builds of your project. We will describe how to use this in more detail below.     There are a few other files that you might see in a project, such as requirements.txt and .gitignore . Don't worry about these for now.  When your project grows, you will likely want to separate your main.ptx source file (inside the source folder) into multiple .ptx files. For example, you might want a single file per chapter, and even a separate file for each section. You can do this by using the <xi:include> tag. For example, if you have a file source\/chapter1.ptx that contains the first chapter of your book, you can include it in your main.ptx file like this:  <xi:include href=\".\/chapter1.ptx\" \/>  In the top level tag of the file in which you use <xi:include> (in this case, main.ptx ), you must add the following attribute:  xmlns:xi=\"http:\/\/www.w3.org\/2001\/XInclude\"    Then in the chapter1.ptx file, you would start with the standard <?xml version=\"1.0\" encoding=\"UTF-8\"?> followed by the top-level tag <chapter> . There can only be one top level tag in this file. A second chapter would need to be its own file and <xi:include> it separately.  More information can be found in the Modular Source Files section of the guide.    Project.ptx  You will likely want to build your source file into multiple output formats. How do you tell PreTeXt what outputs you want? You keep track of this, and some other information, in your project.ptx file.  The project.ptx file is a project manifest file. It is used to manage the different builds of your project. It is a .ptx file, but it is not part of the content of your document. It is used to tell PreTeXt how to build your document.  For now, take a look at the project.ptx file in this project. You will see that there are multiple targets each with a name , and a specified <format> , <source> , <publication> (file), and <output-dir> (directory). The <source> and <publication> are probably the same for all targets, but they don't have to be.  For a complete description of this file and its use, see .    Versions    Building subsets    Codespaces, GitHub, and GitHub Pages   "
 },
 {
-  "id": "p-173",
+  "id": "p-174",
   "level": "2",
-  "url": "ch-project.html#p-173",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "project manifest "
-},
-{
-  "id": "p-185",
-  "level": "2",
-  "url": "ch-project.html#p-185",
+  "url": "ch-project.html#p-174",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -616,6 +616,15 @@ var ptx_lunr_docs = [
   "id": "p-186",
   "level": "2",
   "url": "ch-project.html#p-186",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "project manifest "
+},
+{
+  "id": "p-187",
+  "level": "2",
+  "url": "ch-project.html#p-187",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -640,9 +649,9 @@ var ptx_lunr_docs = [
   "body": " Your goal in doing a conversion should be to move all your materials into PreTeXt and then always work from the PreTeXt source, converting back to other formats as needed. It is simply not feasible to keep converting to PreTeXt , since this process is not automatic.  "
 },
 {
-  "id": "p-190",
+  "id": "p-191",
   "level": "2",
-  "url": "ch-converting-to-pretext.html#p-190",
+  "url": "ch-converting-to-pretext.html#p-191",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
@@ -658,9 +667,9 @@ var ptx_lunr_docs = [
   "body": " Getting Help  Here we collect a number of useful resources to help you when you are stuck. The official PreTeXt site has lots of resources, but we understand it can be overwhelming.   Official documentation  Note that the official PreTeXt Guide can be hard to use because there is so much stuff in it. Additionally, some of the documentation is out of date. Still, if you know where to look, it is a great resource.  Here are some sections that we find especially helpful:    Basics Reference : A listing of the main elements of PreTeXt including snippets of the code that create them. This is one of the few places in the guide that has examples of the markup.     Publication File Reference : When you are ready to start changing how your output looks, you can use the publication file , which is described in this part of the guide.     PreTeXt Schema : The official list of elements and where they can go is given in the PreTeXt Schema, which is described here. Also you can check out the schema browser to actually view the schema.     Getting PreTeXt : If you want to install PreTeXt on your own computer, this early part of the guide gives you directions. It should be updated with information on CodeSpaces soon as well, if you need a refresher.   Finally, note that the search in PreTeXt now works really well, and searching for a feature will usually get you pointed in the right spot.    Examples  The Examples page on the PreTeXt site contains a number of useful live examples. Links are provided to web, pdf, and source (on GitHub). For some of the examples, there is also an annotated version available. We find these especially helpful since you can view source to see exactly how each bit of the example was marked up in code.  Here are some of the most useful such examples:    Sample Book : This annotated sample book contains a section on interactive exercises . The PreTeXt developers use this book for testing, so you can see the latest (sometimes experimental) features available.     Sample Article : Not particularly well organized (it is also a proving ground for developers) but this contains almost every variation of every feature of PreTeXt . Using the search and view source makes this an invaluable resource.       Community Support  There is a very active google group for support: pretext-support . You should also subscribe to the low-traffic pretext-announce to get updates.  This spring we will host daily virtual drop-in sessions to support authoring and devlopement of PreTeXt. Information will be posted to the pretext-announce google group.   "
 },
 {
-  "id": "p-197",
+  "id": "p-198",
   "level": "2",
-  "url": "ch-help.html#p-197",
+  "url": "ch-help.html#p-198",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",

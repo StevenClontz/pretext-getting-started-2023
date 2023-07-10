@@ -323,21 +323,21 @@ eBookConfig.enable_chatcodes =  false;
 <section class="chapter" id="ch-workflow"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">3</span> <span class="title">Codespace Workflow</span>
 </h2>
-<section class="introduction" id="introduction-4"><div class="para" id="p-81">Once you create content in PreTeXt, it is time to <dfn class="terminology">build</dfn> it, perhaps <dfn class="terminology">generate assets</dfn> (if your project has such assets), <dfn class="terminology">view</dfn> the result to make sure it looks good, and when you are ready, <dfn class="terminology">deploy</dfn> your web output to a live webpage for others to marvel at.</div> <div class="para" id="p-82">In this chapter we will walk through the steps to do this inside a codespace environment.</div></section><section class="section" id="sec-build-and-generate"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-4"><div class="para" id="p-82">Once you create content in PreTeXt, it is time to <dfn class="terminology">build</dfn> it, perhaps <dfn class="terminology">generate assets</dfn> (if your project has such assets), <dfn class="terminology">view</dfn> the result to make sure it looks good, and when you are ready, <dfn class="terminology">deploy</dfn> your web output to a live webpage for others to marvel at.</div> <div class="para" id="p-83">In this chapter we will walk through the steps to do this inside a codespace environment.</div></section><section class="section" id="sec-build-and-generate"><h3 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Build and Generate</span>
 </h3>
-<div class="para logical" id="p-83">
+<div class="para logical" id="p-84">
 <div class="para">Inside the VS Code window you opened through codespaces, have a <code class="code-inline tex2jax_ignore">.ptx</code> file open.  You can build your entire project in a few different ways.</div>
 <ul class="disc">
-<li id="li-24"><div class="para" id="p-84">Click the “PreTeXt” button in the VS Code status bar (just left of center on the bottom of the window), or use the keyboard shortcut <code class="code-inline tex2jax_ignore">CTRL+ALT+p</code>, to bring up the PreTeXt Commands menu.  Select “Build” from the menu.  This will bring up a list of build targets.  Select “web” from the list.  This will build your entire project, and put the output in the <code class="code-inline tex2jax_ignore">build/web</code> folder.</div></li>
-<li id="li-25"><div class="para" id="p-85">You can type <code class="code-inline tex2jax_ignore">pretext build web</code> from the terminal (this uses the CLI directly).  If you don’t see a terminal window at the bottom of the screen, you can open it with <code class="code-inline tex2jax_ignore">CTRL+`</code>.</div></li>
-<li id="li-26"><div class="para" id="p-86">You can use the keyboard shortcut <code class="code-inline tex2jax_ignore">CTRL+ALT+b</code>.  This will build the project using the last build target you used.  If you haven’t built yet, it will use the default build target, which is “web”.</div></li>
+<li id="li-24"><div class="para" id="p-85">Click the “PreTeXt” button in the VS Code status bar (just left of center on the bottom of the window), or use the keyboard shortcut <code class="code-inline tex2jax_ignore">CTRL+ALT+p</code>, to bring up the PreTeXt Commands menu.  Select “Build” from the menu.  This will bring up a list of build targets.  Select “web” from the list.  This will build your entire project, and put the output in the <code class="code-inline tex2jax_ignore">build/web</code> folder.</div></li>
+<li id="li-25"><div class="para" id="p-86">You can type <code class="code-inline tex2jax_ignore">pretext build web</code> from the terminal (this uses the CLI directly).  If you don’t see a terminal window at the bottom of the screen, you can open it with <code class="code-inline tex2jax_ignore">CTRL+`</code>.</div></li>
+<li id="li-26"><div class="para" id="p-87">You can use the keyboard shortcut <code class="code-inline tex2jax_ignore">CTRL+ALT+b</code>.  This will build the project using the last build target you used.  If you haven’t built yet, it will use the default build target, which is “web”.</div></li>
 </ul>
 </div>
-<article class="note remark-like" id="note-2"><h4 class="heading">
+<article class="note remark-like" id="note-3"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-87">All shortcuts listed in this guide assume you are using Windows or Linux.  If you are using a Mac, you will need to use <code class="code-inline tex2jax_ignore">CMD</code> instead of <code class="code-inline tex2jax_ignore">CTRL</code>.</div></article><div class="para logical" id="p-88">
+<div class="para" id="p-88">All shortcuts listed in this guide assume you are using Windows or Linux.  If you are using a Mac, you will need to use <code class="code-inline tex2jax_ignore">CMD</code> instead of <code class="code-inline tex2jax_ignore">CTRL</code>.</div></article><div class="para logical" id="p-89">
 <div class="para">If your documentment contains some more complicated elements, you might need to <dfn class="terminology">generate</dfn> them for them to show up.  The elements that require this are (depending on what your build target is):</div>
 <ul class="disc">
 <li id="li-27"><div class="para" id="p-derived-li-27"><code class="code-inline tex2jax_ignore">&lt;latex-image&gt;</code></div></li>
@@ -349,56 +349,56 @@ eBookConfig.enable_chatcodes =  false;
 <li id="li-32"><div class="para" id="p-derived-li-32"><code class="code-inline tex2jax_ignore">&lt;codelense&gt;</code></div></li>
 </ul>
 </div>
-<div class="para" id="p-89">You can generate assets in much the same way you run a build.  The PreTeXt command menu has a <code class="code-inline tex2jax_ignore">Generate</code> choice that you select, and then select your target (different target formats have different requirements for what is generated).  You can also type <code class="code-inline tex2jax_ignore">pretext generate</code> in the terminal, or use the keyboard shortcut <code class="code-inline tex2jax_ignore">CTRL+ALT+g</code>.</div>
-<article class="note remark-like" id="note-3"><h4 class="heading">
+<div class="para" id="p-90">You can generate assets in much the same way you run a build.  The PreTeXt command menu has a <code class="code-inline tex2jax_ignore">Generate</code> choice that you select, and then select your target (different target formats have different requirements for what is generated).  You can also type <code class="code-inline tex2jax_ignore">pretext generate</code> in the terminal, or use the keyboard shortcut <code class="code-inline tex2jax_ignore">CTRL+ALT+g</code>.</div>
+<article class="note remark-like" id="note-4"><h4 class="heading">
 <span class="type">Note</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
 </h4>
-<div class="para" id="p-90">Note that generating assets requires additional software, like <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> or Sage.  Depending on your codespace setup, you can likely fix erorrs by entering the following command in the terminal:</div>
+<div class="para" id="p-91">Note that generating assets requires additional software, like <span class="latex-logo">L<span class="A">a</span>T<span class="E">e</span>X</span> or Sage.  Depending on your codespace setup, you can likely fix erorrs by entering the following command in the terminal:</div>
 <pre class="code-block tex2jax_ignore">sudo bash ./.devcontainer/postCreateCommand.sh
-</pre> <div class="para" id="p-91">Once you install this software once, you should be good to go as long as your codespace exists.</div></article></section><section class="section" id="sec-previewing"><h3 class="heading hide-type">
+</pre> <div class="para" id="p-92">Once you install this software once, you should be good to go as long as your codespace exists.</div></article></section><section class="section" id="sec-previewing"><h3 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Previewing</span>
 </h3>
-<div class="para logical" id="p-92">
+<div class="para logical" id="p-93">
 <div class="para">You can check the output of what you built using the <dfn class="terminology">View</dfn> command.  Again, you can access this in multiple ways. If you use the PreTeXt Commands menu ans select “view”, you will get a choice for your viewer.  We currently suggest using “Live Preview”, although on codespace this requires a few extra steps:</div>
 <ol class="decimal">
-<li id="li-33"><div class="para" id="p-93">When the side preview opens, it will ask you if you want to open in an external browser.  Click “Open in browser”.  If you don’t see the pop-up, you can clicke on “Port: 3000” in the bottom status bar of VS Code and select “Open in browser” from the pop-up menu.</div></li>
-<li id="li-34"><div class="para" id="p-94">Now close the new tab that opens, and also close the side panel in VS Code that opened.</div></li>
-<li id="li-35"><div class="para" id="p-95">Finally select “View” again, and it should just work.  You can drag the VS Code tab to un-split the window to make it easier to view.</div></li>
+<li id="li-33"><div class="para" id="p-94">When the side preview opens, it will ask you if you want to open in an external browser.  Click “Open in browser”.  If you don’t see the pop-up, you can clicke on “Port: 3000” in the bottom status bar of VS Code and select “Open in browser” from the pop-up menu.</div></li>
+<li id="li-34"><div class="para" id="p-95">Now close the new tab that opens, and also close the side panel in VS Code that opened.</div></li>
+<li id="li-35"><div class="para" id="p-96">Finally select “View” again, and it should just work.  You can drag the VS Code tab to un-split the window to make it easier to view.</div></li>
 </ol>
 </div>
-<div class="para" id="p-96">You can also experiment with the CLI view command, by selecting that from the pop-up menu, or by typing <code class="code-inline tex2jax_ignore">pretext view web</code> in the terminal.  This should pop up a new browser tab with the preview.  The only reason we caution against this currently is that the local server that gets started to preview the files will keep running as long as your codespace is active, and we don’t understand how this affects resource use.</div>
-<div class="para" id="p-97">When you make edits to your source files, you will need to build again, and then refresh the preview window to see the changes.</div></section><section class="section" id="sec-saving"><h3 class="heading hide-type">
+<div class="para" id="p-97">You can also experiment with the CLI view command, by selecting that from the pop-up menu, or by typing <code class="code-inline tex2jax_ignore">pretext view web</code> in the terminal.  This should pop up a new browser tab with the preview.  The only reason we caution against this currently is that the local server that gets started to preview the files will keep running as long as your codespace is active, and we don’t understand how this affects resource use.</div>
+<div class="para" id="p-98">When you make edits to your source files, you will need to build again, and then refresh the preview window to see the changes.</div></section><section class="section" id="sec-saving"><h3 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.3</span> <span class="title">Saving your work</span>
 </h3>
-<div class="para" id="p-98">Using codespaces will keep all your files “in the cloud” on GitHub’s server.  As long as you don’t delete your codespace, your files will be saved there.  However, you will want to <dfn class="terminology">push</dfn> these files to your <dfn class="terminology">git repository</dfn> on GitHub to make this save perminent.  This has the benefit of allowing collaborators to access your files as well (your codespace is unique to your account).</div>
-<div class="para" id="p-99">There is a <em class="emphasis">lot</em> to learn about git, but luckily using VS Code lets you do everything you need using menus (you don’t need to use the command line, unless you want to).  Everything can be controlled using the <dfn class="terminology">Source Control</dfn> view: it should be third from the top on the very left of the window, an icon with splitting paths, and likely a badge showing how many files you have changed.</div>
-<div class="para logical" id="p-100">
+<div class="para" id="p-99">Using codespaces will keep all your files “in the cloud” on GitHub’s server.  As long as you don’t delete your codespace, your files will be saved there.  However, you will want to <dfn class="terminology">push</dfn> these files to your <dfn class="terminology">git repository</dfn> on GitHub to make this save perminent.  This has the benefit of allowing collaborators to access your files as well (your codespace is unique to your account).</div>
+<div class="para" id="p-100">There is a <em class="emphasis">lot</em> to learn about git, but luckily using VS Code lets you do everything you need using menus (you don’t need to use the command line, unless you want to).  Everything can be controlled using the <dfn class="terminology">Source Control</dfn> view: it should be third from the top on the very left of the window, an icon with splitting paths, and likely a badge showing how many files you have changed.</div>
+<div class="para logical" id="p-101">
 <div class="para">Here are the basic concepts you need to understand.</div>
 <ul class="disc">
-<li id="li-36"><div class="para" id="p-101">The program <dfn class="terminology">git</dfn> keeps track of all the changes you make to files inside of your <dfn class="terminology">repository</dfn> (in this case, the folder containing your project).</div></li>
+<li id="li-36"><div class="para" id="p-102">The program <dfn class="terminology">git</dfn> keeps track of all the changes you make to files inside of your <dfn class="terminology">repository</dfn> (in this case, the folder containing your project).</div></li>
 <li id="li-37">
-<div class="para" id="p-102">Once you have edited your files and are happy with all of them, you tell git to track the set of changes as a <dfn class="terminology">commit</dfn>.  This creates a handy <em class="emphasis">breakpoint</em> you could return to if you want to go back to an earlier version.</div>
-<div class="para logical" id="p-103">
+<div class="para" id="p-103">Once you have edited your files and are happy with all of them, you tell git to track the set of changes as a <dfn class="terminology">commit</dfn>.  This creates a handy <em class="emphasis">breakpoint</em> you could return to if you want to go back to an earlier version.</div>
+<div class="para logical" id="p-104">
 <div class="para">There are two steps to creating a commit (which you can often do all at once in practice):</div>
 <ol class="decimal"><li id="li-38">
-<div class="para" id="p-104">You <dfn class="terminology">stage</dfn> the files you want to update in the commit.</div>
-<div class="para" id="p-105">You <dfn class="terminology">commit</dfn> the stage files including a <dfn class="terminology">commit message</dfn>.</div>
+<div class="para" id="p-105">You <dfn class="terminology">stage</dfn> the files you want to update in the commit.</div>
+<div class="para" id="p-106">You <dfn class="terminology">commit</dfn> the stage files including a <dfn class="terminology">commit message</dfn>.</div>
 </li></ol>
 <div class="para">Doing this in two steps can be helpful if you want to commit only some of the files that have changed.</div>
 </div>
 </li>
-<li id="li-39"><div class="para" id="p-106">Once you have one or more commits, you need to sync these changes with GitHub.  To “upload” your changes, you <dfn class="terminology">push</dfn> the repository.  To download changes that you are someone else made, you <dfn class="terminology">pull</dfn> the repository.</div></li>
+<li id="li-39"><div class="para" id="p-107">Once you have one or more commits, you need to sync these changes with GitHub.  To “upload” your changes, you <dfn class="terminology">push</dfn> the repository.  To download changes that you are someone else made, you <dfn class="terminology">pull</dfn> the repository.</div></li>
 </ul>
 </div>
-<div class="para" id="p-107">Now, how do we do these things in VS Code?  Start by looking at the Source Control view.  You will notice a list of files that were changed.  You can click on any of these to see what the changes are (you will see a side-by-side view of the original and updated version).</div>
-<div class="para" id="p-108">If you are comfortable staging and committing in one step, you can simply write yourself a short message in the textbox above the big green “Commit” button, and click the button.  If you want to stage first, click the + next to each file under “changes” to stage them.</div>
-<div class="para" id="p-109">The green button should now turn into a “Sync” button.  When you click that, it will do a quick pull and then a push, to sync changes with GitHub.</div>
-<div class="para" id="p-110">The only small point about using git is that no all files will be tracked.  This is on purpose, since temporary files really should not be “remembered” using this version control setting.  Which files or types of files are ignored by git is controled by the “.gitignore” file in your repository.</div>
-<div class="para" id="p-111">In particular, we do not track the output of builds.  Git is used to track progress on your source, which you build into output at any time.  If you want others to be able to see the output of your work without building it themselves, you need to deploy your work.</div></section><section class="section" id="sec-deploy"><h3 class="heading hide-type">
+<div class="para" id="p-108">Now, how do we do these things in VS Code?  Start by looking at the Source Control view.  You will notice a list of files that were changed.  You can click on any of these to see what the changes are (you will see a side-by-side view of the original and updated version).</div>
+<div class="para" id="p-109">If you are comfortable staging and committing in one step, you can simply write yourself a short message in the textbox above the big green “Commit” button, and click the button.  If you want to stage first, click the + next to each file under “changes” to stage them.</div>
+<div class="para" id="p-110">The green button should now turn into a “Sync” button.  When you click that, it will do a quick pull and then a push, to sync changes with GitHub.</div>
+<div class="para" id="p-111">The only small point about using git is that no all files will be tracked.  This is on purpose, since temporary files really should not be “remembered” using this version control setting.  Which files or types of files are ignored by git is controled by the “.gitignore” file in your repository.</div>
+<div class="para" id="p-112">In particular, we do not track the output of builds.  Git is used to track progress on your source, which you build into output at any time.  If you want others to be able to see the output of your work without building it themselves, you need to deploy your work.</div></section><section class="section" id="sec-deploy"><h3 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Deploy</span>
 </h3>
-<div class="para" id="p-112">So you have worked tirelessly to prepare course notes or a book, built and previewed, synced changes using git, and now you are ready to share the results of your efforts with the world.  It’s time to <dfn class="terminology">deploy</dfn> your project.</div>
-<div class="para" id="p-113">With our codespace setup this is simple.  From the “PreTeXt Commands” menu, click on “Deploy”.  This will automatically take the most recent build of your web target and host it through <a class="external" href="https://pages.github.com/" target="_blank">GitHub Pages</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 1 </sup></a>.  Watch the output pane for a link to your published site. (It can take a few minutes for the site to get set up or updated; there should be another link to view the progress of the GitHub “action” that reports the progress.)</div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-8"><div class="fn"><code class="code-inline tex2jax_ignore">pages.github.com/</code></div></div>
+<div class="para" id="p-113">So you have worked tirelessly to prepare course notes or a book, built and previewed, synced changes using git, and now you are ready to share the results of your efforts with the world.  It’s time to <dfn class="terminology">deploy</dfn> your project.</div>
+<div class="para" id="p-114">With our codespace setup this is simple.  From the “PreTeXt Commands” menu, click on “Deploy”.  This will automatically take the most recent build of your web target and host it through <a class="external" href="https://pages.github.com/" target="_blank">GitHub Pages</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-8" id="fn-8"><sup> 1 </sup></a>.  Watch the output pane for a link to your published site. (It can take a few minutes for the site to get set up or updated; there should be another link to view the progress of the GitHub “action” that reports the progress.)</div></section></section><div class="hidden-content tex2jax_ignore" id="hk-fn-8"><div class="fn"><code class="code-inline tex2jax_ignore">pages.github.com/</code></div></div>
 </div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="ch-intro.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="ch-exercises.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
