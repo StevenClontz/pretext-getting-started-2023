@@ -39,6 +39,9 @@
         <p> Follow the instructions at <url href="https://github.com/PreTeXtBook/pretext-codespace" />
             to get started. Let this run for a few minutes in the background while you review the
             rest of this section. </p>
+        <note>
+            <p>Codespaces works best in the Chrome or Edge web browsers.</p>
+        </note>
     </section>
     <section xml:id="sec-principles">
         <title>PreTeXt Principles</title>
@@ -747,8 +750,8 @@ runge()
                 href="https://stevenclontz.github.io/pretext-getting-started-2023/" />, and the same document is
             available in a PDF format at <url
                 href="https://stevenclontz.github.io/pretext-getting-started-2023/print/main.pdf" />. </p>
-        <p> Obtaining these formats are as easy as running <c>pretext build web</c> and
-            <c>pretext build print</c> respectively. PreTeXt supports other types of output as well, including
+        <p> Obtaining these formats from your source is as easy as running clicking a couple buttons in your Codespace.
+            PreTeXt supports other types of output as well, including
             Jupyter notebooks, ePub, and tacticle braille code.</p>
         <p> You're encouraged to view authoring in
             PreTeXt as an <em>investment</em>: you may not need the braille output today, but the little
